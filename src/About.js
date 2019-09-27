@@ -51,7 +51,7 @@ export const About = () => (
                 <img class="card-img-top" src={davidImage} alt="Card image cap"></img>
                 <div class="card-body">
                   <h5>David Sikabwe</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
+                  <p><a href="https://song.link/i/1479959773">Please stream my music.</a></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
