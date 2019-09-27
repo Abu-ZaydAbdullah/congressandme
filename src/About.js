@@ -45,7 +45,7 @@ export const About = () => (
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
                   <h5>David Sikabwe</h5>
-                  <p class="card-text">Filler text.</p>
+                  <p><a href="https://song.link/i/1479959773">Please stream my music.</a></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
