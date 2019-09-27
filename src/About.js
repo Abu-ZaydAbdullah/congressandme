@@ -1,5 +1,9 @@
 import React from 'react'
 import { Jumbotron } from './components/Jumbotron'
+import davidImage from './assets/david.jpeg'
+import robertImage from './assets/robert.jpg'
+import abuImage from './assets/abu.JPG'
+import benbImage from './assets/benb.jpg'
 
 export const About = () => (
 
@@ -17,9 +21,10 @@ export const About = () => (
         <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src={robertImage} alt="Card image cap"></img>
                 <div class="card-body">
                   <h5>Robert C. Gutierrez</h5>
-                  <p class="card-text">I like to box, lift, and code.</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
@@ -32,7 +37,7 @@ export const About = () => (
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
                   <h5>Calvin Dao</h5>
-                  <p class="card-text">Filler text</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
@@ -43,9 +48,10 @@ export const About = () => (
 
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src={davidImage} alt="Card image cap"></img>
                 <div class="card-body">
                   <h5>David Sikabwe</h5>
-                  <p class="card-text">Filler text.</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
@@ -56,9 +62,10 @@ export const About = () => (
 
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src={abuImage} alt="Card image cap"></img>
                 <div class="card-body">
                   <h5>Abu-Zayd Abdullah</h5>
-                  <p class="card-text">Filler text.</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
@@ -71,7 +78,7 @@ export const About = () => (
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
                   <h5>Ben Hazel</h5>
-                  <p class="card-text">Filler text.</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
@@ -82,9 +89,10 @@ export const About = () => (
 
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src={benbImage} alt="Card image cap"></img>
                 <div class="card-body">
                   <h5>Ben Burton</h5>
-                  <p class="card-text">Filler text.</p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                     </div>
