@@ -1,6 +1,6 @@
 import React from 'react'
 import Jumbotron from './components/Jumbotron'
-import PoliticianCard from './components/PoliticianCard'
+import RepresentativeCard from './components/RepresentativeCard'
 
 export const Home = () => (
   <main role="main">
@@ -13,7 +13,7 @@ export const Home = () => (
     <div className="album py-5 bg-light">
       <div className="container">
         <div className="row">
-        <PoliticianCard />
+        <RepresentativeCard />
         </div>
       </div>
     </div>
