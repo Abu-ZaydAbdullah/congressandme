@@ -13,12 +13,12 @@ export const Contact = () => (
       </div>
     </section>
 
-    <div className="album py-5 bg-light">
-      <div className="container">
-        <div className="row">
+    <div className="panel">
+      <ul className="list-group" id="contact-list">
+        <li className="list-group-item">
         <ContactCard />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
 
   </main>
