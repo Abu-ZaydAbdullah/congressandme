@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 import { Jumbotron as Jumbo, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import congressImage from '../assets/congress_image.jpg';
@@ -25,14 +25,20 @@ const Styles = styled.div`
   }
 `;
 
-export const Jumbotron = () => (
+class Jumbotron extends Component {
+  render() {
+  return (
   <Styles>
     <Jumbo fluid className="jumbo">
       <div className="overlay"></div>
       <Container>
-        <h1 className="text-center">Welcome</h1>
-        <p className="text-center">Other Text Goes Here</p>
+        <h1 className="text-center">{this.props.title_text}</h1>
+        <p className="text-center">{this.props.subtitle_text}</p>
       </Container>
     </Jumbo>
   </Styles>
-)
+  )
+}
+}
+
+export default Jumbotron;
