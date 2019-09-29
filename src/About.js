@@ -1,106 +1,23 @@
 import React from 'react'
-import { Jumbotron } from './components/Jumbotron'
-import davidImage from './assets/david.jpeg'
-import robertImage from './assets/robert.jpg'
-import abuImage from './assets/abu.JPG'
-import benbImage from './assets/benb.jpg'
+import Jumbotron from './components/Jumbotron'
+import AboutCard from './components/AboutCard'
 
 export const About = () => (
 
   <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Meet the Team</h1>
-        <p class="lead text-muted">Get to know the team responsible for creating and maintaining this site!</p>
+    <section className="jumbotron text-center">
+      <div className="container">
+        <h1 className="jumbotron-heading">Meet the Team</h1>
+        <p className="lead text-muted">Get to know the team responsible for creating and maintaining this site!</p>
       </div>
     </section>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src={robertImage} alt="Card image cap"></img>
-                <div class="card-body">
-                  <h5>Robert C. Gutierrez</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                  <h5>Calvin Dao</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src={davidImage} alt="Card image cap"></img>
-                <div class="card-body">
-                  <h5>David Sikabwe</h5>
-                  <p><a href="https://song.link/i/1479959773">Please stream my music.</a></p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src={abuImage} alt="Card image cap"></img>
-                <div class="card-body">
-                  <h5>Abu-Zayd Abdullah</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                  <h5>Ben Hazel</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src={benbImage} alt="Card image cap"></img>
-                <div class="card-body">
-                  <h5>Ben Burton</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="album py-5 bg-light">
+      <div className="container">
+        <div className="row">
+        <AboutCard />
+        </div>
       </div>
     </div>
 
