@@ -5,7 +5,7 @@ import RepresentativeCard from './components/RepresentativeCard'
 export const Home = () => (
   <main role="main">
     <div>
-    <Jumbotron title_text={"Home"} subtitle_text={"More Stuff Here"}/>
+    <Jumbotron title_text={"Congress and Me"} subtitle_text={"Learn more about what your representative is up to!"}/>
     <div class="md-form mt-0">
       <input class="form-control" type="text" placeholder="Search Representatives" aria-label="Search"></input>
     </div>

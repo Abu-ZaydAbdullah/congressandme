@@ -16,7 +16,7 @@ export const About = () => (
     <div className="album py-5 bg-light">
       <div className="container">
         <div className="row">
-        <AboutCard />
+        <AboutCard/>
         </div>
       </div>
     </div>
