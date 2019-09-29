@@ -2,6 +2,8 @@ import davidImage from '../assets/david.jpeg'
 import robertImage from '../assets/robert.png'
 import abuzaydImage from '../assets/abuzayd.png'
 import benbImage from '../assets/benb.png'
+import benhImage from '../assets/benh.jpeg'
+import calvinImage from '../assets/calvin2.jpg'
 
 
 
@@ -28,13 +30,13 @@ export default [
       index: 3,
       name: "Calvin Dao",
       gitlab_id: "auproxis",
-      image: "./assets/david.jpeg"
+      image: calvinImage
     },
     {
       index: 4,
       name: "Ben Hazel",
       gitlab_id: "BenHazel007",
-      image: "./assets/david.jpeg"
+      image: benhImage
     },
     {
       index: 5,
