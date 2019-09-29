@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
 import data from "../data/GroupMembers"
 
 class AboutCard extends Component {
@@ -7,7 +8,7 @@ class AboutCard extends Component {
   return (
   <div className="col-md-4" key={member.index}>
   <div className="card mb-4 box-shadow">
-    <img className="card-img-top" src={member.image} alt="Card image cap"></img>
+    <img className="card-img-top about-image" style={{maxHeight: 262}} src={member.image} alt="Card image cap"></img>
     <div className="card-body">
       <h5>{member.name}</h5>
       <p>

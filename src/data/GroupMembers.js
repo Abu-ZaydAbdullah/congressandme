@@ -1,7 +1,9 @@
 import davidImage from '../assets/david.jpeg'
-import robertImage from '../assets/robert.jpg'
-import abuzaydImage from '../assets/abuzayd.jpg'
-import benbImage from '../assets/benb.jpg'
+import robertImage from '../assets/robert.png'
+import abuzaydImage from '../assets/abuzayd.png'
+import benbImage from '../assets/benb.png'
+
+
 
 export default [
     {
