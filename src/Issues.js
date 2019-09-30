@@ -1,6 +1,6 @@
 import React from 'react'
 import Jumbotron from './components/Jumbotron'
-
+import IssueCard from './components/IssueCard'
 export const Issues = () => (
 
   <main role="main">
@@ -15,7 +15,7 @@ export const Issues = () => (
     <div className="panel">
       <ul className="list-group" id="contact-list">
         <li className="list-group-item">
-            <p>"temp"</p>
+        <IssueCard/>
         </li>
       </ul>
     </div>
