@@ -29,7 +29,7 @@ class AboutCard extends Component {
       .then(response => {
         const responseData = response.data
           responseData.forEach((commit) => {
-            this.setState({commit_count: this.state.commit_count += 1})
+            this.setState({commit_count: this.state.commit_count + 1})
             let temp_commit_dict = cloneDeep(this.state.commit_dict)
             temp_commit_dict[commit.author_name] += 1
             this.setState({commit_dict: temp_commit_dict})
@@ -53,7 +53,7 @@ class AboutCard extends Component {
       .then(response => {
         const responseData = response.data
           responseData.forEach((issue) => {
-            this.setState({issue_count: this.state.issue_count += 1})
+            this.setState({issue_count: this.state.issue_count + 1})
             if (issue.closed_by != null) {
             let temp_issue_dict = cloneDeep(this.state.issue_dict)
             temp_issue_dict[issue.closed_by.name] += 1
@@ -77,7 +77,7 @@ class AboutCard extends Component {
   return (
   <div className="col-md-4" key={member.index}>
   <div className="card mb-4 box-shadow">
-    <img className="card-img-top about-image" style={{maxHeight: 262}} src={member.image} alt="Card image cap"></img>
+    <img className="card-img-top about-image" style={{maxHeight: 262}} src={member.image} alt="{member.name}"></img>
     <div className="card-body">
       <h5>{member.name}</h5>
       <p>

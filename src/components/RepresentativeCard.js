@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from 'styled-components';
 import data from "../data/RepresentativeMembers"
 
 class RepresentativeCard extends Component {
@@ -8,7 +7,7 @@ class RepresentativeCard extends Component {
   return (
   <div className="col-md-4" key={representative.index}>
   <div className="card mb-4 box-shadow">
-    <img className="card-img-top about-image" style={{maxHeight: 262}} src={representative.image} alt="Card image cap"></img>
+    <img className="card-img-top about-image" style={{maxHeight: 262}} src={representative.image} alt="{representative.name}"></img>
     <div className="card-body">
       <h5>{representative.name}</h5>
       <p>

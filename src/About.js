@@ -1,5 +1,4 @@
 import React from 'react'
-import Jumbotron from './components/Jumbotron'
 import AboutCard from './components/AboutCard'
 
 export const About = () => (
