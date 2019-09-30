@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
-import { About } from './About';
+import { Representatives } from './Representatives';
+import { States } from './States';
 import { Issues } from './Issues';
+import { About } from './About';
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
@@ -16,8 +18,10 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
+              <Route path="/representatives" component={Representatives} />
+              <Route path="/states" component={States} />
               <Route path="/issues" component={Issues} />
+              <Route path="/about" component={About} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>

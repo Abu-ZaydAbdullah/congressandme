@@ -5,12 +5,10 @@ import benbImage from '../assets/benb.png'
 import benhImage from '../assets/benh.jpeg'
 import calvinImage from '../assets/calvin.jpg'
 
-
-
 export default [
     {
       index: 0,
-      name: "Robert C. Gutierrez",
+      name: "Robert Gutierrez",
       gitlab_id: "robgutierrez1",
       email: "rgutierrez27@utexas.edu",
       image: robertImage

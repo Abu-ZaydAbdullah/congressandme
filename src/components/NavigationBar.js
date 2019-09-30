@@ -32,12 +32,22 @@ export const NavigationBar = () => (
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/about">About</Link>
+              <Link to="/representatives">Representatives</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>
+              <Link to="/states">States</Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
               <Link to="/issues">Issues</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>
+              <Link to="/about">About</Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>
