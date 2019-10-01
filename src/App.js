@@ -8,6 +8,7 @@ import { About } from './About';
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
+import { EnvironmentInst} from './components/EnvironmentInst';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path="/states" component={States} />
               <Route path="/issues" component={Issues} />
               <Route path="/about" component={About} />
+              <Route path="/environmentInst" component={EnvironmentInst} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
