@@ -8,7 +8,7 @@ class IssueCard extends Component {
   return (
     <div className="row mb-5" key={member.index}>
         <div className="panel panel-default">
-            <div className="card-body">    
+            <div className="card-body row">    
                 <div class = "col-sm-6 col-md-6 image-container">
                     <img className="card-img-top about-image" style={{width: 262}}src={member.image} alt="Card image cap"></img>
                 </div>
