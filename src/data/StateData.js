@@ -213,33 +213,41 @@ export default {
     "42" : {
         index: 42,
         name: "Texas",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Texas.svg/255px-Flag_of_Texas.svg.png"
     },
     "43" : {
         index: 43,
         name: "Utah",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/255px-Flag_of_Utah.svg.png"
     },
     "44" : {
         index: 44,
         name: "Vermont",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/255px-Flag_of_Vermont.svg.png"
     },
     "45" : {
         index: 45,
-        name: "Virginia"
+        name: "Virginia",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/248px-Flag_of_Virginia.svg.png"
     },
     "46" : {
         index: 46,
         name: "Washington",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Washington.svg/255px-Flag_of_Washington.svg.png"
     },
     "47" : {
         index: 47,
         name: "West Virgina",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_West_Virginia.svg/255px-Flag_of_West_Virginia.svg.png"
     },
     "48" : {
         index: 48,
         name: "Wisconsin",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_Wisconsin.svg/200px-Flag_of_Wisconsin.svg.png"
     },
     "49" : {
         index: 49,
-        name: "Wyoming"
+        name: "Wyoming",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Wyoming.svg/243px-Flag_of_Wyoming.svg.png"
     }
 };
