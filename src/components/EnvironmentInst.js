@@ -13,7 +13,7 @@ export const EnvironmentInst = () => (
     </section>
 
     <div>
-      
+      <img></img>
     </div>
 
   </main>
