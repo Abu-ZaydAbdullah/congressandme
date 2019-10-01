@@ -15,7 +15,7 @@ class IssueCard extends Component {
                 <div className="col-sm-6 col-md-6" >
                     <h5>{member.name}</h5>
                     <p className="card-text">{member.desc}</p>
-                    <abutton type="button">Click Me!</button>
+                    <a href="./IssueInst" button type="button">Click Me!</button>
                 </div>
             </div>
         </div>
