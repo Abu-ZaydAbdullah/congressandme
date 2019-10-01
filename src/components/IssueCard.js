@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import data from "../data/IssueData"
+import data from "../data/IssueData";
 
 class IssueCard extends Component {
   render() {
@@ -15,7 +15,7 @@ class IssueCard extends Component {
                 <div className="col-sm-6 col-md-6" >
                     <h5>{member.name}</h5>
                     <p className="card-text">{member.desc}</p>
-                    <button type="button">Click Me!</button>
+                    <button type="button" href="./IssueInst">Click Me!</button>
                 </div>
             </div>
         </div>
