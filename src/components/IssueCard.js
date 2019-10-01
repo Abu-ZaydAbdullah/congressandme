@@ -7,17 +7,19 @@ class IssueCard extends Component {
   const issueList = data.map(member => {
   return (
     <div className="row mb-5" key={member.index}>
-    <div className="panel panel-default">
-      <img className="card-img-top about-image" style={{width: 262}}src={member.image} alt="Card image cap"></img>
-    </div>
-     <div className="card-body">
-       <h5>{member.name}</h5>
-       <p className="card-text">{member.desc}</p>
-       <div className="d-flex justify-content-between align-items-center">
-         <div className="btn-group"></div>
-       </div>    
-    </div>
-  </div>  
+        <div className="panel panel-default">
+            <div className="card-body">    
+                <div class = "col-sm-6 col-md-6 image-container">
+                    <img className="card-img-top about-image" style={{width: 262}}src={member.image} alt="Card image cap"></img>
+                </div>
+                <div className="col-sm-6 col-md-6" >
+                    <h5>{member.name}</h5>
+                    <p className="card-text">{member.desc}</p>
+                    <button type="button">Click Me!</button>
+                </div>
+            </div>
+        </div>
+    </div>  
   )
   }
     )
