@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
 import { Representatives } from './Representatives';
 import RepresentativeTemplate from './templates/RepresentativeTemplate';
+import StateTemplate from './templates/StateTemplate';
 import { States } from './States';
 import { Issues } from './Issues';
 import { About } from './About';
@@ -22,6 +23,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/representatives" component={Representatives} />
               <Route path="/representative/:full_name" component={RepresentativeTemplate} />
+              <Route path="/state/:name" component={StateTemplate} />
               <Route path="/states" component={States} />
               <Route path="/issues" component={Issues} />
               <Route path="/about" component={About} />

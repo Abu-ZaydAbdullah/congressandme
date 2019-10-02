@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import data from "../data/StateData"
+import data from "../data/StateData";
+import { Link } from "react-router-dom";
 
 class StateCard extends Component {
   render() {
@@ -11,7 +12,17 @@ class StateCard extends Component {
     <img className="card-img-top" style={{maxHeight: 160}} src={state.image} alt="{state.name}"></img>
     <div className="card-img-overlay">
       <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
-        <a href="#" class="btn btn-primary">{state.name}</a>
+        <Link
+          to={{
+            pathname: `/state/${state.name}`,
+            status: {
+              name: state.name,
+              image: state.image
+            }
+          }}
+        >
+          <a class="btn btn-dark">{state.name}</a>
+        </Link>
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <div className="btn-group"></div>

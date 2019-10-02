@@ -107,4 +107,3 @@ const RepresentativeTemplate = props => {
 };
 
 export default RepresentativeTemplate;
-
