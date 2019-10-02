@@ -7,12 +7,14 @@ class RepresentativeCard extends Component {
   return (
   <div className="col-md-4" key={representative.index}>
   <div className="card mb-4 box-shadow">
-    <img className="card-img-top about-image" style={{maxHeight: 262}} src={representative.image} alt="{representative.name}"></img>
+    <img className="card-img-top about-image" style={{maxHeight: 450}} src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`} alt="{representative.full_name}"></img>
     <div className="card-body">
-      <h5>{representative.name}</h5>
-      <p>
-      <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
-      </p>
+      <h5>{representative.full_name}</h5>
+      <p className="card-text"><strong>Party:</strong> {representative.party}</p>
+      <p className="card-text"><strong>State:</strong> {representative.state}</p>
+      <p className="card-text"><strong>Chamber:</strong> {(representative.type === "sen") ? 'Senate': 'House of Representatives'}</p>
+      <p className="card-text"><strong><a href={`https://twitter.com/@${representative.twitter}`}>Twitter:</a></strong> {(representative.twitter !== "") ? `@${representative.twitter}`:'n/a'}</p>
+      <p className="card-text"><strong><a href={`https://facebook.com/${representative.facebook}`}>Facebook:</a></strong> {(representative.facebook !== "") ? `${representative.facebook}`:'n/a'}</p>
       <div class="col-mb-4 text-center">
         <a href="#" class="btn btn-primary">Learn More</a>
       </div>

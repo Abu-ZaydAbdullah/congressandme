@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
 import { Representatives } from './Representatives';
+import RepresentativeTemplate from './templates/RepresentativeTemplate';
 import { States } from './States';
 import { Issues } from './Issues';
 import { About } from './About';
@@ -19,7 +20,8 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/representatives" component={Representatives} />
+              <Route exact path="/representatives" component={Representatives} />
+              <Route path="/representatives/" component={RepresentativeTemplate} />
               <Route path="/states" component={States} />
               <Route path="/issues" component={Issues} />
               <Route path="/about" component={About} />

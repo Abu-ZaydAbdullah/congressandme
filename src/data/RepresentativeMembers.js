@@ -1,74 +1,200 @@
-import bernieImage from '../assets/bernie.jpg'
-import danImage from '../assets/dan.jpg'
-import elizabethImage from '../assets/elizabeth.jpg'
-import mitchImage from '../assets/mitch.jpg'
-import alexImage from '../assets/alex.jpg'
-import tedImage from '../assets/ted.jpg'
-import coryImage from '../assets/cory.jpg'
-import johnImage from '../assets/john.jpg'
-
 export default [
-    {
-        index: 0,
-        name: "Bernie Sanders",
-        party: "Democrat",
-        image: bernieImage,
-        state: "Vermont"
-    },
-
-    {
-        index: 1,
-        name: "Dan Crenshaw",
-        party: "Republican",
-        image: danImage,
-        state: "Texas"
-    },
-
-    {
-        index: 2,
-        name: "Elizabeth Warren",
-        party: "Democrat",
-        image: elizabethImage,
-        state: "Massachusetts"
-    },
-
-    {
-        index: 3,
-        name: "Mitch McConnell",
-        party: "Republican",
-        image: mitchImage,
-        state: "Kentucky"
-    },
-
-    {
-        index: 4,
-        name: "Alexandria Ocasio-Cortez",
-        party: "Democrat",
-        image: alexImage,
-        state: "New York"
-    },
-
-    {
-        index: 5,
-        name: "Ted Cruz",
-        party: "Republican",
-        image: tedImage,
-        state: "Texas"
-    },
-
-    {
-        index: 6,
-        name: "Cory Booker",
-        party: "Democrat",
-        image: coryImage,
-        state: "New Jersey"
-    },
-
-    {
-        index: 7,
-        name: "John Barrasso",
-        party: "Republican",
-        image: johnImage,
-        state: "Wyoming"
-    }
-];
+  {
+    "full_name": "Sherrod Brown",
+    "type": "sen",
+    "state": "OH",
+    "index": 0,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.brown.senate.gov",
+    "phone": "202-224-2315",
+    "contact_form": "http://www.brown.senate.gov/contact/",
+    "rss_url": "http://www.brown.senate.gov/rss/feeds/?type=all&amp",
+    "twitter": "",
+    "facebook": "SenSherrodBrown",
+    "youtube": "SenatorSherrodBrown",
+    "bioguide_id": "B000944",
+    "": ""
+  },
+  {
+    "full_name": "Maria Cantwell",
+    "type": "sen",
+    "state": "WA",
+    "index": 1,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.cantwell.senate.gov",
+    "phone": "202-224-3441",
+    "contact_form": "http://www.cantwell.senate.gov/public/index.cfm/email-maria",
+    "rss_url": "http://www.cantwell.senate.gov/public/index.cfm/rss/feed",
+    "twitter": "SenatorCantwell",
+    "facebook": "senatorcantwell",
+    "youtube": "SenatorCantwell",
+    "bioguide_id": "C000127",
+    "": ""
+  },
+  {
+    "full_name": "Benjamin L. Cardin",
+    "type": "sen",
+    "state": "MD",
+    "index": 2,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.cardin.senate.gov",
+    "phone": "202-224-4524",
+    "contact_form": "http://www.cardin.senate.gov/contact/",
+    "rss_url": "http://www.cardin.senate.gov/rss/feeds/?type=all",
+    "twitter": "SenatorCardin",
+    "facebook": "senatorbencardin",
+    "youtube": "senatorcardin",
+    "bioguide_id": "C000141",
+    "": ""
+  },
+  {
+    "full_name": "Thomas R. Carper",
+    "type": "sen",
+    "state": "DE",
+    "index": 3,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.carper.senate.gov/public",
+    "phone": "202-224-2441",
+    "contact_form": "http://www.carper.senate.gov/public/index.cfm/email-senator-carper",
+    "rss_url": "http://www.carper.senate.gov/public/index.cfm/rss/feed",
+    "twitter": "SenatorCarper",
+    "facebook": "tomcarper",
+    "youtube": "senatorcarper",
+    "bioguide_id": "C000174",
+    "": ""
+  },
+  {
+    "full_name": "Robert P. Casey, Jr.",
+    "type": "sen",
+    "state": "PA",
+    "index": 4,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.casey.senate.gov",
+    "phone": "202-224-6324",
+    "contact_form": "https://www.casey.senate.gov/contact/",
+    "rss_url": "http://www.casey.senate.gov/rss/feeds/?all",
+    "twitter": "SenBobCasey",
+    "facebook": "SenatorBobCasey",
+    "youtube": "SenatorBobCasey",
+    "bioguide_id": "C001070",
+    "": ""
+  },
+  {
+    "full_name": "Dianne Feinstein",
+    "type": "sen",
+    "state": "CA",
+    "index": 5,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.feinstein.senate.gov",
+    "phone": "202-224-3841",
+    "contact_form": "https://www.feinstein.senate.gov/public/index.cfm/e-mail-me",
+    "rss_url": "http://www.feinstein.senate.gov/public/?a=rss.feed",
+    "twitter": "SenFeinstein",
+    "facebook": "senatorfeinstein",
+    "youtube": "SenatorFeinstein",
+    "bioguide_id": "F000062",
+    "": ""
+  },
+  {
+    "full_name": "Amy Klobuchar",
+    "type": "sen",
+    "state": "MN",
+    "index": 6,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.klobuchar.senate.gov",
+    "phone": "202-224-3244",
+    "contact_form": "http://www.klobuchar.senate.gov/public/index.cfm/contact",
+    "rss_url": "",
+    "twitter": "SenAmyKlobuchar",
+    "facebook": "",
+    "youtube": "senatorklobuchar",
+    "bioguide_id": "K000367",
+    "": ""
+  },
+  {
+    "full_name": "Robert Menendez",
+    "type": "sen",
+    "state": "NJ",
+    "index": 7,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.menendez.senate.gov",
+    "phone": "202-224-4744",
+    "contact_form": "https://www.menendez.senate.gov/contact",
+    "rss_url": "http://www.menendez.senate.gov/rss/feeds/index.cfm?type=news",
+    "twitter": "SenatorMenendez",
+    "facebook": "senatormenendez",
+    "youtube": "SenatorMenendezNJ",
+    "bioguide_id": "M000639",
+    "": ""
+  },
+  {
+    "full_name": "Bernard Sanders",
+    "type": "sen",
+    "state": "VT",
+    "index": 8,
+    "district": "",
+    "senate_class": 1,
+    "party": "Independent",
+    "url": "https://www.sanders.senate.gov",
+    "phone": "202-224-5141",
+    "contact_form": "http://www.sanders.senate.gov/contact/",
+    "rss_url": "http://www.sanders.senate.gov/rss/",
+    "twitter": "SenSanders",
+    "facebook": "senatorsanders",
+    "youtube": "senatorsanders",
+    "bioguide_id": "S000033",
+    "": ""
+  },
+  {
+    "full_name": "Debbie Stabenow",
+    "type": "sen",
+    "state": "MI",
+    "index": 9,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.stabenow.senate.gov",
+    "phone": "202-224-4822",
+    "contact_form": "https://www.stabenow.senate.gov/contact",
+    "rss_url": "http://stabenow.senate.gov/rss/?p=news",
+    "twitter": "SenStabenow",
+    "facebook": "SenatorStabenow",
+    "youtube": "senatorstabenow",
+    "bioguide_id": "S000770",
+    "": ""
+  },
+  {
+    "full_name": "Jon Tester",
+    "type": "sen",
+    "state": "MT",
+    "index": 10,
+    "district": "",
+    "senate_class": 1,
+    "party": "Democrat",
+    "url": "https://www.tester.senate.gov",
+    "phone": "202-224-2644",
+    "contact_form": "https://www.tester.senate.gov/?p=email_senator",
+    "rss_url": "http://www.tester.senate.gov/rss/?p=hot_topic",
+    "twitter": "SenatorTester",
+    "facebook": "senatortester",
+    "youtube": "senatorjontester",
+    "bioguide_id": "T000464",
+    "": ""
+  }
+]
