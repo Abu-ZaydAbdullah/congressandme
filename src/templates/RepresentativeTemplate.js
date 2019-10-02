@@ -38,22 +38,21 @@ const RepresentativeTemplate = props => {
           <div className="col-md-4">
             <div className="shifted">
               <div className="profile-work">
-                <p>WORK LINK</p>
-                <a href="">Website Link</a>
+                <p>Contact</p>
+                <a href={props.location.state.website}>Website</a>
                 <br />
-                <a href="">Bootsnipp Profile</a>
+                <a href={props.location.state.form}>Email</a>
                 <br />
-                <a href="">Bootply Profile</a>
+                <a href={props.location.state.phone}>Phone</a>
                 <p>Social Media</p>
                 <a href={props.location.state.twitter}>Twitter</a>
                 <br />
                 <a href={props.location.state.facebook}>Facebook</a>
                 <br />
-                <a href="">WordPress</a>
+                <a href={props.location.state.youtube}>YouTube</a>
                 <br />
-                <a href="">WooCommerce</a>
+                <a href={props.location.state.rss}>RSS</a>
                 <br />
-                <a href="">PHP, .Net</a>
                 <br />
               </div>
             </div>
@@ -87,23 +86,15 @@ const RepresentativeTemplate = props => {
                     <label>Chamber</label>
                   </div>
                   <div className="col-md-6">
-                    <p></p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <label>Phone</label>
+                    <p>{props.location.state.chamber}</p>
                   </div>
                   <div className="col-md-6">
-                    <p>123 456 7890</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <label>Profession</label>
+                    <label>Summary: (Courtesy of <a href="http://bioguide.congress.gov">BioGuide</a>)</label>
                   </div>
                   <div className="col-md-6">
-                    <p>Web Developer and Designer</p>
+                  </div>
+                  <div className="col-md-12">
+                    <p>{props.location.state.summary}</p>
                   </div>
                 </div>
               </div>

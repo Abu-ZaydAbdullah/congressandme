@@ -15,7 +15,7 @@ export default [
     "facebook": "SenSherrodBrown",
     "youtube": "SenatorSherrodBrown",
     "bioguide_id": "B000944",
-    "": ""
+    "bioguide_summary": "BROWN, Sherrod, a Senator and a Representative from Ohio; born in Mansfield, Richland County, Ohio, November 9, 1952; B.A., Yale University, New Haven, Conn., 1974; M.A., Ohio State University, Ohio, 1981; member of the faculty, Ohio State University, Mansfield, Ohio, 1979-1981; member of the Ohio State house of representatives, 1975-1982; Ohio secretary of state, 1983-1991; elected as a Democrat to the One Hundred Third and to the six succeeding Congresses (January 3, 1993-January 3, 2007); not a candidate for reelection to the House of Representatives but was elected as a Democrat to the United States Senate in 2006; reelected in 2012, and again in 2018 for the term ending January 3, 2025."
   },
   {
     "full_name": "Maria Cantwell",
@@ -33,7 +33,7 @@ export default [
     "facebook": "senatorcantwell",
     "youtube": "SenatorCantwell",
     "bioguide_id": "C000127",
-    "": ""
+    "bioguide_summary": "CANTWELL, Maria E., a Senator and a Representative from Washington; born in Indianapolis, Ind., October 13, 1958; attended public schools in Indianapolis; B.A., Miami University of Ohio 1980; pursued an academic course at the Miami University European Center, Luxembourg; public relations consultant; Washington State representative 1987-1993; elected as a Democrat to the 103rd Congress (January 3, 1993-January 3, 1995); unsuccessful candidate for reelection to the 104th Congress; elected as a Democrat to the U.S. Senate on November 7, 2000, for the term commencing January 3, 2001; reelected in 2006, 2012, and again in 2018 for the term ending January 3, 2025; chair, Committee on Indian Affairs (One Hundred Thirteenth Congress [January 3, 2013-February 12, 2014]), Committee on Small Business and Entrepreneurship (One Hundred Thirteenth Congress [February 12, 2014-January 3, 2015])."
   },
   {
     "full_name": "Benjamin L. Cardin",
@@ -51,7 +51,7 @@ export default [
     "facebook": "senatorbencardin",
     "youtube": "senatorcardin",
     "bioguide_id": "C000141",
-    "": ""
+    "bioguide_summary": "CARDIN, Benjamin Louis, a Senator and a Representative from Maryland; born in Baltimore, Md., October 5, 1943; attended public schools; graduated from Baltimore City College, Baltimore, Md., 1961; B.A., University of Pittsburgh, Pittsburgh, Pa., 1964; J.D., University of Maryland, Baltimore, Md., 1967; lawyer, private practice; member of the Maryland state house of delegates, 1966-1986, speaker, 1979-1986; elected as a Democrat to the One Hundredth and to the nine succeeding Congresses (January 3, 1987-January 3, 2007); one of the managers appointed by the House of Representatives in 1989 to conduct the impeachment proceedings against Walter L. Nixon, judge of the United States District Court for the District Court of Mississippi; not a candidate for reelection to the House of Representatives but was elected as a Democrat to the United States Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025."
   },
   {
     "full_name": "Thomas R. Carper",
@@ -69,7 +69,7 @@ export default [
     "facebook": "tomcarper",
     "youtube": "senatorcarper",
     "bioguide_id": "C000174",
-    "": ""
+    "bioguide_summary": "CARPER, Thomas Richard, a Senator and a Representative from Delaware; born in Beckley, Raleigh County, W.Va., January 23, 1947; attended public schools; graduated, Whetstone High School, Columbus, Ohio 1964; B.A., Ohio State University, Columbus 1968; University of Delaware, Newark, M.B.A. 1975; served in the United States Navy 1968-1973; Naval Reserve, commander, 1973-1991; Delaware State treasurer 1976-1983; elected as a Democrat to the Ninety-eighth and to the four succeeding Congresses (January 3, 1983-January 3, 1993); governor of Delaware 1993-2001; chairman of the National Governors Association 1998-1999; elected to the United States Senate in 2000 for term commencing January 3, 2001; reelected in 2006, 2012, and again in 2018 for the term ending January 3, 2025; chair, Committee on Homeland Security and Governmental Affairs (One Hundred Thirteenth Congress)."
   },
   {
     "full_name": "Robert P. Casey, Jr.",
@@ -87,7 +87,7 @@ export default [
     "facebook": "SenatorBobCasey",
     "youtube": "SenatorBobCasey",
     "bioguide_id": "C001070",
-    "": ""
+    "bioguide_summary": ""
   },
   {
     "full_name": "Dianne Feinstein",
@@ -105,7 +105,7 @@ export default [
     "facebook": "senatorfeinstein",
     "youtube": "SenatorFeinstein",
     "bioguide_id": "F000062",
-    "": ""
+    "bioguide_summary": "CASEY, Robert P. (Bob), Jr., a Senator from Pennsylvania; born in Scranton, Penn., April 13, 1960; graduated College of the Holy Cross 1982; J.D., Catholic University of America 1988; practiced law in Scranton; Pennsylvania auditor general 1997-2005; unsuccessful candidate for governor 2002; Pennsylvania State treasurer 2005-2006; elected as a Democrat to the United States Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025; chair, Joint Economic Committee (One Hundred Twelfth Congress); vice chair, Joint Economic Committee (One Hundred Thirteenth Congress)."
   },
   {
     "full_name": "Amy Klobuchar",
@@ -123,7 +123,7 @@ export default [
     "facebook": "",
     "youtube": "senatorklobuchar",
     "bioguide_id": "K000367",
-    "": ""
+    "bioguide_summary": "KLOBUCHAR, Amy, a Senator from Minnesota; born in Plymouth, Minn., May 25, 1960; attended the public schools in Plymouth; graduated magna cum laude Yale University 1982; J.D., University of Chicago 1985; practiced law in Minnesota, becoming partner at the law firms of Dorsey & Whitney and Gray Plant Mooty; Hennepin County attorney 1999-2006; elected as a Democrat to the United States Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025."
   },
   {
     "full_name": "Robert Menendez",
@@ -141,7 +141,7 @@ export default [
     "facebook": "senatormenendez",
     "youtube": "SenatorMenendezNJ",
     "bioguide_id": "M000639",
-    "": ""
+    "bioguide_summary": "MENENDEZ, Robert, a Senator and a Representative from New Jersey; born in New York, N.Y., on January 1, 1954; graduated from Union Hill High School, Union City, N.J., 1972; B.A., Saint Peter's College, Jersey City, N.J., 1976; J.D., Rutgers University School of Law, Newark, N.J., 1979; lawyer, private practice; member of the Union City, N.J., board of education 1974-1978, and chief financial officer 1978-1982; mayor of Union City, N.J., 1986-1992; member of the New Jersey state general assembly 1987-1991; member of the New Jersey state senate 1991-1993; elected as a Democrat to the One Hundred Third and to the six succeeding Congresses, and served from January 3, 1993, to January 16, 2006, when he resigned to become a U.S. senator; chair, House Democratic Caucus (One Hundred Eighth through One Hundred Ninth Congresses); appointed on January 17, 2006, to the United States Senate to fill vacancy caused by resignation of Jon S. Corzine; service began on January 17, 2006, and took the oath of office on January 18, 2006; elected to the U.S. Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025; chair, Democratic Senatorial Campaign Committee (2008-2011), Committee on Foreign Relations (One Hundred Thirteenth Congress [February 1, 2013-January 3, 2015])."
   },
   {
     "full_name": "Bernard Sanders",
@@ -159,7 +159,7 @@ export default [
     "facebook": "senatorsanders",
     "youtube": "senatorsanders",
     "bioguide_id": "S000033",
-    "": ""
+    "bioguide_summary": "SANDERS, Bernard, a Senator and a Representative from Vermont; born in Brooklyn, Kings County, N.Y., September 8, 1941; graduated from Madison High School, Brooklyn, N.Y.; B.S., University of Chicago, Chicago, Ill., 1964; faculty, Harvard University, Cambridge, Mass., 1989; faculty, Hamilton College, Clinton, N.Y., 1990; carpenter; journalist; unsuccessful independent candidate for election to the United States Senate in 1972 and 1974; unsuccessful independent candidate for election for governor of Vermont in 1972, 1976 and 1986; mayor of Burlington, Vt., 1981-1989; unsuccessful independent candidate to the One Hundred First Congress in 1988; elected as an independent to the One Hundred Second and to the seven succeeding Congresses (January 3, 1991-January 3, 2007); was not a candidate for reelection to the House of Representatives but was elected as an Independent to the United States Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025; chair, Committee on Veterans Affairs (One Hundred Thirteenth Congress); was an unsuccessful candidate for the Democratic presidential nomination in 2016."
   },
   {
     "full_name": "Debbie Stabenow",
@@ -177,7 +177,7 @@ export default [
     "facebook": "SenatorStabenow",
     "youtube": "senatorstabenow",
     "bioguide_id": "S000770",
-    "": ""
+    "bioguide_summary": "STABENOW, Deborah Ann, a Senator and a Representative from Michigan; born in Gladwin, Mich., April 29, 1950; graduated, Clare High School; B.A., Michigan State University, East Lansing 1972; M.S.W. magna cum laude, Michigan State University, 1975; social worker; leadership training consultant; Ingham County commissioner 1975-1978; member, State house of representatives 1979-1990; member, State senate 1991-1994; elected as a Democrat to the One Hundred Fifth and One Hundred Sixth Congresses (January 3, 1997-January 3, 2001); was not a candidate for reelection to the House of Representatives in 2000, but was elected to the United States Senate for the term commencing January 3, 2001; reelected in 2006, 2012, and again in 2018 for the term ending January 3, 2025; Democratic Conference secretary (2005-2007); vice-chair, Democratic Policy and Communications Committee (2011-2017); chair, Democratic Policy and Communications Committee (2017-); chair, Committee on Agriculture, Nutrition, and Forestry (One Hundred Twelfth and One Hundred Thirteenth Congresses)."
   },
   {
     "full_name": "Jon Tester",
@@ -195,6 +195,6 @@ export default [
     "facebook": "senatortester",
     "youtube": "senatorjontester",
     "bioguide_id": "T000464",
-    "": ""
+    "bioguide_summary": "TESTER, Jon, a Senator from Montana; born in Havre, Mont., on August 21, 1956; graduated College of Great Falls 1978, farmer; teacher; member, Big Sandy school board 1983-1992 (chairman 1986-1991); Montana State senate 1999-2006, serving as minority whip 2001-2003, minority leader 2003-2005, president 2005-2006; elected as a Democrat to the United States Senate in 2006 for the term commencing January 3, 2007; reelected in 2012, and again in 2018 for the term ending January 3, 2025; chair, Committee on Indian Affairs (One Hundred Thirteenth Congress [February 12, 2014-January 3, 2015]); chair, Democratic Senatorial Campaign Committee (2015-2017)."
   }
 ]
