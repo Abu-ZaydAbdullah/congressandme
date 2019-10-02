@@ -19,7 +19,7 @@ class IssueCard extends Component {
                     <p className="card-text">{issue.desc}</p>
                     <Link
                       to={{
-                        pathname: `/issue/${issue.name}`,
+                        pathname: `/issue/${key}`,
                         status: {
                           name: issue.name,
                           desc: issue.name,
