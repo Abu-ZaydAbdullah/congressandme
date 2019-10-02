@@ -13,8 +13,8 @@ const RepresentativeTemplate = props => {
           </div>
           <div className="col-md-4">
             <div className="profile-head">
-              <h5>{props.location.state.name}</h5>
-              <h6>{props.location.state.type}</h6>
+              <h1>{props.location.state.name}</h1>
+              <h2>{props.location.state.type}</h2>
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
                   <a
