@@ -17,7 +17,11 @@ class StateCard extends Component {
             pathname: `/state/${state.name}`,
             status: {
               name: state.name,
-              image: state.image
+              image: state.image,
+              website: state.website,
+              summary: state.summary,
+              issues: state.issues,
+              Facebook: state.facebook
             }
           }}
         >

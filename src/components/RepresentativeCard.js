@@ -76,7 +76,7 @@ class RepresentativeCard extends Component {
                     }
                   }}
                 >
-                  Learn More
+                  <a class="btn btn-light">Learn More</a>
                 </Link>
               </div>
               <div className="d-flex justify-content-between align-items-center">

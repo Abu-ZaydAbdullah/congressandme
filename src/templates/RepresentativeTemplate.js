@@ -18,13 +18,14 @@ const RepresentativeTemplate = props => {
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
                   <a
-                    className="nav-link active"
-                    id="home-tab"
-                    data-toggle="tab"
-                    href="#home"
-                    role="tab"
-                    aria-controls="home"
-                    aria-selected="true"
+                  // Commented out for now because it throws an error when clicked
+                    //className="nav-link active"
+                    //id="home-tab"
+                    //data-toggle="tab"
+                    //href="#home"
+                    //role="tab"
+                    //aria-controls="home"
+                    //aria-selected="true"
                   >
                     About
                   </a>
@@ -39,19 +40,19 @@ const RepresentativeTemplate = props => {
             <div className="shifted">
               <div className="profile-work">
                 <p>Contact</p>
-                <a href={props.location.state.website}>Website</a>
+                <a href={props.location.state.website} target="_blank">Website</a>
                 <br />
-                <a href={props.location.state.form}>Email</a>
+                <a href={props.location.state.form} target="_blank">Email</a>
                 <br />
-                <a href={props.location.state.phone}>Phone</a>
+                <a href={props.location.state.phone} target="_blank">Phone</a>
                 <p>Social Media</p>
-                <a href={props.location.state.twitter}>Twitter</a>
+                <a href={props.location.state.twitter} target="_blank">Twitter</a>
                 <br />
-                <a href={props.location.state.facebook}>Facebook</a>
+                <a href={props.location.state.facebook} target="_blank">Facebook</a>
                 <br />
-                <a href={props.location.state.youtube}>YouTube</a>
+                <a href={props.location.state.youtube} target="_blank">YouTube</a>
                 <br />
-                <a href={props.location.state.rss}>RSS</a>
+                <a href={props.location.state.rss} target="_blank">RSS</a>
                 <br />
                 <br />
               </div>
@@ -89,7 +90,7 @@ const RepresentativeTemplate = props => {
                     <p>{props.location.state.chamber}</p>
                   </div>
                   <div className="col-md-6">
-                    <label>Summary: (Courtesy of <a href="http://bioguide.congress.gov">BioGuide</a>)</label>
+                    <label>Summary: (Courtesy of <a href="http://bioguide.congress.gov" target="_blank">BioGuide</a>)</label>
                   </div>
                   <div className="col-md-6">
                   </div>
