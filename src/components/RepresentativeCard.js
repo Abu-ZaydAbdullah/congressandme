@@ -4,7 +4,8 @@ import data from "../data/RepresentativeMembers";
 
 class RepresentativeCard extends Component {
   render() {
-    const repList = data.map(representative => {
+    const repList = Object.keys(data).map(key => {
+    let representative = data[key];
       return (
         <div className="col-md-4" key={representative.index}>
           <div className="card mb-4 box-shadow">
