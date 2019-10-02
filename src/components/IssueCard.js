@@ -4,7 +4,8 @@ import data from "../data/IssueData";
 
 class IssueCard extends Component {
   render() {
-  const issueList = data.map(member => {
+    const issueList = Object.keys(data).map(key => {
+        let member = data[key];
   return (
     <div className="row mb-5" key={member.index}>
         <div className="panel panel-default">

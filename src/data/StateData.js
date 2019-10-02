@@ -4,7 +4,7 @@ export default {
         index: 0,
         name: "Alabama",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/255px-Flag_of_Alabama.svg.png",
-        issues: "Abortion",
+        issues: "0",
         website: "https://az.gov/",
         summary: "Alabama (/ˌæləˈbæmə/) is a state in the southeastern region of the United States. It is bordered by Tennessee to the north, Georgia to the east, Florida and the Gulf of Mexico to the south, and Mississippi to the west. Alabama is the 30th largest by area and the 24th-most populous of the U.S. states. With a total of 1,500 miles (2,400 km) of inland waterways, Alabama has among the most of any state.",        facebook: "https://www.facebook.com/alabamagov/"
     },
@@ -27,7 +27,7 @@ export default {
         index: 4,
         name: "California",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/255px-Flag_of_California.svg.png",
-        issues: "Environmentalism",
+        issues: "1",
         website: "https://www.ca.gov/",
         summary: "California is a state in the Pacific Region of the United States. With 39.6 million residents across a total area of about 163,696 square miles (423,970 km2), California is the most populous U.S. state and the third-largest by area. The state capital is Sacramento. The Greater Los Angeles Area and the San Francisco Bay Area are the nation's second- and fifth-most populous urban regions, with 18.7 million and 9.7 million residents respectively.[12] Los Angeles is California's most populous city, and the country's second-most populous, after New York City. California also has the nation's most populous county, Los Angeles County, and its largest county by area, San Bernardino County. The City and County of San Francisco is both the country's second-most densely populated major city after New York City and the fifth-most densely populated county, behind only four of the five New York City boroughs.",
         facebook: "https://www.facebook.com/CAgovernor/"
@@ -221,7 +221,7 @@ export default {
         index: 42,
         name: "Texas",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Texas.svg/255px-Flag_of_Texas.svg.png",
-        issues: "Immigration",
+        issues: "4",
         website: "https://texas.gov/",
         summary: "Texas (/ˈtɛksəs/, locally /ˈtɛksɪz/;[9] Spanish: Texas or Tejas, pronounced [ˈtexas] (About this soundlisten)) is the second largest state in the United States by area (after Alaska) and population (after California). Geographically located in the South Central region of the country, Texas shares borders with the U.S. states of Louisiana to the east, Arkansas to the northeast, Oklahoma to the north, New Mexico to the west, and the Mexican states of Chihuahua, Coahuila, Nuevo León, and Tamaulipas to the southwest, and has a coastline with the Gulf of Mexico to the southeast.",
         facebook: "https://www.facebook.com/Texas.gov"

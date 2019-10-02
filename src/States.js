@@ -10,7 +10,7 @@ export const States = () => (
       <input class="form-control" type="text" placeholder="Search States" aria-label="Search_States"></input>
     </div>
     <br></br>
-    <h1>States</h1>
+    <h1>States (Note: Currently only Alabama, California, and Texas have instance pages)</h1>
     </div>
 
     <div className="album py-5 bg-light">
