@@ -8,8 +8,8 @@ export default {
     "0" : {
       index: 0,
       name: "Abortion",
-      desc: "The issue of abortion is extremely volatile in the current political climate. See whether your politician believes in a woman's right to her own body\
-             or if they believe every developing life must be prioritized, regardless of cost.",
+      desc: "The issue of abortion is extremely volatile in the current political climate. See how much your politician\
+             values a woman's bodily autonomy.",
       image: cancelImage
     },
     "1" : {
@@ -21,14 +21,14 @@ export default {
     },
     "2" : {
       index: 3,
-      name: "Gun Control",
+      name: "Gun-Control",
       desc: "With a steady increase in mass shooting over the years, gun control has become a contentious topic. See what your politician\
              has been saying about limiting the distribution of weapons here.",
       image: gunImage
     },
     "3" : {
       index: 4,
-      name: "Government Healthcare",
+      name: "Healthcare",
       desc: "With the cost of medical care so high, some form of insurance is absolutely necessary to survival. See what your politician\
              thinks about subsidizing a basic neccesity for the masses.",
       image: medicalImage
