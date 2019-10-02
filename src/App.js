@@ -21,7 +21,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/representatives" component={Representatives} />
-              <Route path="/representatives/" component={RepresentativeTemplate} />
+              <Route path="/representative/:full_name" component={RepresentativeTemplate} />
               <Route path="/states" component={States} />
               <Route path="/issues" component={Issues} />
               <Route path="/about" component={About} />

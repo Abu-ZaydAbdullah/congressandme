@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import data from "../data/RepresentativeMembers"
 
 class RepresentativeCard extends Component {
@@ -16,7 +17,7 @@ class RepresentativeCard extends Component {
       <p className="card-text"><strong><a href={`https://twitter.com/@${representative.twitter}`}>Twitter:</a></strong> {(representative.twitter !== "") ? `@${representative.twitter}`:'n/a'}</p>
       <p className="card-text"><strong><a href={`https://facebook.com/${representative.facebook}`}>Facebook:</a></strong> {(representative.facebook !== "") ? `${representative.facebook}`:'n/a'}</p>
       <div class="col-mb-4 text-center">
-        <a href="#" class="btn btn-primary">Learn More</a>
+      <Link to={{ pathname: `/representative/${representative.full_name}`, state: {name: representative.full_name, type: (representative.type === "sen") ? 'Senator': 'Representative', image: `https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`, party: representative.party, state: representative.state, twitter: `https://twitter.com/@${representative.twitter}`, facebook: `https://facebook.com/${representative.facebook}`} }}>Learn More</Link>
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <div className="btn-group"></div>
