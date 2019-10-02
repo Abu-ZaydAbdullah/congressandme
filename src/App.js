@@ -4,13 +4,13 @@ import { Home } from './Home';
 import { Representatives } from './Representatives';
 import RepresentativeTemplate from './templates/RepresentativeTemplate';
 import StateTemplate from './templates/StateTemplate';
+import IssueTemplate from './templates/IssueTemplate';
 import { States } from './States';
 import { Issues } from './Issues';
 import { About } from './About';
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
-import { EnvironmentInst} from './components/EnvironmentInst';
 
 class App extends Component {
   render() {
@@ -25,9 +25,9 @@ class App extends Component {
               <Route path="/representative/:full_name" component={RepresentativeTemplate} />
               <Route path="/state/:name" component={StateTemplate} />
               <Route path="/states" component={States} />
+              <Route path="/issue/:name" component={IssueTemplate} />
               <Route path="/issues" component={Issues} />
               <Route path="/about" component={About} />
-              <Route path="/environmentInst" component={EnvironmentInst} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
