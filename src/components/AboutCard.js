@@ -95,13 +95,25 @@ class AboutCard extends Component {
   )
   }
     )
-  return aboutList
+  return (
+  <div className="container">
+  <div className="row">
+  {aboutList}
+  <div className="col-md-4"></div>
+  <div className="col-md-4">
+  <div className="card mb-4 box-shadow">
+  <div className="card-body">
+  <h5>Team Stats</h5>
+  <p className="card-text"><strong>Total Commits:</strong> {this.state.commit_count}</p>
+  <p className="card-text"><strong>Total Issues:</strong> {this.state.issue_count}</p>
+  </div>
+  </div>
+  </div>
+  <div className="col-md-4"></div>
+  </div>
+  </div>
+  )
 }
 }
 
 export default AboutCard;
-
-
-
-
-

@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutCard from './components/AboutCard'
+import ToolCard from './components/ToolCard'
 
 export const About = () => (
 
@@ -13,13 +14,10 @@ export const About = () => (
     </section>
 
     <div className="album py-5 bg-light">
-      <div className="container">
-        <div className="row">
         <AboutCard/>
-        </div>
-      </div>
+    <h3 className="text-center" style={{marginTop: '3%', marginBottom: '3%'}}>Tools</h3>
+        <ToolCard/>
     </div>
-
   </main>
 
 )

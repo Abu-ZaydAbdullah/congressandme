@@ -13,19 +13,13 @@ const RepresentativeTemplate = props => {
           </div>
           <div className="col-md-4">
             <div className="profile-head">
-              <h1>{props.location.state.name}</h1>
-              <h2>{props.location.state.type}</h2>
+              <h4>{props.location.state.name}</h4>
+              <h5>{props.location.state.type}</h5>
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
                   <a
-                  // Commented out for now because it throws an error when clicked
-                    //className="nav-link active"
-                    //id="home-tab"
-                    //data-toggle="tab"
-                    //href="#home"
-                    //role="tab"
-                    //aria-controls="home"
-                    //aria-selected="true"
+                    className="nav-link active"
+                    id="home-tab"
                   >
                     About
                   </a>
