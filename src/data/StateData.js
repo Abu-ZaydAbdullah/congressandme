@@ -25,6 +25,7 @@ export default {
     // },
     "4" : {
         index: 4,
+        abbreviation: 'CA',
         name: "California",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/255px-Flag_of_California.svg.png",
         issues: "1",
@@ -180,6 +181,7 @@ export default {
     // },
     "34" : {
         index: 34,
+        abbreviation: 'OH',
         name: "Ohio",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Ohio.svg/255px-Flag_of_Ohio.svg.png",
         issues: "0",
@@ -239,6 +241,7 @@ export default {
     // },
     "44" : {
         index: 44,
+        abbreviation: 'VT',
         name: "Vermont",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/255px-Flag_of_Vermont.svg.png",
         issues: "4",

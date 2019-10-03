@@ -14,7 +14,7 @@ class StateCard extends Component {
       <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
         <Link
           to={{
-            pathname: `/state/${key}`,
+            pathname: `/state/${state.index}`,
             status: {
               name: state.name,
               image: state.image,
