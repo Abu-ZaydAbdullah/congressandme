@@ -57,7 +57,7 @@ export default [
       gitlab_id: "bentburton",
       email: "bentburton@gmail.com",
       role: 'Cloud Services Engineer',
-      bio: '',
+      bio: 'Lacrosse player at UT and future Software Engineer at AT&T',
       image: benbImage
     }
 ];
