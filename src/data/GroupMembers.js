@@ -39,7 +39,7 @@ export default [
       gitlab_id: "auproxis",
       email: "calvindao16@gmail.com",
       role: 'Frontend Engineer',
-      bio: '',
+      bio: 'I\'m a software developer that enjoys game-dev and hanging out on creative writing forums in my free time.',
       image: calvinImage
     },
     {
@@ -48,7 +48,7 @@ export default [
       gitlab_id: "BenHazel007",
       email: "ben.hazel@gmail.com",
       role: 'Backend Engineer',
-      bio: '',
+      bio: 'Senior CS major at UT and clarinet player in the Longhorn Marching Band.',
       image: benhImage
     },
     {
