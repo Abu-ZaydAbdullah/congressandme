@@ -1,23 +1,25 @@
-# CongressConversation
+# Congress and Me
 
 ## Phase 1:
-Team Members, EID, GitLab ID
-    Abu-Zayd Abdullah, aa77266, AbuZaydAbdullah
-    Ben Burton, btb896, bentburton
-    Calvin Dao, cvd325, auproxis
-    Robert Gutierrez, rg43274, robgutierrez1
-    Ben Hazel, bgh559, BenHazel007
-    David Sikabwe, dws2375, dsikabwe
-Git SHA: a19442d988fd64df0b7274c9ee366028dda4bd01
-Project Lead: Abu-Zayd Abdullah
-GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines
-Estimated/Actual Completion Times
-    Abu-Zayd: 14 hours/20 hours
-    Ben B.: 18 hours/20 hours
-    Calvin: 48 hours/20 hours
-    Robert: 15 hours/20 hours
-    Ben H.: 11 hours/20 hours
-    David: 12 hours/20 hours
+Team Members, EID, GitLab ID<br>
+* Abu-Zayd Abdullah, aa77266, AbuZaydAbdullah
+* Ben Burton, btb896, bentburton
+* Calvin Dao, cvd325, auproxis
+* Robert Gutierrez, rg43274, robgutierrez1
+* Ben Hazel, bgh559, BenHazel007
+* David Sikabwe, dws2375, dsikabwe
+
+Git SHA: a19442d988fd64df0b7274c9ee366028dda4bd01<br>
+Project Lead: Abu-Zayd Abdullah<br>
+GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
+Website: https://congressand.me
+Estimated/Actual Completion Times<br>
+* Abu-Zayd: 14 hours/20 hours
+* Ben B.: 18 hours/20 hours
+* Calvin: 48 hours/20 hours
+* Robert: 15 hours/20 hours
+* Ben H.: 11 hours/20 hours
+* David: 12 hours/20 hours
 
 ## Available Commands
 
