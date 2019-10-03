@@ -16,7 +16,7 @@ export default {
               the child may be born into.",
       image: cancelImage,
       states: 34,
-      rep: 0
+      rep: 8
     },
     "1" : {
       index: 2,
@@ -26,7 +26,7 @@ export default {
       about: "Abortion",
       image: natureImage,
       states: 4,
-      rep: 0
+      rep: 8
     },
     "2" : {
       index: 3,
@@ -35,8 +35,8 @@ export default {
              has been saying about limiting the distribution of weapons here.",
       about: "Abortion",
       image: gunImage,
-      states: 0,
-      rep: 0
+      states: 34,
+      rep: 8
     },
     "3" : {
       index: 4,
@@ -45,8 +45,8 @@ export default {
              thinks about subsidizing a basic neccesity for the masses.",
       about: "Abortion",
       image: medicalImage,
-      states: 0,
-      rep: 0
+      states: 44,
+      rep: 8
     },
     "4" : {
       index: 5,
@@ -56,6 +56,6 @@ export default {
       about: "Abortion",
       image: fenceImage,
       states: 44,
-      rep: 0
+      rep: 8
     }
   };
