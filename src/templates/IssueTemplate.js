@@ -42,7 +42,7 @@ class IssueTemplate extends React.Component
                                 <p>{this.props.about}</p>
                             </div>
                         </div>
-                        <div className="row shifted">
+                        <div className="row pt-2 shifted">
                             <p><a href={this.props.vids} target="_blank">Trevor Noah on {this.props.name}</a></p>
                         </div>
                         <div className="row justify-content-left pt-5 ">
