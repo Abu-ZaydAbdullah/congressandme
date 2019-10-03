@@ -11,6 +11,8 @@ export default [
       name: "Robert Gutierrez",
       gitlab_id: "robgutierrez1",
       email: "rgutierrez27@utexas.edu",
+      role: 'Frontend Engineer',
+      bio: 'My dream is to innovate and create for the benefit of humanity and the future.',
       image: robertImage
     },
     {
@@ -18,6 +20,8 @@ export default [
       name: "Abu-Zayd Abdullah",
       gitlab_id: "AbuZaydAbdullah",
       email: "abuzaydabdullah@utexas.edu",
+      role: 'Frontend Engineer',
+      bio: 'Junior at UT studying Computer Science who loves coding and video games.',
       image: abuzaydImage
     },
     {
@@ -25,6 +29,8 @@ export default [
       name: "David Sikabwe",
       gitlab_id: "dsikabwe",
       email: "dsikabwe@utexas.edu",
+      role: 'Backend Engineer',
+      bio: '',
       image: davidImage
     },
     {
@@ -32,6 +38,8 @@ export default [
       name: "Calvin Dao",
       gitlab_id: "auproxis",
       email: "calvindao16@gmail.com",
+      role: 'Frontend Engineer',
+      bio: '',
       image: calvinImage
     },
     {
@@ -39,6 +47,8 @@ export default [
       name: "Ben Hazel",
       gitlab_id: "BenHazel007",
       email: "ben.hazel@gmail.com",
+      role: 'Backend Engineer',
+      bio: '',
       image: benhImage
     },
     {
@@ -46,6 +56,8 @@ export default [
       name: "Ben Burton",
       gitlab_id: "bentburton",
       email: "bentburton@gmail.com",
+      role: 'Cloud Services Engineer',
+      bio: '',
       image: benbImage
     }
 ];

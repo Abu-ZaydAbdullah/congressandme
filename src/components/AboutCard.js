@@ -81,7 +81,8 @@ class AboutCard extends Component {
     <div className="card-body">
       <h5>{member.name}</h5>
       <p>
-      <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis feugiat elit, ac porta diam commodo non. In pulvinar neque dolor, sed vestibulum odio dapibus a. Curabitur turpis lacus, commodo eu purus sit amet, venenatis tristique ex. Donec sit amet mattis tellus, non hendrerit urna.</p>
+      <p className="card-text"><strong>Role: </strong>{member.role}</p>
+      <p className="card-text"><strong>Biography: </strong>{member.bio}</p>
       </p>
       {"\n"}
       <p className="card-text"><strong>Commits:</strong> {this.state.commit_dict[member.name]}</p>
