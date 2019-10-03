@@ -30,7 +30,7 @@ export default [
       gitlab_id: "dsikabwe",
       email: "dsikabwe@utexas.edu",
       role: 'Backend Engineer',
-      bio: '',
+      bio: 'I like songwriting and lattes. I also write code sometimes. Please stream my music.',
       image: davidImage
     },
     {
