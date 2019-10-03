@@ -32,8 +32,11 @@ class IssueTemplate extends React.Component
                     <div className = "container emp-profile">
                         <div className = "row justify-content-left">
                             <div className="col-md-4">
-                                <div className="profile-img">
+                                <div>
                                     <img style={{height: 180}} src={this.props.image}/>
+                                </div>
+                                <div className="row pt-2 pl-5">
+                                    <p><a href={this.props.vids} target="_blank">Trevor Noah on {this.props.name}</a></p>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -41,9 +44,6 @@ class IssueTemplate extends React.Component
                                 <hr></hr>
                                 <p>{this.props.about}</p>
                             </div>
-                        </div>
-                        <div className="row pt-2 shifted">
-                            <p><a href={this.props.vids} target="_blank">Trevor Noah on {this.props.name}</a></p>
                         </div>
                         <div className="row justify-content-left pt-5 ">
                             <h1>This issue is important in the following states!</h1>
