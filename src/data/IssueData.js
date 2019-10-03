@@ -16,10 +16,11 @@ export default {
               the child may be born into.",
       image: cancelImage,
       states: 34,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
     },
     "1" : {
-      index: 2,
+      index: 1,
       name: "Environmentalism",
       desc: "Every day, the earth crawls closer to irreversible catastrophe thanks to our own actions. See what your politician\
              is doing to stop us from all burning alive here.",
@@ -30,10 +31,11 @@ export default {
               real and is caused by humans.",
       image: natureImage,
       states: 4,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=rhQVustYV24"
     },
     "2" : {
-      index: 3,
+      index: 2,
       name: "Gun-Control",
       desc: "With a steady increase in mass shooting over the years, gun control has become a contentious topic. See what your politician\
              has been saying about limiting the distribution of weapons here.",
@@ -45,10 +47,11 @@ export default {
               issue in America.",
       image: gunImage,
       states: 34,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=up1Wb2Q_WMk"
     },
     "3" : {
-      index: 4,
+      index: 3,
       name: "Healthcare",
       desc: "With the cost of medical care so high, some form of insurance is absolutely necessary to survival. See what your politician\
              thinks about subsidizing a basic neccesity for the masses.",
@@ -56,16 +59,18 @@ export default {
               can't afford to be sick or injured.",
       image: medicalImage,
       states: 44,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
     },
     "4" : {
-      index: 5,
+      index: 4,
       name: "Immigration",
       desc: "America has a long and storied history of relying on immigrants to do much of the backbreaking labor... and despising them\
              for taking that work at the same time. See what your politican has been saying in this cycle of the fight.",
       about: "Abortion",
       image: fenceImage,
       states: 44,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZmOKKY9shiQ"
     }
   };

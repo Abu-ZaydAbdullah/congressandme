@@ -14,7 +14,7 @@ class StateTemplate extends React.Component
             image: "",
             website: "",
             summary: "",
-            issues: "0",
+            issues: 0,
             Facebook: "",
             reps: "0"
         }
@@ -94,7 +94,21 @@ class StateTemplate extends React.Component
                         <div className="col-sm-6 col-md-6" >
                             <h5>{member.name}</h5>
                             <p className="card-text">{member.desc}</p>
-                            <a href="../IssueInst" button type="button">Click Me!</a>
+                            <Link
+                            to={{
+                                pathname: `/issue/${this.props.issues}`,
+                                status: {
+                                name: member.name,
+                                desc: member.desc,
+                                image: member.image,
+                                states: member.states,
+                                reps: member.rep,
+                                vids: member.vids,
+                                }
+                            }}
+                            >
+                            <a class="btn btn-dark">{member.name}</a>
+                            </Link>
                         </div>
                     </div>
                 </div>

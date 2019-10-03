@@ -22,10 +22,11 @@ class IssueCard extends Component {
                         pathname: `/issue/${key}`,
                         status: {
                           name: issue.name,
-                          desc: issue.name,
+                          desc: issue.desc,
                           image: issue.image,
                           states: issue.states,
                           reps: issue.rep,
+                          vids: issue.vids,
                         }
                       }}
                     >
