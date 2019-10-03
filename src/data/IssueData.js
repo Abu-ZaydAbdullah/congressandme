@@ -16,7 +16,8 @@ export default {
               the child may be born into.",
       image: cancelImage,
       states: 34,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
     },
     "1" : {
       index: 2,
@@ -26,7 +27,8 @@ export default {
       about: "Abortion",
       image: natureImage,
       states: 4,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=rhQVustYV24"
     },
     "2" : {
       index: 3,
@@ -36,7 +38,8 @@ export default {
       about: "Abortion",
       image: gunImage,
       states: 34,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=up1Wb2Q_WMk"
     },
     "3" : {
       index: 4,
@@ -46,7 +49,8 @@ export default {
       about: "Abortion",
       image: medicalImage,
       states: 44,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
     },
     "4" : {
       index: 5,
@@ -56,6 +60,7 @@ export default {
       about: "Abortion",
       image: fenceImage,
       states: 44,
-      rep: 8
+      rep: 8,
+      vids: "https://www.youtube.com/watch?v=ZmOKKY9shiQ"
     }
   };

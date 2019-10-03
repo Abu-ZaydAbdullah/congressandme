@@ -26,6 +26,7 @@ class IssueCard extends Component {
                           image: issue.image,
                           states: issue.states,
                           reps: issue.rep,
+                          vids: issue.vids,
                         }
                       }}
                     >

@@ -15,6 +15,7 @@ class IssueTemplate extends React.Component
             image: "",
             states: 0,
             rep: 0,
+            vids: "",
         }
         this.props = props
     }
@@ -40,6 +41,9 @@ class IssueTemplate extends React.Component
                                 <hr></hr>
                                 <p>{this.props.about}</p>
                             </div>
+                        </div>
+                        <div className="row shifted">
+                            <p><a href={this.props.vids} target="_blank">Trevor Noah on {this.props.name}</a></p>
                         </div>
                         <div className="row justify-content-left pt-5 ">
                             <h1>This issue is important in the following states!</h1>
