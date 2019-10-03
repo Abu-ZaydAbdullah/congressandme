@@ -15,7 +15,7 @@ export default [
     {
       index: 1,
       name: "Slack",
-      purpose: "For interteam communication.",
+      purpose: "For intrateam communication.",
       image: slackImage
     },
     {
