@@ -7,7 +7,7 @@ class ToolCard extends Component {
   return (
   <div className="col-md-4" key={tool.index}>
   <div className="card mb-4 box-shadow text-center">
-    <img className="card-img-top about-image mx-auto" style={{maxHeight: 190, padding: 40}} src={tool.image} alt="{tool.name}"></img>
+    <img className="card-img-top about-image mx-auto" style={{maxHeight: 240, padding: 40}} src={tool.image} alt="{tool.name}"></img>
     <div className="card-body">
       <h5>{tool.name}</h5>
       <p>
