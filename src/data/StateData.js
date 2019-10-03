@@ -244,7 +244,7 @@ export default {
         abbreviation: 'VT',
         name: "Vermont",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/255px-Flag_of_Vermont.svg.png",
-        issues: "4",
+        issues: "3",
         website: "https://www.vermont.gov/",
         summary: "Vermont (/vərˈmɒnt, vɜːr-/) is a state in the New England region of the northeastern United States. It borders the U.S. states of Massachusetts to the south, New Hampshire to the east, New York to the west, and the Canadian province of Quebec to the north. Vermont is the second-smallest by population and the sixth-smallest by area of the 50 U.S. states. The state capital is Montpelier, the least populous state capital in the United States. The most populous city, Burlington, is the least populous city to be the most populous city in a state. As of 2019, Vermont was the leading producer of maple syrup in the United States.[8] In crime statistics, it was ranked since 2016 as the safest state in the country.",
         facebook: "https://www.facebook.com/GovPhilScott/",

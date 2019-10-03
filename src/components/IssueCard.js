@@ -23,7 +23,9 @@ class IssueCard extends Component {
                         status: {
                           name: issue.name,
                           desc: issue.name,
-                          image: issue.image
+                          image: issue.image,
+                          states: issue.states,
+                          reps: issue.rep,
                         }
                       }}
                     >

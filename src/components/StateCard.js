@@ -33,7 +33,7 @@ class StateCard extends Component {
       </div>
     </div>
   </div>
-</div>
+  </div>
   )
   }
     )
