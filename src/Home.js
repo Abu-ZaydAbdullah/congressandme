@@ -3,7 +3,10 @@ import Jumbotron from './components/Jumbotron'
 
 export const Home = () => (
   <main role="main">
-    <h3 className="text-center" style={{marginBottom: '3%', marginTop: '10%'}}>What is Congress and Me?</h3>
+    <div>
+      <Jumbotron title_text={"Congress and Me"} subtitle_text={"Welcome to the Home Page!"}/>
+    </div>
+
     <div className="row" style={{marginBottom: '3%'}}>
     <div className="col-md-3"></div>
     <div className="col-md-6">
