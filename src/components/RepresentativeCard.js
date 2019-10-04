@@ -4,8 +4,12 @@ import data from "../data/RepresentativeMembers";
 
 class RepresentativeCard extends Component {
   render() {
-    const repList = Object.keys(data).map(key => {
-    let representative = data[key];
+    const {filterText } = this.props;
+    const repList = data
+    .filter(representative => {
+      return representative.full_name.toLowerCase().startsWith(filterText.toLowerCase()) == true
+      })
+    .map(representative => {
       return (
         <div className="col-md-4" key={representative.index}>
           <div className="card mb-4 box-shadow">

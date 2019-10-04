@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
-import { Representatives } from './Representatives';
+import Representatives from './Representatives';
 import RepresentativeTemplate from './templates/RepresentativeTemplate';
 import StateTemplate from './templates/StateTemplate';
 import IssueTemplate from './templates/IssueTemplate';
