@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutCard from './components/AboutCard'
 import ToolCard from './components/ToolCard'
+import SourceCard from './components/SourceCard'
 
 export const About = () => (
 
@@ -33,6 +34,9 @@ export const About = () => (
         <AboutCard/>
     <h3 className="text-center" style={{marginTop: '3%', marginBottom: '3%'}}>Tools</h3>
         <ToolCard/>
+    <h3 className="text-center" style={{marginTop: '3%', marginBottom: '3%'}}>Data Sources</h3>
+        <SourceCard/>
+
     <h3 className="text-center" style={{marginBottom: '3%'}}>Links</h3>
     <p className="text-center"><a href="https://gitlab.com/AbuZaydAbdullah/congressconversation">GitLab Repository</a></p>
     <p className="text-center"><a href="https://documenter.getpostman.com/view/9014793/SVtR19vq">API Documentation</a></p>
