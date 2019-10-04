@@ -15,11 +15,14 @@ class AboutCard extends Component {
   }
 
   componentWillMount() {
-    
     let getCommits = () => {
+      let currPage = 1;
+      let keepGoing = 1;
+      while (keepGoing) {
+      let counter = 0;
       var authOptions = {
         method: 'GET',
-        url: 'https://gitlab.com/api/v4/projects/14525540/repository/commits?all=true&per_page=100',
+        url: `https://gitlab.com/api/v4/projects/14525540/repository/commits?all=true&per_page=100&page=${currPage}`,
         headers: {
             'Private-Token': 'mS_bG_uQE4UkARaq3_oQ'
         },
@@ -38,7 +41,10 @@ class AboutCard extends Component {
         temp_commit_dict['Abu-Zayd Abdullah'] += temp_commit_dict['Abu-ZaydAbdullah']
         this.setState({commit_dict: temp_commit_dict})
       })
+      keepGoing = (counter < 100) ? 0 : 1;
+      currPage += 1;
     }
+  }
     
     let getIssues = () => {
       var authOptions = {
