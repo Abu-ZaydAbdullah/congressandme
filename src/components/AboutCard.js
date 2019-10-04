@@ -17,9 +17,7 @@ class AboutCard extends Component {
   componentWillMount() {
     let getCommits = () => {
       let currPage = 1;
-      let keepGoing = 1;
-      while (keepGoing) {
-      let counter = 0;
+      while (currPage < 3) {
       var authOptions = {
         method: 'GET',
         url: `https://gitlab.com/api/v4/projects/14525540/repository/commits?all=true&per_page=100&page=${currPage}`,
@@ -36,12 +34,11 @@ class AboutCard extends Component {
             let temp_commit_dict = cloneDeep(this.state.commit_dict)
             temp_commit_dict[commit.author_name] += 1
             this.setState({commit_dict: temp_commit_dict})
-        })
+          })
         let temp_commit_dict = cloneDeep(this.state.commit_dict)
         temp_commit_dict['Abu-Zayd Abdullah'] += temp_commit_dict['Abu-ZaydAbdullah']
         this.setState({commit_dict: temp_commit_dict})
       })
-      keepGoing = (counter < 100) ? 0 : 1;
       currPage += 1;
     }
   }
@@ -74,8 +71,6 @@ class AboutCard extends Component {
     
     getCommits()
     getIssues()
-    console.log(this.state.issue_dict)
-    console.log(this.state.commit_dict)
   }
 
   render() {
