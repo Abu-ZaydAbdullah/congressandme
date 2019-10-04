@@ -15,7 +15,8 @@ class Search extends Component {
           }}
           placeholder="Name of Representative"
           onChange={this.filterUpdate.bind(this)}
-          className="searchBar"
+          className="form-control"
+          style={{marginBottom: '1%'}}
         />
       </form>
     );
