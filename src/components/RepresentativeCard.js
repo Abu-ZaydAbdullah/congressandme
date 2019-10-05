@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import data from "../data/RepresentativeMembers";
 
 class RepresentativeCard extends Component {
+
   render() {
     const {filterText } = this.props;
     const repList = data
