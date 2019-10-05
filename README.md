@@ -9,7 +9,7 @@ Team Members, EID, GitLab ID<br>
 * Ben Hazel, bgh559, BenHazel007
 * David Sikabwe, dws2375, dsikabwe
 
-Git SHA: a19442d988fd64df0b7274c9ee366028dda4bd01<br>
+Git SHA: bb3cea01d406605dd38dd4bdcab41365615e55cf<br>
 Project Lead: Abu-Zayd Abdullah<br>
 GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
 Website: https://congressand.me
