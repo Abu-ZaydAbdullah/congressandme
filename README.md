@@ -1,7 +1,7 @@
 # Congress and Me
 
 ## Phase 1:
-Team Members, EID, GitLab ID<br>
+Team Member, EID, GitLab ID<br>
 * Abu-Zayd Abdullah, aa77266, AbuZaydAbdullah
 * Ben Burton, btb896, bentburton
 * Calvin Dao, cvd325, auproxis
@@ -12,8 +12,8 @@ Team Members, EID, GitLab ID<br>
 Git SHA: bb3cea01d406605dd38dd4bdcab41365615e55cf<br>
 Project Lead: Abu-Zayd Abdullah<br>
 GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
-Website: https://congressand.me
-Estimated/Actual Completion Times<br>
+Website: https://congressand.me<br>
+Estimated/Actual Completion Time<br>
 * Abu-Zayd: 14 hours/20 hours
 * Ben B.: 18 hours/20 hours
 * Calvin: 48 hours/20 hours
