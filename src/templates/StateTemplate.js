@@ -4,29 +4,8 @@ import stateData from "../data/StateData";
 import repData from "../data/RepresentativeMembers";
 import { Link } from "react-router-dom";
 
-class StateTemplate extends React.Component
-{
-    constructor(props)
-    {
-        super(props)
-        this.props = {
-            name: "",
-            image: "",
-            website: "",
-            summary: "",
-            issues: 0,
-            Facebook: "",
-            reps: "0"
-        }
-        this.props = props
-    }
-    render()
-    {
-        let pathParts = window.location.pathname.split("/");
-        let stateId = pathParts[pathParts.length - 1];
-        this.props = stateData[stateId];
-        let member = data[this.props.issues];
-        let representative = repData[this.props.reps];
+const StateTemplate = props => {
+        console.log(props)
         return (
             <main role="main">
                 <div>
@@ -34,12 +13,12 @@ class StateTemplate extends React.Component
                     <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                        <img src={this.props.image} alt="" />
+                        <img src={props.location.state.image} alt="" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="profile-head">
-                        <h1>{this.props.name}</h1>
+                        <h1>{props.location.state.name}</h1>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item">
                             <a>
@@ -56,10 +35,10 @@ class StateTemplate extends React.Component
                         <div className="shifted">
                         <div className="profile-work">
                             <p>Contact</p>
-                            <a href={this.props.website} target="_blank">Website</a>
+                            <a href={props.location.state.website} target="_blank">Website</a>
                             <br />
                             <p>Social Media</p>
-                            <a href={this.props.Facebook} target="_blank">Facebook</a>
+                            <a href={props.location.state.facebook} target="_blank">Facebook</a>
                         </div>
                         </div>
                     </div>
@@ -75,7 +54,7 @@ class StateTemplate extends React.Component
                             <div className="col-md-6">
                             </div>
                             <div className="col-md-12">
-                                <p style={{color: 'black'}}>{this.props.summary}</p>
+                                <p style={{color: 'black'}}>{props.location.state.summary}</p>
                             </div>
                             </div>
                         </div>
@@ -84,7 +63,7 @@ class StateTemplate extends React.Component
                     </div>
                 </div>
                 </div>
-                <div className="row mb-5">
+                {/* <div className="row mb-5">
                 <h1>The Following Issues are Important in this State:</h1>
                 <div className="panel panel-default">
                     <div className="card-body row">    
@@ -96,7 +75,7 @@ class StateTemplate extends React.Component
                             <p className="card-text">{member.desc}</p>
                             <Link
                             to={{
-                                pathname: `/issue/${this.props.issues}`,
+                                pathname: `/issue/${props.location.state..issues}`,
                                 status: {
                                 name: member.name,
                                 desc: member.desc,
@@ -112,8 +91,8 @@ class StateTemplate extends React.Component
                         </div>
                     </div>
                 </div>
-            </div>
-            <h1>This State's Representatives!</h1>
+            </div> */}
+            {/* <h1>This State's Representatives!</h1>
             <div className="col-md-4" key={representative.index}>
                 <div className="card mb-4 box-shadow">
                     <img
@@ -190,12 +169,11 @@ class StateTemplate extends React.Component
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group"></div>
                     </div>
-                    </div>
-                </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
+                {/* </div> */}
             </main>
           );
     }
-}
 
 export default StateTemplate;

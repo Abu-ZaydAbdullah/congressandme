@@ -1,5 +1,5 @@
 
-export default {
+export default [
     // "0" : {
     //     index: 0,
     //     name: "Alabama",
@@ -23,7 +23,7 @@ export default {
     //     name: "Arkansas",
     //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arkansas.svg/200px-Flag_of_Arkansas.svg.png"
     // },
-    "4" : {
+  {
         index: 4,
         abbreviation: 'CA',
         name: "California",
@@ -179,7 +179,7 @@ export default {
     //     name: "North Dakota",
     //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flag_of_North_Dakota.svg/217px-Flag_of_North_Dakota.svg.png"
     // },
-    "34" : {
+    {
         index: 34,
         abbreviation: 'OH',
         name: "Ohio",
@@ -239,7 +239,7 @@ export default {
     //     name: "Utah",
     //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/255px-Flag_of_Utah.svg.png"
     // },
-    "44" : {
+    {
         index: 44,
         abbreviation: 'VT',
         name: "Vermont",
@@ -275,4 +275,4 @@ export default {
     //     name: "Wyoming",
     //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Wyoming.svg/243px-Flag_of_Wyoming.svg.png"
     // }
-};
+];

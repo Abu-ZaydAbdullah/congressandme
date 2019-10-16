@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 class StateCard extends Component {
   render() {
-  const stateList = Object.keys(data).map(key => {
-    let state = data[key];
+  const stateList = data.map(state => {
     return (
   <div className="col-md-4" key={state.index}>
   <div className="card mb-4 box-shadow">
@@ -14,14 +13,14 @@ class StateCard extends Component {
       <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
         <Link
           to={{
-            pathname: `/state/${state.index}`,
-            status: {
+            pathname: `/state/${state.abbreviation}`,
+            state: {
               name: state.name,
               image: state.image,
               website: state.website,
               summary: state.summary,
               issues: state.issues,
-              Facebook: state.facebook
+              facebook: state.facebook
             }
           }}
         >
