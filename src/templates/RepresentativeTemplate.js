@@ -1,7 +1,21 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Jumbotron from "../components/Jumbotron";
 
 const RepresentativeTemplate = props => {
+  let repToState = (repState) => {
+    if (repState === 'OH') {
+    return '/34'
+    } else if (repState === 'CA') {
+    return '/4'
+    } else if (repState === 'VT') {
+    return '/44'
+    }
+    return 's/'
+    }
+  
+  const stateVal = repToState(props.location.state.state)
+
   return (
     <div>
       <div className="container emp-profile">
@@ -73,7 +87,7 @@ const RepresentativeTemplate = props => {
                     <label>State</label>
                   </div>
                   <div className="col-md-6">
-                    <p>{props.location.state.state}</p>
+                    <p><Link to={`/state${stateVal}`}>{props.location.state.state}</Link></p>
                   </div>
                 </div>
                 <div className="row">
