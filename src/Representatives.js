@@ -26,7 +26,7 @@ class Representatives extends Component {
     <br></br>
     <h1>Representatives</h1>
     </div>
-    <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} />
+    <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} placeholder = "Name of Representative"/>
     <div className="album py-5 bg-light">
       <div className="container">
         <div className="row">

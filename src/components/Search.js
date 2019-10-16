@@ -13,7 +13,7 @@ class Search extends Component {
           ref={value => {
             this.myValue = value;
           }}
-          placeholder="Name of Representative"
+          placeholder={this.props.placeholder}
           onChange={this.filterUpdate.bind(this)}
           className="form-control"
           style={{marginBottom: '1%'}}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 class StateCard extends Component {
   render() {
   const stateList = data.map(state => {
+    
     return (
   <div className="col-md-4" key={state.index}>
   <div className="card mb-4 box-shadow">
