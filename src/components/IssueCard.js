@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 
 class IssueCard extends Component {
   render() {
-    const issueList = Object.keys(data).map(key => {
-        let issue = data[key];
+    const{filterText } = this.props
+    const issueList = data
+    .filter(issue => {
+      return issue.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
+      })
+    .map(issue => {
   return (
     <div className="row mb-5" key={issue.index}>
         <div className="panel panel-default">
@@ -19,7 +23,7 @@ class IssueCard extends Component {
                     <p className="card-text">{issue.desc}</p>
                     <Link
                       to={{
-                        pathname: `/issue/${key}`,
+                        pathname: `/issue/${issue.index}`,
                         status: {
                           name: issue.name,
                           desc: issue.desc,
