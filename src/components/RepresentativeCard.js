@@ -1,12 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import data from "../data/RepresentativeMembers";
+import axios from "axios"
 
 class RepresentativeCard extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+    representatives: []
+    }
+  }
+
+  componentWillMount(){
+  this.fetchReps()
+  }
+
+  fetchReps = async() => {
+    let res = await axios.get('http://localhost:8000/representatives/page/1')
+    let data = await res.data;
+    this.setState({
+      representatives: data
+    });
+    await console.log(this.state.representatives)
+  }
+
   render() {
     const {filterText } = this.props;
-    const repList = data
+    const repList = this.state.representatives
     .filter(representative => {
       return representative.full_name.toLowerCase().startsWith(filterText.toLowerCase()) == true
       })
@@ -18,7 +38,7 @@ class RepresentativeCard extends Component {
               className="card-img-top about-image"
               style={{ maxHeight: 450 }}
               src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`}
-              alt="{representative.full_name}"
+              alt={representative.full_name}
             ></img>
             <div className="card-body">
               <h5>{representative.full_name}</h5>
