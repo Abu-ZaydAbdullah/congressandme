@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Jumbotron from "../components/Jumbotron";
 
 const RepresentativeTemplate = props => {
   let repToState = (repState) => {

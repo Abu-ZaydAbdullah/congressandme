@@ -113,7 +113,35 @@ class RepresentativeCard extends Component {
         </div>
       );
     });
-    return repList;
+
+    return(
+      <>
+      {repList}
+
+      <div className="container">
+      <div className="row">
+      <div className="col-md-4"></div>
+      <div className="col-md-4">
+      <nav>
+      <ul aria-label="Page:" class="pagination">
+      <li class="page-item"><Link to={{pathname: `/representatives/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/2`, state: {page_num: 2} }}><a class="page-link">2</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/3`, state: {page_num: 3} }}><a class="page-link">3</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/4`, state: {page_num: 4} }}><a class="page-link">4</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/5`, state: {page_num: 5} }}><a class="page-link">5</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/6`, state: {page_num: 6} }}><a class="page-link">6</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/7`, state: {page_num: 7} }}><a class="page-link">7</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/8`, state: {page_num: 8} }}><a class="page-link">8</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/9`, state: {page_num: 9} }}><a class="page-link">9</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/10`, state: {page_num: 10} }}><a class="page-link">10</a></Link></li>
+    </ul>
+    </nav>
+    </div>
+    <div className="col-md-4"></div>
+    </div>
+    </div>
+    </>
+    );
   }
 }
 
