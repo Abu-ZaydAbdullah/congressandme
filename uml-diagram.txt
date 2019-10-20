@@ -1,0 +1,46 @@
+@startuml
+class Representatives {
+String full_name
+String type
+String state
+String district
+String senate_class
+String party
+String url
+String phone
+String contact_form
+String rss_url
+String twitter
+String facebook
+String youtube
+String issues
+String bioguide_id
+String bioguide_summary
+}
+
+class States {
+String abbreviation
+String name
+String image
+String issues
+String website
+String summary
+String facebook
+String reps  
+}
+
+class Issues {
+String name
+String desc
+String about
+String image
+String states
+String rep
+String vids
+}
+
+Representatives "1" o- "*" States
+Representatives "*" -- "*" Issues
+States "*" -- "*" Issues
+
+@enduml
