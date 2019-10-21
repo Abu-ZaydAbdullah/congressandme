@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask.ext.restless import APIManager
+from flask_restless import APIManager
 
 # Handles the creation of the Flask app
 app = Flask(__name__)
@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 
 # Create the Flask-SQLAlchemy models.
 class Representatives(db.Model):
-    __tablename__ =     'Representatives'
+    __table__name__ =     'Representatives'
     full_name =         db.Column(db.Unicode, primary_key = True)
     Type =              db.Column(db.Unicode)
     state =             db.Column(db.Unicode)
@@ -57,4 +57,4 @@ manager.create_api(Issues, methods=['GET'], max_results_per_page=10)
 
 
 if __name__=='__main__':
-	app.run(host='0.0.0.0', port=80)
+	app.run(host='0.0.0.0', port=5000)
