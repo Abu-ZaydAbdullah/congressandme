@@ -6,11 +6,11 @@ export default [
         name: "Alabama",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/255px-Flag_of_Alabama.svg.png",
         website: "https://www.alabama.gov/",
-        summary: "Alabama (/ˌæləˈbæmə/) is a state in the southeastern region of the United States. It is bordered by Tennessee to the north, Georgia to the east, Florida and the Gulf of Mexico to the south, and Mississippi to the west. Alabama is the 30th largest by area and the 24th-most populous of the U.S. states. With a total of 1,500 miles (2,400 km) of inland waterways, Alabama has among the most of any state.",        facebook: "https://www.facebook.com/alabamagov/"
+        summary: "Alabama (/ˌæləˈbæmə/) is a state in the southeastern region of the United States. It is bordered by Tennessee to the north, Georgia to the east, Florida and the Gulf of Mexico to the south, and Mississippi to the west. Alabama is the 30th largest by area and the 24th-most populous of the U.S. states. With a total of 1,500 miles (2,400 km) of inland waterways, Alabama has among the most of any state."
     },
     {
         index: 1,
-        abbreviation: '',
+        abbreviation: 'AK',
         name: "Alaska",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Alaska.svg/2000px-Flag_of_Alaska.svg.png",
         website: "http://alaska.gov/",
