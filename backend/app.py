@@ -12,12 +12,12 @@ db = SQLAlchemy(app)
 
 # Create the Flask-SQLAlchemy models.
 class Representatives(db.Model):
-    __table__name__ =     'Representatives'
+    __tablename__ =     "Representatives"
     full_name =         db.Column(db.Unicode, primary_key = True)
-    Type =              db.Column(db.Unicode)
+    chamber =           db.Column(db.Unicode)
     state =             db.Column(db.Unicode)
-    district =          db.Column(db.Unicode)
-    senate_class =      db.Column(db.Unicode)
+    district =          db.Column(db.Integer)
+    senate_class =      db.Column(db.Integer)
     party =             db.Column(db.Unicode)
     url =               db.Column(db.Unicode)
     phone =             db.Column(db.Unicode)
@@ -31,7 +31,7 @@ class Representatives(db.Model):
     bioguide_summary =  db.Column(db.Unicode)
 
 class States(db.Model):
-    __table__name =     'States'
+    __tablename__ =     "States"
     abbreviation =      db.Column(db.Unicode, primary_key = True)
     name =              db.Column(db.Unicode)
     image =             db.Column(db.Unicode)
@@ -39,7 +39,7 @@ class States(db.Model):
     summary =           db.Column(db.Unicode)
 
 class Issues(db.Model):
-    __table__name =     'Issues'
+    __tablename__ =     "Issues"
     name =              db.Column(db.Unicode, primary_key = True)
     desc =              db.Column(db.Unicode)
     about =             db.Column(db.Unicode)
@@ -54,7 +54,6 @@ manager = APIManager(app, flask_sqlalchemy_db=db)
 manager.create_api(Representatives, methods=['GET'], max_results_per_page=10)
 manager.create_api(States, methods=['GET'], max_results_per_page=10)
 manager.create_api(Issues, methods=['GET'], max_results_per_page=10)
-
 
 if __name__=='__main__':
 	app.run(host='0.0.0.0', port=5000)
