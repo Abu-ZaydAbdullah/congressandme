@@ -56,4 +56,4 @@ manager.create_api(States, methods=['GET'])
 manager.create_api(Issues, methods=['GET'])
 
 if __name__=='__main__':
-	app.run(host='0.0.0.0', port=5000)
+	app.run()
