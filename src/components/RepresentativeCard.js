@@ -16,8 +16,8 @@ class RepresentativeCard extends Component {
   }
 
   fetchReps = async() => {
-    let res = await axios.get('http://localhost:8000/representatives/page/1')
-    let data = await res.data;
+    let res = await axios("http://localhost:5000/api/Representatives?page=1")
+    let data = await res.data.objects;
     this.setState({
       representatives: data
     });

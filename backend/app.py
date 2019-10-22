@@ -1,11 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
+from flask_cors import CORS
 
 # Handles the creation of the Flask app
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
 app.config['DEBUG'] = True
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Flask Alchemy obj
 db = SQLAlchemy(app)

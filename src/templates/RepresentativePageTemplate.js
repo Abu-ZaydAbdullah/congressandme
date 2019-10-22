@@ -1,14 +1,15 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import axios from "axios"
 import { Link } from 'react-router-dom';
 
-class RepresentativePageTemplate extends PureComponent {
+class RepresentativePageTemplate extends Component {
 
     constructor(props){
         super(props)
+        this.fetchReps = this.fetchReps.bind(this)
         this.state = {
         representatives: [],
-        page_num: this.props.match.params.handle
+        page_num: this.props.match.params.page_num
         }
       }
 
@@ -17,15 +18,11 @@ class RepresentativePageTemplate extends PureComponent {
       this.fetchReps()
       }
 
-      componentWillUpdate(){
-      this.fetchReps()
-      }
-
       fetchReps = async() => {
-        let res = await axios.get(`http://localhost:8000/representatives/page/${this.props.location.state.page_num}`)
+        let res = await axios(`http://localhost:5000/api/Representatives?page=${this.state.page_num}`)
+        console.log(res)
         this.setState({page_num: this.props.match.params.handle })
-        console.log(this.state.page_num)
-        let data = await res.data;
+        let data = await res.data.objects;
         this.setState({
           representatives: data
         });
