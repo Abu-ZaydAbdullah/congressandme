@@ -12,6 +12,7 @@ import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
 import RepresentativePageTemplate from './templates/RepresentativePageTemplate'
+import IssuePageTemplate from './templates/IssuePageTemplate'
 
 class App extends Component {
   render() {
@@ -25,10 +26,12 @@ class App extends Component {
               <Route exact path="/representatives" component={Representatives} />
               <Route path="/representative/:full_name" component={RepresentativeTemplate} />
               <Route path="/representatives/page/:page_num" component={RepresentativePageTemplate}/>
+              <Route exact path="/states" component={States} />
               <Route path="/state/:name" component={StateTemplate} />
-              <Route path="/states" component={States} />
+              <Route path="/states/page/:page_num" component={States} />
+              <Route exact path="/issues" component={Issues} />
               <Route path="/issue/:name" component={IssueTemplate} />
-              <Route path="/issues" component={Issues} />
+              <Route path="/issues/page/:page_num" component={IssuePageTemplate} />
               <Route path="/about" component={About} />
               <Route component={NoMatch} />
             </Switch>

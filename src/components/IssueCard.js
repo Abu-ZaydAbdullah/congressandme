@@ -4,9 +4,29 @@ import data from "../data/IssueData";
 import { Link } from "react-router-dom";
 
 class IssueCard extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+    issues: []
+    }
+  }
+
+  componentWillMount(){
+  this.fetchReps()
+  }
+
+  fetchIssues = async() => {
+    let res = await axios("http://localhost:5000/api/Issues?page=1")
+    let data = await res.data.objects;
+    this.setState({
+      issues: data
+    });
+  }
+
   render() {
-    const{filterText } = this.props
-    const issueList = data
+    const { filterText } = this.props
+    const issueList = this.state.representatives
     .filter(issue => {
       return issue.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
       })
