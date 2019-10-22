@@ -11,7 +11,7 @@ class RepresentativeCard extends Component {
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
   this.fetchReps()
   }
 
@@ -30,7 +30,7 @@ class RepresentativeCard extends Component {
     .filter(representative => {
       return representative.full_name.toLowerCase().startsWith(filterText.toLowerCase()) == true
       })
-    .map(representative => {
+    .map((representative, index) => {
       return (
         <div className="col-md-4" key={representative.index}>
           <div className="card mb-4 box-shadow">
@@ -50,7 +50,7 @@ class RepresentativeCard extends Component {
               </p>
               <p className="card-text">
                 <strong>Chamber:</strong>{" "}
-                {representative.type === "sen"
+                {representative.chamber === "sen"
                   ? "Senate"
                   : "House of Representatives"}
               </p>
@@ -77,17 +77,13 @@ class RepresentativeCard extends Component {
               <div class="col-mb-4 text-center">
                 <Link
                   to={{
-                    pathname: `/representative/${representative.full_name}`,
+                    pathname: `/representative/${index}`,
                     state: {
                       name: representative.full_name,
                       chamber:
                         representative.type === "sen"
                           ? "Senate"
                           : "House of Representatives",
-                      type:
-                        representative.type === "sen"
-                          ? "Senator"
-                          : "Representative",
                       image: `https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`,
                       party: representative.party,
                       state: representative.state,
