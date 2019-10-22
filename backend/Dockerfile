@@ -6,4 +6,3 @@ RUN mkdir -p /app
 COPY app.py /app
 COPY config.cfg /app
 WORKDIR /app
-CMD ["python", "app.py"]
