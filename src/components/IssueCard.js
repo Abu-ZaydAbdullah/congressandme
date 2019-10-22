@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import data from "../data/IssueData";
+import axios from "axios"
 import { Link } from "react-router-dom";
 
 class IssueCard extends Component {
@@ -13,7 +14,7 @@ class IssueCard extends Component {
   }
 
   componentWillMount(){
-  this.fetchReps()
+  this.fetchIssues()
   }
 
   fetchIssues = async() => {
@@ -26,7 +27,7 @@ class IssueCard extends Component {
 
   render() {
     const { filterText } = this.props
-    const issueList = this.state.representatives
+    const issueList = this.state.issues
     .filter(issue => {
       return issue.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
       })
