@@ -1,8 +1,8 @@
-import React from "react";
+import { React, Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios"
 
-class RepresentativeTemplate extends React.Component {
+class RepresentativeTemplate extends Component {
 
   constructor(props) {
     super(props);
@@ -37,7 +37,6 @@ class RepresentativeTemplate extends React.Component {
     let rep_id = window.location.pathname.split("/")[window.location.pathname.split("/").length -1];
     let res = await axios("http://localhost:5000/api/Representatives?page=1")
     this.setState({rep_data : res.data.objects[parseInt(rep_id)]});
-    //console.log(this.state.rep_data)
   }
   
   render() {

@@ -21,7 +21,6 @@ class RepresentativeCard extends Component {
     this.setState({
       representatives: data
     });
-    await console.log(this.state.representatives)
   }
 
   render() {
