@@ -13,6 +13,7 @@ import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
 import RepresentativePageTemplate from './templates/RepresentativePageTemplate'
 import IssuePageTemplate from './templates/IssuePageTemplate'
+import StatePageTemplate from './templates/StatePageTemplate';
 
 class App extends Component {
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
               <Route path="/representatives/page/:page_num" component={RepresentativePageTemplate}/>
               <Route exact path="/states" component={States} />
               <Route path="/state/:name" component={StateTemplate} />
-              <Route path="/states/page/:page_num" component={States} />
+              <Route path="/states/page/:page_num" component={StatePageTemplate} />
               <Route exact path="/issues" component={Issues} />
               <Route path="/issue/:name" component={IssueTemplate} />
               <Route path="/issues/page/:page_num" component={IssuePageTemplate} />
