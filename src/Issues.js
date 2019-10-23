@@ -24,7 +24,7 @@ class Issues extends Component {
   <main role="main">
     <Jumbotron title_text={"Issues"} subtitle_text={"All the hottest topics being discussed"}/>
     <br></br>
-    <h1>Issues</h1>
+    <h1 className="page-title">Issues</h1>
     <div className="panel">
     <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} />
       <ul className="list-group" id="contact-list">

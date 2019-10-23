@@ -23,7 +23,7 @@ return(
     <div>
     <Jumbotron title_text={"States"} subtitle_text={"Learn who represents your State!"}/>
     <br></br>
-    <h1>States</h1>
+    <h1 className="page-title">States</h1>
     </div>
 
     <div className="album py-5 bg-light">

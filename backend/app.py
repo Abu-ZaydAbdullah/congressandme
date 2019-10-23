@@ -43,7 +43,7 @@ class States(db.Model):
 class Issues(db.Model):
     __tablename__ =     "Issues"
     name =              db.Column(db.Unicode, primary_key = True)
-    desc =              db.Column(db.Unicode)
+    description =              db.Column(db.Unicode)
     about =             db.Column(db.Unicode)
     image =             db.Column(db.Unicode)
     vids =              db.Column(db.Unicode)
