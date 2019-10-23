@@ -55,7 +55,7 @@ manager = APIManager(app, flask_sqlalchemy_db=db)
 # Create APIs for our above models. Will be used to send and receive messages in JSON format
 manager.create_api(Representatives, methods=['GET'], results_per_page=54)
 manager.create_api(States, methods=['GET'], results_per_page=10)
-manager.create_api(Issues, methods=['GET'])
+manager.create_api(Issues, methods=['GET'], results_per_page=5)
 
 if __name__=='__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0')
