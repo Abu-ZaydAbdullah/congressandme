@@ -43,10 +43,32 @@ class States(db.Model):
 class Issues(db.Model):
     __tablename__ =     "Issues"
     name =              db.Column(db.Unicode, primary_key = True)
-    desc =              db.Column(db.Unicode)
+    description =       db.Column(db.Unicode)
     about =             db.Column(db.Unicode)
     image =             db.Column(db.Unicode)
     vids =              db.Column(db.Unicode)
+
+class Mentions(db.Model):
+    __tablename__ =                     "Mentions"
+    full_name =                         db.Column(db.Unicode, primary_key = True)
+    state =                             db.Column(db.Unicode)
+    agriculture =                       db.Column(db.Unicode)        
+    armed_forces =                      db.Column(db.Unicode)    
+    crimes =                            db.Column(db.Unicode)    
+    economics =                         db.Column(db.Unicode)    
+    education =                         db.Column(db.Unicode)    
+    emergency_management =              db.Column(db.Unicode)             
+    environmentalism =                  db.Column(db.Unicode)        
+    gun_control =                       db.Column(db.Unicode)     
+    healthcare =                        db.Column(db.Unicode)    
+    housing =                           db.Column(db.Unicode)    
+    immigration =                       db.Column(db.Unicode)    
+    labor =                             db.Column(db.Unicode)
+    social_issues =                     db.Column(db.Unicode)     
+    taxation =                          db.Column(db.Unicode)    
+    transporation_and_public_works =    db.Column(db.Unicode)            
+    other =                             db.Column(db.Unicode)
+
 
 # Allows for the use of Flask-Restless to quickly build APIs
 # Requires app we just built with configurations and a flask alchemy obj

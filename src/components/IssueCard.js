@@ -36,10 +36,10 @@ class IssueCard extends Component {
     <div className="row mb-5" key={issue.index}>
         <div className="panel panel-default">
             <div className="card-body row">    
-                <div class = "col-sm-6 col-md-6 image-container">
+                <div className="col-sm-6 col-md-6 image-container">
                     <img className="card-img-top about-image" style={{width: 262}}src={issue.image} alt="Card image cap"></img>
                 </div>
-                <div className="col-sm-6 col-md-6" >
+                <div className="col-sm-6 col-md-6">
                     <h5>{issue.name}</h5>
                     <p className="card-text">{issue.desc}</p>
                     <Link
@@ -64,7 +64,27 @@ class IssueCard extends Component {
   )
   }
     )
-  return issueList
+    return(
+      <>
+      {issueList}
+
+      <div className="container">
+      <div className="row">
+      <div className="col-md-4"></div>
+      <div className="col-md-4">
+      <nav>
+      <ul aria-label="Page:" class="pagination">
+      <li class="page-item"><Link to={{pathname: `/issues/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/2`, state: {page_num: 2} }}><a class="page-link">2</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/3`, state: {page_num: 3} }}><a class="page-link">3</a></Link></li>
+    </ul>
+    </nav>
+    </div>
+    <div className="col-md-4"></div>
+    </div>
+    </div>
+    </>
+    );
 }
 }
 

@@ -46,6 +46,14 @@ describe('States Component', () => {
   })
 })
 
+const IssuesWrapper = shallow(<Issues />)
+
+describe('Issues Component', () => {
+  it('Renders Title', () => {
+    expect(IssuesWrapper.find('h1').text()).toEqual('Issues')
+  })
+})
+
 const AboutWrapper = shallow(<About />)
 
 describe('About Component', () => {

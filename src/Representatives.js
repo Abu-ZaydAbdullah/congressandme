@@ -24,7 +24,7 @@ class Representatives extends Component {
     <div>
     <Jumbotron title_text={"Congress and Me"} subtitle_text={"Learn more about what your representatives are up to!"}/>
     <br></br>
-    <h1>Representatives</h1>
+    <h1 className="page-title">Representatives</h1>
     </div>
     <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} placeholder = "Name of Representative"/>
     <div className="album py-5 bg-light">
