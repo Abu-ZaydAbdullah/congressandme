@@ -1,8 +1,4 @@
 import React from "react";
-import data from "../data/IssueData";
-import stateData from "../data/StateData";
-import repData from "../data/RepresentativeMembers";
-import { Link } from "react-router-dom";
 
 const StateTemplate = props => {
         console.log(props)

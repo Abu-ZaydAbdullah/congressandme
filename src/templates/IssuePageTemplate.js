@@ -66,7 +66,35 @@ class IssuePageTemplate extends Component {
       )
       }
         )
-      return issueList
+        return(
+          <>
+        <div className="album py-5 bg-light">
+        <div className="container">
+        <div className="row">
+          {issueList}
+    
+          <div className="container">
+          <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+          <nav>
+          <ul aria-label="Page:" class="pagination">
+          <li class="page-item"><Link to={{pathname: `/issues/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/2`, state: {page_num: 2} }}><a class="page-link">2</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/3`, state: {page_num: 3} }}><a class="page-link">3</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/4`, state: {page_num: 4} }}><a class="page-link">4</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/issues/page/5`, state: {page_num: 5} }}><a class="page-link">5</a></Link></li>
+        </ul>
+        </nav>
+        </div>
+        <div className="col-md-4"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+            </>
+        );
     }
     }
     

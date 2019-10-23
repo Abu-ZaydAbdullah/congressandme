@@ -115,7 +115,7 @@ class AboutCard extends Component {
                   {member.role}
                 </p>
                 <p className="card-text">
-                  <strong>Biography:</strong>
+                  <strong>Biography: </strong>
                   {member.bio}
                 </p>
               </p>
