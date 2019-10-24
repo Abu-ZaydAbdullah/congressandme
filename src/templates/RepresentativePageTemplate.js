@@ -9,19 +9,19 @@ class RepresentativePageTemplate extends Component {
         this.fetchReps = this.fetchReps.bind(this)
         this.state = {
         representatives: [],
-        page_num: this.props.match.params.page_num
+        page_num: this.props.page_num
         }
       }
 
    
-      componentWillMount(){
-      this.fetchReps()
+      componentDidMount(){
+        this.fetchReps()
       }
 
       fetchReps = async() => {
         let res = await axios(`http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=${this.state.page_num}`)
         console.log(res)
-        await this.setState({page_num: this.props.match.params.handle })
+        await this.setState({page_num: this.state.page_num })
         let data = await res.data.objects;
         await this.setState({
           representatives: data
@@ -101,7 +101,7 @@ class RepresentativePageTemplate extends Component {
                   <div class="col-mb-4 text-center">
                     <Link
                       to={{
-                        pathname: `/representative/${representative.full_name}`,
+                        pathname: `/representative/${representative.full_name}/${this.state.page_num}/${index}`,
                         state: {
                           name: representative.full_name,
                           chamber:

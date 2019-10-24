@@ -27,7 +27,7 @@ class StateCard extends Component {
   }
 
   render() {
-  const stateList = this.state.states.map(state => {
+  const stateList = this.state.states.map((state, index) => {
     return (
   <div className="col-md-4" key={state.index}>
   <div className="card mb-4 box-shadow">
@@ -36,7 +36,7 @@ class StateCard extends Component {
       <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
         <Link
           to={{
-            pathname: `/state/${state.abbreviation}`,
+            pathname: `/state/${state.abbreviation}/${index}`,
             state: {
               name: state.name,
               image: state.image,
