@@ -66,7 +66,7 @@ class Mentions(db.Model):
     labor =                             db.Column(db.Unicode)
     social_issues =                     db.Column(db.Unicode)
     taxation =                          db.Column(db.Unicode)
-    transportation_and_public_works =    db.Column(db.Unicode)
+    transportation_and_public_works =   db.Column(db.Unicode)
     other =                             db.Column(db.Unicode)
 
 

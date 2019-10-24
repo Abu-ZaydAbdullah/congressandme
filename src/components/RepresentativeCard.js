@@ -16,7 +16,7 @@ class RepresentativeCard extends Component {
   }
 
   fetchReps = async() => {
-    let res = await axios("http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=1")
+    let res = await axios("https://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=1")
     let data = await res.data.objects;
     this.setState({
       representatives: data

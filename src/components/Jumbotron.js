@@ -3,9 +3,11 @@ import { Jumbotron as Jumbo, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import congressImage from '../assets/congress_image.jpg';
 
-const Styles = styled.div`
+class Jumbotron extends Component {
+  render() {
+  const Styles = styled.div`
   .jumbo {
-    background: url(${congressImage}) no-repeat fixed bottom;
+    background: url(${this.props.image}) no-repeat fixed bottom;
     background-size: contain;
     color: #efefef;
     height: 500px;
@@ -24,9 +26,6 @@ const Styles = styled.div`
     z-index: -1;
   }
 `;
-
-class Jumbotron extends Component {
-  render() {
   return (
   <Styles>
     <Jumbo fluid className="jumbo">

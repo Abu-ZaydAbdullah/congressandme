@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from './components/Jumbotron'
 import StateCard from './components/StateCard'
+import stateImage from './assets/stateImage.jpg'
 
 class States extends Component { 
   constructor(props) {
@@ -21,7 +22,7 @@ render(){
 return(
 <main role="main">
     <div>
-    <Jumbotron title_text={"States"} subtitle_text={"Learn who represents your State!"}/>
+    <Jumbotron title_text={"States"} subtitle_text={"Learn who represents your State!"} image={stateImage}/>
     <br></br>
     <h1 className="page-title">States</h1>
     </div>
