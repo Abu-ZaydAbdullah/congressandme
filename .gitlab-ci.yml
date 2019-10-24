@@ -25,6 +25,5 @@ backend-api-testing:
 frontend-jest-testing:
     image: gpdowning/node
     script:
-        - cd frontend/
-        - yarn install
+        - npm install
         - npm test
