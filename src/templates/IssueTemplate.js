@@ -1,7 +1,54 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
-const IssueTemplate = props => {
+class IssueTemplate extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+        reps: [],
+        mentions: []
+        }
+      }
+    
+      componentWillMount(){
+        this.fetchMentions()
+        this.fetchReps()
+      }
+
+      fetchReps = async() => {
+        const api1 = axios({
+            url : "https://api.congressand.me/api/Representatives?page=1"
+          });
+        const api2 = axios({
+                url : "https://api.congressand.me/api/Representatives?page=2"
+            });
+        const api3 = axios({
+                url : "https://api.congressand.me/api/Representatives?page=3"
+            });
+        let data = await Promise.all([api1, api1, api3]);
+        console.log(data)
+        await this.setState({
+          reps: data
+        });
+      }
+    
+      fetchMentions = async() => {
+        let res = await axios("https://api.congressand.me/api/Mentions?page=1")
+        let data = await res.data.objects;
+        console.log(data)
+        await this.setState({
+          mentions: data
+        });
+      }
+
+    render() {
+        //const repList = this.reps
+        //.filter(representative => {
+        //    return mentions[representative.full_name]. == true})
+        //.map()
+
         return (
             <main role="main">
                 <div>
@@ -9,16 +56,16 @@ const IssueTemplate = props => {
                         <div className = "row justify-content-left">
                             <div className="col-md-4">
                                 <div>
-                                    <img style={{height: 180}} src={props.location.state.image}/>
+                                    <img style={{height: 180}} src={this.props.location.state.image}/>
                                 </div>
                                 <div className="row pt-2 pl-5">
-                                    <p><a href={props.location.state.vids} target="_blank">Trevor Noah on {props.location.state.name}</a></p>
+                                    <p><a href={this.props.location.state.vids} target="_blank">Trevor Noah on {this.props.location.state.name}</a></p>
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <h1>{props.location.state.name}</h1>
+                                <h1>{this.props.location.state.name}</h1>
                                 <hr></hr>
-                                <p>{props.location.state.about}</p>
+                                <p>{this.props.location.state.about}</p>
                             </div>
                         </div>
                         <div className="row justify-content-left pt-5 ">
@@ -141,5 +188,6 @@ const IssueTemplate = props => {
             </main>
         );
     }
+}
 
 export default IssueTemplate;
