@@ -1,6 +1,35 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import axios from "axios"
 
-const StateTemplate = props => {
+class StateTemplate extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            state_data : {
+                abbreviation: "",
+                name: "",
+                image: "",
+                website: "",
+                summary: ""
+            }
+        }
+    }
+
+    componentDidMount()
+    {
+      this.fetchReps()
+    }
+  
+    fetchReps = async() => {
+      //console.log(this.props.page_num)
+      let res = await axios(`https://api.congressand.me/api/States?page=${this.props.page_num}`)
+      await this.setState({state_data : res.data.objects[parseInt(this.props.index)]});
+      await console.log(this.state.state_data)
+    }
+
+    render() {
         return (
             <main role="main">
                 <div>
@@ -8,12 +37,12 @@ const StateTemplate = props => {
                     <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                        <img src={props.location.state.image} alt="" />
+                        <img src={this.state.state_data.image} alt="" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="profile-head">
-                        <h1>{props.location.state.name}</h1>
+                        <h1>{this.state.state_data.name}</h1>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item">
                             <a>
@@ -30,10 +59,10 @@ const StateTemplate = props => {
                         <div className="shifted">
                         <div className="profile-work">
                             <p>Contact</p>
-                            <a href={props.location.state.website} target="_blank">Website</a>
+                            <a href={this.state.state_data.website} target="_blank">Website</a>
                             <br />
                             <p>Social Media</p>
-                            <a href={props.location.state.facebook} target="_blank">Facebook</a>
+                            <a href={this.state.state_data.facebook} target="_blank">Facebook</a>
                         </div>
                         </div>
                     </div>
@@ -49,7 +78,7 @@ const StateTemplate = props => {
                             <div className="col-md-6">
                             </div>
                             <div className="col-md-12">
-                                <p style={{color: 'black'}}>{props.location.state.summary}</p>
+                                <p style={{color: 'black'}}>{this.state.state_data.summary}</p>
                             </div>
                             </div>
                         </div>
@@ -169,6 +198,6 @@ const StateTemplate = props => {
                 {/* </div> */}
             </main>
           );
+        }
     }
-
 export default StateTemplate;

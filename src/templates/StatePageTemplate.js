@@ -9,27 +9,27 @@ class StatePageTemplate extends Component {
         this.fetchStates = this.fetchStates.bind(this)
         this.state = {
         states: [],
-        page_num: this.props.match.params.page_num
+        page_num: this.props.page_num
         }
       }
 
    
-      componentWillMount(){
-      this.fetchStates()
+      componentDidMount(){
+        this.fetchStates()
       }
 
       fetchStates = async() => {
         let res = await axios(`https://api.congressand.me/page?q=${this.state.page_num}`)
         console.log(res)
-        this.setState({page_num: this.props.match.params.handle })
+        await this.setState({page_num: this.state.page_num })
         let data = await res.data.objects;
-        this.setState({
+        await this.setState({
           states: data
         });
       }
     
       render() {
-        const stateList = this.state.states.map(state => {
+        const stateList = this.state.states.map((state, index) => {
           return (
         <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
@@ -38,7 +38,7 @@ class StatePageTemplate extends Component {
             <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
               <Link
                 to={{
-                  pathname: `/state/${state.abbreviation}`,
+                  pathname: `/state/${state.abbreviation}/${this.state.page_num}/${index}`,
                   state: {
                     name: state.name,
                     image: state.image,

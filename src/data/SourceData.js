@@ -7,7 +7,7 @@ export default [
       index: 0,
       name: "ProPublica",
       purpose: "Used to get information about members of Congress and issues being discussed.",
-      url: "https://projects.propublica.org/api-docs",
+      url: "https://projects.propublica.org/api-docs/congress-api/",
       image: propublicaImage
     },
     {

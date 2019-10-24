@@ -144,7 +144,7 @@ class RepresentativeCard extends Component {
       <div className="col-md-4">
       <nav>
       <ul aria-label="Page:" class="pagination">
-      <li class="page-item"><Link to={{pathname: `/representatives/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
+          <li class="page-item"><Link to={{pathname: `/representatives/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
           <li class="page-item"><Link to={{pathname: `/representatives/page/2`, state: {page_num: 2} }}><a class="page-link">2</a></Link></li>
           <li class="page-item"><Link to={{pathname: `/representatives/page/3`, state: {page_num: 3} }}><a class="page-link">3</a></Link></li>
           <li class="page-item"><Link to={{pathname: `/representatives/page/4`, state: {page_num: 4} }}><a class="page-link">4</a></Link></li>
