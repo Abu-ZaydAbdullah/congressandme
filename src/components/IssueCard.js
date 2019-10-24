@@ -16,7 +16,7 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Issues?page=1")
+    let res = await axios("http://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues?page=1")
     let data = await res.data.objects;
     this.setState({
       issues: data
@@ -39,13 +39,13 @@ class IssueCard extends Component {
                 </div>
                 <div className="col-sm-6 col-md-6">
                     <h5>{issue.name}</h5>
-                    <p className="card-text">{issue.desc}</p>
+                    <p className="card-text">{issue.description}</p>
                     <Link
                       to={{
-                        pathname: `/issue/${issue.index}`,
-                        status: {
+                        pathname: `/issue/${issue.name}`,
+                        state: {
                           name: issue.name,
-                          desc: issue.desc,
+                          description: issue.description,
                           image: issue.image,
                           states: issue.states,
                           reps: issue.rep,

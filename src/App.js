@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Router forceRefresh={true}>
+        <Router>
           <NavigationBar />
           <Layout>
             <Switch>

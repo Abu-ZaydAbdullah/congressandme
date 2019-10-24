@@ -19,7 +19,7 @@ class IssuePageTemplate extends Component {
       }
 
       fetchIssues = async() => {
-        let res = await axios(`http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Issues?page=${this.state.page_num}`)
+        let res = await axios(`http://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues?page=${this.state.page_num}`)
         this.setState({page_num: this.props.match.params.handle })
         let data = await res.data.objects;
         this.setState({
@@ -28,11 +28,7 @@ class IssuePageTemplate extends Component {
       }
     
       render() {
-        const { filterText } = this.props
         const issueList = this.state.issues
-        .filter(issue => {
-          return issue.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
-          })
         .map(issue => {
       return (
         <div className="row mb-5" key={issue.index}>
@@ -43,13 +39,13 @@ class IssuePageTemplate extends Component {
                     </div>
                     <div className="col-sm-6 col-md-6" >
                         <h5>{issue.name}</h5>
-                        <p className="card-text">{issue.desc}</p>
+                        <p className="card-text">{issue.description}</p>
                         <Link
                           to={{
                             pathname: `/issue/${issue.index}`,
-                            status: {
+                            state: {
                               name: issue.name,
-                              desc: issue.desc,
+                              description: issue.description,
                               image: issue.image,
                               states: issue.states,
                               reps: issue.rep,
@@ -82,8 +78,6 @@ class IssuePageTemplate extends Component {
           <li class="page-item"><Link to={{pathname: `/issues/page/1`, state: {page_num: 1} }}><a class="page-link">1</a></Link></li>
           <li class="page-item"><Link to={{pathname: `/issues/page/2`, state: {page_num: 2} }}><a class="page-link">2</a></Link></li>
           <li class="page-item"><Link to={{pathname: `/issues/page/3`, state: {page_num: 3} }}><a class="page-link">3</a></Link></li>
-          <li class="page-item"><Link to={{pathname: `/issues/page/4`, state: {page_num: 4} }}><a class="page-link">4</a></Link></li>
-          <li class="page-item"><Link to={{pathname: `/issues/page/5`, state: {page_num: 5} }}><a class="page-link">5</a></Link></li>
         </ul>
         </nav>
         </div>

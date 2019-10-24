@@ -1,7 +1,6 @@
 import React from "react";
 
 const StateTemplate = props => {
-        console.log(props)
         return (
             <main role="main">
                 <div>
