@@ -22,3 +22,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 Technical Report (Phase 1).pages
+
+*.la
+*.lo
+*.log
+*.o
+*.pc
+*.pyc
+*.pyo
+__pycache__
+.deps
+.libs
