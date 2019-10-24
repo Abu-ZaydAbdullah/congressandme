@@ -78,6 +78,7 @@ manager = APIManager(app, flask_sqlalchemy_db=db)
 manager.create_api(Representatives, methods=['GET'], results_per_page=54)
 manager.create_api(States, methods=['GET'], results_per_page=10)
 manager.create_api(Issues, methods=['GET'], results_per_page=5)
+manager.create_api(Mentions, methods = ['GET'])
 
 if __name__=='__main__':
     app.run(host='0.0.0.0')

@@ -16,7 +16,7 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("http://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues?page=1")
+    let res = await axios("https://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues")
     let data = await res.data.objects;
     this.setState({
       issues: data
@@ -24,6 +24,7 @@ class IssueCard extends Component {
   }
 
   render() {
+    console.log(issue)
     const { filterText } = this.props
     const issueList = this.state.issues
     .filter(issue => {
@@ -35,7 +36,21 @@ class IssueCard extends Component {
         <div className="panel panel-default">
             <div className="card-body row">    
                 <div className="col-sm-6 col-md-6 image-container">
+                  <Link
+                    to={{
+                      pathname: `/issue/${issue.name}`,
+                      state: {
+                        name: issue.name,
+                        description: issue.description,
+                        image: issue.image,
+                        states: issue.states,
+                        reps: issue.rep,
+                        vids: issue.vids,
+                      }
+                    }}
+                  >
                     <img className="card-img-top about-image" style={{width: 262}}src={issue.image} alt="Card image cap"></img>
+                  </Link>     
                 </div>
                 <div className="col-sm-6 col-md-6">
                     <h5>{issue.name}</h5>

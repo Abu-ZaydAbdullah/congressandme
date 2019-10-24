@@ -35,7 +35,23 @@ class IssuePageTemplate extends Component {
             <div className="panel panel-default">
                 <div className="card-body row">    
                     <div class = "col-sm-6 col-md-6 image-container">
+                    <div className="col-sm-6 col-md-6 image-container">
+                      <Link
+                        to={{
+                          pathname: `/issue/${issue.name}`,
+                          state: {
+                            name: issue.name,
+                            description: issue.description,
+                            image: issue.image,
+                            states: issue.states,
+                            reps: issue.rep,
+                            vids: issue.vids,
+                          }
+                        }}
+                      >
                         <img className="card-img-top about-image" style={{width: 262}}src={issue.image} alt="Card image cap"></img>
+                      </Link>     
+                    </div>
                     </div>
                     <div className="col-sm-6 col-md-6" >
                         <h5>{issue.name}</h5>
