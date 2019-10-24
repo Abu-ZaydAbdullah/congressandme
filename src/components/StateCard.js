@@ -18,7 +18,7 @@ class StateCard extends Component {
   }
 
   fetchStates = async() => {
-    let res = await axios('http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=1')
+    let res = await axios('https://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=1')
     console.log(res)
     let data = await res.data.objects;
     this.setState({

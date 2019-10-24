@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Jumbotron from './components/Jumbotron'
 import IssueCard from './components/IssueCard'
 import Search from './components/Search'
+import issueImage from './assets/issueImage.jpg'
 
 class Issues extends Component { 
   constructor(props) {
@@ -22,7 +23,7 @@ class Issues extends Component {
   return(
   
   <main role="main">
-    <Jumbotron title_text={"Issues"} subtitle_text={"All the hottest topics being discussed"}/>
+    <Jumbotron title_text={"Issues"} subtitle_text={"All the hottest topics being discussed"} image={issueImage}/>
     <br></br>
     <h1 className="page-title">Issues</h1>
     <div className="panel">

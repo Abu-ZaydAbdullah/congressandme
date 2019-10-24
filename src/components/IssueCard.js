@@ -24,7 +24,6 @@ class IssueCard extends Component {
   }
 
   render() {
-    console.log(issue)
     const { filterText } = this.props
     const issueList = this.state.issues
     .filter(issue => {

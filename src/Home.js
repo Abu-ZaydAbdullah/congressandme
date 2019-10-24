@@ -1,10 +1,11 @@
 import React from 'react'
 import Jumbotron from './components/Jumbotron'
+import congressImage from './assets/congress_image.jpg'
 
 export const Home = () => (
   <main role="main">
     <div>
-      <Jumbotron title_text={"Congress and Me"} subtitle_text={"Welcome to the Home Page!"}/>
+      <Jumbotron title_text={"Congress and Me"} subtitle_text={"Welcome to the Home Page!"} image={congressImage}/>
     </div>
     <h3 className="text-center" style={{marginBottom: '3%', marginTop: '10%'}}>What is Congress and Me?</h3>
     <div className="row" style={{marginBottom: '3%'}}>
