@@ -33,12 +33,37 @@ class RepresentativeCard extends Component {
       return (
         <div className="col-md-4" key={representative.index}>
           <div className="card mb-4 box-shadow">
-            <img
-              className="card-img-top about-image"
-              style={{ maxHeight: 450 }}
-              src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`}
-              alt={representative.full_name}
-            ></img>
+          <Link
+              to={{
+                pathname: `/representative/${index}`,
+                state: {
+                  name: representative.full_name,
+                  chamber:
+                    representative.type === "sen"
+                      ? "Senate"
+                      : "House of Representatives",
+                  image: `https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`,
+                  party: representative.party,
+                  state: representative.state,
+                  twitter: `https://twitter.com/@${representative.twitter}`,
+                  facebook: `https://facebook.com/${representative.facebook}`,
+                  youtube: `https://www.youtube.com/results?search_query=${representative.youtube}`,
+                  rss: representative.rss_url,
+                  website: representative.url,
+                  form: representative.contact_form,
+                  phone: `tel:${representative.phone}`,
+                  summary: representative.bioguide_summary
+                }
+              }}
+            >
+              <img
+                className="card-img-top about-image"
+                style={{ maxHeight: 450 }}
+                src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`}
+                alt={representative.full_name}
+              ></img>
+            </Link>
+            
             <div className="card-body">
               <h5>{representative.full_name}</h5>
               <p className="card-text">
