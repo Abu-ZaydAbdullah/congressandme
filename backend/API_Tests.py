@@ -2,8 +2,7 @@ import requests
 import json
 import unittest
 
-#url = "https://empoweringknowledge.me/"
-url = "http://0.0.0.0:5000/"
+url = "http://congressandme-api.us-east-2.elasticbeanstalk.com/"
 
 class ApiTests(unittest.TestCase):
     def test1(self):

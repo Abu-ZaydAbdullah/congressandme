@@ -1,0 +1,30 @@
+before_script:
+    - date
+    - uname -a
+    - printenv | sort
+
+congressandme:
+    image: gpdowning/python
+    script:
+    - ls -al
+      # - cd backend
+      # - python3
+
+selenium-unittests:
+    image: abuzaydabdullah/selenium-headless
+    script:
+        - python3 SeleniumTests.py
+
+backend-api-testing:
+    image: gpdowning/node
+    script:
+        - echo Running Postman Tests
+        - npm install newman
+        - node_modules/.bin/newman run UnitTests.postman_collection.json
+
+frontend-jest-testing:
+    image: gpdowning/node
+    script:
+        - cd frontend/
+        - yarn install
+        - npm test
