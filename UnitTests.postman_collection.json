@@ -19,7 +19,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(1);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -30,17 +33,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/1",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=1",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"1"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -60,7 +69,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(2);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -71,17 +83,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/2",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=2",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"2"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -101,7 +119,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(3);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -112,17 +133,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/3",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=3",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"3"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						}
 					]
 				}
 			},
@@ -142,7 +169,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(4);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -153,17 +183,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/4",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=4",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"4"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "4"
+						}
 					]
 				}
 			},
@@ -183,7 +219,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(5);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -194,17 +233,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/5",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=5",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"5"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						}
 					]
 				}
 			},
@@ -224,7 +269,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(6);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -235,17 +283,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/6",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=6",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"6"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "6"
+						}
 					]
 				}
 			},
@@ -265,7 +319,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(7);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -276,17 +333,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/7",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=7",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"7"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "7"
+						}
 					]
 				}
 			},
@@ -306,7 +369,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(8);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -317,17 +383,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/8",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=8",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"8"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "8"
+						}
 					]
 				}
 			},
@@ -347,7 +419,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(9);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -358,17 +433,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/9",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=9",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"9"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "9"
+						}
 					]
 				}
 			},
@@ -388,7 +469,10 @@
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
 							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(54);",
+							"    pm.expect(jsonData.page).to.eql(10);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -399,24 +483,30 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/10",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=10",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"10"
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "10"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Representatives Page 11",
+			"name": "States Page 1",
 			"event": [
 				{
 					"listen": "test",
@@ -428,9 +518,11 @@
 							"});",
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error;",
-							"    pm.response.to.be.withBody; ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(1);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -441,76 +533,46 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives/page/11",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=1",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
 					],
 					"path": [
-						"representatives",
-						"page",
-						"11"
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Representatives No Page",
+			"name": "States Page 2",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "d75e30ba-78b5-41f2-a3a8-1a1f213fc0c7",
-						"exec": [
-							"pm.test(\"response is ok\", function () {",
-							"    pm.response.to.have.status(404);",
-							"});",
-							"",
-							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.be.error;",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com/representatives",
-					"protocol": "http",
-					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"representatives"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Default URL",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "08964da0-630a-4e69-aaa1-9fbcd4d97137",
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error;",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(2);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -521,12 +583,173 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-mockapi.herokuapp.com",
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=2",
 					"protocol": "http",
 					"host": [
-						"congressandme-mockapi",
-						"herokuapp",
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
 						"com"
+					],
+					"path": [
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "States Page 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=3",
+					"protocol": "http",
+					"host": [
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "States Page 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(4);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=4",
+					"protocol": "http",
+					"host": [
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "States Page 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=5",
+					"protocol": "http",
+					"host": [
+						"congressandme-api",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						}
 					]
 				}
 			},
