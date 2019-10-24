@@ -29,15 +29,12 @@ class IssuePageTemplate extends Component {
     
       render() {
         const issueList = this.state.issues
-        .map(issue => {
+        .map((issue, index) => {
       return (
-        <div className="row mb-5" key={issue.index}>
-            <div className="panel panel-default">
-                <div className="card-body row">    
-                    <div class = "col-sm-6 col-md-6 image-container">
-                    <div className="col-sm-6 col-md-6 image-container">
-                      <Link
-                        to={{
+        <div className="col-md-4" key={issue.index}>
+        <div className="card mb-4 box-shadow">
+        <Link
+          to={{
                           pathname: `/issue/${issue.name}`,
                           state: {
                             name: issue.name,
@@ -51,27 +48,26 @@ class IssuePageTemplate extends Component {
                       >
                         <img className="card-img-top about-image" style={{width: 262}}src={issue.image} alt="Card image cap"></img>
                       </Link>     
-                    </div>
-                    </div>
-                    <div className="col-sm-6 col-md-6" >
-                        <h5>{issue.name}</h5>
-                        <p className="card-text">{issue.description}</p>
-                        <Link
-                          to={{
-                            pathname: `/issue/${issue.index}`,
-                            state: {
-                              name: issue.name,
-                              description: issue.description,
-                              image: issue.image,
-                              states: issue.states,
-                              reps: issue.rep,
-                              vids: issue.vids,
-                            }
-                          }}
-                        >
-                          <a class="btn btn-dark">{issue.name}</a>
-                        </Link>
-                    </div>
+                <div className="card-body">
+              <h5>{issue.name}</h5>
+              <p className="card-text">
+             {issue.description}
+             </p>
+            <Link
+          to={{
+                          pathname: `/issue/${issue.name}`,
+                          state: {
+                            name: issue.name,
+                            description: issue.description,
+                            image: issue.image,
+                            states: issue.states,
+                            reps: issue.rep,
+                            vids: issue.vids,
+                          }
+                        }}
+                      >
+                      <a class="btn btn-light">Learn More</a>
+                      </Link>     
                 </div>
             </div>
         </div>  

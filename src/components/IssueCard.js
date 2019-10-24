@@ -16,7 +16,7 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("http://localhost:5000/api/Issues?page=1")
+    let res = await axios("https://api.congressand.me/api/Issues?page=1")
     let data = await res.data.objects;
     console.log(data)
     await this.setState({
@@ -33,10 +33,11 @@ class IssueCard extends Component {
       })
     .map(issue => {
   return (
-    <div className="row mb-5" key={issue.index}>
-        <div className="panel panel-default">
-            <div className="card-body row">    
-                <div className="col-sm-6 col-md-6 image-container">
+    <div className="album py-5 bg-light">
+    <div className="container">
+      <div className="row">
+    <div className="col-md-4" key={issue.index}>
+    <div className="card mb-4 box-shadow">
                   <Link
                     to={{
                       pathname: `/issue/${issue.name}`,
@@ -53,7 +54,7 @@ class IssueCard extends Component {
                     <img className="card-img-top about-image" style={{width: 262}}src={issue.image} alt="Card image cap"></img>
                   </Link>     
                 </div>
-                <div className="col-sm-6 col-md-6">
+                <div className="card-body">
                     <h5>{issue.name}</h5>
                     <p className="card-text">{issue.description}</p>
                     <Link
@@ -73,8 +74,9 @@ class IssueCard extends Component {
                     </Link>
                 </div>
             </div>
-        </div>
-    </div>  
+            </div>
+            </div>
+            </div>
   )
   }
     )
