@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import styled from 'styled-components';
-import data from "../data/IssueData";
 import axios from "axios"
 import { Link } from "react-router-dom";
 
@@ -18,7 +16,7 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("http://localhost:5000/api/Issues?page=1")
+    let res = await axios("http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Issues?page=1")
     let data = await res.data.objects;
     this.setState({
       issues: data
