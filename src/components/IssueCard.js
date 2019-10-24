@@ -16,14 +16,16 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("https://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues")
+    let res = await axios("http://localhost:5000/api/Issues?page=1")
     let data = await res.data.objects;
-    this.setState({
+    console.log(data)
+    await this.setState({
       issues: data
     });
   }
 
   render() {
+    // console.log(issue)
     const { filterText } = this.props
     const issueList = this.state.issues
     .filter(issue => {
