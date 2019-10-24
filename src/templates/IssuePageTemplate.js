@@ -19,7 +19,7 @@ class IssuePageTemplate extends Component {
       }
 
       fetchIssues = async() => {
-        let res = await axios(`http://congress-and-me.xujrpppdsw.us-east-1.elasticbeanstalk.com/api/Issues?page=${this.state.page_num}`)
+        let res = await axios(`https://api.congressand.me/api/Issues?page=${this.state.page_num}`)
         this.setState({page_num: this.props.match.params.handle })
         let data = await res.data.objects;
         this.setState({
