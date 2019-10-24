@@ -33,7 +33,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=1",
+					"raw": "https://api.congressand.me/api/Representatives?page=1",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -83,7 +83,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=2",
+					"raw": "https://api.congressand.me/api/Representatives?page=2",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -133,7 +133,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=3",
+					"raw": "https://api.congressand.me/api/Representatives?page=3",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -183,7 +183,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=4",
+					"raw": "https://api.congressand.me/api/Representatives?page=4",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -233,7 +233,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=5",
+					"raw": "https://api.congressand.me/api/Representatives?page=5",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -283,7 +283,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=6",
+					"raw": "https://api.congressand.me/api/Representatives?page=6",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -333,7 +333,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=7",
+					"raw": "https://api.congressand.me/api/Representatives?page=7",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -383,7 +383,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=8",
+					"raw": "https://api.congressand.me/api/Representatives?page=8",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -433,7 +433,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=9",
+					"raw": "https://api.congressand.me/api/Representatives?page=9",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -483,7 +483,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=10",
+					"raw": "https://api.congressand.me/api/Representatives?page=10",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -533,7 +533,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=1",
+					"raw": "https://api.congressand.me/api/States?page=1",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -583,7 +583,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=2",
+					"raw": "https://api.congressand.me/api/States?page=2",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -633,7 +633,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=3",
+					"raw": "https://api.congressand.me/api/States?page=3",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -683,7 +683,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=4",
+					"raw": "https://api.congressand.me/api/States?page=4",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",
@@ -733,7 +733,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://congressandme-api.us-east-2.elasticbeanstalk.com/api/States?page=5",
+					"raw": "https://api.congressand.me/api/States?page=5",
 					"protocol": "http",
 					"host": [
 						"congressandme-api",

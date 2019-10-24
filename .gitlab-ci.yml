@@ -7,8 +7,8 @@ congressandme:
     image: gpdowning/python
     script:
     - ls -al
-      # - cd backend
-      # - python3
+    - cd backend
+    - python3 API_Tests.py
 
 selenium-unittests:
     image: abuzaydabdullah/selenium-headless
