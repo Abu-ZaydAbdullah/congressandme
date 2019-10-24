@@ -19,7 +19,7 @@ class RepresentativePageTemplate extends Component {
       }
 
       fetchReps = async() => {
-        let res = await axios(`http://localhost:5000/api/Representatives?page=${this.state.page_num}`)
+        let res = await axios(`http://congressandme-api.us-east-2.elasticbeanstalk.com/api/Representatives?page=${this.state.page_num}`)
         console.log(res)
         this.setState({page_num: this.props.match.params.handle })
         let data = await res.data.objects;

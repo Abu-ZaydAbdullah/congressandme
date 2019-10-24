@@ -29,7 +29,7 @@ class AboutCard extends Component {
       },
       issue_count: 0,
       unittest_dict: {
-        "Abu-Zayd Abdullah": 0,
+        "Abu-Zayd Abdullah": 40,
         "Abu-ZaydAbdullah": 0,
         "Robert Gutierrez": 0,
         "Calvin Dao": 0,
@@ -37,7 +37,7 @@ class AboutCard extends Component {
         "Ben Burton": 0,
         "Ben Hazel": 0
       },
-      unittest_count: 0
+      unittest_count: 40
     };
   }
 
