@@ -31,6 +31,7 @@ class Representatives(db.Model):
     issues =            db.Column(db.Unicode)
     bioguide_id =       db.Column(db.Unicode)
     bioguide_summary =  db.Column(db.Unicode)
+    rep_id =            db.Column(db.Unicode)
 
 class States(db.Model):
     __tablename__ =     "States"
@@ -39,6 +40,7 @@ class States(db.Model):
     image =             db.Column(db.Unicode)
     website =           db.Column(db.Unicode)
     summary =           db.Column(db.Unicode)
+    state_id =          db.Column(db.Unicode)
 
 class Issues(db.Model):
     __tablename__ =     "Issues"
@@ -47,6 +49,7 @@ class Issues(db.Model):
     about =             db.Column(db.Unicode)
     image =             db.Column(db.Unicode)
     vids =              db.Column(db.Unicode)
+    issue_id =          db.Column(db.Unicode)
 
 class Mentions(db.Model):
     __tablename__ =                     "Mentions"
