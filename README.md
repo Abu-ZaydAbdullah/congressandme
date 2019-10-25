@@ -10,7 +10,7 @@
 | David Sikabwe     | dws2375       | dsikabwe           | 35 hours        | 40 hours     |
 
 
-Git SHA: <br>
+Git SHA: bbcb9b2e5bd3311da9f651f236d774382c5e89e2<br>
 Project Lead: Robert Gutierrez<br>
 GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
 Website: https://congressand.me<br>
