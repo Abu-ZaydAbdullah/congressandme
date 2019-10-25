@@ -61,6 +61,17 @@ class RepresentativeTemplate extends React.Component {
                         id="home-tab"
                       >
                         About
+                        <Timeline
+        dataSource={{
+        sourceType: 'profile',
+        screenName: this.state.rep_data.twitter
+        }}
+        options={{
+        username: 'TwitterDev',
+        height: '400'
+        }}
+        onLoad={() => console.log('Timeline is loaded!')}
+        />
                       </a>
                     </li>
                   </ul>
@@ -130,17 +141,7 @@ class RepresentativeTemplate extends React.Component {
                       <div className="col-md-12">
                         <p>{this.state.rep_data.bioguide_summary}</p>
                       </div>
-                      <Timeline
-        dataSource={{
-        sourceType: 'profile',
-        screenName: 'AOC'
-        }}
-        options={{
-        username: 'TwitterDev',
-        height: '400'
-        }}
-        onLoad={() => console.log('Timeline is loaded!')}
-        />
+                      
                     </div>
                   </div>
                 </div>
