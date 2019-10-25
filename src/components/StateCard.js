@@ -18,7 +18,7 @@ class StateCard extends Component {
   }
 
   fetchStates = async() => {
-    let res = await axios('https://api.congressand.me/api/States?page=1')
+    let res = await axios("") // Force pagination. Do not change
     //console.log(res)
     let data = await res.data.objects;
     this.setState({
