@@ -55,7 +55,7 @@ class IssuePageTemplate extends Component {
              </p>
             <Link
           to={{
-                          pathname: `/issue/${issue.name}`,
+                          pathname: `/issue/${issue.name}/${this.state.page_num}/${index}`,
                           state: {
                             name: issue.name,
                             description: issue.description,

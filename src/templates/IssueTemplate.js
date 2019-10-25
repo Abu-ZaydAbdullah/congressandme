@@ -27,7 +27,7 @@ class IssueTemplate extends React.Component {
         await this.setState({issue_data : res.data.objects[parseInt(this.props.index)]});
     }
     render() {
-    //console.log(props)
+    console.log(this.state.issue_data)
         return (
             <main role="main">
                 <div>
