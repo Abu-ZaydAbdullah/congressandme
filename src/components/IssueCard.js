@@ -31,7 +31,7 @@ class IssueCard extends Component {
     .filter(issue => {
       return issue.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
       })
-    .map(issue => {
+    .map((issue, index) => {
   return (
     <div className="album py-5 bg-light">
     <div className="container">
@@ -40,7 +40,7 @@ class IssueCard extends Component {
     <div className="card mb-4 box-shadow">
                   <Link
                     to={{
-                      pathname: `/issue/${issue.name}`,
+                      pathname: `/issue/${issue.name}/${index}`,
                       state: {
                         name: issue.name,
                         description: issue.description,
@@ -59,7 +59,7 @@ class IssueCard extends Component {
                     <p className="card-text">{issue.description}</p>
                     <Link
                       to={{
-                        pathname: `/issue/${issue.name}`,
+                        pathname: `/issue/${issue.name}/${index}`,
                         state: {
                           name: issue.name,
                           description: issue.description,

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Jumbotron from './components/Jumbotron'
 import StateCard from './components/StateCard'
 import stateImage from './assets/stateImage.jpg'
+import Search from './components/Search'
 
 class States extends Component { 
   constructor(props) {
@@ -27,10 +28,11 @@ return(
     <h1 className="page-title">States</h1>
     </div>
 
+    <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} placeholder = "Name of State"/>
     <div className="album py-5 bg-light">
       <div className="container">
         <div className="row">
-        <StateCard/>
+        <StateCard filterText = {this.state.filterText}/>
         </div>
       </div>
     </div>

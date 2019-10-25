@@ -31,8 +31,7 @@ class StateTemplate extends React.Component {
 
     render() {
         return (
-            <main role="main">
-                <div>
+            <div>
                 <div className="container emp-profile">
                     <div className="row">
                     <div className="col-md-4">
@@ -87,7 +86,7 @@ class StateTemplate extends React.Component {
                     </div>
                 </div>
                 </div>
-                {/* <div className="row mb-5">
+                /* <div className="row mb-5">
                 <h1>The Following Issues are Important in this State:</h1>
                 <div className="panel panel-default">
                     <div className="card-body row">    
@@ -115,8 +114,8 @@ class StateTemplate extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div> */}
-            {/* <h1>This State's Representatives!</h1>
+            </div> */
+            /* <h1>This State's Representatives!</h1>
             <div className="col-md-4" key={representative.index}>
                 <div className="card mb-4 box-shadow">
                     <img
@@ -193,10 +192,9 @@ class StateTemplate extends React.Component {
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group"></div>
                     </div>
-                    </div> */}
-                {/* </div> */}
-                {/* </div> */}
-            </main>
+                    </div> */
+                /* </div> */
+            /* </div> */
           );
         }
     }

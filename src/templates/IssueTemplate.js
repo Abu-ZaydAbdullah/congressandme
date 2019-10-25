@@ -1,7 +1,33 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import axios from "axios"
 
-const IssueTemplate = props => {
-    console.log(props)
+class IssueTemplate extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+          issue_data : {
+            name: "",
+            description: "",
+            about: "",
+            image: "",
+            vids: ""
+            } 
+          }
+        }
+    
+    componentDidMount()
+    {
+        this.fetchIssues()
+    }
+    
+    fetchIssues = async() => {
+        //console.log(this.props.page_num)
+        let res = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
+        await this.setState({issue_data : res.data.objects[parseInt(this.props.index)]});
+    }
+    render() {
+    //console.log(props)
         return (
             <main role="main">
                 <div>
@@ -9,12 +35,12 @@ const IssueTemplate = props => {
                     <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                        <img src={props.location.state.image} alt="" />
+                        <img src={this.state.issue_data.image} alt="" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="profile-head">
-                        <h1>{props.location.state.name}</h1>
+                        <h1>{this.state.issue_data.name}</h1>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item">
                             <a>
@@ -31,10 +57,10 @@ const IssueTemplate = props => {
                         <div className="shifted">
                         <div className="profile-work">
                             <p>Contact</p>
-                            <a href={props.location.state.website} target="_blank">Website</a>
+                            <a href={this.state.issue_data.website} target="_blank">Website</a>
                             <br />
                             <p>Social Media</p>
-                            <a href={props.location.state.facebook} target="_blank">Facebook</a>
+                            <a href={this.state.issue_data.facebook} target="_blank">Facebook</a>
                         </div>
                         </div>
                     </div>
@@ -50,7 +76,7 @@ const IssueTemplate = props => {
                             <div className="col-md-6">
                             </div>
                             <div className="col-md-12">
-                                <p style={{color: 'black'}}>{props.location.state.summary}</p>
+                                <p style={{color: 'black'}}>{this.state.issue_data.summary}</p>
                             </div>
                             </div>
                         </div>
@@ -71,7 +97,7 @@ const IssueTemplate = props => {
                             <p className="card-text">{member.desc}</p>
                             <Link
                             to={{
-                                pathname: `/issue/${props.location.state..issues}`,
+                                pathname: `/issue/${this.state.issue_data..issues}`,
                                 status: {
                                 name: member.name,
                                 desc: member.desc,
@@ -170,6 +196,7 @@ const IssueTemplate = props => {
                 {/* </div> */}
             </main>
           );
+        }
     }
 
 export default IssueTemplate;

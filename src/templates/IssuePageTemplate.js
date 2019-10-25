@@ -9,7 +9,7 @@ class IssuePageTemplate extends Component {
         this.fetchIssues = this.fetchIssues.bind(this)
         this.state = {
         issues: [],
-        page_num: this.props.match.params.page_num
+        page_num: this.props.page_num
         }
       }
 
@@ -20,7 +20,7 @@ class IssuePageTemplate extends Component {
 
       fetchIssues = async() => {
         let res = await axios(`https://api.congressand.me/api/Issues?page=${this.state.page_num}`)
-        this.setState({page_num: this.props.match.params.handle })
+        this.setState({page_num: this.state.page_num })
         let data = await res.data.objects;
         this.setState({
           issues: data
@@ -35,7 +35,7 @@ class IssuePageTemplate extends Component {
         <div className="card mb-4 box-shadow">
         <Link
           to={{
-                          pathname: `/issue/${issue.name}`,
+                          pathname: `/issue/${issue.name}/${this.state.page_num}/${index}`,
                           state: {
                             name: issue.name,
                             description: issue.description,

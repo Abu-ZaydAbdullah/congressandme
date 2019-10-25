@@ -13,13 +13,13 @@ class StateCard extends Component {
   }
 
 
-  componentWillMount(){
+  componentDidMount(){
   this.fetchStates()
   }
 
   fetchStates = async() => {
     let res = await axios('https://api.congressand.me/api/States?page=1')
-    console.log(res)
+    //console.log(res)
     let data = await res.data.objects;
     this.setState({
       states: data
@@ -27,38 +27,43 @@ class StateCard extends Component {
   }
 
   render() {
-  const stateList = this.state.states.map((state, index) => {
-    return (
-  <div className="col-md-4" key={state.index}>
-  <div className="card mb-4 box-shadow">
-    <img className="card-img-top" style={{maxHeight: 160}} src={state.image} alt="{state.name}"></img>
-    <div className="card-img-overlay">
-      <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
-        <Link
-          to={{
-            pathname: `/state/${state.abbreviation}/${index}`,
-            state: {
-              name: state.name,
-              image: state.image,
-              website: state.website,
-              summary: state.summary,
-              issues: state.issues,
-              facebook: state.facebook
-            }
-          }}
-        >
-          <a class="btn btn-dark">{state.name}</a>
-        </Link>
+    const {filterText } = this.props;
+    const stateList = this.state.states
+    .filter(state => {
+      return state.name.toLowerCase().startsWith(filterText.toLowerCase()) == true
+      })
+    .map((state, index) => {
+      return (
+      <div className="col-md-4" key={state.index}>
+      <div className="card mb-4 box-shadow">
+        <img className="card-img-top" style={{maxHeight: 160}} src={state.image} alt="{state.name}"></img>
+        <div className="card-img-overlay">
+          <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
+            <Link
+              to={{
+                pathname: `/state/${state.abbreviation}/${index}`,
+                state: {
+                  name: state.name,
+                  image: state.image,
+                  website: state.website,
+                  summary: state.summary,
+                  issues: state.issues,
+                  facebook: state.facebook
+                }
+              }}
+            >
+              <a class="btn btn-dark">{state.name}</a>
+            </Link>
+          </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="btn-group"></div>
+          </div>
+        </div>
       </div>
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="btn-group"></div>
       </div>
-    </div>
-  </div>
-  </div>
-  )
-  }
-    )
+      );
+  });
+
     return(
       <>
       {stateList}
