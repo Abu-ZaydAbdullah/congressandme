@@ -27,7 +27,7 @@ class Issues extends Component {
     <br></br>
     <h1 className="page-title">Issues</h1>
     <div className="panel">
-    <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} />
+  {/*<Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} />*/}
       <ul className="list-group" id="contact-list">
         <li className="list-group-item">
         <IssueCard filterText = {this.state.filterText}/>

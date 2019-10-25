@@ -28,7 +28,7 @@ return(
     <h1 className="page-title">States</h1>
     </div>
 
-    <Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} placeholder = "Name of State"/>
+    {/*<Search filterText = {this.state.filterText} filterUpdate = {this.filterUpdate.bind(this)} placeholder = "Name of State"/>*/}
     <div className="album py-5 bg-light">
       <div className="container">
         <div className="row">
