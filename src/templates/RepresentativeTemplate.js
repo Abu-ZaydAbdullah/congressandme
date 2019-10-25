@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios"
+import { Timeline } from 'react-twitter-widgets'
 
 class RepresentativeTemplate extends React.Component {
 
@@ -129,6 +130,17 @@ class RepresentativeTemplate extends React.Component {
                       <div className="col-md-12">
                         <p>{this.state.rep_data.bioguide_summary}</p>
                       </div>
+                      <Timeline
+        dataSource={{
+        sourceType: 'profile',
+        screenName: 'AOC'
+        }}
+        options={{
+        username: 'TwitterDev',
+        height: '400'
+        }}
+        onLoad={() => console.log('Timeline is loaded!')}
+        />
                     </div>
                   </div>
                 </div>
@@ -136,6 +148,7 @@ class RepresentativeTemplate extends React.Component {
             </div>
           </div>
         </div>
+       
       );
     }
   }
