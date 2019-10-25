@@ -13,6 +13,7 @@ class IssueCard extends Component {
 
   componentWillMount(){
   this.fetchIssues()
+  this.fetchMentions()
   }
 
   fetchIssues = async() => {
@@ -21,6 +22,15 @@ class IssueCard extends Component {
     console.log(data)
     await this.setState({
       issues: data
+    });
+  }
+
+  fetchMentions = async() => {
+    let res = await axios("https://api.congressand.me/api/Mentions?page=1")
+    let data = await res.data.objects;
+    console.log(data)
+    await this.setState({
+      mentions: data
     });
   }
 
@@ -44,6 +54,7 @@ class IssueCard extends Component {
                       state: {
                         name: issue.name,
                         description: issue.description,
+                        about: issue.about,
                         image: issue.image,
                         states: issue.states,
                         reps: issue.rep,
@@ -63,6 +74,7 @@ class IssueCard extends Component {
                         state: {
                           name: issue.name,
                           description: issue.description,
+                          about: issue.about,
                           image: issue.image,
                           states: issue.states,
                           reps: issue.rep,

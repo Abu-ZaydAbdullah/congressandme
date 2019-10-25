@@ -198,5 +198,4 @@ class IssueTemplate extends React.Component {
           );
         }
     }
-
 export default IssueTemplate;
