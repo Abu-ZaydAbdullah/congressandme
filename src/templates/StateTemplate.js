@@ -41,7 +41,7 @@ class StateTemplate extends React.Component {
                     </div>
                     <div className="col-md-4">
                         <div className="profile-head">
-                        <h1>{this.state.state_data.name}</h1>
+                        <h1>{this.state.state_data.name} ({this.state.state_data.abbreviation})</h1>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item">
                             <a>
@@ -59,9 +59,6 @@ class StateTemplate extends React.Component {
                         <div className="profile-work">
                             <p>Contact</p>
                             <a href={this.state.state_data.website} target="_blank">Website</a>
-                            <br />
-                            <p>Social Media</p>
-                            <a href={this.state.state_data.facebook} target="_blank">Facebook</a>
                         </div>
                         </div>
                     </div>
@@ -85,7 +82,13 @@ class StateTemplate extends React.Component {
                     </div>
                     </div>
                 </div>
+                <div className="row mb-5">
+                    <h1>The Following Issues are Important in this State:</h1>
                 </div>
+                <div className="row mb-5">
+                    <h1>This State's Representatives!</h1>
+                </div>
+            </div>
                 /* <div className="row mb-5">
                 <h1>The Following Issues are Important in this State:</h1>
                 <div className="panel panel-default">

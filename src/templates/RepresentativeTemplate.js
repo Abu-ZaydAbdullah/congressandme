@@ -127,7 +127,7 @@ class RepresentativeTemplate extends React.Component {
                       <div className="col-md-6">
                       </div>
                       <div className="col-md-12">
-                        <p>{this.state.rep_data.summary}</p>
+                        <p>{this.state.rep_data.bioguide_summary}</p>
                       </div>
                     </div>
                   </div>
