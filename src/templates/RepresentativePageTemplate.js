@@ -29,6 +29,7 @@ class RepresentativePageTemplate extends Component {
       }
     
       render() {
+        console.log(this.state.representatives)
         const repList = this.state.representatives
         .map((representative, index) => {
           return (

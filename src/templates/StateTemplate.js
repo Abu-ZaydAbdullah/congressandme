@@ -23,45 +23,9 @@ class StateTemplate extends React.Component {
                 vids: ""
             }, 
 
-            mentions_data : {
-                full_name: "",
-                state: "",
-                agriculture: "",
-                armed_forces: "",
-                crimes: "",
-                economics: "",
-                education: "",
-                emergency_management: "",
-                environmentalism: "",
-                gun_control: "",
-                healthcare: "",
-                housing: "",
-                immigration: "",
-                labor: "",
-                social_issues: "",
-                taxation: "",
-                transportation_and_public_works: "",
-                others: ""
-            },
+            mentions_data : [],
 
-            rep_data : {
-                full_name: "",
-                chamber: "",
-                state : "",
-                district: "",
-                senate_class: "",
-                party: "",
-                url: "",
-                phone: "",
-                contact_form: "",
-                rss_url: "",
-                twitter: "",
-                facebook: "",
-                youtube: "",
-                issues: "",
-                bioguide_id: "",
-                bioguide_summary: ""
-            }
+            rep_data : []
         }
     }
 
@@ -84,6 +48,7 @@ class StateTemplate extends React.Component {
         console.log(this.state.state_data.abbreviation)
         let res4 = await axios(`https://api.congressand.me/api/Representatives?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         console.log(res4)
+
         await this.setState({rep_data : await res4.data.objects})
         await console.log(this.state.rep_data)
     }
