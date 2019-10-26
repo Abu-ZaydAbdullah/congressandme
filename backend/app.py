@@ -50,6 +50,7 @@ class Issues(db.Model):
     image =             db.Column(db.Unicode)
     vids =              db.Column(db.Unicode)
     issue_id =          db.Column(db.Unicode)
+    abbreviation =      db.Column(db.Unicode)
 
 class Mentions(db.Model):
     __tablename__ =                     "Mentions"

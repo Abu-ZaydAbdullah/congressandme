@@ -83,18 +83,14 @@ class RepresentativeTemplate extends React.Component {
               <div className="col-md-4">
                 <div className="shifted">
                   <div className="profile-work">
-                    <p>Contact</p>
-                    <a href={this.state.rep_data.website} target="_blank">Website</a>
+                    <h3>Connect</h3>
+                    <a>Contact: {`${this.state.rep_data.contact_form}`}</a>
                     <br />
-                    <a href={this.state.rep_data.form} target="_blank">Email</a>
+                    <a href={`https://twitter.com/@${this.state.rep_data.twitter}`} target="_blank">Twitter</a>
                     <br />
-                    <a href={this.state.rep_data.phone} target="_blank">Phone</a>
-                    <p>Social Media</p>
-                    <a href={this.state.rep_data.twitter} target="_blank">Twitter</a>
+                    <a href={`https://facebook.com/${this.state.rep_data.facebook}`} target="_blank">Facebook</a>
                     <br />
-                    <a href={this.state.rep_data.facebook} target="_blank">Facebook</a>
-                    <br />
-                    <a href={this.state.rep_data.youtube} target="_blank">YouTube</a>
+                    <a href={`https://www.youtube.com/${this.state.rep_data.youtube}`} target="_blank">YouTube</a>
                     <br />
                     <a href={this.state.rep_data.rss} target="_blank">RSS</a>
                     <br />
