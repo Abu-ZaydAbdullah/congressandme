@@ -25,7 +25,20 @@ class RepresentativeTemplate extends React.Component {
         twitter: "",
         url: "",
         youtube: ""
-        } 
+        },
+
+      state_data : {
+        abbreviation: "",
+        name: "",
+        image: "",
+        website: "",
+        summary: "",
+        state_id: ""
+      },
+
+      mentions_data : [],
+
+      issue_data : []
       }
     }
     componentDidMount()
@@ -36,11 +49,21 @@ class RepresentativeTemplate extends React.Component {
     fetchReps = async() => {
       //console.log(this.props.page_num)
       let res = await axios(`https://api.congressand.me/api/Representatives?page=${this.props.page_num}`)
-      await this.setState({rep_data : res.data.objects[parseInt(this.props.index)]});
-      await console.log(this.state.rep_data)
+        await this.setState({rep_data : await res.data.objects[parseInt(this.props.index)]});
+        await console.log(this.state.rep_data)
+        // let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"abbreviation","op":"eq","val":"${this.state.rep_data.abbreviation}"}]}`)
+        // await this.setState({mentions_data : await res2.data.objects})
+        // await console.log(this.state.mention_data)
+        // let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
+        // await this.setState({issue_data : await res3.data.objects[1]});
+        // await console.log(this.state.issue_data)
+        let res4 = await axios(`https://api.congressand.me/api/States?q={"filters":[{"name":"abbreviation","op":"eq","val":"${this.state.rep_data.state}"}]}`)
+        await this.setState({state_data : await res4.data.objects[0]})
+        await console.log(this.state.state_data)
     }
   
     render() {
+      console.log(this.state.state_data)
       return (
         <div>
           <div className="container emp-profile">
@@ -123,7 +146,22 @@ class RepresentativeTemplate extends React.Component {
                         <label>State</label>
                       </div>
                       <div className="col-md-6">
-                        <p><Link to={`/state/${this.state.rep_data.state}`}>{this.state.rep_data.state}</Link></p>
+                        <p>
+                        <Link to={{
+                          pathname: `/state/${this.state.rep_data.state}/${Math.floor((this.state.state_data.state_id - 1) / 10)}/${(this.state.state_data.state_id-1) % 10}`,
+                          state: {
+                            name: this.state.state_data.name,
+                            image: this.state.state_data.image,
+                            website: this.state.state_data.website,
+                            summary: this.state.state_data.summary,
+                            issues: this.state.state_data.issues,
+                            facebook: this.state.state_data.facebook
+                          }
+                        }}
+                      >
+                      {this.state.rep_data.state}
+                      </Link>
+                      </p>
                       </div>
                     </div>
                     <div className="row">
@@ -146,6 +184,27 @@ class RepresentativeTemplate extends React.Component {
                   </div>
                 </div>
               </div>
+              <div className="row mb-5">
+                    <h1>The Following Issues are Important in this Representative:</h1>
+                    <div className="panel panel-default">
+                        <div className="card-body row">    
+                            <div class = "col-sm-6 col-md-6 image-container">
+                                <img className="card-img-top about-image" style={{width: 262}} src={this.state.issue_data.image} alt="Card image cap"></img>
+                            </div>
+                            <div className="col-sm-6 col-md-6" >
+                                <h5>{this.state.issue_data.name}</h5>
+                                <p className="card-text">{this.state.issue_data.desc}</p>
+                                <Link
+                                to={{
+                                    pathname: `/issue/${this.state.issue_data.name}/1/0`
+                                }}
+                                >
+                                <a class="btn btn-dark">{this.state.issue_data.name}</a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>

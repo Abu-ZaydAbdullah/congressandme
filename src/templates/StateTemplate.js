@@ -42,8 +42,8 @@ class StateTemplate extends React.Component {
         let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         await this.setState({mentions_data : await res2.data.objects})
         await console.log(this.state.mention_data)
-        let res3 = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
-        await this.setState({issue_data : await res3.data.objects[parseInt(this.props.index)]});
+        let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
+        await this.setState({issue_data : await res3.data.objects[1]});
         await console.log(this.state.issue_data)
         console.log(this.state.state_data.abbreviation)
         let res4 = await axios(`https://api.congressand.me/api/Representatives?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
