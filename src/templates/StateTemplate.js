@@ -12,7 +12,8 @@ class StateTemplate extends React.Component {
                 name: "",
                 image: "",
                 website: "",
-                summary: ""
+                summary: "",
+                state_id: ""
             },
 
             issue_data : {
@@ -20,7 +21,8 @@ class StateTemplate extends React.Component {
                 description: "",
                 about: "",
                 image: "",
-                vids: ""
+                vids: "",
+                issue_id: ""
             }, 
 
             mentions_data : [],
@@ -42,13 +44,12 @@ class StateTemplate extends React.Component {
         let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         await this.setState({mentions_data : await res2.data.objects})
         await console.log(this.state.mention_data)
-        let res3 = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
-        await this.setState({issue_data : await res3.data.objects[parseInt(this.props.index)]});
+        let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
+        await this.setState({issue_data : await res3.data.objects[0]});
         await console.log(this.state.issue_data)
         console.log(this.state.state_data.abbreviation)
         let res4 = await axios(`https://api.congressand.me/api/Representatives?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         console.log(res4)
-
         await this.setState({rep_data : await res4.data.objects})
         await console.log(this.state.rep_data)
     }
@@ -106,36 +107,36 @@ class StateTemplate extends React.Component {
                     </div>
                     </div>
                 </div>
+                <h1>The Following Issues are Important in this State:</h1>
                 <div className="row mb-5">
-                    <h1>The Following Issues are Important in this State:</h1>
                     <div className="panel panel-default">
                         <div className="card-body row">    
                             <div class = "col-sm-6 col-md-6 image-container">
                                 <img className="card-img-top about-image" style={{width: 262}} src={this.state.issue_data.image} alt="Card image cap"></img>
                             </div>
-                            <div className="col-sm-6 col-md-6" >
-                                <h5>{this.state.issue_data.name}</h5>
+                            <div className="col-sm-6 col-md-6">
                                 <p className="card-text">{this.state.issue_data.desc}</p>
                                 <Link
                                 to={{
                                     pathname: `/issue/${this.state.issue_data.name}/1/0`
                                 }}
                                 >
-                                <a class="btn btn-dark">{this.state.issue_data.name}</a>
+                                <a class="btn btn-dark" style={{marginTop: "25%", marginLeft: "80%"}}>{this.state.issue_data.name}</a>
+
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
+                <h1>This State's Representatives!</h1>
                 <div className="row mb-5">
-                    <h1>This State's Representatives!</h1>
                     {this.state.rep_data.map((representative, index) => {
                         return(
-                            <div className="col-md-4">
+                            <div className="col-sm-4">
                             <div className="card mb-4 box-shadow">
                             <Link
                                 to={{
-                                  pathname: `/representative/${index}`,
+                                  pathname: `/representative/${representative.full_name}/${Math.floor(representative.rep_id / 54)}/${representative.rep_id % 54}`,
                                   state: {
                                     name: representative.full_name,
                                     chamber:
@@ -201,7 +202,7 @@ class StateTemplate extends React.Component {
                                 <div class="col-mb-4 text-center">
                                   <Link
                                     to={{
-                                      pathname: `/representative/${index}`,
+                                      pathname: `/representative/${representative.full_name}/${Math.floor(representative.rep_id / 54) + 1}/${(representative.rep_id % 54)- 1}`,
                                       state: {
                                         name: representative.full_name,
                                         chamber:
