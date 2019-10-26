@@ -49,7 +49,7 @@ class RepresentativePageTemplate extends Component {
                     state: representative.state,
                     twitter: `https://twitter.com/@${representative.twitter}`,
                     facebook: `https://facebook.com/${representative.facebook}`,
-                    youtube: `https://www.youtube.com/results?search_query=${representative.youtube}`,
+                    youtube: `https://www.youtube.com/${representative.youtube}`,
                     rss: representative.rss_url,
                     website: representative.url,
                     form: representative.contact_form,
