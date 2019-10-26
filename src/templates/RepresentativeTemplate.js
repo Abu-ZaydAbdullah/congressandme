@@ -52,8 +52,7 @@ class RepresentativeTemplate extends React.Component {
               </div>
               <div className="col-md-4">
                 <div className="profile-head">
-                  <h4>{this.state.rep_data.name}</h4>
-                  <h5>{this.state.rep_data.type}</h5>
+                <h1 class="page-title">{`${this.state.rep_data.full_name}`}</h1>
                   <ul className="nav nav-tabs" id="myTab" role="tablist">
                     <li className="nav-item">
                       <a
