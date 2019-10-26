@@ -12,7 +12,8 @@ class StateTemplate extends React.Component {
                 name: "",
                 image: "",
                 website: "",
-                summary: ""
+                summary: "",
+                state_id: ""
             },
 
             issue_data : {
@@ -20,7 +21,8 @@ class StateTemplate extends React.Component {
                 description: "",
                 about: "",
                 image: "",
-                vids: ""
+                vids: "",
+                issue_id: ""
             }, 
 
             mentions_data : [],
@@ -42,13 +44,12 @@ class StateTemplate extends React.Component {
         let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         await this.setState({mentions_data : await res2.data.objects})
         await console.log(this.state.mention_data)
-        let res3 = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
-        await this.setState({issue_data : await res3.data.objects[parseInt(this.props.index)]});
+        let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
+        await this.setState({issue_data : await res3.data.objects[0]});
         await console.log(this.state.issue_data)
         console.log(this.state.state_data.abbreviation)
         let res4 = await axios(`https://api.congressand.me/api/Representatives?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
         console.log(res4)
-
         await this.setState({rep_data : await res4.data.objects})
         await console.log(this.state.rep_data)
     }
@@ -135,7 +136,7 @@ class StateTemplate extends React.Component {
                             <div className="card mb-4 box-shadow">
                             <Link
                                 to={{
-                                  pathname: `/representative/${index}`,
+                                  pathname: `/representative/${representative.full_name}/${Math.floor(representative.rep_id / 54)}/${representative.rep_id % 54}`,
                                   state: {
                                     name: representative.full_name,
                                     chamber:
@@ -201,7 +202,7 @@ class StateTemplate extends React.Component {
                                 <div class="col-mb-4 text-center">
                                   <Link
                                     to={{
-                                      pathname: `/representative/${index}`,
+                                      pathname: `/representative/${representative.full_name}/${Math.floor(representative.rep_id / 54) + 1}/${(representative.rep_id % 54 )- 1}`,
                                       state: {
                                         name: representative.full_name,
                                         chamber:
