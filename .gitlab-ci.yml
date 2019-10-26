@@ -6,6 +6,7 @@ before_script:
 congressandme:
     image: gpdowning/python
     script:
+    - pip3 install requests
     - ls -al
     - cd backend
     - python3 API_Tests.py
