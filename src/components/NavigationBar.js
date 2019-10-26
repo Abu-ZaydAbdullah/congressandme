@@ -40,7 +40,7 @@ export const NavigationBar = () => (
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/issues">
+            <Nav.Link href="/issues/page/1">
               Issues
             </Nav.Link>
           </Nav.Item>
