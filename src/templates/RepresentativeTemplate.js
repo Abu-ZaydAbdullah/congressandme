@@ -1,59 +1,23 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import axios from "axios"
+import { Link, useLocation } from 'react-router-dom';
 import { Timeline } from 'react-twitter-widgets'
 
-class RepresentativeTemplate extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { 
-      rep_data : {
-        bioguide_id: "",
-        bioguide_summary: "",
-        chamber: "",
-        contact_form: "",
-        district: "",
-        facebook: "",
-        full_name: "",
-        issues: "",
-        party: "",
-        phone: "",
-        rss_url: "",
-        senate_class: "",
-        state: "",
-        twitter: "",
-        url: "",
-        youtube: ""
-        } 
-      }
-    }
-    componentDidMount()
-    {
-      this.fetchReps()
-    }
-  
-    fetchReps = async() => {
-      //console.log(this.props.page_num)
-      let res = await axios(`https://api.congressand.me/api/Representatives?page=${this.props.page_num}`)
-      await this.setState({rep_data : res.data.objects[parseInt(this.props.index)]});
-      await console.log(this.state.rep_data)
-    }
-  
-    render() {
+function RepresentativeTemplate() {
+      console.log(useLocation())
+      const rep_data = {...(useLocation().state)}
       return (
         <div>
           <div className="container emp-profile">
             <div className="row">
               <div className="col-md-4">
                 <div className="profile-img">
-                  <img src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${this.state.rep_data.bioguide_id}.jpg`} alt="" />
+                  <img src={rep_data.image} alt="" />
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="profile-head">
-                  <h4>{this.state.rep_data.name}</h4>
-                  <h5>{this.state.rep_data.type}</h5>
+                  <h4>{rep_data.name}</h4>
+                  <h5>{rep_data.type}</h5>
                   <ul className="nav nav-tabs" id="myTab" role="tablist">
                     <li className="nav-item">
                       <a
@@ -64,7 +28,7 @@ class RepresentativeTemplate extends React.Component {
                         <Timeline
                           dataSource={{
                           sourceType: 'profile',
-                          screenName: this.state.rep_data.twitter
+                          screenName: rep_data.twitter
                           }}
                           options={{
                           username: 'TwitterDev',
@@ -84,19 +48,19 @@ class RepresentativeTemplate extends React.Component {
                 <div className="shifted">
                   <div className="profile-work">
                     <p>Contact</p>
-                    <a href={this.state.rep_data.website} target="_blank">Website</a>
+                    <a href={rep_data.website} target="_blank">Website</a>
                     <br />
-                    <a href={this.state.rep_data.form} target="_blank">Email</a>
+                    <a href={rep_data.form} target="_blank">Email</a>
                     <br />
-                    <a href={this.state.rep_data.phone} target="_blank">Phone</a>
+                    <a href={rep_data.phone} target="_blank">Phone</a>
                     <p>Social Media</p>
-                    <a href={this.state.rep_data.twitter} target="_blank">Twitter</a>
+                    <a href={rep_data.twitter} target="_blank">Twitter</a>
                     <br />
-                    <a href={this.state.rep_data.facebook} target="_blank">Facebook</a>
+                    <a href={rep_data.facebook} target="_blank">Facebook</a>
                     <br />
-                    <a href={this.state.rep_data.youtube} target="_blank">YouTube</a>
+                    <a href={rep_data.youtube} target="_blank">YouTube</a>
                     <br />
-                    <a href={this.state.rep_data.rss} target="_blank">RSS</a>
+                    <a href={rep_data.rss} target="_blank">RSS</a>
                     <br />
                     <br />
                   </div>
@@ -115,7 +79,7 @@ class RepresentativeTemplate extends React.Component {
                         <label>Party</label>
                       </div>
                       <div className="col-md-6">
-                        <p>{this.state.rep_data.party}</p>
+                        <p>{rep_data.party}</p>
                       </div>
                     </div>
                     <div className="row">
@@ -123,7 +87,7 @@ class RepresentativeTemplate extends React.Component {
                         <label>State</label>
                       </div>
                       <div className="col-md-6">
-                        <p><Link to={`/state/${this.state.rep_data.state}`}>{this.state.rep_data.state}</Link></p>
+                        <p><Link to={`/state/${rep_data.state}`}>{rep_data.state}</Link></p>
                       </div>
                     </div>
                     <div className="row">
@@ -131,7 +95,7 @@ class RepresentativeTemplate extends React.Component {
                         <label>Chamber</label>
                       </div>
                       <div className="col-md-6">
-                        <p>{this.state.rep_data.chamber}</p>
+                        <p>{rep_data.chamber}</p>
                       </div>
                       <div className="col-md-6">
                         <label>Summary: (Courtesy of <a href="http://bioguide.congress.gov" target="_blank">BioGuide</a>)</label>
@@ -139,7 +103,7 @@ class RepresentativeTemplate extends React.Component {
                       <div className="col-md-6">
                       </div>
                       <div className="col-md-12">
-                        <p>{this.state.rep_data.bioguide_summary}</p>
+                        <p>{rep_data.summary}</p>
                       </div>
                       
                     </div>
@@ -152,6 +116,5 @@ class RepresentativeTemplate extends React.Component {
        
       );
     }
-  }
 
 export default RepresentativeTemplate;

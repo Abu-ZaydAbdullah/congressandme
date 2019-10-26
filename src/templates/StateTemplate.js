@@ -1,71 +1,21 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import axios from "axios"
+import { Link, useLocation } from 'react-router-dom';
 
-class StateTemplate extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            state_data : {
-                abbreviation: "",
-                name: "",
-                image: "",
-                website: "",
-                summary: ""
-            },
-
-            issue_data : {
-                name: "",
-                description: "",
-                about: "",
-                image: "",
-                vids: ""
-            }, 
-
-            mentions_data : [],
-
-            rep_data : []
-        }
-    }
-
-    componentDidMount()
-    {
-      this.fetchData()
-    }
-  
-    fetchData = async() => {
-        //console.log(this.props.page_num)
-        let res = await axios(`https://api.congressand.me/api/States?page=${this.props.page_num}`)
-        await this.setState({state_data : await res.data.objects[parseInt(this.props.index)]});
-        await console.log(this.state.state_data)
-        let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
-        await this.setState({mentions_data : await res2.data.objects})
-        await console.log(this.state.mention_data)
-        let res3 = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
-        await this.setState({issue_data : await res3.data.objects[parseInt(this.props.index)]});
-        await console.log(this.state.issue_data)
-        console.log(this.state.state_data.abbreviation)
-        let res4 = await axios(`https://api.congressand.me/api/Representatives?q={"filters":[{"name":"state","op":"eq","val":"${this.state.state_data.abbreviation}"}]}`)
-        console.log(res4)
-
-        await this.setState({rep_data : await res4.data.objects})
-        await console.log(this.state.rep_data)
-    }
-
-    render() {
-        return (
+function StateTemplate() {
+  console.log(useLocation())
+  const state_data = {...(useLocation().state)}
+  return (
             <div>
                 <div className="container emp-profile">
                     <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                        <img src={this.state.state_data.image} alt="" />
+                        <img src={state_data.image} alt="" />
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="profile-head">
-                        <h1>{this.state.state_data.name} ({this.state.state_data.abbreviation})</h1>
+                        <h1>{state_data.name} ({state_data.abbreviation})</h1>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item">
                             <a>
@@ -82,7 +32,7 @@ class StateTemplate extends React.Component {
                         <div className="shifted">
                         <div className="profile-work">
                             <p>Contact</p>
-                            <a href={this.state.state_data.website} target="_blank">Website</a>
+                            <a href={state_data.website} target="_blank">Website</a>
                         </div>
                         </div>
                     </div>
@@ -98,7 +48,7 @@ class StateTemplate extends React.Component {
                             <div className="col-md-6">
                             </div>
                             <div className="col-md-12">
-                                <p style={{color: 'black'}}>{this.state.state_data.summary}</p>
+                                <p style={{color: 'black'}}>{state_data.summary}</p>
                             </div>
                             </div>
                         </div>
@@ -106,22 +56,22 @@ class StateTemplate extends React.Component {
                     </div>
                     </div>
                 </div>
-                <div className="row mb-5">
+                {/* <div className="row mb-5">
                     <h1>The Following Issues are Important in this State:</h1>
                     <div className="panel panel-default">
                         <div className="card-body row">    
                             <div class = "col-sm-6 col-md-6 image-container">
-                                <img className="card-img-top about-image" style={{width: 262}} src={this.state.issue_data.image} alt="Card image cap"></img>
+                                <img className="card-img-top about-image" style={{width: 262}} src={issue_data.image} alt="Card image cap"></img>
                             </div>
                             <div className="col-sm-6 col-md-6" >
-                                <h5>{this.state.issue_data.name}</h5>
-                                <p className="card-text">{this.state.issue_data.desc}</p>
+                                <h5>{issue_data.name}</h5>
+                                <p className="card-text">{issue_data.desc}</p>
                                 <Link
                                 to={{
-                                    pathname: `/issue/${this.state.issue_data.name}/1/0`
+                                    pathname: `/issue/${issue_data.name}/1/0`
                                 }}
                                 >
-                                <a class="btn btn-dark">{this.state.issue_data.name}</a>
+                                <a class="btn btn-dark">{issue_data.name}</a>
                                 </Link>
                             </div>
                         </div>
@@ -129,7 +79,7 @@ class StateTemplate extends React.Component {
                 </div>
                 <div className="row mb-5">
                     <h1>This State's Representatives!</h1>
-                    {this.state.rep_data.map((representative, index) => {
+                    {rep_data.map((representative, index) => {
                         return(
                             <div className="col-md-4">
                             <div className="card mb-4 box-shadow">
@@ -234,9 +184,9 @@ class StateTemplate extends React.Component {
                         );
                     })}
                 
-                </div>
+                </div> */}
             </div> 
           );
         }
-    }
+
 export default StateTemplate;
