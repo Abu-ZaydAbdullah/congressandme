@@ -11,26 +11,22 @@ import { About } from './About';
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
-import RepresentativePageTemplate from './templates/RepresentativePageTemplate'
 import IssuePageTemplate from './templates/IssuePageTemplate'
-import StatePageTemplate from './templates/StatePageTemplate';
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Router forceRefresh='true'>
+        <Router>
           <NavigationBar />
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/representatives" component={Representatives} />
-              <Route path="/representative/:full_name/:page_num/:index" render={(props)=>{ return <RepresentativeTemplate page_num={props.match.params.page_num} index={props.match.params.index}/> }}/>/>
-              <Route path="/representatives/page/:page_num" render={(props)=>{ return <RepresentativePageTemplate page_num={props.match.params.page_num}/> }}/>
-              <Route exact path="/states" component={States} />
-              <Route path="/state/:name/:page_num/:index" render={(props)=>{ return <StateTemplate page_num={props.match.params.page_num} index={props.match.params.index}/> }}/> />
-              <Route path="/states/page/:page_num" render={(props)=>{ return <StatePageTemplate page_num={props.match.params.page_num}/> }}/>
-              <Route exact path="/issues" component={Issues} />
+              <Route path="/representative/:full_name/:page_num/:index" component={RepresentativeTemplate}/>/>
+              <Route path="/representatives/page/:page_num" component={Representatives}/>
+              <Route path="/state/:name/:page_num/:index" component={StateTemplate}/> />
+              <Route path="/states/page/:page_num" component={States}/>
+              <Route exact path="/issues/" component={Issues} />
               <Route path="/issue/:name/:page_num/:index" render={(props)=>{ return <IssueTemplate page_num={props.match.params.page_num} index={props.match.params.index}/> }}/>/>
               <Route path="/issues/page/:page_num" render={(props)=>{ return <IssuePageTemplate page_num={props.match.params.page_num}/> }}/>
               <Route path="/about" component={About} />
@@ -42,8 +38,6 @@ class App extends Component {
     );
   }
 }
-
-// <Route path="/representatives/page/:page_num/:index" render={(props)=>{ return <RepresentativePageTemplate index={props.match.params.index} page_num={props.match.params.page_num}/> }}/>
 
 
 export default App;

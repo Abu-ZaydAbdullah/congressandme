@@ -17,7 +17,7 @@ class IssueCard extends Component {
   }
 
   fetchIssues = async() => {
-    let res = await axios("") // Force pagination. Do not change
+    let res = await axios(`https://api.congressand.me/api/Issues?page=1`) // Force pagination. Do not change
     let data = await res.data.objects;
     console.log(data)
     await this.setState({

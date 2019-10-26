@@ -30,12 +30,12 @@ export const NavigationBar = () => (
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/representatives">
+            <Nav.Link href="/representatives/page/1">
               Representatives
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/states">
+            <Nav.Link href="/states/page/1">
             States
             </Nav.Link>
           </Nav.Item>
