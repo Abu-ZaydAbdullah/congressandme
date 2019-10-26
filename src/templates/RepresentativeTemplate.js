@@ -54,9 +54,9 @@ class RepresentativeTemplate extends React.Component {
         // let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"abbreviation","op":"eq","val":"${this.state.rep_data.abbreviation}"}]}`)
         // await this.setState({mentions_data : await res2.data.objects})
         // await console.log(this.state.mention_data)
-        // let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
-        // await this.setState({issue_data : await res3.data.objects[1]});
-        // await console.log(this.state.issue_data)
+        let res3 = await axios(`https://api.congressand.me/api/Issues?page=1`)
+        await this.setState({issue_data : await res3.data.objects[0]});
+        await console.log(this.state.issue_data)
         let res4 = await axios(`https://api.congressand.me/api/States?q={"filters":[{"name":"abbreviation","op":"eq","val":"${this.state.rep_data.state}"}]}`)
         await this.setState({state_data : await res4.data.objects[0]})
         await console.log(this.state.state_data)
@@ -143,7 +143,7 @@ class RepresentativeTemplate extends React.Component {
                       <div className="col-md-6">
                         <p>
                         <Link to={{
-                          pathname: `/state/${this.state.rep_data.state}/${Math.floor((this.state.state_data.state_id - 1) / 10)}/${(this.state.state_data.state_id-1) % 10}`,
+                          pathname: `/state/${this.state.rep_data.state}/${Math.floor((this.state.state_data.state_id ) / 10 + 1)}/${(this.state.state_data.state_id) % 10 - 1}`,
                           state: {
                             name: this.state.state_data.name,
                             image: this.state.state_data.image,
