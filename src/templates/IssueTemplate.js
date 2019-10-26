@@ -12,9 +12,40 @@ class IssueTemplate extends React.Component {
             about: "",
             image: "",
             vids: ""
-            } 
-          }
+            },
+
+            state_data : {
+                abbreviation: "",
+                name: "",
+                image: "",
+                website: "",
+                summary: ""
+            },
+
+            mention_data : {
+                full_name: "",                         
+                state: "",                             
+                agriculture: "",                       
+                armed_forces: "",                      
+                crimes: "",                            
+                economics: "",                         
+                education: "",                         
+                emergency_management: "",              
+                environmentalism: "",                  
+                gun_control: "",                       
+                healthcare: "",                        
+                housing: "",                           
+                immigration: "",                       
+                labor: "",                             
+                social_issues: "",                     
+                taxation: "",                          
+                transportation_and_public_works: "",   
+                other: ""                            
+            },
+
+            rep_data : []
         }
+    }
     
     componentDidMount()
     {
@@ -24,10 +55,20 @@ class IssueTemplate extends React.Component {
     fetchIssues = async() => {
         //console.log(this.props.page_num)
         let res = await axios(`https://api.congressand.me/api/Issues?page=${this.props.page_num}`)
-        await this.setState({issue_data : res.data.objects[parseInt(this.props.index)]});
+        await this.setState({issue_data : await res.data.objects[parseInt(this.props.index)]});
+        await console.log(this.state.issue_data)
+
+        let res2 = await axios(`https://api.congressand.me/api/Mentions?q={"filters":[{"name":"${this.state.issue_data.abbreviation}","op":"eq","val": "1"}]}`)
+        await this.setState({mentions_data : await res2.data.objects})
+        await console.log(this.state.mention_data)
+
+        let res3 = await axios(`https://api.congressand.me/api/State?q={"filters":[{"name":"abbreviation","op":"eq","val":"${this.state.mention_data.state}"}]}`)
+        await this.setState({state_data : await res3.data.objects})
+        await console.log(this.state.state_data)
     }
+
     render() {
-    console.log(this.state.issue_data)
+    console.log(this.state.mentions_data)
     return (
         <main role="main">
             <div>
