@@ -26,7 +26,7 @@ function Representatives() {
               <div className="card mb-4 box-shadow">
               <Link
                 to={{
-                  pathname: `/representative/${index}`,
+                  pathname: `/representative/${representative.full_name}`,
                   state: {
                     name: representative.full_name,
                     chamber:
@@ -91,7 +91,7 @@ function Representatives() {
                   <div class="col-mb-4 text-center">
                     <Link
                       to={{
-                        pathname: `/representative/${representative.full_name}/${page_num}/${index}`,
+                        pathname: `/representative/${representative.full_name}`,
                         state: {
                           name: representative.full_name,
                           chamber:

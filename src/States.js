@@ -23,12 +23,26 @@ function States() {
           return (
         <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
+        <Link
+                to={{
+                  pathname: `/state/${state.abbreviation}`,
+                  state: {
+                    name: state.name,
+                    image: state.image,
+                    website: state.website,
+                    summary: state.summary,
+                    issues: state.issues,
+                    facebook: state.facebook
+                  }
+                }}
+              >
           <img className="card-img-top" style={{maxHeight: 160}} src={state.image} alt="{state.name}"></img>
+          </Link>
           <div className="card-img-overlay">
             <div class="col-mb-4 text-center" style={{marginTop: "12%"}}>
               <Link
                 to={{
-                  pathname: `/state/${state.abbreviation}/${page_num}/${index}`,
+                  pathname: `/state/${state.abbreviation}`,
                   state: {
                     name: state.name,
                     image: state.image,

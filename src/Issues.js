@@ -27,7 +27,7 @@ function Issues(){
         <div className="card mb-4 box-shadow">
         <Link
           to={{
-                          pathname: `/issue/${issue.name}/${page_num}/${index}`,
+                          pathname: `/issue/${issue.name}`,
                           state: {
                             name: issue.name,
                             description: issue.description,
@@ -47,7 +47,7 @@ function Issues(){
              </p>
             <Link
           to={{
-                          pathname: `/issue/${issue.name}/${page_num}/${index}`,
+                          pathname: `/issue/${issue.name}`,
                           state: {
                             name: issue.name,
                             description: issue.description,

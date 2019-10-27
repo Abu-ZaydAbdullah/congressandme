@@ -21,11 +21,11 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/representative/:full_name/:page_num/:index" component={RepresentativeTemplate}/>/>
+              <Route path="/representative/:full_name" component={RepresentativeTemplate}/>/>
               <Route path="/representatives/page/:page_num" component={Representatives}/>
-              <Route path="/state/:name/:page_num/:index" component={StateTemplate}/> />
+              <Route path="/state/:name" component={StateTemplate}/> />
               <Route path="/states/page/:page_num" component={States}/>
-              <Route path="/issue/:name/:page_num/:index" component={IssueTemplate}/> }}/>/>
+              <Route path="/issue/:name" component={IssueTemplate}/> }}/>/>
               <Route path="/issues/page/:page_num" component={Issues}/>
               <Route path="/about" component={About} />
               <Route component={NoMatch} />
