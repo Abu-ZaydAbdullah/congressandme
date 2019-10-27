@@ -132,7 +132,7 @@ function Representatives() {
           <>
       <main role="main">
       <div>
-    <Jumbotron title_text={"Congress and Me"} subtitle_text={"Learn more about what your representatives are up to!"} image={repImage}/>
+    <Jumbotron title_text={"Representatives"} subtitle_text={"Learn who represents your State!"} image={repImage}/>
     <br></br>
     <h1 className="page-title">Representatives</h1>
     </div>

@@ -1,10 +1,38 @@
-import React from "react";
-import { useLocation } from 'react-router-dom';
+import React, {useState, useEffect } from "react";
+import { useLocation, useParams } from 'react-router-dom';
+import axios from "axios"
 
 
 function IssueTemplate() {
-    console.log(useLocation())
-    const issue_data = {...(useLocation().state)}
+    const issue_schema = {abbreviation: "", about: "", description: "", image: "", issue_id: "", name: "", vids: ""}
+    const temp_data = useLocation()
+    const { name } = useParams()
+    const [issue_data, setIssueData] = useState({...issue_schema})
+    
+    const getIssueData = async() => {
+      if (temp_data.state == undefined) {
+      const req = await axios(`https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`)
+      const data = await req.data.objects
+      await setIssueData(data[0])
+      } else {
+      setIssueData(temp_data.state)
+      }
+    }
+
+    const getRepData = async() => {
+        if (temp_data.state == undefined) {
+        const req = await axios(`https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`)
+        const data = await req.data.objects
+        await setIssueData(data[0])
+        } else {
+        setIssueData(temp_data.state)
+        }
+      }
+  
+      useEffect(() => {
+      getIssueData()
+      }, [name]);
+
     return (
         <main role="main">
             <div>

@@ -69,7 +69,7 @@ function States() {
             <>
           <main role="main">
     <div>
-    <Jumbotron title_text={"States"} subtitle_text={"Learn who represents your State!"} image={stateImage}/>
+    <Jumbotron title_text={"States"} subtitle_text={"Learn more about your State!"} image={stateImage}/>
     <br></br>
     <h1 className="page-title">States</h1>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, mount, configure } from 'enzyme'
+import { MemoryRouter } from 'react-router-dom'
+import { mount, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 import App from './App';
 import { Home } from './Home'
@@ -17,7 +18,7 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-const HomeWrapper = shallow(<Home />)
+const HomeWrapper = mount(<Home />)
 
 describe('Home Component', () => {
   it('Renders Title', () => {
@@ -29,32 +30,41 @@ describe('Home Component', () => {
 })
 
 
-const RepresentativesWrapper = shallow(<Representatives />)
+const RepresentativesWrapper = mount(
+    <MemoryRouter initial_entries='/representatives/page/1'>
+    <Representatives />
+    </ MemoryRouter> )
 
 describe('Representatives Component', () => {
   it('Renders Title', () => {
-    expect(RepresentativesWrapper.find('h1').text()).toEqual('Representatives')
+    expect(RepresentativesWrapper.find('h1').at(0).text()).toEqual('Representatives')
   })
 })
 
 
-const StatesWrapper = shallow(<States />)
+const StatesWrapper = mount(
+    <MemoryRouter initial_entries='/representatives/page/1'>
+    <States />
+    </ MemoryRouter> )
 
 describe('States Component', () => {
   it('Renders Title', () => {
-    expect(StatesWrapper.find('h1').text()).toEqual('States')
+    expect(StatesWrapper.find('h1').at(0).text()).toEqual('States')
   })
 })
 
-const IssuesWrapper = shallow(<Issues />)
+const IssuesWrapper = mount(
+    <MemoryRouter initial_entries='/representatives/page/1'>
+    <Issues />
+    </ MemoryRouter> )
 
 describe('Issues Component', () => {
   it('Renders Title', () => {
-    expect(IssuesWrapper.find('h1').text()).toEqual('Issues')
+    expect(IssuesWrapper.find('h1').at(0).text()).toEqual('Issues')
   })
 })
 
-const AboutWrapper = shallow(<About />)
+const AboutWrapper = mount(<About />)
 
 describe('About Component', () => {
   it('Renders Title', () => {

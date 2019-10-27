@@ -211,7 +211,17 @@ function StateTemplate() {
                 */}
                 <div className="row mb-5">
                     <h1>This State's Representatives!</h1>
+              <div className="container">
+              <div className="row">
+            <div className="album py-5 bg-light">
+           <div className="container">
+              <div className="row">
                     {repList}
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
                 </div>
             </div> 
           );
