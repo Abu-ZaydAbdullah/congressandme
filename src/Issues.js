@@ -30,6 +30,7 @@ function Issues(){
                           pathname: `/issue/${issue.name}`,
                           state: {
                             name: issue.name,
+                            abbreviation: issue.abbreviation,
                             description: issue.description,
                             image: issue.image,
                             states: issue.states,

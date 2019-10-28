@@ -50,6 +50,7 @@ class Issues(db.Model):
     image =             db.Column(db.Unicode)
     vids =              db.Column(db.Unicode)
     issue_id =          db.Column(db.Unicode)
+    abbreviation =      db.Column(db.Unicode)
 
 class Mentions(db.Model):
     __tablename__ =                     "Mentions"
@@ -78,10 +79,11 @@ class Mentions(db.Model):
 manager = APIManager(app, flask_sqlalchemy_db=db)
 
 # Create APIs for our above models. Will be used to send and receive messages in JSON format
-manager.create_api(Representatives, methods=['GET'], results_per_page=54)
+manager.create_api(Representatives, methods=['GET'], results_per_page=54, max_results_per_page=540)
 manager.create_api(States, methods=['GET'], results_per_page=10)
 manager.create_api(Issues, methods=['GET'], results_per_page=5)
-manager.create_api(Mentions, methods = ['GET'])
+manager.create_api(Mentions, methods = ['GET'], results_per_page=0)
 
 if __name__=='__main__':
     app.run(host='0.0.0.0')
+
