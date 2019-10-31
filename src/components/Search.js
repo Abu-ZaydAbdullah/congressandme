@@ -16,7 +16,7 @@ class Search extends Component {
           placeholder={this.props.placeholder}
           onChange={this.filterUpdate.bind(this)}
           className="form-control"
-          style={{marginBottom: '1%'}}
+          style={{ marginBottom: "1%" }}
         />
       </form>
     );

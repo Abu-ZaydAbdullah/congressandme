@@ -1,13 +1,15 @@
-import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import styled from "styled-components";
 
 const Styles = styled.div`
   .navbar {
-    background-color: #007BFF;
+    background-color: #007bff;
   }
 
-  a, .navbar-brand, .navbar-nav .nav-link {
+  a,
+  .navbar-brand,
+  .navbar-nav .nav-link {
     color: #fdfdfd;
     font-weight: 500;
 
@@ -26,31 +28,23 @@ export const NavigationBar = () => (
         <Nav className="ml-auto">
           <Nav.Item>
             <Nav.Link href="/" className=".HomeLink">
-            Home
+              Home
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/representatives/page/1">
-              Representatives
-            </Nav.Link>
+            <Nav.Link href="/representatives/page/1">Representatives</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/states/page/1">
-            States
-            </Nav.Link>
+            <Nav.Link href="/states/page/1">States</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/issues/page/1">
-              Issues
-            </Nav.Link>
+            <Nav.Link href="/issues/page/1">Issues</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/about">
-              About
-            </Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  </Styles >
-)
+  </Styles>
+);
