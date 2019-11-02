@@ -1,10 +1,34 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Timeline } from "react-twitter-widgets";
+import axios from "axios";
 
 function RepresentativeTemplate() {
-  console.log(useLocation());
+  
   const rep_data = { ...useLocation().state };
+  const [issueData, setIssueData] = useState([]);
+
+  const getIssueData = async () => {
+      const req = await axios(
+        `https://api.congressand.me/api/States?q={"filters":[{"name":"full_name","op":"==","val":"${rep_data.name}"}]}`
+      );
+      const data = await req.data.objects;
+      const allIssues = await []
+      var issue;
+      for (issue in await data) {
+      console.log(issue)
+      if (data[issue]) {
+      allIssues.push(issue)
+      }
+      }
+      await setIssueData(allIssues);
+  };
+
+  useEffect(() => {
+    getIssueData();
+    console.log(issueData)
+  }, [rep_data.name]);
+
   return (
     <div>
       <div className="container emp-profile">
