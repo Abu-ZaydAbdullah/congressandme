@@ -1,8 +1,24 @@
 import React from "react";
 import Jumbotron from "./components/Jumbotron";
+import algoliasearch from 'algoliasearch/lite';
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+} from 'react-instantsearch-dom';
 import congressImage from "./assets/congress_image.jpg";
+import './App.css'
 
-export const Home = () => (
+const searchClient = algoliasearch(
+  'C2FVR597N2',
+  'ca1f93ebd6b28b4474bd084d5eb0cea2'
+);
+
+function Home() { 
+
+  return (
   <main role="main">
     <div>
       <Jumbotron
@@ -31,5 +47,37 @@ export const Home = () => (
       </div>
       <div className="col-md-3"></div>
     </div>
-  </main>
-);
+    <InstantSearch
+            searchClient={searchClient}
+            indexName="congressandme-search"
+          >
+            <div className="search-panel">
+              <div className="search-panel__results">
+                <SearchBox
+                  className="searchbox"
+                  translations={{
+                    placeholder: '',
+                  }}
+                />
+                <Hits hitComponent={Hit} />
+
+                <div className="pagination">
+                  <Pagination />
+                </div>
+              </div>
+            </div>
+          </InstantSearch>
+  </main>)
+}
+
+function Hit(props) {
+  return (
+    <article>
+      <h1>
+        <Highlight attribute="name" hit={props.hit} />
+      </h1>
+    </article>
+  );
+}
+
+export default Home;
