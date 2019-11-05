@@ -73,6 +73,42 @@ class Mentions(db.Model):
     transportation_and_public_works =   db.Column(db.Unicode)
     other =                             db.Column(db.Unicode)
 
+class megaTable(db.Model):
+    __tablename__ =                     "megaTable"
+    full_name =                         db.Column(db.Unicode, primary_key = True)
+    state =                             db.Column(db.Unicode)
+    chamber =                           db.Column(db.Unicode)
+    district =                          db.Column(db.Integer)
+    senate_class =                      db.Column(db.Integer)
+    party =                             db.Column(db.Unicode)
+    url =                               db.Column(db.Unicode)
+    phone =                             db.Column(db.Unicode)
+    contact_form =                      db.Column(db.Unicode)
+    rss_url =                           db.Column(db.Unicode)
+    twitter =                           db.Column(db.Unicode)
+    facebook =                          db.Column(db.Unicode)
+    youtube =                           db.Column(db.Unicode)
+    issues =                            db.Column(db.Unicode)
+    bioguide_id =                       db.Column(db.Unicode)
+    bioguide_summary =                  db.Column(db.Unicode)
+    rep_id =                            db.Column(db.Unicode)
+    agriculture =                       db.Column(db.Unicode)
+    armed_forces =                      db.Column(db.Unicode)
+    crimes =                            db.Column(db.Unicode)
+    economics =                         db.Column(db.Unicode)
+    education =                         db.Column(db.Unicode)
+    emergency_management =              db.Column(db.Unicode)
+    environmentalism =                  db.Column(db.Unicode)
+    gun_control =                       db.Column(db.Unicode)
+    healthcare =                        db.Column(db.Unicode)
+    housing =                           db.Column(db.Unicode)
+    immigration =                       db.Column(db.Unicode)
+    labor =                             db.Column(db.Unicode)
+    social_issues =                     db.Column(db.Unicode)
+    taxation =                          db.Column(db.Unicode)
+    transportation_and_public_works =   db.Column(db.Unicode)
+    other =                             db.Column(db.Unicode)
+
 
 # Allows for the use of Flask-Restless to quickly build APIs
 # Requires app we just built with configurations and a flask alchemy obj
