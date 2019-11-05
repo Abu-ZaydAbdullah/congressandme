@@ -35,8 +35,8 @@ class Representatives(db.Model):
 
 class States(db.Model):
     __tablename__ =     "States"
-    abbreviation =      db.Column(db.Unicode, primary_key = True)
-    name =              db.Column(db.Unicode)
+    abbreviation =      db.Column(db.Unicode)
+    name =              db.Column(db.Unicode, primary_key = True)
     image =             db.Column(db.Unicode)
     website =           db.Column(db.Unicode)
     summary =           db.Column(db.Unicode)
