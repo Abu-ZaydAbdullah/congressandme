@@ -20,7 +20,7 @@ function Issues() {
     fetchIssues();
   }, [page_num]);
 
-  const issueList = issues.map((issue, index) => {
+  const issueList = issues.map(issue => {
     return (
       <div className="col-md-4" key={issue.index}>
         <div className="card mb-4 box-shadow">

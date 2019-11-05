@@ -23,21 +23,26 @@ function IssueTemplate() {
   const getIssueandRepData = async () => {
     if (temp_data.state == undefined) {
       const req = await axios(
-        `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`
+        `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name.toLowerCase()}"}]}`
       );
       const data = await req.data.objects;
+      await console.log(data);
       await setIssueData(data[0]);
       await setIssueName(data[0].abbreviation);
     } else {
-      setIssueData(temp_data.state);
-      setIssueName(temp_data.state.abbreviation);
+        setIssueData(temp_data.state);
+        setIssueName(temp_data.state.abbreviation);
     }
+    console.log(name);
     const req2 = await axios(
-      `http://localhost:5000/api/Mentions?q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
+      `https://api.congressand.me/api/megaTable?q={"filters":[{"name":"${name.toLowerCase()}","op":"==","val":"1"}]}`
     );
+
     const data2 = await req2.data.objects;
+    await console.log(data2);
     await setRepresentativeData(data2);
-    await console.log("Done");
+
+    // await console.log(rep_data);
   };
 
   useEffect(() => {
@@ -45,6 +50,7 @@ function IssueTemplate() {
   }, [name]);
 
   const repList = rep_data.map((representative, index) => {
+
     return (
       <div className="col-md-4">
         <div className="card mb-4 box-shadow">
@@ -171,9 +177,6 @@ function IssueTemplate() {
               <hr></hr>
               <p>{issue_data.about}</p>
             </div>
-          </div>
-          <div className="row justify-content-left pt-5 ">
-            <h1>This issue is important in the following states!</h1>
           </div>
           <div className="panel panel-default pt-5"></div>
           <div className="row justify-content-left pt-5 ">
