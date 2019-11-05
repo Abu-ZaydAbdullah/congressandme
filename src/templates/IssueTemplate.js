@@ -91,7 +91,12 @@ function IssueTemplate() {
               <strong>Party:</strong> {representative.party}
             </p>
             <p className="card-text">
-              <strong>State:</strong> {representative.state}
+              <strong>State:</strong>
+                <p>
+                  <Link to={`/state/${representative.state}`}>
+                    {representative.state}
+                  </Link>
+                </p>
             </p>
             <p className="card-text">
               <strong>Chamber:</strong>{" "}
