@@ -119,7 +119,7 @@ manager.create_api(Representatives, methods=['GET'], results_per_page=54, max_re
 manager.create_api(States, methods=['GET'], results_per_page=10, max_results_per_page=51)
 manager.create_api(Issues, methods=['GET'], results_per_page=5, max_results_per_page=30)
 manager.create_api(Mentions, methods = ['GET'], results_per_page=0)
-manager.create_api(megaTable, methods = ['GET'], results_per_page=54)
+manager.create_api(megaTable, methods = ['GET'])
 
 if __name__=='__main__':
     app.run(host='0.0.0.0')
