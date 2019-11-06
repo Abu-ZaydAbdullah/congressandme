@@ -5,6 +5,8 @@ import Jumbotron from "./components/Jumbotron";
 import stateImage from "./assets/stateImage.jpg";
 import StateCard from "./components/StateCard";
 import { Dropdown } from "react-bootstrap"
+import Search from "./components/Search";
+const Fuse = require("fuse.js")
 
 function States() {
   const [states, setStates] = useState([]);
@@ -12,6 +14,32 @@ function States() {
   const [dataSize, setDataSize] = useState(50);
   const [sort_dir, setSortDir] = useState("A-Z");
   const [data, setData] = useState([]);
+  const [filterText, setFilterText] = useState("");
+  var options = {
+    shouldSort: true,
+    tokenize: true,
+    threshold: 0,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 140,
+    minMatchCharLength: 1,
+    keys: [
+      { name: "abbreviation", weight: 0.5 },
+      { name: "name", weight: 0.4 },
+      { name: "summary", weight: 0.1 }
+    ]
+  };
+  const fuse = new Fuse(data, options);
+
+  function filterUpdate(value) {
+    setFilterText(value);
+  }
+
+  useEffect(() => {
+    var temp_data = fuse.search(filterText)
+    setStates(temp_data);
+    setDataSize(temp_data.length)
+  }, [filterText]);
 
   const fetchStates = async () => {
     if(data.length == 0) {
@@ -105,7 +133,12 @@ function States() {
           </div>
           </div>
         </div>
-        <StateCard states={states} filterText={""}/>
+        <Search
+        placeholder={"Search"}
+        filterText={filterText}
+        filterUpdate={filterUpdate.bind(this)}
+      />
+        <StateCard states={states} filterText={filterText}/>
 
         <div className="container">
           <div className="row">
