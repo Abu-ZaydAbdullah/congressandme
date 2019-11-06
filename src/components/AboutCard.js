@@ -71,7 +71,8 @@ class AboutCard extends Component {
     let getIssues = () => {
       var authOptions = {
         method: "GET",
-        url: "https://gitlab.com/api/v4/projects/14525540/issues?scope=all&state=all&per_page=100",
+        url:
+          "https://gitlab.com/api/v4/projects/14525540/issues?scope=all&state=all&per_page=100",
         headers: { "Private-Token": "mS_bG_uQE4UkARaq3_oQ" },
         json: true
       };

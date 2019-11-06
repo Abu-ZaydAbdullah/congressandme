@@ -30,8 +30,8 @@ function IssueTemplate() {
       await setIssueData(data[0]);
       await setIssueName(data[0].abbreviation);
     } else {
-        setIssueData(temp_data.state);
-        setIssueName(temp_data.state.abbreviation);
+      setIssueData(temp_data.state);
+      setIssueName(temp_data.state.abbreviation);
     }
     console.log(name);
     const req2 = await axios(
@@ -50,7 +50,6 @@ function IssueTemplate() {
   }, [name]);
 
   const repList = rep_data.map((representative, index) => {
-
     return (
       <div className="col-md-4">
         <div className="card mb-4 box-shadow">
@@ -92,11 +91,11 @@ function IssueTemplate() {
             </p>
             <p className="card-text">
               <strong>State:</strong>
-                <p>
-                  <Link to={`/state/${representative.state}`}>
-                    {representative.state}
-                  </Link>
-                </p>
+              <p>
+                <Link to={`/state/${representative.state}`}>
+                  {representative.state}
+                </Link>
+              </p>
             </p>
             <p className="card-text">
               <strong>Chamber:</strong>{" "}
