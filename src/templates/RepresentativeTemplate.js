@@ -42,7 +42,7 @@ function RepresentativeTemplate() {
 
   const issueList = issue_data
     .filter(issue => issuesMentioned.includes(issue.abbreviation))
-    .map((issue, index) => {
+    .map(issue => {
       return (
         <div className="col-md-4" key={issue.index}>
           <div className="card mb-4 box-shadow">

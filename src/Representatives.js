@@ -20,7 +20,7 @@ function Representatives() {
     fetchRepresentatives();
   }, [page_num]);
 
-  const repList = representatives.map((representative, index) => {
+  const repList = representatives.map(representative => {
     return (
       <div className="col-md-4" key={representative.index}>
         <div className="card mb-4 box-shadow">

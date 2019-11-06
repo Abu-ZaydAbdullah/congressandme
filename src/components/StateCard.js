@@ -7,10 +7,10 @@ var query;
 for (query in queries) {
 let idx = str.toLowerCase().indexOf(queries[query].toLowerCase())
 if (idx !== -1) {
-return idx
+  return idx
 }
 }
-return 0;
+  return 0;
 }
 
 function StateCard({ states, filterText }) {

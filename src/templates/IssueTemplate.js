@@ -20,11 +20,11 @@ function IssueTemplate() {
 
   const temp_data = useLocation();
   const { name } = useParams();
-  const [issue_data, setIssueData] = useState({ ...issue_schema });
+  const [issue_data, setIssueData] = useState([{ ...issue_schema }]);
   const [rep_data, setRepresentativeData] = useState([]);
   const [issue_name, setIssueName] = useState("");
 
-  console.log(name);
+  //console.log(name);
 
   const getIssueandRepData = async () => {
     if (temp_data.state == undefined) {
@@ -37,7 +37,9 @@ function IssueTemplate() {
       await setIssueName(data[0].abbreviation);
     } else {
       setIssueData(temp_data.state);
+      console.log(issue_data);
       setIssueName(temp_data.state.abbreviation);
+      console.log(issue_name);
     }
     const req2 = await axios(
       `https://api.congressand.me/api/megaTable?q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
@@ -46,13 +48,12 @@ function IssueTemplate() {
     const data2 = await req2.data.objects;
     await console.log(data2);
     await setRepresentativeData(data2);
-
-    // await console.log(rep_data);
+    await console.log(rep_data);
   };
 
   useEffect(() => {
     getIssueandRepData();
-  }, [name]);
+  }, [issue_data]);
 
   const repList = rep_data.map((representative, index) => {
     return (

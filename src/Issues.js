@@ -21,6 +21,7 @@ function Issues() {
   }, [page_num]);
 
   const issueList = issues.map(issue => {
+    console.log(issue.abbreviation);
     return (
       <div className="col-md-4" key={issue.index}>
         <div className="card mb-4 box-shadow">
@@ -40,7 +41,7 @@ function Issues() {
           >
             <img
               className="card-img-top about-image"
-              style={{ width: 262 }}
+              style={{ maxHeight: 450 }}
               src={issue.image}
               alt="Card image cap"
             ></img>
@@ -53,6 +54,7 @@ function Issues() {
                 pathname: `/issue/${issue.name}`,
                 state: {
                   name: issue.name,
+                  abbreviation: issue.abbreviation,
                   description: issue.description,
                   image: issue.image,
                   states: issue.states,
