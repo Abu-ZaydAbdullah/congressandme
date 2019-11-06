@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
 
@@ -16,7 +16,7 @@ return 0;
 function StateCard({ states, filterText }) {
   const queries = filterText.split(" ");
   const stateList = states.map((state, index) => {
-    var summary_idx = trimSummary(state.summary, queries)
+  var summary_idx = trimSummary(state.summary, queries)
     return (
       <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
@@ -76,6 +76,20 @@ function StateCard({ states, filterText }) {
                     color: "white"
                   }}
                 />
+              </p>
+              <p className="card-text">
+                <strong>Website: </strong>
+                <a href={state.website}>
+                <Highlighter
+                  searchWords={queries}
+                  autoEscape={false}
+                  textToHighlight={state.website}
+                  highlightStyle={{
+                    backgroundColor: "#27ae60",
+                    color: "white"
+                  }}
+                />
+                </a>
               </p>
               <Link
             to={{

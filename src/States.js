@@ -14,6 +14,7 @@ function States() {
   const [data, setData] = useState([]);
 
   const fetchStates = async () => {
+    if(data.length == 0) {
     let res = await axios(
       `https://api.congressand.me/api/States?results_per_page=50`
     );
@@ -22,6 +23,12 @@ function States() {
     await setData(data);
     await setStates(data.slice(start_index, start_index + 10));
     await setDataSize(data.length);
+    } else {
+      const start_index = (page_num - 1)*10
+      setData(data);
+      setStates(data.slice(start_index, start_index + 10));
+      setDataSize(data.length);
+    }
   };
 
   useEffect(() => {
@@ -32,7 +39,18 @@ function States() {
     if(sort_dir == "A-Z")
     {
       const start_index = (page_num - 1)*10
-      setStates(data.sort().slice(start_index, start_index + 10))
+      setStates(data.sort(function(a, b){
+        if(a.name < b.name) { return -1; }
+        if(a.name > b.name) { return 1; }
+        return 0;
+    }).slice(start_index, start_index + 10))
+    } else if (sort_dir == "Z-A") {
+      const start_index = (page_num - 1)*10
+      setStates(data.sort(function(a, b){
+        if(a.name > b.name) { return -1; }
+        if(a.name < b.name) { return 1; }
+        return 0;
+    }).slice(start_index, start_index + 10))
     }
   };
 
@@ -57,7 +75,6 @@ function States() {
       </li>
       )
     }
-    console.log(p_list);
     return p_list;
   }
 
@@ -81,9 +98,8 @@ function States() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">A-Z</Dropdown.Item>  
-              {/* onClick={setSortDir("Z-A")} */}
-              <Dropdown.Item href="#/action-2">Z-A</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setSortDir("A-Z");}}>A-Z</Dropdown.Item>  
+              <Dropdown.Item onClick={() => {setSortDir("Z-A");}}>Z-A</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           </div>

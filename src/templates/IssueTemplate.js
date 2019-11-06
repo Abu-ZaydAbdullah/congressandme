@@ -12,6 +12,12 @@ function IssueTemplate() {
     name: "",
     vids: ""
   };
+
+  // TODO 
+  // const issue_map = (name) => {
+  // switch (name) {}
+  // }
+
   const temp_data = useLocation();
   const { name } = useParams();
   const [issue_data, setIssueData] = useState({ ...issue_schema });
@@ -23,7 +29,7 @@ function IssueTemplate() {
   const getIssueandRepData = async () => {
     if (temp_data.state == undefined) {
       const req = await axios(
-        `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name.toLowerCase()}"}]}`
+        `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`
       );
       const data = await req.data.objects;
       await console.log(data);
@@ -33,9 +39,8 @@ function IssueTemplate() {
       setIssueData(temp_data.state);
       setIssueName(temp_data.state.abbreviation);
     }
-    console.log(name);
     const req2 = await axios(
-      `https://api.congressand.me/api/megaTable?q={"filters":[{"name":"${name.toLowerCase()}","op":"==","val":"1"}]}`
+      `https://api.congressand.me/api/megaTable?q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
     );
 
     const data2 = await req2.data.objects;
