@@ -4,22 +4,62 @@ import { Link, useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import stateImage from "./assets/stateImage.jpg";
 import StateCard from "./components/StateCard";
+import { Dropdown } from "react-bootstrap"
 
 function States() {
   const [states, setStates] = useState([]);
   const { page_num } = useParams();
+  const [dataSize, setDataSize] = useState(50);
+  const [sort_dir, setSortDir] = useState("A-Z");
+  const [data, setData] = useState([]);
 
   const fetchStates = async () => {
     let res = await axios(
-      `https://api.congressand.me/api/States?page=${page_num}`
+      `https://api.congressand.me/api/States?results_per_page=50`
     );
     let data = await res.data.objects;
-    await setStates(data);
+    const start_index = (page_num - 1)*10
+    await setData(data);
+    await setStates(data.slice(start_index, start_index + 10));
+    await setDataSize(data.length);
   };
 
   useEffect(() => {
     fetchStates();
   }, [page_num]);
+
+  const sortStates = () => {
+    if(sort_dir == "A-Z")
+    {
+      const start_index = (page_num - 1)*10
+      setStates(data.sort().slice(start_index, start_index + 10))
+    }
+  };
+
+  useEffect(() => {
+    sortStates();
+  }, [sort_dir]);
+
+  const pagination_list = () => {
+    let p_list = [];
+    for(var i = 0; i < dataSize/10; i++)
+    {
+      p_list.push(
+      <li class="page-item">
+        <Link
+          to={{
+            pathname: `/states/page/${i + 1}`,
+            state: { page_num: i + 1 }
+          }}
+        >
+          <a class="page-link">{i + 1}</a>
+        </Link>
+      </li>
+      )
+    }
+    console.log(p_list);
+    return p_list;
+  }
 
   return (
     <>
@@ -32,6 +72,22 @@ function States() {
           />
           <br></br>
           <h1 className="page-title">States</h1>
+          <div className="row">
+          <div className="col-md-10"></div>
+          <div className="col-md-2">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Sort By:
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">A-Z</Dropdown.Item>  
+              {/* onClick={setSortDir("Z-A")} */}
+              <Dropdown.Item href="#/action-2">Z-A</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          </div>
+          </div>
         </div>
         <StateCard states={states} filterText={""}/>
 
@@ -41,56 +97,7 @@ function States() {
             <div className="col-md-4">
               <nav>
                 <ul aria-label="Page:" class="pagination">
-                  <li class="page-item">
-                    <Link
-                      to={{
-                        pathname: `/states/page/1`,
-                        state: { page_num: 1 }
-                      }}
-                    >
-                      <a class="page-link">1</a>
-                    </Link>
-                  </li>
-                  <li class="page-item">
-                    <Link
-                      to={{
-                        pathname: `/states/page/2`,
-                        state: { page_num: 2 }
-                      }}
-                    >
-                      <a class="page-link">2</a>
-                    </Link>
-                  </li>
-                  <li class="page-item">
-                    <Link
-                      to={{
-                        pathname: `/states/page/3`,
-                        state: { page_num: 3 }
-                      }}
-                    >
-                      <a class="page-link">3</a>
-                    </Link>
-                  </li>
-                  <li class="page-item">
-                    <Link
-                      to={{
-                        pathname: `/states/page/4`,
-                        state: { page_num: 4 }
-                      }}
-                    >
-                      <a class="page-link">4</a>
-                    </Link>
-                  </li>
-                  <li class="page-item">
-                    <Link
-                      to={{
-                        pathname: `/states/page/5`,
-                        state: { page_num: 5 }
-                      }}
-                    >
-                      <a class="page-link">5</a>
-                    </Link>
-                  </li>
+                  {pagination_list()}
                 </ul>
               </nav>
             </div>
