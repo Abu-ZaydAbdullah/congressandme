@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Timeline } from "react-twitter-widgets";
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import axios from "axios";
 
 function RepresentativeTemplate() {
@@ -91,6 +92,7 @@ function RepresentativeTemplate() {
       );
     });
 
+  console.log(rep_data.twitter);
   return (
     <>
       <div>
@@ -109,16 +111,10 @@ function RepresentativeTemplate() {
                   <li className="nav-item">
                     <a className="nav-link active" id="home-tab">
                       About
-                      <Timeline
-                        dataSource={{
-                          sourceType: "profile",
-                          screenName: rep_data.twitter
-                        }}
-                        options={{
-                          username: "TwitterDev",
-                          height: "400"
-                        }}
-                        onLoad={() => console.log("Timeline is loaded!")}
+                      <TwitterTimelineEmbed
+                        sourceType="profile"
+                        screenName= {rep_data.twitter.split("@")[1]}
+                        options={{height: 400}}
                       />
                     </a>
                   </li>
