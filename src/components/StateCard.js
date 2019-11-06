@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
 
 function trimSummary (str, queries) {
-var query
+var query;
 for (query in queries) {
-let idx = str.indexOf(queries[query])
+let idx = str.toLowerCase().indexOf(queries[query].toLowerCase())
 if (idx !== -1) {
 return idx
 }
 }
+return 0;
 }
 
 function StateCard({ states, filterText }) {
   const queries = filterText.split(" ");
   const stateList = states.map((state, index) => {
-    let summary_idx = trimSummary(state.summary, queries)
-    console.log(state.name+": "+summary_idx)
+    var summary_idx = trimSummary(state.summary, queries)
     return (
       <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
@@ -77,6 +77,21 @@ function StateCard({ states, filterText }) {
                   }}
                 />
               </p>
+              <Link
+            to={{
+              pathname: `/state/${state.abbreviation}`,
+              state: {
+                name: state.name,
+                image: state.image,
+                website: state.website,
+                summary: state.summary,
+                issues: state.issues,
+                facebook: state.facebook
+              }
+            }}
+          >
+              <a class="btn btn-light">Learn More</a>
+              </Link>
             </div>
           </div>
           <div className="d-flex justify-content-between align-items-center">
