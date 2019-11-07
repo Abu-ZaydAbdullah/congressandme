@@ -152,7 +152,7 @@ function Representatives() {
             <div className="col-md-8"></div>
             <div className="col-md-2">
               <Dropdown>
-                <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                   Filter By:
                 </Dropdown.Toggle>
 
@@ -512,7 +512,7 @@ function Representatives() {
             </div>
             <div className="col-md-2">
               <Dropdown>
-                <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                   Sort By:
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -532,6 +532,7 @@ function Representatives() {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+              <br></br>
             </div>
           </div>
         </div>

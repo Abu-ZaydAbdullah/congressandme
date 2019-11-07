@@ -187,7 +187,7 @@ function Issues() {
           <div className="col-md-10"></div>
           <div className="col-md-2">
             <Dropdown>
-              <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                 Sort By:
               </Dropdown.Toggle>
 
@@ -208,6 +208,7 @@ function Issues() {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+            <br></br>
           </div>
         </div>
         <Search

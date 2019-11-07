@@ -44,11 +44,6 @@ function Home() {
           image={congressImage}
         />
       </div>
-      <Search
-        placeholder={"Search"}
-        filterText={filterText}
-        filterUpdate={filterUpdate.bind(this)}
-      />
       <h3
         className="text-center"
         style={{ marginBottom: "3%", marginTop: "10%" }}
@@ -69,6 +64,13 @@ function Home() {
         </div>
         <div className="col-md-3"></div>
       </div>
+      <br></br>
+      <br></br>
+      <Search
+        placeholder={"Search"}
+        filterText={filterText}
+        filterUpdate={filterUpdate.bind(this)}
+      />
       <StateCard states={state_data} filterText={filterText} />
     </main>
   );
