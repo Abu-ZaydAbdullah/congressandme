@@ -6,7 +6,7 @@ from flask_cors import CORS
 # Handles the creation of the Flask app
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Flask Alchemy obj
