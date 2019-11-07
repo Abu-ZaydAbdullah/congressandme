@@ -13,7 +13,7 @@ function IssueTemplate() {
     vids: ""
   };
 
-  // TODO 
+  // TODO
   // const issue_map = (name) => {
   // switch (name) {}
   // }

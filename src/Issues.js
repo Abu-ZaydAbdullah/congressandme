@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import issueImage from "./assets/issueImage.jpg";
-import { Dropdown } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap";
 
 function Issues() {
   const [issues, setIssues] = useState([]);
@@ -13,17 +13,17 @@ function Issues() {
   const [data, setData] = useState([]);
 
   const fetchIssues = async () => {
-    if(data.length == 0) {
+    if (data.length == 0) {
       let res = await axios(
-      `https://api.congressand.me/api/Issues?results_per_page=15`
-    );
-    let data = await res.data.objects;
-    const start_index = (page_num - 1)*5
-    await setData(data);
-    await setIssues(data.slice(start_index, start_index + 5));
-    await setDataSize(data.length);
+        `https://api.congressand.me/api/Issues?results_per_page=15`
+      );
+      let data = await res.data.objects;
+      const start_index = (page_num - 1) * 5;
+      await setData(data);
+      await setIssues(data.slice(start_index, start_index + 5));
+      await setDataSize(data.length);
     } else {
-      const start_index = (page_num - 1)*5
+      const start_index = (page_num - 1) * 5;
       setData(data);
       setIssues(data.slice(start_index, start_index + 5));
       setDataSize(data.length);
@@ -35,21 +35,36 @@ function Issues() {
   }, [page_num]);
 
   const sortIssues = () => {
-    if(sort_dir == "A-Z")
-    {
-      const start_index = (page_num - 1)*5
-      setIssues(data.sort(function(a, b){
-        if(a.name < b.name) { return -1; }
-        if(a.name > b.name) { return 1; }
-        return 0;
-    }).slice(start_index, start_index + 5))
+    if (sort_dir == "A-Z") {
+      const start_index = (page_num - 1) * 5;
+      setIssues(
+        data
+          .sort(function(a, b) {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          })
+          .slice(start_index, start_index + 5)
+      );
     } else if (sort_dir == "Z-A") {
-      const start_index = (page_num - 1)*5
-      setIssues(data.sort(function(a, b){
-        if(a.name > b.name) { return -1; }
-        if(a.name < b.name) { return 1; }
-        return 0;
-    }).slice(start_index, start_index + 5))
+      const start_index = (page_num - 1) * 5;
+      setIssues(
+        data
+          .sort(function(a, b) {
+            if (a.name > b.name) {
+              return -1;
+            }
+            if (a.name < b.name) {
+              return 1;
+            }
+            return 0;
+          })
+          .slice(start_index, start_index + 5)
+      );
     }
   };
 
@@ -59,23 +74,22 @@ function Issues() {
 
   const pagination_list = () => {
     let p_list = [];
-    for(var i = 0; i < dataSize/5; i++)
-    {
+    for (var i = 0; i < dataSize / 5; i++) {
       p_list.push(
-      <li class="page-item">
-        <Link
-          to={{
-            pathname: `/issues/page/${i + 1}`,
-            state: { page_num: i + 1 }
-          }}
-        >
-          <a class="page-link">{i + 1}</a>
-        </Link>
-      </li>
-      )
+        <li class="page-item">
+          <Link
+            to={{
+              pathname: `/issues/page/${i + 1}`,
+              state: { page_num: i + 1 }
+            }}
+          >
+            <a class="page-link">{i + 1}</a>
+          </Link>
+        </li>
+      );
     }
     return p_list;
-  }
+  };
 
   const issueList = issues.map(issue => {
     console.log(issue.abbreviation);
@@ -142,18 +156,30 @@ function Issues() {
         <div className="row">
           <div className="col-md-10"></div>
           <div className="col-md-2">
-          <Dropdown>
-            <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
-              Sort By:
-            </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+                Sort By:
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={() => {setSortDir("A-Z");}}>A-Z</Dropdown.Item>  
-              <Dropdown.Item onClick={() => {setSortDir("Z-A");}}>Z-A</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("A-Z");
+                  }}
+                >
+                  A-Z
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("Z-A");
+                  }}
+                >
+                  Z-A
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
-          </div>
+        </div>
         <div className="panel">
           <ul className="list-group" id="contact-list">
             <li className="list-group-item">
