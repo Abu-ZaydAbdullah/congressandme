@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "74a037cf-17a2-439f-92f7-3d0e2d5d1274",
+		"_postman_id": "f0963dcb-e650-4838-a132-de1bff8b2929",
 		"name": "UnitTests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -33,13 +33,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=1",
+					"raw": "http://api.congressand.me/api/Representatives?page=1",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -83,13 +82,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=2",
+					"raw": "http://api.congressand.me/api/Representatives?page=2",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -133,13 +131,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=3",
+					"raw": "http://api.congressand.me/api/Representatives?page=3",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -183,13 +180,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=4",
+					"raw": "http://api.congressand.me/api/Representatives?page=4",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -233,13 +229,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=5",
+					"raw": "http://api.congressand.me/api/Representatives?page=5",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -283,13 +278,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=6",
+					"raw": "http://api.congressand.me/api/Representatives?page=6",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -333,13 +327,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=7",
+					"raw": "http://api.congressand.me/api/Representatives?page=7",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -383,13 +376,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=8",
+					"raw": "http://api.congressand.me/api/Representatives?page=8",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -433,13 +425,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=9",
+					"raw": "http://api.congressand.me/api/Representatives?page=9",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -483,13 +474,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/Representatives?page=10",
+					"raw": "http://api.congressand.me/api/Representatives?page=10",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -533,13 +523,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/States?page=1",
+					"raw": "http://api.congressand.me/api/States?page=1",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -583,13 +572,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/States?page=2",
+					"raw": "http://api.congressand.me/api/States?page=2",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -633,13 +621,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/States?page=3",
+					"raw": "http://api.congressand.me/api/States?page=3",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -683,13 +670,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/States?page=4",
+					"raw": "http://api.congressand.me/api/States?page=4",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -733,13 +719,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.congressand.me/api/States?page=5",
+					"raw": "http://api.congressand.me/api/States?page=5",
 					"protocol": "http",
 					"host": [
-						"congressandme-api",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
+						"api",
+						"congressand",
+						"me"
 					],
 					"path": [
 						"api",
@@ -749,6 +734,398 @@
 						{
 							"key": "page",
 							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issues Page 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(15);",
+							"    pm.expect(jsonData.objects.length).to.eql(5);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Issues?page=1",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Issues"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issues Page 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(15);",
+							"    pm.expect(jsonData.objects.length).to.eql(5);",
+							"    pm.expect(jsonData.page).to.eql(2);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Issues?page=2",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Issues"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issues Page 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbf49b2b-ce79-4f4f-924f-658ca39ea52a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(15);",
+							"    pm.expect(jsonData.objects.length).to.eql(5);",
+							"    pm.expect(jsonData.page).to.eql(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Issues?page=3",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Issues"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Representatives Results Per Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(540);",
+							"    pm.expect(jsonData.objects.length).to.eql(540);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Representatives?results_per_page=540",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Representatives"
+					],
+					"query": [
+						{
+							"key": "results_per_page",
+							"value": "540"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "States Results Per Page Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(50);",
+							"    pm.expect(jsonData.objects.length).to.eql(50);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/States?results_per_page=50",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"States"
+					],
+					"query": [
+						{
+							"key": "results_per_page",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issues Results Per Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(15);",
+							"    pm.expect(jsonData.objects.length).to.eql(15);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Issues?results_per_page=15",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Issues"
+					],
+					"query": [
+						{
+							"key": "results_per_page",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issues Filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(1);",
+							"    pm.expect(jsonData.objects.length).to.eql(1);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Issues?q={\"filters\":[{\"name\":\"abbreviation\",\"op\":\"==\",\"val\":\"crimes\"}]}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Issues"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{\"filters\":[{\"name\":\"abbreviation\",\"op\":\"==\",\"val\":\"crimes\"}]}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "megaTable Filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(383);",
+							"    pm.expect(jsonData.objects.length).to.eql(10);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/megaTable?q={\"filters\":[{\"name\":\"crimes\",\"op\":\"==\",\"val\":\"1\"}]}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"megaTable"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{\"filters\":[{\"name\":\"crimes\",\"op\":\"==\",\"val\":\"1\"}]}"
 						}
 					]
 				}
