@@ -2,21 +2,21 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
 
-function trimSummary (str, queries) {
-var query;
-for (query in queries) {
-let idx = str.toLowerCase().indexOf(queries[query].toLowerCase())
-if (idx !== -1) {
-  return idx
-}
-}
+function trimSummary(str, queries) {
+  var query;
+  for (query in queries) {
+    let idx = str.toLowerCase().indexOf(queries[query].toLowerCase());
+    if (idx !== -1) {
+      return idx;
+    }
+  }
   return 0;
 }
 
 function StateCard({ states, filterText }) {
   const queries = filterText.split(" ");
   const stateList = states.map((state, index) => {
-  var summary_idx = trimSummary(state.summary, queries)
+    var summary_idx = trimSummary(state.summary, queries);
     return (
       <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
@@ -43,7 +43,7 @@ function StateCard({ states, filterText }) {
           <div class="col-mb-4 text-center" style={{ marginTop: "5%" }}>
             <div className="card-body">
               <h5>
-              <Highlighter
+                <Highlighter
                   searchWords={queries}
                   autoEscape={false}
                   textToHighlight={state.name}
@@ -70,7 +70,10 @@ function StateCard({ states, filterText }) {
                 <Highlighter
                   searchWords={queries}
                   autoEscape={false}
-                  textToHighlight={state.summary.substring(summary_idx, summary_idx + 100)}
+                  textToHighlight={state.summary.substring(
+                    summary_idx,
+                    summary_idx + 100
+                  )}
                   highlightStyle={{
                     backgroundColor: "#27ae60",
                     color: "white"
@@ -80,31 +83,31 @@ function StateCard({ states, filterText }) {
               <p className="card-text">
                 <strong>Website: </strong>
                 <a href={state.website}>
-                <Highlighter
-                  searchWords={queries}
-                  autoEscape={false}
-                  textToHighlight={state.website}
-                  highlightStyle={{
-                    backgroundColor: "#27ae60",
-                    color: "white"
-                  }}
-                />
+                  <Highlighter
+                    searchWords={queries}
+                    autoEscape={false}
+                    textToHighlight={state.website}
+                    highlightStyle={{
+                      backgroundColor: "#27ae60",
+                      color: "white"
+                    }}
+                  />
                 </a>
               </p>
               <Link
-            to={{
-              pathname: `/state/${state.abbreviation}`,
-              state: {
-                name: state.name,
-                image: state.image,
-                website: state.website,
-                summary: state.summary,
-                issues: state.issues,
-                facebook: state.facebook
-              }
-            }}
-          >
-              <a class="btn btn-light">Learn More</a>
+                to={{
+                  pathname: `/state/${state.abbreviation}`,
+                  state: {
+                    name: state.name,
+                    image: state.image,
+                    website: state.website,
+                    summary: state.summary,
+                    issues: state.issues,
+                    facebook: state.facebook
+                  }
+                }}
+              >
+                <a class="btn btn-light">Learn More</a>
               </Link>
             </div>
           </div>

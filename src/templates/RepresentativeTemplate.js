@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Timeline } from "react-twitter-widgets";
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton
+} from "react-twitter-embed";
 import axios from "axios";
 
 function RepresentativeTemplate() {
@@ -24,6 +35,7 @@ function RepresentativeTemplate() {
       }
       return issueList;
     });
+    console.log(allIssues());
     await setIssuesMentioned(allIssues());
   };
 
@@ -116,8 +128,8 @@ function RepresentativeTemplate() {
                       About
                       <TwitterTimelineEmbed
                         sourceType="profile"
-                        screenName= {rep_data.twitter.split("@")[1]}
-                        options={{height: 400}}
+                        screenName={rep_data.twitter.split("@")[1]}
+                        options={{ height: 400 }}
                       />
                     </a>
                   </li>
@@ -224,14 +236,14 @@ function RepresentativeTemplate() {
         </label>
       </div>
       <div className="container">
-              <div className="row">
-                <div className="album py-5 bg-light">
-                  <div className="container">
-                    <div className="row">{issueList}</div>
-                  </div>
-                </div>
-              </div>
+        <div className="row">
+          <div className="album py-5 bg-light">
+            <div className="container">
+              <div className="row">{issueList}</div>
             </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
