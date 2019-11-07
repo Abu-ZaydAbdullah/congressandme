@@ -38,7 +38,7 @@ function Home() {
       <div>
         <Jumbotron
           title_text={"Congress and Me"}
-          subtitle_text={"Welcome to the Home Page!"}
+          subtitle_text={"\"The ballot is stronger than the bullet.\" - Abraham Lincoln"}
           image={congressImage}
         />
       </div>

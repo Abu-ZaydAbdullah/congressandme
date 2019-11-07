@@ -130,6 +130,7 @@ function States() {
               <Dropdown.Item onClick={() => {setSortDir("Z-A");}}>Z-A</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          <br></br>
           </div>
           </div>
         </div>
