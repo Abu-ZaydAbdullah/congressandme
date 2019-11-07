@@ -3,7 +3,10 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import issueImage from "./assets/issueImage.jpg";
+import IssueCard from "./components/IssueCard";
 import { Dropdown } from "react-bootstrap";
+import Search from "./components/Search";
+const Fuse = require("fuse.js");
 
 function Issues() {
   const [issues, setIssues] = useState([]);
@@ -11,6 +14,33 @@ function Issues() {
   const [dataSize, setDataSize] = useState(5);
   const [sort_dir, setSortDir] = useState("A-Z");
   const [data, setData] = useState([]);
+  const [filterText, setFilterText] = useState("");
+
+  var options = {
+    shouldSort: true,
+    tokenize: true,
+    threshold: 0,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 140,
+    minMatchCharLength: 1,
+    keys: [
+      { name: "name", weight: 0.5 },
+      { name: "about", weight: 0.4 },
+      { name: "desc", weight: 0.1 }
+    ]
+  };
+  const fuse = new Fuse(data, options);
+
+  function filterUpdate(value) {
+    setFilterText(value);
+  }
+
+  useEffect(() => {
+    var temp_data = fuse.search(filterText);
+    setIssues(temp_data);
+    setDataSize(temp_data.length);
+  }, [filterText]);
 
   const fetchIssues = async () => {
     if (data.length == 0) {
@@ -180,33 +210,26 @@ function Issues() {
             </Dropdown>
           </div>
         </div>
-        <div className="panel">
-          <ul className="list-group" id="contact-list">
-            <li className="list-group-item">
-              <div className="album py-5 bg-light">
-                <div className="container">
-                  <div className="row">
-                    {issueList}
+        <Search
+          placeholder={"Search"}
+          filterText={filterText}
+          filterUpdate={filterUpdate.bind(this)}
+        />
+        <IssueCard issues={issues} filterText={filterText} />
 
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-md-4"></div>
-                        <div className="col-md-4">
-                          <nav>
-                            <ul aria-label="Page:" class="pagination">
-                              {pagination_list()}
-                            </ul>
-                          </nav>
-                        </div>
-                        <div className="col-md-4"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4"></div>
+              <div className="col-md-4">
+                <nav>
+                  <ul aria-label="Page:" class="pagination">
+                    {pagination_list()}
+                  </ul>
+                </nav>
               </div>
-            </li>
-          </ul>
-        </div>
+              <div className="col-md-4"></div>
+            </div>
+          </div>
       </main>
     </>
   );
