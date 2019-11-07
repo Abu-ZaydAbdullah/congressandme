@@ -88,6 +88,7 @@ function Issues() {
               state: {
                 name: issue.name,
                 abbreviation: issue.abbreviation,
+                about: issue.about,
                 description: issue.description,
                 image: issue.image,
                 states: issue.states,
@@ -112,6 +113,7 @@ function Issues() {
                 state: {
                   name: issue.name,
                   abbreviation: issue.abbreviation,
+                  about: issue.about,
                   description: issue.description,
                   image: issue.image,
                   states: issue.states,
