@@ -15,8 +15,8 @@ function trimSummary(str, queries) {
 
 function IssueCard({ issues, filterText }) {
     const queries = filterText.split(" ");
-    const issueList = issues.map((state, index) => {
-        var summary_idx = trimSummary(state.about, queries);
+    const issueList = issues.map((issue, index) => {
+        var summary_idx = trimSummary(issue.about, queries);
         return(
             <div className="col-md-4" key={issue.index}>
         <div className="card mb-4 box-shadow">
