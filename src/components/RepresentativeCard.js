@@ -18,7 +18,7 @@ function RepresentativeCard({ representatives, filterText }) {
                   representative.type === "sen"
                     ? "Senate"
                     : "House of Representatives",
-                image: "rep_images(`${representative.bioguide_id}.jpg`)",
+                image: rep_images(`./${representative.bioguide_id}.jpg`),
                 party: representative.party,
                 state: representative.state,
                 twitter: `https://twitter.com/@${representative.twitter}`,
@@ -145,7 +145,7 @@ function RepresentativeCard({ representatives, filterText }) {
                       representative.type === "sen"
                         ? "Senator"
                         : "Representative",
-                    image: `https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`,
+                    image: rep_images(`./${representative.bioguide_id}.jpg`),
                     party: representative.party,
                     state: representative.state,
                     twitter: `https://twitter.com/@${representative.twitter}`,
