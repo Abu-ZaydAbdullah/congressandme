@@ -45,7 +45,7 @@ function RepresentativeTemplate() {
     .filter(issue => issuesMentioned.includes(issue.abbreviation))
     .map(issue => {
       return (
-        <div className="col-md-4" key={issue.index}>
+        <div className="col-md-4">
           <div className="card mb-4 box-shadow">
             <Link
               to={{
@@ -53,6 +53,7 @@ function RepresentativeTemplate() {
                 state: {
                   name: issue.name,
                   abbreviation: issue.abbreviation,
+                  about: issue.about,
                   description: issue.description,
                   image: issue.image,
                   states: issue.states,
@@ -63,7 +64,7 @@ function RepresentativeTemplate() {
             >
               <img
                 className="card-img-top about-image"
-                style={{ width: 262 }}
+                style={{ maxHeight: 450 }}
                 src={issue.image}
                 alt="Card image cap"
               ></img>
@@ -76,6 +77,8 @@ function RepresentativeTemplate() {
                   pathname: `/issue/${issue.name}`,
                   state: {
                     name: issue.name,
+                    abbreviation: issue.abbreviation,
+                    about: issue.about,
                     description: issue.description,
                     image: issue.image,
                     states: issue.states,
@@ -220,7 +223,15 @@ function RepresentativeTemplate() {
           <strong>Issues Discussed:</strong>
         </label>
       </div>
-      {issueList}
+      <div className="container">
+              <div className="row">
+                <div className="album py-5 bg-light">
+                  <div className="container">
+                    <div className="row">{issueList}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
     </>
   );
 }
