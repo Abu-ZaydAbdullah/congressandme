@@ -2,17 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
 
-function trimSummary(str, queries) {
-  var query;
-  for (query in queries) {
-    let idx = str.toLowerCase().indexOf(queries[query].toLowerCase());
-    if (idx !== -1) {
-      return idx;
-    }
-  }
-  return 0;
-}
-
 function RepresentativeCard({ representatives, filterText }) {
   const queries = filterText.split(" ");
   const repList = representatives.map(representative => {

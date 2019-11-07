@@ -11,10 +11,10 @@ const Fuse = require("fuse.js");
 function Representatives() {
   const [representatives, setRepresentatives] = useState([]);
   const { page_num } = useParams();
+  const [filterText, setFilterText] = useState("");
   const [dataSize, setDataSize] = useState(540);
   const [sort_dir, setSortDir] = useState("A-Z");
   const [data, setData] = useState([]);
-  const [fullData, setFullData] = useState([]);
   const [filterState, setFilterState] = useState("");
 
   var options = {
@@ -51,7 +51,6 @@ function Representatives() {
       `https://api.congressand.me/api/Representatives?results_per_page=540`
     );
     let data = await res.data.objects;
-    await setFullData(res.data.objects);
     const start_index = (page_num - 1)*54
     await setData(data);
     await setRepresentatives(data.slice(start_index, start_index + 54));
@@ -106,21 +105,11 @@ function Representatives() {
     sortReps();
   }, [sort_dir]);
 
-  const filterByState = () => {
-    let filtered_list = [];
-    for(var i = 0; i < fullData.length; i++)
-    {
-      if(fullData[i].state == filterState)
-      {
-        filtered_list.push(fullData[i]);
-      }
-        
-    }
-    
+  const filterByState = () => {    
     const start_index = (page_num - 1)*54
-    setData(filtered_list);
-    setRepresentatives(data.slice(start_index, start_index + 54));
-    setDataSize(filtered_list.length);
+    const temp_data = data.filter(representative => representative.state === filterState)
+    setRepresentatives(temp_data.slice(start_index, start_index + 54));
+    setDataSize(temp_data.length);
   }
 
   useEffect(() => {
@@ -167,8 +156,8 @@ function Representatives() {
                 </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => {setFilterState("AL");}}>AL</Dropdown.Item>
-              <Dropdown.Item onClick={() => {setFilterState("AK");}}>AK</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setFilterState("AL")}}>AL</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setFilterState("AK")}}>AK</Dropdown.Item>
               <Dropdown.Item onClick={() => {setFilterState("AZ");}}>AZ</Dropdown.Item>
               <Dropdown.Item onClick={() => {setFilterState("AR");}}>AR</Dropdown.Item>
               <Dropdown.Item onClick={() => {setFilterState("CA");}}>CA</Dropdown.Item>
