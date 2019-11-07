@@ -3,22 +3,81 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import repImage from "./assets/repImage.jpg";
+import { Dropdown } from "react-bootstrap"
 
 function Representatives() {
   const [representatives, setRepresentatives] = useState([]);
   const { page_num } = useParams();
+  const [dataSize, setDataSize] = useState(540);
+  const [sort_dir, setSortDir] = useState("A-Z");
+  const [data, setData] = useState([]);
+  const [filterText, setFilterText] = useState("");
+
 
   const fetchRepresentatives = async () => {
-    let res = await axios(
-      `https://api.congressand.me/api/Representatives?page=${page_num}`
+    if(data.length == 0) {
+      let res = await axios(
+      `https://api.congressand.me/api/Representatives?results_per_page=540`
     );
     let data = await res.data.objects;
-    await setRepresentatives(data);
+    const start_index = (page_num - 1)*54
+    await setData(data);
+    await setRepresentatives(data.slice(start_index, start_index + 54));
+    await setDataSize(data.length);
+    } else {
+      const start_index = (page_num - 1)*54
+      setData(data);
+      setRepresentatives(data.slice(start_index, start_index + 54));
+      setDataSize(data.length);
+    }
   };
 
   useEffect(() => {
     fetchRepresentatives();
   }, [page_num]);
+
+  const sortReps = () => {
+    if(sort_dir == "A-Z")
+    {
+      const start_index = (page_num - 1)*54
+      setRepresentatives(data.sort(function(a, b){
+        if(a.full_name < b.full_name) { return -1; }
+        if(a.full_name > b.full_name) { return 1; }
+        return 0;
+    }).slice(start_index, start_index + 54))
+    } else if (sort_dir == "Z-A") {
+      const start_index = (page_num - 1)*54
+      setRepresentatives(data.sort(function(a, b){
+        if(a.full_name > b.full_name) { return -1; }
+        if(a.full_name < b.full_name) { return 1; }
+        return 0;
+    }).slice(start_index, start_index + 54))
+    }
+  };
+
+  useEffect(() => {
+    sortReps();
+  }, [sort_dir]);
+
+  const pagination_list = () => {
+    let p_list = [];
+    for(var i = 0; i < dataSize/54; i++)
+    {
+      p_list.push(
+      <li class="page-item">
+        <Link
+          to={{
+            pathname: `/representatives/page/${i + 1}`,
+            state: { page_num: i + 1 }
+          }}
+        >
+          <a class="page-link">{i + 1}</a>
+        </Link>
+      </li>
+      )
+    }
+    return p_list;
+  }
 
   const repList = representatives.map(representative => {
     return (
@@ -139,6 +198,21 @@ function Representatives() {
           />
           <br></br>
           <h1 className="page-title">Representatives</h1>
+          <div className="row">
+          <div className="col-md-10"></div>
+          <div className="col-md-2">
+          <Dropdown>
+            <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+              Sort By:
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => {setSortDir("A-Z");}}>A-Z</Dropdown.Item>  
+              <Dropdown.Item onClick={() => {setSortDir("Z-A");}}>Z-A</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          </div>
+          </div>
         </div>
         <div className="album py-5 bg-light">
           <div className="container">
@@ -154,106 +228,7 @@ function Representatives() {
                       <div className="col-md-4">
                         <nav>
                           <ul aria-label="Page:" class="pagination">
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/1`,
-                                  state: { page_num: 1 }
-                                }}
-                              >
-                                <a class="page-link">1</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/2`,
-                                  state: { page_num: 2 }
-                                }}
-                              >
-                                <a class="page-link">2</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/3`,
-                                  state: { page_num: 3 }
-                                }}
-                              >
-                                <a class="page-link">3</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/4`,
-                                  state: { page_num: 4 }
-                                }}
-                              >
-                                <a class="page-link">4</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/5`,
-                                  state: { page_num: 5 }
-                                }}
-                              >
-                                <a class="page-link">5</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/6`,
-                                  state: { page_num: 6 }
-                                }}
-                              >
-                                <a class="page-link">6</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/7`,
-                                  state: { page_num: 7 }
-                                }}
-                              >
-                                <a class="page-link">7</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/8`,
-                                  state: { page_num: 8 }
-                                }}
-                              >
-                                <a class="page-link">8</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/9`,
-                                  state: { page_num: 9 }
-                                }}
-                              >
-                                <a class="page-link">9</a>
-                              </Link>
-                            </li>
-                            <li class="page-item">
-                              <Link
-                                to={{
-                                  pathname: `/representatives/page/10`,
-                                  state: { page_num: 10 }
-                                }}
-                              >
-                                <a class="page-link">10</a>
-                              </Link>
-                            </li>
+                            {pagination_list()}
                           </ul>
                         </nav>
                       </div>

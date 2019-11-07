@@ -121,7 +121,7 @@ function States() {
           <div className="col-md-10"></div>
           <div className="col-md-2">
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
               Sort By:
             </Dropdown.Toggle>
 
