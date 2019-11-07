@@ -199,7 +199,19 @@ function Representatives() {
           <br></br>
           <h1 className="page-title">Representatives</h1>
           <div className="row">
-          <div className="col-md-10"></div>
+          <div className="col-md-8"></div>
+          <div className="col-md-2">
+          <Dropdown>
+            <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+              Filter By:
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => {setSortDir("A-Z");}}>A-Z</Dropdown.Item>  
+              <Dropdown.Item onClick={() => {setSortDir("Z-A");}}>Z-A</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          </div>
           <div className="col-md-2">
           <Dropdown>
             <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
