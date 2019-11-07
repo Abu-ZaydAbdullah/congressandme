@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
+const rep_images = require.context("../assets/450x550", true);
 
 function RepresentativeCard({ representatives, filterText }) {
   const queries = filterText.split(" ");
@@ -17,7 +18,7 @@ function RepresentativeCard({ representatives, filterText }) {
                   representative.type === "sen"
                     ? "Senate"
                     : "House of Representatives",
-                image: `https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`,
+                image: "rep_images(`${representative.bioguide_id}.jpg`)",
                 party: representative.party,
                 state: representative.state,
                 twitter: `https://twitter.com/@${representative.twitter}`,
@@ -34,7 +35,7 @@ function RepresentativeCard({ representatives, filterText }) {
             <img
               className="card-img-top about-image"
               style={{ maxHeight: 450 }}
-              src={`https://github.com/Abu-ZaydAbdullah/images/raw/gh-pages/congress/450x550/${representative.bioguide_id}.jpg`}
+              src={rep_images(`./${representative.bioguide_id}.jpg`)}
               alt={representative.full_name}
             ></img>
           </Link>
