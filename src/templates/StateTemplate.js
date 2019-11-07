@@ -15,6 +15,8 @@ function StateTemplate() {
   const { name } = useParams();
   const [state_data, setStateData] = useState({ ...state_schema });
   const [rep_data, setRepresentativeData] = useState([]);
+  const [issuesMentioned, setIssuesMentioned] = useState([]);
+  const [issue_data, setIssueData] = useState([]);
 
   const getStateData = async () => {
     if (temp_data.state == undefined) {
@@ -34,12 +36,87 @@ function StateTemplate() {
     );
     const data = await req.data.objects;
     await setRepresentativeData(data);
+    const data2 = await data[0];
+    console.log(data2);
+    const allIssues = await (() => {
+      var issue;
+      var issueList = [];
+      for (issue in data2) {
+        if (data2[issue]) {
+          issueList.push(issue);
+        }
+      }
+      return issueList;
+    });
+    console.log(allIssues());
+    await setIssuesMentioned(allIssues());
+    const req2 = await axios(
+      `https://api.congressand.me/api/Issues?results_per_page=31`
+    );
+    const data3 = await req2.data.objects;
+    await setIssueData(data3);
+    console.log(data3);
   };
 
   useEffect(() => {
     getStateData();
     getRepData();
+    window.scrollTo(0, 0)
   }, [name]);
+
+  // TODO. Filter based on mentions like in reptemplate
+  const issueList = issue_data.map(issue => {
+    console.log(issue_data);
+      return (
+        <div className="col-md-4">
+          <div className="card mb-4 box-shadow">
+            <Link
+              to={{
+                pathname: `/issue/${issue.name}`,
+                state: {
+                  name: issue.name,
+                  abbreviation: issue.abbreviation,
+                  about: issue.about,
+                  description: issue.description,
+                  image: issue.image,
+                  states: issue.states,
+                  reps: issue.rep,
+                  vids: issue.vids
+                }
+              }}
+            >
+              <img
+                className="card-img-top about-image"
+                style={{ maxHeight: 450 }}
+                src={issue.image}
+                alt="Card image cap"
+              ></img>
+            </Link>
+            <div className="card-body">
+              <h5>{issue.name}</h5>
+              <p className="card-text">{issue.description}</p>
+              <Link
+                to={{
+                  pathname: `/issue/${issue.name}`,
+                  state: {
+                    name: issue.name,
+                    abbreviation: issue.abbreviation,
+                    about: issue.about,
+                    description: issue.description,
+                    image: issue.image,
+                    states: issue.states,
+                    reps: issue.rep,
+                    vids: issue.vids
+                  }
+                }}
+              >
+                <a class="btn btn-light">Learn More</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      );
+    });
 
   const repList = rep_data.map((representative, index) => {
     return (
@@ -197,28 +274,6 @@ function StateTemplate() {
           </div>
         </div>
       </div>
-      {/* <div className="row mb-5">
-                    <h1>The Following Issues are Important in this State:</h1>
-                    <div className="panel panel-default">
-                        <div className="card-body row">    
-                            <div class = "col-sm-6 col-md-6 image-container">
-                                <img className="card-img-top about-image" style={{width: 262}} src={issue_data.image} alt="Card image cap"></img>
-                            </div>
-                            <div className="col-sm-6 col-md-6" >
-                                <h5>{issue_data.name}</h5>
-                                <p className="card-text">{issue_data.desc}</p>
-                                <Link
-                                to={{
-                                    pathname: `/issue/${issue_data.name}/1/0`
-                                }}
-                                >
-                                <a class="btn btn-dark">{issue_data.name}</a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                */}
       <div className="row mb-5">
         <h1>This State's Representatives!</h1>
         <div className="container">
@@ -226,6 +281,18 @@ function StateTemplate() {
             <div className="album py-5 bg-light">
               <div className="container">
                 <div className="row">{repList}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mb-5">
+        <h1>Issues relevant to this state:</h1>
+        <div className="container">
+          <div className="row">
+            <div className="album py-5 bg-light">
+              <div className="container">
+                <div className="row">{issueList}</div>
               </div>
             </div>
           </div>

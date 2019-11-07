@@ -24,6 +24,7 @@ function RepresentativeTemplate() {
       }
       return issueList;
     });
+    console.log(allIssues());
     await setIssuesMentioned(allIssues());
   };
 
