@@ -47,14 +47,14 @@ function States() {
       `https://api.congressand.me/api/States?results_per_page=50`
     );
     let data = await res.data.objects;
-    const start_index = (page_num - 1)*10
+    const start_index = (page_num - 1)*9
     await setData(data);
-    await setStates(data.slice(start_index, start_index + 10));
+    await setStates(data.slice(start_index, start_index + 9));
     await setDataSize(data.length);
     } else {
-      const start_index = (page_num - 1)*10
+      const start_index = (page_num - 1)*9
       setData(data);
-      setStates(data.slice(start_index, start_index + 10));
+      setStates(data.slice(start_index, start_index + 9));
       setDataSize(data.length);
     }
   };
@@ -66,19 +66,19 @@ function States() {
   const sortStates = () => {
     if(sort_dir == "A-Z")
     {
-      const start_index = (page_num - 1)*10
+      const start_index = (page_num - 1)*9
       setStates(data.sort(function(a, b){
         if(a.name < b.name) { return -1; }
         if(a.name > b.name) { return 1; }
         return 0;
-    }).slice(start_index, start_index + 10))
+    }).slice(start_index, start_index + 9))
     } else if (sort_dir == "Z-A") {
-      const start_index = (page_num - 1)*10
+      const start_index = (page_num - 1)*9
       setStates(data.sort(function(a, b){
         if(a.name > b.name) { return -1; }
         if(a.name < b.name) { return 1; }
         return 0;
-    }).slice(start_index, start_index + 10))
+    }).slice(start_index, start_index + 9))
     }
   };
 
@@ -88,7 +88,7 @@ function States() {
 
   const pagination_list = () => {
     let p_list = [];
-    for(var i = 0; i < dataSize/10; i++)
+    for(var i = 0; i < dataSize/9; i++)
     {
       p_list.push(
       <li class="page-item">
