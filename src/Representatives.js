@@ -533,30 +533,6 @@ function Representatives() {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <div className="col-md-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
-                  Sort By:
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("A-Z");
-                    }}
-                  >
-                    A-Z
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("Z-A");
-                    }}
-                  >
-                    Z-A
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
           </div>
         </div>
         <Search
