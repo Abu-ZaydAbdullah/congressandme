@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RepresentativeCard from "../components/RepresentativeCard";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import IssueCard from "../components/IssueCard";
 import axios from "axios";
 
 function StateTemplate() {
@@ -64,60 +65,6 @@ function StateTemplate() {
     getRepData();
     window.scrollTo(0, 0);
   }, [name]);
-
-  // TODO. Filter based on mentions like in reptemplate
-  const issueList = issue_data.map(issue => {
-    console.log(issue_data);
-    return (
-      <div className="col-md-4">
-        <div className="card mb-4 box-shadow">
-          <Link
-            to={{
-              pathname: `/issue/${issue.name}`,
-              state: {
-                name: issue.name,
-                abbreviation: issue.abbreviation,
-                about: issue.about,
-                description: issue.description,
-                image: issue.image,
-                states: issue.states,
-                reps: issue.rep,
-                vids: issue.vids
-              }
-            }}
-          >
-            <img
-              className="card-img-top about-image"
-              style={{ maxHeight: 450 }}
-              src={issue.image}
-              alt="Card image cap"
-            ></img>
-          </Link>
-          <div className="card-body">
-            <h5>{issue.name}</h5>
-            <p className="card-text">{issue.description}</p>
-            <Link
-              to={{
-                pathname: `/issue/${issue.name}`,
-                state: {
-                  name: issue.name,
-                  abbreviation: issue.abbreviation,
-                  about: issue.about,
-                  description: issue.description,
-                  image: issue.image,
-                  states: issue.states,
-                  reps: issue.rep,
-                  vids: issue.vids
-                }
-              }}
-            >
-              <a class="btn btn-light">Learn More</a>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  });
 
   return (
     <div>
@@ -191,11 +138,7 @@ function StateTemplate() {
         <h1>Issues relevant to this state:</h1>
         <div className="container">
           <div className="row">
-            <div className="album py-5 bg-light">
-              <div className="container">
-                <div className="row">{issueList}</div>
-              </div>
-            </div>
+            <IssueCard issues={issue_data} filterText={""} />
           </div>
         </div>
       </div>

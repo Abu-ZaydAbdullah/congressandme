@@ -73,6 +73,14 @@ class ApiTests(unittest.TestCase):
         response = requests.request("GET", url + 'megaTable?q={"filters":[{"name":"state","op":"==","val":"Texas"}]}')
         assert(response.ok)
 
+    def test18(self):
+        response = requests.request("GET", url + "Mentions")
+        assert(response.ok)
+
+    def test19(self):
+        response = requests.request("GET", url + 'Mentions?q={"filters":[{"name":"state","op":"==","val":"TX"}]}')
+        assert(response.ok)
+
 if __name__ == "__main__":
     unittest.main()
 

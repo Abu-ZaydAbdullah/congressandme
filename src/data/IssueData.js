@@ -1,90 +1,145 @@
-import gunImage from "../assets/gun.jpg";
-import fenceImage from "../assets/fence.jpg";
-import medicalImage from "../assets/medical.jpg";
-import natureImage from "../assets/nature.jpg";
-import cancelImage from "../assets/cancel.png";
-
 export default [
   {
-    index: 0,
-    name: "Abortion",
-    desc:
-      "The issue of abortion is extremely volatile in the current political climate. See how much your politician\
-             values a woman's bodily autonomy.",
-    about:
-      "Abortion is the act of euthanizing a developing fetus. It can be done for many reasons, ranging from\
-              medical safety to the child being conceived through violence. While generally safe, some protest it\
-              because they believe the child's life should be preserved, regardless of what kind of circumstances\
-              the child may be born into.",
-    image: cancelImage,
-    states: 34,
-    rep: 8,
-    vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
+    abbreviation: "agriculture",
+    about: "moo",
+    description: "moo",
+    image: "https://gitlab.com/auproxis/images/raw/master/farming.jpg",
+    issue_id: 2,
+    name: "Agriculture",
+    vids: "https://www.youtube.com/watch?v=Qmla9NLFBvU"
   },
   {
-    index: 1,
-    name: "Environmentalism",
-    desc:
-      "Every day, the earth crawls closer to irreversible catastrophe thanks to our own actions. See what your politician\
-             is doing to stop us from all burning alive here.",
+    abbreviation: "armed_forces",
+    about: "Shock and Awe",
+    description: "Shock and Awe",
+    image: "https://gitlab.com/auproxis/images/raw/master/armed-forces.jpg",
+    issue_id: 3,
+    name: "Armed Forces",
+    vids: "https://www.youtube.com/watch?v=lPkr7ZqhCV0"
+  },
+  {
+    abbreviation: "crimes",
+    about: "Orange is the new Black",
+    description: "Orange is the new Black",
+    image: "https://gitlab.com/auproxis/images/raw/master/crime.jpg",
+    issue_id: 4,
+    name: "Crime And Law Enforcement",
+    vids: "https://www.youtube.com/watch?v=CNcgUdPacyo"
+  },
+  {
+    abbreviation: "economics",
+    about: "$$$",
+    description: "$$$",
+    image: "https://gitlab.com/auproxis/images/raw/master/economy.jpg",
+    issue_id: 5,
+    name: "Economics",
+    vids: "https://www.youtube.com/results?search_query=US+economy"
+  },
+  {
+    abbreviation: "education",
+    about: "1+1 = ?",
+    description: "1+1 = ?",
+    image: "https://gitlab.com/auproxis/images/raw/master/college.jpg",
+    issue_id: 6,
+    name: "Education",
+    vids: "https://www.youtube.com/watch?v=pvXJnukCFoo"
+  },
+  {
+    abbreviation: "emergency_management",
+    about: "How we respond to disaster.",
+    description: "How we respond to disaster.",
+    image: "https://gitlab.com/auproxis/images/raw/master/emergency.jpg",
+    issue_id: 7,
+    name: "Emergency Management",
+    vids: "https://www.youtube.com/watch?v=00OoD3_aemQ"
+  },
+  {
+    abbreviation: "environmentalism",
     about:
-      "Climate change is the process by which greenhouse gasses emitted by humans are heating the Earth and\
-              changing the expected weather pattens across the globe. Global temperatures are on the rise along with sea\
-              levels and pollution count as humans continue to emit carbon into the air and sea. Some people try to deny\
-              that this is happening by actively disagreeing with the 97% of scientists who agree that climate change is\
-              real and is caused by humans.",
-    image: natureImage,
-    states: 4,
-    rep: 8,
+      "Every day, the earth crawls closer to irreversible catastrophe thanks to our own actions. See what your politician is doing to stop us from all burning alive here.",
+    description:
+      "Every day, the earth crawls closer to irreversible catastrophe thanks to our own actions. See what your politician is doing to stop us from all burning alive here.",
+    image: "https://gitlab.com/auproxis/images/raw/master/nature.jpg",
+    issue_id: 8,
+    name: "environmentalism",
     vids: "https://www.youtube.com/watch?v=rhQVustYV24"
   },
   {
-    index: 2,
-    name: "Gun-Control",
-    desc:
-      "With a steady increase in mass shooting over the years, gun control has become a contentious topic. See what your politician\
-             has been saying about limiting the distribution of weapons here.",
+    abbreviation: "gun_control",
     about:
-      "Guns are designed to do harm to other human beings. Some people argue that they need guns to protect themselves\
-              while others would say that owning a gun is unecessary. Guns can do a lot of damage in a short amount of time,\
-              so a big issue in the gun debate is whether the cost of hundreds of lives every year due to mass shootings\
-              is worth being able to own a high-powered assault weapon for personal protection. Whether you advocate for\
-              gun confiscation programs or have a loose interpretation of the second ammendment, the gun debate is a major\
-              issue in America.",
-    image: gunImage,
-    states: 34,
-    rep: 8,
+      "With a steady increase in mass shooting over the years, gun control has become a contentious topic. See what your politician has been saying about limiting the distribution of weapons here.",
+    description:
+      "With a steady increase in mass shooting over the years, gun control has become a contentious topic. See what your politician has been saying about limiting the distribution of weapons here.",
+    image: "https://gitlab.com/auproxis/images/raw/master/gun.jpg",
+    issue_id: 9,
+    name: "gun control",
     vids: "https://www.youtube.com/watch?v=up1Wb2Q_WMk"
   },
   {
-    index: 3,
-    name: "Healthcare",
-    desc:
-      "With the cost of medical care so high, some form of insurance is absolutely necessary to survival. See what your politician\
-             thinks about subsidizing a basic neccesity for the masses.",
+    abbreviation: "healthcare",
     about:
-      "Healthcare is as expensive as it is necessary and costs are only rising. People go bankrupt every day because they\
-              can't afford to be sick or injured. Major injuries are left untreated because of the price, people choose to walk to the\
-              hospital or Uber rather then take an expensive ambulence. Healthcare helps subsidize these otherwise absurd costs and provide\
-              a basic quality of life to all citizens.",
-    image: medicalImage,
-    states: 44,
-    rep: 8,
+      "With the cost of medical care so high, some form of insurance is absolutely necessary to survival. See what your politician thinks about subsidizing a basic necessity for the masses.",
+    description:
+      "With the cost of medical care so high, some form of insurance is absolutely necessary to survival. See what your politician thinks about subsidizing a basic necessity for the masses.",
+    image: "https://gitlab.com/auproxis/images/raw/master/medical.jpg",
+    issue_id: 10,
+    name: "healthcare",
     vids: "https://www.youtube.com/watch?v=ZHt-_NlHZAU"
   },
   {
-    index: 4,
-    name: "Immigration",
-    desc:
-      "America has a long and storied history of relying on immigrants to do much of the backbreaking labor... and despising them\
-             for taking that work at the same time. See what your politican has been saying in this cycle of the fight.",
+    abbreviation: "housing_and_community_development",
+    about: "Spare change?",
+    description: "Spare change?",
+    image: "https://gitlab.com/auproxis/images/raw/master/housing.jpg",
+    issue_id: 11,
+    name: "Housing and Community Development",
+    vids: "https://www.youtube.com/watch?v=6BKZmH4y4GE"
+  },
+  {
+    abbreviation: "immigration",
     about:
-      "America is a melting pot, a nation built on the backs of immigrants. The influx of immigrants helps stimulate the economy, fill\
-              job positions generally considered unwanted, and help enrich our culture. However, negative perception of immigrants has led to\
-              law enforcement being tasked to round up undocumented immigrants, immigration requirements being raised, and more.",
-    image: fenceImage,
-    states: 44,
-    rep: 8,
+      "America has a long and storied history of relying on immigrants to do much of the backbreaking labor... and despising them for taking that work at the same time. See what your politician has been saying in this cycle of the fight.",
+    description:
+      "America has a long and storied history of relying on immigrants to do much of the backbreaking labor... and despising them for taking that work at the same time. See what your politician has been saying in this cycle of the fight.",
+    image: "https://gitlab.com/auproxis/images/raw/master/fence.jpg",
+    issue_id: 12,
+    name: "immigration",
     vids: "https://www.youtube.com/watch?v=ZmOKKY9shiQ"
+  },
+  {
+    abbreviation: "labor_and_employment",
+    about: "Piss off your unions at your own peril",
+    description: "Piss off your unions at your own peril",
+    image: "https://gitlab.com/auproxis/images/raw/master/labor.jpg",
+    issue_id: 13,
+    name: "Labor and Employment",
+    vids: "https://www.youtube.com/results?search_query=US+employment"
+  },
+  {
+    abbreviation: "social_issues",
+    about: "Racism, homophobia, sexism.",
+    description: "Racism\\, homophobia\\, sexism.",
+    image: "https://gitlab.com/auproxis/images/raw/master/social.jpg",
+    issue_id: 14,
+    name: "Social Issues",
+    vids: "https://www.youtube.com/watch?v=3m2QCkXiq_A"
+  },
+  {
+    abbreviation: "taxation",
+    about: "Nothings free. Especially not the government.",
+    description: "Nothings free. Especially not the government.",
+    image: "https://gitlab.com/auproxis/images/raw/master/tax.jpg",
+    issue_id: 15,
+    name: "Taxation",
+    vids: "https://www.youtube.com/results?search_query=us+taxes"
+  },
+  {
+    abbreviation: "transportation_and_public_works",
+    about: "Where's our bus already?",
+    description: "Where's our bus already?",
+    image: "https://gitlab.com/auproxis/images/raw/master/transportation.jpg",
+    issue_id: 16,
+    name: "Transportation and Public Works",
+    vids: "https://www.youtube.com/watch?v=lqgtk4ozgsg"
   }
 ];

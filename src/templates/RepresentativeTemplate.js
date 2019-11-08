@@ -1,18 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Timeline } from "react-twitter-widgets";
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
+import IssueCard from "../components/IssueCard";
 import axios from "axios";
 
 function RepresentativeTemplate() {
@@ -53,61 +43,6 @@ function RepresentativeTemplate() {
     window.scrollTo(0, 0);
   }, [rep_data.name]);
 
-  const issueList = issue_data
-    .filter(issue => issuesMentioned.includes(issue.abbreviation))
-    .map(issue => {
-      return (
-        <div className="col-md-4">
-          <div className="card mb-4 box-shadow">
-            <Link
-              to={{
-                pathname: `/issue/${issue.name}`,
-                state: {
-                  name: issue.name,
-                  abbreviation: issue.abbreviation,
-                  about: issue.about,
-                  description: issue.description,
-                  image: issue.image,
-                  states: issue.states,
-                  reps: issue.rep,
-                  vids: issue.vids
-                }
-              }}
-            >
-              <img
-                className="card-img-top about-image"
-                style={{ maxHeight: 450 }}
-                src={issue.image}
-                alt="Card image cap"
-              ></img>
-            </Link>
-            <div className="card-body">
-              <h5>{issue.name}</h5>
-              <p className="card-text">{issue.description}</p>
-              <Link
-                to={{
-                  pathname: `/issue/${issue.name}`,
-                  state: {
-                    name: issue.name,
-                    abbreviation: issue.abbreviation,
-                    about: issue.about,
-                    description: issue.description,
-                    image: issue.image,
-                    states: issue.states,
-                    reps: issue.rep,
-                    vids: issue.vids
-                  }
-                }}
-              >
-                <a class="btn btn-light">Learn More</a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      );
-    });
-
-  console.log(rep_data.twitter);
   return (
     <>
       <div>
@@ -237,11 +172,7 @@ function RepresentativeTemplate() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="album py-5 bg-light">
-            <div className="container">
-              <div className="row">{issueList}</div>
-            </div>
-          </div>
+          <IssueCard issues={issue_data} filterText={""} />
         </div>
       </div>
     </>

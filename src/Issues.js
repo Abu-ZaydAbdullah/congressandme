@@ -32,8 +32,19 @@ function Issues() {
   };
   const fuse = new Fuse(data, options);
 
+  function sanitize(value) {
+    return value
+      .replace("(", " ")
+      .replace(")", " ")
+      .replace(",", " ")
+      .replace("^", " ")
+      .replace("[", " ")
+      .replace("]", " ");
+  }
+
   function filterUpdate(value) {
     setFilterText(value);
+    value = sanitize(value);
   }
 
   useEffect(() => {
@@ -121,58 +132,6 @@ function Issues() {
     return p_list;
   };
 
-  const issueList = issues.map(issue => {
-    console.log(issue.abbreviation);
-    return (
-      <div className="col-md-4" key={issue.index}>
-        <div className="card mb-4 box-shadow">
-          <Link
-            to={{
-              pathname: `/issue/${issue.name}`,
-              state: {
-                name: issue.name,
-                abbreviation: issue.abbreviation,
-                about: issue.about,
-                description: issue.description,
-                image: issue.image,
-                states: issue.states,
-                reps: issue.rep,
-                vids: issue.vids
-              }
-            }}
-          >
-            <img
-              className="card-img-top about-image"
-              style={{ maxHeight: 450 }}
-              src={issue.image}
-              alt="Card image cap"
-            ></img>
-          </Link>
-          <div className="card-body">
-            <h5>{issue.name}</h5>
-            <p className="card-text">{issue.description}</p>
-            <Link
-              to={{
-                pathname: `/issue/${issue.name}`,
-                state: {
-                  name: issue.name,
-                  abbreviation: issue.abbreviation,
-                  about: issue.about,
-                  description: issue.description,
-                  image: issue.image,
-                  states: issue.states,
-                  reps: issue.rep,
-                  vids: issue.vids
-                }
-              }}
-            >
-              <a class="btn btn-light">Learn More</a>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  });
   return (
     <>
       <main role="main">
@@ -218,19 +177,19 @@ function Issues() {
         />
         <IssueCard issues={issues} filterText={filterText} />
 
-          <div className="container">
-            <div className="row">
-              <div className="col-md-4"></div>
-              <div className="col-md-4">
-                <nav>
-                  <ul aria-label="Page:" class="pagination">
-                    {pagination_list()}
-                  </ul>
-                </nav>
-              </div>
-              <div className="col-md-4"></div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
+              <nav>
+                <ul aria-label="Page:" class="pagination">
+                  {pagination_list()}
+                </ul>
+              </nav>
             </div>
+            <div className="col-md-4"></div>
           </div>
+        </div>
       </main>
     </>
   );

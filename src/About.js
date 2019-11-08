@@ -60,7 +60,7 @@ export const About = () => (
         </a>
       </p>
       <p className="text-center">
-        <a href="https://documenter.getpostman.com/view/9014793/SVzxXyvM?version=latest">
+        <a href="https://documenter.getpostman.com/view/9014793/SVzxXyvM">
           API Documentation
         </a>
       </p>

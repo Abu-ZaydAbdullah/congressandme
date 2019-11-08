@@ -1131,6 +1131,55 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Mentions Filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f0c7d94-4799-4285-9f0b-49924c8df19a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.num_results).to.eql(38);",
+							"    pm.expect(jsonData.objects.length).to.eql(38);",
+							"    pm.expect(jsonData.page).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.congressand.me/api/Mentions?q={\"filters\":[{\"name\":\"state\",\"op\":\"==\",\"val\":\"TX\"}]}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"congressand",
+						"me"
+					],
+					"path": [
+						"api",
+						"Mentions"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{\"filters\":[{\"name\":\"state\",\"op\":\"==\",\"val\":\"TX\"}]}"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

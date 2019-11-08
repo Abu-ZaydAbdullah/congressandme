@@ -72,7 +72,10 @@ function StateCard({ states, filterText }) {
                   autoEscape={false}
                   textToHighlight={state.summary.substring(
                     summary_idx,
-                    summary_idx + 100
+                    state.summary.indexOf(
+                      " ",
+                      state.summary.indexOf(" ", summary_idx + 99)
+                    )
                   )}
                   highlightStyle={{
                     backgroundColor: "#27ae60",
@@ -86,7 +89,7 @@ function StateCard({ states, filterText }) {
                   <Highlighter
                     searchWords={queries}
                     autoEscape={false}
-                    textToHighlight={state.website}
+                    textToHighlight={state.website.substring(0, 26)}
                     highlightStyle={{
                       backgroundColor: "#27ae60",
                       color: "white"
