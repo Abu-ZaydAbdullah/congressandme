@@ -31,18 +31,29 @@ function States() {
   };
   const fuse = new Fuse(data, options);
 
+  function sanitize(value) {
+    return value
+      .replace("(", " ")
+      .replace(")", " ")
+      .replace(",", " ")
+      .replace("^", " ")
+      .replace("[", " ")
+      .replace("]", " ");
+  }
+
   function filterUpdate(value) {
+    value = sanitize(value);
     setFilterText(value);
   }
 
   useEffect(() => {
     if (filterText === "") {
-    setStates(data)
-    setDataSize(data.length)
+      setStates(data);
+      setDataSize(data.length);
     } else {
-    var temp_data = fuse.search(filterText);
-    setStates(temp_data);
-    setDataSize(temp_data.length);
+      var temp_data = fuse.search(filterText);
+      setStates(temp_data);
+      setDataSize(temp_data.length);
     }
   }, [filterText]);
 
@@ -187,7 +198,7 @@ function States() {
         </div>
       </main>
       <br></br>
-    <br></br>
+      <br></br>
     </>
   );
 }

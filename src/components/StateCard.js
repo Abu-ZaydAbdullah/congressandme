@@ -72,7 +72,10 @@ function StateCard({ states, filterText }) {
                   autoEscape={false}
                   textToHighlight={state.summary.substring(
                     summary_idx,
-                    state.summary.indexOf(" ", state.summary.indexOf(" ", summary_idx+99))
+                    state.summary.indexOf(
+                      " ",
+                      state.summary.indexOf(" ", summary_idx + 99)
+                    )
                   )}
                   highlightStyle={{
                     backgroundColor: "#27ae60",

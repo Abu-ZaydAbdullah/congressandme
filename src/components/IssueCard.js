@@ -63,7 +63,11 @@ function IssueCard({ issues, filterText }) {
                 autoEscape={false}
                 textToHighlight={issue.description.substring(
                   description_idx,
-                  issue.description.indexOf(" ", issue.description.indexOf(" ", description_idx+90)))}
+                  issue.description.indexOf(
+                    " ",
+                    issue.description.indexOf(" ", description_idx + 90)
+                  )
+                )}
                 highlightStyle={{
                   backgroundColor: "#27ae60",
                   color: "white"
@@ -77,7 +81,10 @@ function IssueCard({ issues, filterText }) {
                 autoEscape={false}
                 textToHighlight={issue.about.substring(
                   about_idx,
-                  issue.about.indexOf(" ", issue.about.indexOf(" ", about_idx+90))
+                  issue.about.indexOf(
+                    " ",
+                    issue.about.indexOf(" ", about_idx + 90)
+                  )
                 )}
                 highlightStyle={{
                   backgroundColor: "#27ae60",

@@ -6,9 +6,9 @@ import Search from "./components/Search";
 import StateCard from "./components/StateCard";
 import RepresentativeCard from "./components/RepresentativeCard";
 import IssueCard from "./components/IssueCard";
-import StateData from "./data/StateData"
-import RepresentativeData from "./data/RepresentativeData"
-import IssueData from "./data/IssueData"
+import StateData from "./data/StateData";
+import RepresentativeData from "./data/RepresentativeData";
+import IssueData from "./data/IssueData";
 const Fuse = require("fuse.js");
 
 function Home() {
@@ -69,7 +69,18 @@ function Home() {
   const fuseStates = new Fuse(StateData, state_options);
   const fuseIssues = new Fuse(IssueData, issue_options);
 
+  function sanitize(value) {
+    return value
+      .replace("(", " ")
+      .replace(")", " ")
+      .replace(",", " ")
+      .replace("^", " ")
+      .replace("[", " ")
+      .replace("]", " ");
+  }
+
   function filterUpdate(value) {
+    value = sanitize(value);
     setFilterText(value);
   }
 
@@ -77,62 +88,65 @@ function Home() {
     setRepData(fuseReps.search(filterText));
     setStateData(fuseStates.search(filterText));
     setIssueData(fuseIssues.search(filterText));
-    console.log(issue_data)
+    console.log(issue_data);
   }, [filterText]);
 
   return (
     <>
-    <main role="main">
-      <div>
-        <Jumbotron
-          title_text={"Congress and Me"}
-          subtitle_text={
-            '"The ballot is stronger than the bullet." - Abraham Lincoln'
-          }
-          image={congressImage}
-        />
-      </div>
-      <h3
-        className="text-center"
-        style={{ marginBottom: "3%", marginTop: "10%" }}
-      >
-        What is Congress and Me?
-      </h3>
-      <div className="row" style={{ marginBottom: "3%" }}>
-        <div className="col-md-3"></div>
-        <div className="col-md-6">
-          <h5 className="text-justify">
-            The six of us believe that a well-informed populace is crucial to a
-            functioning democracy. We wanted a way for people to easily see what
-            issues their representatives are and aren’t talking about in their
-            tweets and on the Congress floor, and we wanted to highlight which
-            issues are being discussed and which ones require attention on a
-            nation-wide scale. To that end, we’ve built Congress and Me.
-          </h5>
+      <main role="main">
+        <div>
+          <Jumbotron
+            title_text={"Congress and Me"}
+            subtitle_text={
+              '"The ballot is stronger than the bullet." - Abraham Lincoln'
+            }
+            image={congressImage}
+          />
         </div>
-        <div className="col-md-3"></div>
-      </div>
+        <h3
+          className="text-center"
+          style={{ marginBottom: "3%", marginTop: "10%" }}
+        >
+          What is Congress and Me?
+        </h3>
+        <div className="row" style={{ marginBottom: "3%" }}>
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            <h5 className="text-justify">
+              The six of us believe that a well-informed populace is crucial to
+              a functioning democracy. We wanted a way for people to easily see
+              what issues their representatives are and aren’t talking about in
+              their tweets and on the Congress floor, and we wanted to highlight
+              which issues are being discussed and which ones require attention
+              on a nation-wide scale. To that end, we’ve built Congress and Me.
+            </h5>
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+        <br></br>
+        <br></br>
+        <Search
+          placeholder={"Search"}
+          filterText={filterText}
+          filterUpdate={filterUpdate.bind(this)}
+        />
+        <Tabs defaultActiveKey="reps" id="uncontrolled-tab-example">
+          <Tab eventKey="reps" title="Representatives">
+            <RepresentativeCard
+              representatives={rep_data}
+              filterText={filterText}
+            />
+          </Tab>
+          <Tab eventKey="states" title="States">
+            <StateCard states={state_data} filterText={filterText} />
+          </Tab>
+          <Tab eventKey="issues" title="Issues">
+            <IssueCard issues={issue_data} filterText={filterText} />
+          </Tab>
+        </Tabs>
+      </main>
       <br></br>
       <br></br>
-      <Search
-        placeholder={"Search"}
-        filterText={filterText}
-        filterUpdate={filterUpdate.bind(this)}
-      />
-      <Tabs defaultActiveKey="reps" id="uncontrolled-tab-example">
-        <Tab eventKey="reps" title="Representatives">
-        <RepresentativeCard representatives={rep_data} filterText={filterText} />
-        </Tab>
-        <Tab eventKey="states" title="States">
-          <StateCard states={state_data} filterText={filterText} />
-        </Tab>
-        <Tab eventKey="issues" title="Issues">
-          <IssueCard issues={issue_data} filterText={filterText} />
-        </Tab>
-      </Tabs>
-    </main>
-    <br></br>
-    <br></br>
     </>
   );
 }

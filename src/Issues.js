@@ -32,8 +32,19 @@ function Issues() {
   };
   const fuse = new Fuse(data, options);
 
+  function sanitize(value) {
+    return value
+      .replace("(", " ")
+      .replace(")", " ")
+      .replace(",", " ")
+      .replace("^", " ")
+      .replace("[", " ")
+      .replace("]", " ");
+  }
+
   function filterUpdate(value) {
     setFilterText(value);
+    value = sanitize(value);
   }
 
   useEffect(() => {
