@@ -39,6 +39,63 @@ String rep
 String vids
 }
 
+class MegaTable {
+String full_name
+String type
+String state
+String district
+String senate_class
+String party
+String url
+String phone
+String contact_form
+String rss_url
+String twitter
+String facebook
+String youtube
+String issues
+String bioguide_id
+String bioguide_summary
+integer rep_id
+integer agriculture
+integer armed_forces
+integer crimes
+integer economics
+integer education
+integer emergency_management
+integer environmentalism
+integer gun_control
+integer healthcare
+integer housing
+integer immigration
+integer labor
+integer social_issues
+integer taxation
+integer transportation_and_public_works
+integer other
+}
+
+class stateIssues {
+String state
+integer agriculture
+integer armed_forces
+integer crimes
+integer economics
+integer education
+integer emergency_management
+integer environmentalism
+integer gun_control
+integer healthcare
+integer housing
+integer immigration
+integer labor
+integer social_issues
+integer taxation
+integer transportation_and_public_works
+integer other
+integer tally
+}
+
 Representatives "1" o- "*" States
 Representatives "*" -- "*" Issues
 States "*" -- "*" Issues
