@@ -25,7 +25,7 @@ class AboutCard extends Component {
         "Calvin Dao": 0,
         "David Sikabwe": 0,
         "Ben Burton": 0,
-        "Ben Hazel": 0
+        BenHazel007: 0
       },
       issue_count: 0,
       unittest_dict: {
@@ -127,7 +127,9 @@ class AboutCard extends Component {
               </p>
               <p className="card-text">
                 <strong>Issues: </strong>
-                {this.state.issue_dict[member.name]}
+                {this.state.issue_dict[member.name] != undefined
+                  ? this.state.issue_dict[member.name]
+                  : this.state.issue_dict[member.gitlab_id]}
               </p>
               <p className="card-text">
                 <strong>Unit Tests: </strong>
