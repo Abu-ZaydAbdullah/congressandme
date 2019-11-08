@@ -75,6 +75,10 @@ integer transportation_and_public_works
 integer other
 }
 
+States "*" - "*" Issues
+(States, Issues) .. stateIssues
+
+
 class stateIssues {
 String state
 integer agriculture
@@ -93,7 +97,7 @@ integer social_issues
 integer taxation
 integer transportation_and_public_works
 integer other
-integer tally
+String tally
 }
 
 Representatives "1" o- "*" States
