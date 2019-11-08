@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Jumbotron from "./components/Jumbotron";
+import { Tab, Tabs } from "react-bootstrap";
 import congressImage from "./assets/congress_image.jpg";
-import StateData from "./data/StateData";
 import Search from "./components/Search";
 import StateCard from "./components/StateCard";
+import RepresentativeCard from "./components/RepresentativeCard";
+import IssueCard from "./components/IssueCard";
+import StateData from "./data/StateData"
+import RepresentativeData from "./data/RepresentativeData"
+import IssueData from "./data/IssueData"
 const Fuse = require("fuse.js");
 
 function Home() {
   const [filterText, setFilterText] = useState("");
   const [state_data, setStateData] = useState([]);
-  var options = {
-    shouldSort: true,
+  const [rep_data, setRepData] = useState([]);
+  const [issue_data, setIssueData] = useState([]);
+
+  var state_options = {
+    shouldSort: false,
     tokenize: true,
     threshold: 0,
     location: 0,
@@ -23,17 +31,57 @@ function Home() {
       { name: "summary", weight: 0.1 }
     ]
   };
-  const fuse = new Fuse(StateData, options);
+
+  var rep_options = {
+    shouldSort: false,
+    tokenize: true,
+    threshold: 0,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 140,
+    minMatchCharLength: 1,
+    keys: [
+      { name: "full_name", weight: 0.4 },
+      { name: "party", weight: 0.1 },
+      { name: "state", weight: 0.1 },
+      { name: "chamber", weight: 0.1 },
+      { name: "twitter", weight: 0.1 },
+      { name: "facebook", weight: 0.1 }
+    ]
+  };
+
+  var issue_options = {
+    shouldSort: false,
+    tokenize: true,
+    threshold: 0,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 140,
+    minMatchCharLength: 1,
+    keys: [
+      { name: "name", weight: 0.6 },
+      { name: "description", weight: 0.2 },
+      { name: "about", weight: 0.2 }
+    ]
+  };
+
+  const fuseReps = new Fuse(RepresentativeData, rep_options);
+  const fuseStates = new Fuse(StateData, state_options);
+  const fuseIssues = new Fuse(IssueData, issue_options);
 
   function filterUpdate(value) {
     setFilterText(value);
   }
 
   useEffect(() => {
-    setStateData(fuse.search(filterText));
+    setRepData(fuseReps.search(filterText));
+    setStateData(fuseStates.search(filterText));
+    setIssueData(fuseIssues.search(filterText));
+    console.log(issue_data)
   }, [filterText]);
 
   return (
+    <>
     <main role="main">
       <div>
         <Jumbotron
@@ -71,8 +119,21 @@ function Home() {
         filterText={filterText}
         filterUpdate={filterUpdate.bind(this)}
       />
-      <StateCard states={state_data} filterText={filterText} />
+      <Tabs defaultActiveKey="reps" id="uncontrolled-tab-example">
+        <Tab eventKey="reps" title="Representatives">
+        <RepresentativeCard representatives={rep_data} filterText={filterText} />
+        </Tab>
+        <Tab eventKey="states" title="States">
+          <StateCard states={state_data} filterText={filterText} />
+        </Tab>
+        <Tab eventKey="issues" title="Issues">
+          <IssueCard issues={issue_data} filterText={filterText} />
+        </Tab>
+      </Tabs>
     </main>
+    <br></br>
+    <br></br>
+    </>
   );
 }
 

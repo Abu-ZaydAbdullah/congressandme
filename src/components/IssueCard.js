@@ -15,10 +15,12 @@ function trimSummary(str, queries) {
 
 function IssueCard({ issues, filterText }) {
   const queries = filterText.split(" ");
+
   const issueList = issues.map((issue, index) => {
-    var summary_idx = trimSummary(issue.about, queries);
+    var about_idx = trimSummary(issue.about, queries);
+    var description_idx = trimSummary(issue.description, queries);
     return (
-      <div className="col-md-4" key={issue.index}>
+      <div className="col-md-4 text-center" key={issue.index}>
         <div className="card mb-4 box-shadow">
           <Link
             to={{
@@ -37,7 +39,7 @@ function IssueCard({ issues, filterText }) {
           >
             <img
               className="card-img-top about-image"
-              style={{ maxHeight: 450 }}
+              style={{ maxHeight: 200 }}
               src={issue.image}
               alt="Card image cap"
             ></img>
@@ -59,7 +61,9 @@ function IssueCard({ issues, filterText }) {
               <Highlighter
                 searchWords={queries}
                 autoEscape={false}
-                textToHighlight={issue.description}
+                textToHighlight={issue.description.substring(
+                  description_idx,
+                  issue.description.indexOf(" ", issue.description.indexOf(" ", description_idx+90)))}
                 highlightStyle={{
                   backgroundColor: "#27ae60",
                   color: "white"
@@ -72,8 +76,8 @@ function IssueCard({ issues, filterText }) {
                 searchWords={queries}
                 autoEscape={false}
                 textToHighlight={issue.about.substring(
-                  summary_idx,
-                  summary_idx + 100
+                  about_idx,
+                  issue.about.indexOf(" ", issue.about.indexOf(" ", about_idx+90))
                 )}
                 highlightStyle={{
                   backgroundColor: "#27ae60",

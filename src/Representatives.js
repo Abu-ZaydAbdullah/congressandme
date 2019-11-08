@@ -40,9 +40,15 @@ function Representatives() {
   }
 
   useEffect(() => {
+    if (filterText === "") {
+      const start_index = (page_num - 1) * 54;
+      setRepresentatives(data.slice(start_index, start_index + 54))
+      setDataSize(data.length)
+      } else {
     var temp_data = fuse.search(filterText);
     setRepresentatives(temp_data);
     setDataSize(temp_data.length);
+      }
   }, [filterText]);
 
   const fetchRepresentatives = async () => {
@@ -559,6 +565,8 @@ function Representatives() {
           </div>
         </div>
       </main>
+      <br></br>
+    <br></br>
     </>
   );
 }

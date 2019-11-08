@@ -36,9 +36,14 @@ function States() {
   }
 
   useEffect(() => {
+    if (filterText === "") {
+    setStates(data)
+    setDataSize(data.length)
+    } else {
     var temp_data = fuse.search(filterText);
     setStates(temp_data);
     setDataSize(temp_data.length);
+    }
   }, [filterText]);
 
   const fetchStates = async () => {
@@ -181,6 +186,8 @@ function States() {
           </div>
         </div>
       </main>
+      <br></br>
+    <br></br>
     </>
   );
 }
