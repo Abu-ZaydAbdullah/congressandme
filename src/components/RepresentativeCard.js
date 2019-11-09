@@ -62,18 +62,20 @@ function RepresentativeCard({ representatives, filterText }) {
                 }}
               />
             </p>
-            <p className="card-text">
-              <strong>State:</strong>{" "}
-              <Highlighter
-                searchWords={queries}
-                autoEscape={false}
-                textToHighlight={representative.state}
-                highlightStyle={{
-                  backgroundColor: "#27ae60",
-                  color: "white"
-                }}
-              />
-            </p>
+            <Link to={`/state/${representative.state}`}>
+              <p className="card-text">
+                <strong>State:</strong>{" "}
+                <Highlighter
+                  searchWords={queries}
+                  autoEscape={false}
+                  textToHighlight={representative.state}
+                  highlightStyle={{
+                    backgroundColor: "#27ae60",
+                    color: "white"
+                  }}
+                />
+              </p>
+            </Link>
             <p className="card-text">
               <strong>Chamber:</strong>{" "}
               <Highlighter

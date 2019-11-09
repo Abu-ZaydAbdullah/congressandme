@@ -109,7 +109,7 @@ class megaTable(db.Model):
     transportation_and_public_works =   db.Column(db.Unicode)
     other =                             db.Column(db.Unicode)
 
-class issueTable(db.Model):
+class stateIssues(db.Model):
     __tablename__ =                     "stateIssues"
     state =                             db.Column(db.Unicode, primary_key = True)
     agriculture =                       db.Column(db.Unicode)

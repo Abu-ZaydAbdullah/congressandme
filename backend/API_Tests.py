@@ -81,6 +81,14 @@ class ApiTests(unittest.TestCase):
         response = requests.request("GET", url + 'Mentions?q={"filters":[{"name":"state","op":"==","val":"TX"}]}')
         assert(response.ok)
 
+    def test20(self):
+        response = requests.request("GET", url + "stateIssues")
+        assert(response.ok)
+
+    def test21(self):
+        response = requests.request("GET", url + 'stateIssues?q={"filters":[{"name":"state","op":"==","val":"TX"}]}')
+        assert(response.ok)
+
 if __name__ == "__main__":
     unittest.main()
 
