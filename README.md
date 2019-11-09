@@ -1,17 +1,17 @@
-# Congress and Me (Phase 2)
+# Congress and Me (Phase 3)
 
 | Name              | EID           | GitLabID           | Estimated Comp. | Actual Comp. |
 | ------------------|:-------------:|:------------------:|:---------------:|:------------:|
-| Abu-Zayd Abdullah | aa77266       | AbuZaydAbdullah    | 24 hours        | 40 hours     |
-| Ben Burton        | btb896        | bentburton         | 15 hours        | 40 hours     |
-| Calvin Dao        | cvd325        | auproxis           | 35 hours        | 40 hours     |
-| Robert Gutierrez  | rg43274       | robgutierrez1      | 15 hours        | 40 hours     |
-| Ben Hazel         | bgh559        | BenHazel007        | 20 hours        | 40 hours     |
-| David Sikabwe     | dws2375       | dsikabwe           | 35 hours        | 40 hours     |
+| Abu-Zayd Abdullah | aa77266       | AbuZaydAbdullah    | 24 hours        | 35 hours     |
+| Ben Burton        | btb896        | bentburton         | 10 hours        | 35 hours     |
+| Calvin Dao        | cvd325        | auproxis           | 35 hours        | 35 hours     |
+| Robert Gutierrez  | rg43274       | robgutierrez1      | 30 hours        | 35 hours     |
+| Ben Hazel         | bgh559        | BenHazel007        | 20 hours        | 35 hours     |
+| David Sikabwe     | dws2375       | dsikabwe           | 30 hours        | 35 hours     |
 
 
-Git SHA: bbcb9b2e5bd3311da9f651f236d774382c5e89e2<br>
-Project Lead: Robert Gutierrez<br>
+Git SHA: dd076c3e2a5a5fc99596183a0b5234072b8e0fc2<br>
+Project Lead: Ben Hazel<br>
 GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
 Website: https://congressand.me<br>
 
