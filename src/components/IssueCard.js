@@ -16,7 +16,7 @@ function trimSummary(str, queries) {
 function IssueCard({ issues, filterText }) {
   const queries = filterText.split(" ");
 
-  const issueList = issues.map((issue, index) => {
+  const issueList = issues.map(issue => {
     var about_idx = trimSummary(issue.about, queries);
     var description_idx = trimSummary(issue.description, queries);
     return (
