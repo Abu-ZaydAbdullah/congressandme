@@ -7,7 +7,7 @@ function trimSummary(str, queries) {
   for (query in queries) {
     let idx = str.toLowerCase().indexOf(queries[query].toLowerCase());
     if (idx !== -1) {
-      return idx;
+      return str.indexOf(" ", idx - 5) + 1;
     }
   }
   return 0;
