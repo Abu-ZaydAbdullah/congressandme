@@ -109,6 +109,26 @@ class megaTable(db.Model):
     transportation_and_public_works =   db.Column(db.Unicode)
     other =                             db.Column(db.Unicode)
 
+class stateIssues(db.Model):
+    __tablename__ =                     "stateIssues"
+    state =                             db.Column(db.Unicode, primary_key = True)
+    agriculture =                       db.Column(db.Unicode)
+    armed_forces =                      db.Column(db.Unicode)
+    crimes =                            db.Column(db.Unicode)
+    economics =                         db.Column(db.Unicode)
+    education =                         db.Column(db.Unicode)
+    emergency_management =              db.Column(db.Unicode)
+    environmentalism =                  db.Column(db.Unicode)
+    gun_control =                       db.Column(db.Unicode)
+    healthcare =                        db.Column(db.Unicode)
+    housing =                           db.Column(db.Unicode)
+    immigration =                       db.Column(db.Unicode)
+    labor =                             db.Column(db.Unicode)
+    social_issues =                     db.Column(db.Unicode)
+    taxation =                          db.Column(db.Unicode)
+    transportation_and_public_works =   db.Column(db.Unicode)
+    tally =                             db.Column(db.Unicode)
+
 
 # Allows for the use of Flask-Restless to quickly build APIs
 # Requires app we just built with configurations and a flask alchemy obj
@@ -120,6 +140,7 @@ manager.create_api(States, methods=['GET'], results_per_page=10, max_results_per
 manager.create_api(Issues, methods=['GET'], results_per_page=5, max_results_per_page=30)
 manager.create_api(Mentions, methods = ['GET'], results_per_page=0)
 manager.create_api(megaTable, methods = ['GET'])
+manager.create_api(stateIssues, methods = ['GET'])
 
 if __name__=='__main__':
     app.run(host='0.0.0.0')
