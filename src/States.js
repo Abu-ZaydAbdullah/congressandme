@@ -78,9 +78,7 @@ function States() {
       await setDataSize(data.length);
     } else {
       const start_index = (page_num - 1) * 9;
-      setData(data);
-      setStates(data.slice(start_index, start_index + 9));
-      setDataSize(data.length);
+      resetStates(data.slice(start_index, start_index + 9));
     }
   };
 
@@ -88,64 +86,64 @@ function States() {
     fetchStates();
   }, [page_num]);
 
-  const sortStates = () => {
+  useEffect(() => {
+    resetStates();
+  }, [sort_dir]);
+
+  function resetStates()
+  {
     if (sort_dir == "A-Z") {
       const start_index = (page_num - 1) * 9;
-      setStates(
-        data
-          .sort(function(a, b) {
-            if (a.name < b.name) {
-              return -1;
-            }
-            if (a.name > b.name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 9)
+      let temp_data = data
+      .sort(function(a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
+      .filter(
+        state => stateHasIssue(state)
       );
+      setStates(temp_data.slice(start_index, start_index + 9));
+      setDataSize(temp_data.length);
     } else if (sort_dir == "Z-A") {
       const start_index = (page_num - 1) * 9;
-      setStates(
-        data
-          .sort(function(a, b) {
-            if (a.name > b.name) {
-              return -1;
-            }
-            if (a.name < b.name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 9)
+      let temp_data = data
+      .sort(function(a, b) {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+        return 0;
+      })
+      .filter(
+        state => stateHasIssue(state)
       );
+      setStates(temp_data.slice(start_index, start_index + 9));
+      setDataSize(temp_data.length);
     }
   };
 
   useEffect(() => {
-    sortStates();
-  }, [sort_dir]);
-
-  const filterByIssue = () => {
-    const start_index = (page_num - 1) * 9;
-    const temp_data = data.filter(
-      state => stateHasIssue(state)
-    );
-    setStates(temp_data.slice(start_index, start_index + 9));
-    setDataSize(temp_data.length);
-  };
-
-  useEffect(() => {
-    filterByIssue();
+    resetStates();
   }, [filterIssue]);
 
   function stateHasIssue(state)
       {
+        if(filterIssue == "")
+        {
+          return true;
+        }
         for(var i = 0; i < data2.length; i++)
         {
+          
           if(data2[i].state === state.abbreviation)
           {
-            console.log(i);
             return data2[i].tally.includes(filterIssue);
           }
         }
@@ -154,6 +152,7 @@ function States() {
 
   const pagination_list = () => {
     let p_list = [];
+    console.log("page list " + String(dataSize));
     for (var i = 0; i < dataSize / 9; i++) {
       p_list.push(
         <li class="page-item">
@@ -191,6 +190,13 @@ function States() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("");
+                  }}
+                >
+                  Don't Filter
+                </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
                     setFilterIssue("agriculture");
