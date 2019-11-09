@@ -14,7 +14,9 @@ function States() {
   const [dataSize, setDataSize] = useState(50);
   const [sort_dir, setSortDir] = useState("A-Z");
   const [data, setData] = useState([]);
+  const [data2, setData2] = useState([]);
   const [filterText, setFilterText] = useState("");
+  const [filterIssue, setFilterIssue] = useState("");
   var options = {
     shouldSort: true,
     tokenize: true,
@@ -63,8 +65,14 @@ function States() {
         `https://api.congressand.me/api/States?results_per_page=50`
       );
       let data = await res.data.objects;
+
+      let res2 = await axios(
+        `https://api.congressand.me/api/stateIssues?results_per_page=56`
+      );
+      let data2 = await res2.data.objects;
       const start_index = (page_num - 1) * 9;
       await setData(data);
+      await setData2(data2);
       await setStates(data.slice(start_index, start_index + 9));
       await setDataSize(data.length);
     } else {
@@ -117,6 +125,32 @@ function States() {
     sortStates();
   }, [sort_dir]);
 
+  const filterByIssue = () => {
+    const start_index = (page_num - 1) * 9;
+    const temp_data = data.filter(
+      state => stateHasIssue(state)
+    );
+    setStates(temp_data.slice(start_index, start_index + 9));
+    setDataSize(temp_data.length);
+  };
+
+  useEffect(() => {
+    filterByIssue();
+  }, [filterIssue]);
+
+  function stateHasIssue(state)
+      {
+        for(var i = 0; i < data2.length; i++)
+        {
+          if(data2[i].state === state.abbreviation)
+          {
+            console.log(i);
+            return data2[i].tally.includes(filterIssue);
+          }
+        }
+        return false;
+      };
+
   const pagination_list = () => {
     let p_list = [];
     for (var i = 0; i < dataSize / 9; i++) {
@@ -148,7 +182,130 @@ function States() {
           <br></br>
           <h1 className="page-title">States</h1>
           <div className="row">
-            <div className="col-md-10"></div>
+            <div className="col-md-8"></div>
+            <div className="col-md-2">
+              <Dropdown>
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                  Filter By:
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("agriculture");
+                  }}
+                >
+                  Agriculture
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("armed_forces");
+                  }}
+                >
+                  Armed Forces
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("crimes");
+                  }}
+                >
+                  Crime And Law Enforcement
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("armed_forces");
+                  }}
+                >
+                  Armed Forces
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("economics");
+                  }}
+                >
+                  Economics
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("education");
+                  }}
+                >
+                  Education
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("emergency_management");
+                  }}
+                >
+                  Emergency Management
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("environmentalism");
+                  }}
+                >
+                  environmentalism
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("gun_control");
+                  }}
+                >
+                  gun control
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("healthcare");
+                  }}
+                >
+                  healthcare
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("housing_and_community_development");
+                  }}
+                >
+                  Housing and Community Development
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("immigration");
+                  }}
+                >
+                  immigration
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("labor_and_employment");
+                  }}
+                >
+                  Labor and Employment
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("social_issues");
+                  }}
+                >
+                  Social Issues
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("taxation");
+                  }}
+                >
+                  Taxation
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("transportation_and_public_works");
+                  }}
+                >
+                  Transportation and Public Works
+                </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              
+            </div>
             <div className="col-md-2">
               <Dropdown>
                 <Dropdown.Toggle variant="secondary" id="dropdown-basic">
