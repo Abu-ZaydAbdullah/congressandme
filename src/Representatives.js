@@ -118,6 +118,22 @@ function Representatives() {
     }
   };
 
+  function sanitize(value) {
+    return value
+      .replace("(", " ")
+      .replace(")", " ")
+      .replace(",", " ")
+      .replace("^", " ")
+      .replace("[", " ")
+      .replace("]", " ")
+      .replace("\\", " ");
+  }
+
+  function filterUpdate(value) {
+    value = sanitize(value);
+    setFilterText(value);
+  }
+
   useEffect(() => {
     sortReps();
   }, [sort_dir]);

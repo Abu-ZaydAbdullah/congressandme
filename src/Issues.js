@@ -39,12 +39,13 @@ function Issues() {
       .replace(",", " ")
       .replace("^", " ")
       .replace("[", " ")
-      .replace("]", " ");
+      .replace("]", " ")
+      .replace("\\", " ");
   }
 
   function filterUpdate(value) {
-    setFilterText(value);
     value = sanitize(value);
+    setFilterText(value);
   }
 
   useEffect(() => {

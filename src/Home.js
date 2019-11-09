@@ -76,7 +76,8 @@ function Home() {
       .replace(",", " ")
       .replace("^", " ")
       .replace("[", " ")
-      .replace("]", " ");
+      .replace("]", " ")
+      .replace("\\", " ");
   }
 
   function filterUpdate(value) {

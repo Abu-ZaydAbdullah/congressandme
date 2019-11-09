@@ -40,7 +40,8 @@ function States() {
       .replace(",", " ")
       .replace("^", " ")
       .replace("[", " ")
-      .replace("]", " ");
+      .replace("]", " ")
+      .replace("\\", " ");
   }
 
   function filterUpdate(value) {
