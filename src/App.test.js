@@ -99,7 +99,7 @@ describe("States Component", () => {
       StatesWrapper.find("button")
         .at(0)
         .text()
-    ).toEqual("Sort By:");
+    ).toEqual("Filter By:");
   });
 });
 
@@ -122,7 +122,7 @@ describe("Issues Component", () => {
       IssuesWrapper.find("button")
         .at(0)
         .text()
-    ).toEqual("Sort By:");
+    ).toEqual("Filter By:");
   });
 });
 
