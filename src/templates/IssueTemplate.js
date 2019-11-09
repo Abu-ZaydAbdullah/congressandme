@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RepresentativeCard from "../components/RepresentativeCard";
 import { useLocation, useParams, Link } from "react-router-dom";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 import axios from "axios";
 
 function IssueTemplate() {
@@ -61,8 +62,13 @@ function IssueTemplate() {
               <div className="row">
                 <p>
                   <a href={issue_data.vids} target="_blank">
-                    Trevor Noah on {issue_data.name}
+                      Trevor Noah on {issue_data.name}
                   </a>
+                  <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="UN"
+                    options={{ height: 500 }}
+                  />
                 </p>
               </div>
             </div>
