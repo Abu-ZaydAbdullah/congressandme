@@ -74,9 +74,7 @@ function Representatives() {
       await setDataSize(data.length);
     } else {
       const start_index = (page_num - 1) * 54;
-      setData(data);
-      setRepresentatives(data.slice(start_index, start_index + 54));
-      setDataSize(data.length);
+      resetRepresentatives(data.slice(start_index, start_index + 54));
     }
   };
 
@@ -84,38 +82,52 @@ function Representatives() {
     fetchRepresentatives();
   }, [page_num]);
 
-  const sortReps = () => {
+  function resetRepresentatives() 
+  {
     if (sort_dir == "A-Z") {
       const start_index = (page_num - 1) * 54;
-      setRepresentatives(
-        data
-          .sort(function(a, b) {
-            if (a.full_name < b.full_name) {
-              return -1;
-            }
-            if (a.full_name > b.full_name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 54)
+      let temp_data = data
+      .sort(function(a, b) {
+        if (a.full_name < b.full_name) {
+          return -1;
+        }
+        if (a.full_name > b.full_name) {
+          return 1;
+        }
+        return 0;
+      })
+      .filter(
+        representative => repInState(representative)
       );
+      setRepresentatives(temp_data.slice(start_index, start_index + 54));
+      setDataSize(temp_data.length);
     } else if (sort_dir == "Z-A") {
       const start_index = (page_num - 1) * 54;
-      setRepresentatives(
-        data
-          .sort(function(a, b) {
-            if (a.full_name > b.full_name) {
-              return -1;
-            }
-            if (a.full_name < b.full_name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 54)
+      let temp_data = data
+      .sort(function(a, b) {
+        if (a.full_name > b.full_name) {
+          return -1;
+        }
+        if (a.full_name < b.full_name) {
+          return 1;
+        }
+        return 0;
+      })
+      .filter(
+        representative => repInState(representative)
       );
+      setRepresentatives(temp_data.slice(start_index, start_index + 54));
+      setDataSize(temp_data.length);
     }
+  }
+
+  function repInState(representative)
+  {
+    if(filterState === "")
+    {
+      return true;
+    }
+    return representative.state === filterState;
   };
 
   function sanitize(value) {
@@ -135,20 +147,11 @@ function Representatives() {
   }
 
   useEffect(() => {
-    sortReps();
+    resetRepresentatives();
   }, [sort_dir]);
 
-  const filterByState = () => {
-    const start_index = (page_num - 1) * 54;
-    const temp_data = data.filter(
-      representative => representative.state === filterState
-    );
-    setRepresentatives(temp_data.slice(start_index, start_index + 54));
-    setDataSize(temp_data.length);
-  };
-
   useEffect(() => {
-    filterByState();
+    resetRepresentatives();
   }, [filterState]);
 
   const pagination_list = () => {
@@ -190,6 +193,13 @@ function Representatives() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
+                <Dropdown.Item
+                    onClick={() => {
+                      setFilterState("");
+                    }}
+                  >
+                    Don't Filter
+                  </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       setFilterState("AL");
