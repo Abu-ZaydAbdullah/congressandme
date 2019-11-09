@@ -34,19 +34,25 @@ describe("Home Component", () => {
     );
   });
   it("Renders Tab 1", () => {
-    expect(HomeWrapper.find("a").at(0).text()).toEqual(
-      "Representatives"
-    );
+    expect(
+      HomeWrapper.find("a")
+        .at(0)
+        .text()
+    ).toEqual("Representatives");
   });
   it("Renders Tab 2", () => {
-    expect(HomeWrapper.find("a").at(1).text()).toEqual(
-      "States"
-    );
+    expect(
+      HomeWrapper.find("a")
+        .at(1)
+        .text()
+    ).toEqual("States");
   });
   it("Renders Tab 3", () => {
-    expect(HomeWrapper.find("a").at(2).text()).toEqual(
-      "Issues"
-    );
+    expect(
+      HomeWrapper.find("a")
+        .at(2)
+        .text()
+    ).toEqual("Issues");
   });
 });
 

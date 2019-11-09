@@ -62,8 +62,8 @@ function RepresentativeCard({ representatives, filterText }) {
                 }}
               />
             </p>
-            <Link to={`/state/${representative.state}`}>
-              <p className="card-text">
+            <p className="card-text">
+              <Link to={`/state/${representative.state}`}>
                 <strong>State:</strong>{" "}
                 <Highlighter
                   searchWords={queries}
@@ -74,8 +74,8 @@ function RepresentativeCard({ representatives, filterText }) {
                     color: "white"
                   }}
                 />
-              </p>
-            </Link>
+              </Link>
+            </p>
             <p className="card-text">
               <strong>Chamber:</strong>{" "}
               <Highlighter

@@ -62,7 +62,7 @@ function IssueTemplate() {
               <div className="row">
                 <p>
                   <a href={issue_data.vids} target="_blank">
-                      Trevor Noah on {issue_data.name}
+                    Trevor Noah on {issue_data.name}
                   </a>
                   <TwitterTimelineEmbed
                     sourceType="profile"
