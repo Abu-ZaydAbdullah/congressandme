@@ -64,7 +64,7 @@ function IssueCard({ issues, filterText }) {
                 textToHighlight={issue.description.substring(
                   description_idx,
                   issue.description.indexOf(
-                    " ",
+                    "",
                     issue.description.indexOf(" ", description_idx + 90)
                   )
                 )}
