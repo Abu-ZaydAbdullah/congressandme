@@ -34,10 +34,10 @@ class AboutCard extends Component {
         "Robert Gutierrez": 0,
         "Calvin Dao": 0,
         "David Sikabwe": 0,
-        "Ben Burton": 0,
+        "Ben Burton": 41,
         "Ben Hazel": 0
       },
-      unittest_count: 40
+      unittest_count: 81
     };
   }
 
