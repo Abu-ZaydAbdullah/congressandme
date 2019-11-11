@@ -63,7 +63,7 @@ function Representatives() {
   }, [filterText]);
 
   const fetchRepresentatives = async () => {
-    if (data.length == 0) {
+    if (data.length === 0) {
       let res = await axios(
         `https://api.congressand.me/api/Representatives?results_per_page=540`
       );
@@ -84,7 +84,7 @@ function Representatives() {
 
   function resetRepresentatives() 
   {
-    if (sort_dir == "A-Z") {
+    if (sort_dir === "A-Z") {
       const start_index = (page_num - 1) * 54;
       let temp_data = data
       .sort(function(a, b) {
@@ -101,7 +101,7 @@ function Representatives() {
       );
       setRepresentatives(temp_data.slice(start_index, start_index + 54));
       setDataSize(temp_data.length);
-    } else if (sort_dir == "Z-A") {
+    } else if (sort_dir === "Z-A") {
       const start_index = (page_num - 1) * 54;
       let temp_data = data
       .sort(function(a, b) {
@@ -129,22 +129,6 @@ function Representatives() {
     }
     return representative.state === filterState;
   };
-
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ")
-      .replace("\\", " ");
-  }
-
-  function filterUpdate(value) {
-    value = sanitize(value);
-    setFilterText(value);
-  }
 
   useEffect(() => {
     resetRepresentatives();
@@ -192,13 +176,13 @@ function Representatives() {
                   Filter By:
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu>
+                <Dropdown.Menu style={{overflow: "scroll", maxHeight: "200px"}}>
                 <Dropdown.Item
                     onClick={() => {
                       setFilterState("");
                     }}
                   >
-                    Don't Filter
+                    Reset Filter
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {

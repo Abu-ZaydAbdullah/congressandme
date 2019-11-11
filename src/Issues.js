@@ -49,16 +49,6 @@ function Issues() {
     setFilterText(value);
   }
 
-  useEffect(() => {
-    if (filterText == "") {
-      fetchIssues();
-    } else {
-      var temp_data = fuse.search(filterText);
-      setIssues(temp_data);
-      setDataSize(temp_data.length);
-    }
-  }, [filterText]);
-
   const fetchIssues = async () => {
     if (data.length == 0) {
       let res = await axios(
@@ -76,6 +66,12 @@ function Issues() {
       setDataSize(data.length);
     }
   };
+
+  useEffect(() => {
+      var temp_data = fuse.search(filterText);
+      setIssues(temp_data);
+      setDataSize(temp_data.length);
+  }, [filterText]);
 
   useEffect(() => {
     filterIssuesByState();
@@ -158,6 +154,7 @@ function Issues() {
     return p_list;
   };
 
+  console.log(issues)
   return (
     <>
       <main role="main">
@@ -176,7 +173,7 @@ function Issues() {
                 Filter By:
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
+              <Dropdown.Menu style={{overflow: "scroll", maxHeight: "200px"}}>
                 <Dropdown.Item
                   onClick={() => {
                     setFilterState("AL");

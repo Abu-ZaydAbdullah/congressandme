@@ -185,7 +185,7 @@ function States() {
                       setFilterIssue("");
                     }}
                   >
-                    Don't Filter
+                    Reset Filter
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
@@ -241,21 +241,21 @@ function States() {
                       setFilterIssue("environmentalism");
                     }}
                   >
-                    environmentalism
+                    Environmentalism
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       setFilterIssue("gun_control");
                     }}
                   >
-                    gun control
+                    Gun Control
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       setFilterIssue("healthcare");
                     }}
                   >
-                    healthcare
+                    Healthcare
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
@@ -269,7 +269,7 @@ function States() {
                       setFilterIssue("immigration");
                     }}
                   >
-                    immigration
+                    Immigration
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
