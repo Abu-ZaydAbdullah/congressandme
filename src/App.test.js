@@ -8,7 +8,7 @@ import Home from "./Home";
 import Representatives from "./Representatives";
 import States from "./States";
 import Issues from "./Issues";
-import { About } from "./About";
+import About from "./About";
 
 configure({ adapter: new Adapter() });
 
@@ -132,7 +132,11 @@ describe("Issues Component", () => {
   });
 });
 
-const AboutWrapper = mount(<About />);
+const AboutWrapper = mount(
+  <MemoryRouter initial_entries="/about">
+    <About />
+  </MemoryRouter>
+);
 
 describe("About Component", () => {
   it("Renders Title", () => {

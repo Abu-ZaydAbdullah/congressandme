@@ -7,7 +7,7 @@ import StateTemplate from "./templates/StateTemplate";
 import IssueTemplate from "./templates/IssueTemplate";
 import States from "./States";
 import Issues from "./Issues";
-import { About } from "./About";
+import About from "./About";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";

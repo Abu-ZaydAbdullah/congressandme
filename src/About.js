@@ -3,7 +3,9 @@ import AboutCard from "./components/AboutCard";
 import ToolCard from "./components/ToolCard";
 import SourceCard from "./components/SourceCard";
 
-export const About = () => (
+function About () {
+
+  return (
   <main role="main">
     <section className="jumbotron text-center">
       <div className="container">
@@ -60,10 +62,13 @@ export const About = () => (
         </a>
       </p>
       <p className="text-center">
-        <a href="https://documenter.getpostman.com/view/9014793/SVzxXyvM">
+        <a href="https://documenter.getpostman.com/view/9014793/SVzxXyvM?version=latest">
           API Documentation
         </a>
       </p>
     </div>
   </main>
-);
+  )
+  };
+
+  export default About
