@@ -21,7 +21,7 @@ function StateTemplate() {
   const [issue_data, setIssueData] = useState([]);
 
   const getStateData = async () => {
-    if (temp_data.state == undefined) {
+    if (temp_data.state === undefined) {
       const req = await axios(
         `https://api.congressand.me/api/States?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`
       );

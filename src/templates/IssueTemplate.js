@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RepresentativeCard from "../components/RepresentativeCard";
-import { useLocation, useParams, Link } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ function IssueTemplate() {
   const [issue_name, setIssueName] = useState("");
 
   const getIssueandRepData = async () => {
-    if (temp_data.state == undefined) {
+    if (temp_data.state === undefined) {
       const req = await axios(
         `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`
       );
@@ -57,11 +57,11 @@ function IssueTemplate() {
           <div className="row justify-content-left">
             <div className="col-md-4">
               <div>
-                <img style={{ height: 180 }} src={issue_data.image} />
+                <img style={{ height: 180 }} src={issue_data.image} alt={issue_data.name}/>
               </div>
               <div className="row">
                 <p>
-                  <a href={issue_data.vids} target="_blank">
+                  <a href={issue_data.vids}>
                     Trevor Noah on {issue_data.name}
                   </a>
                   <TwitterTimelineEmbed

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Timeline } from "react-twitter-widgets";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import IssueCard from "../components/IssueCard";
 import axios from "axios";
@@ -59,7 +58,7 @@ function RepresentativeTemplate() {
                 <h5>{rep_data.type}</h5>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item">
-                    <a className="nav-link active" id="home-tab">
+                    <a className="nav-link active" id="home-tab" href={`http://bioguide.congress.gov/scripts/biodisplay.pl?index=${rep_data.bioguide}`}>
                       About
                       <TwitterTimelineEmbed
                         sourceType="profile"
@@ -78,31 +77,31 @@ function RepresentativeTemplate() {
               <div className="shifted">
                 <div className="profile-work">
                   <p>Contact</p>
-                  <a href={rep_data.website} target="_blank">
+                  <a href={rep_data.website} >
                     Website
                   </a>
                   <br />
-                  <a href={rep_data.form} target="_blank">
+                  <a href={rep_data.form} >
                     Email
                   </a>
                   <br />
-                  <a href={rep_data.phone} target="_blank">
+                  <a href={rep_data.phone} >
                     Phone
                   </a>
                   <p>Social Media</p>
-                  <a href={rep_data.twitter} target="_blank">
+                  <a href={rep_data.twitter} >
                     Twitter
                   </a>
                   <br />
-                  <a href={rep_data.facebook} target="_blank">
+                  <a href={rep_data.facebook} >
                     Facebook
                   </a>
                   <br />
-                  <a href={rep_data.youtube} target="_blank">
+                  <a href={rep_data.youtube} >
                     YouTube
                   </a>
                   <br />
-                  <a href={rep_data.rss} target="_blank">
+                  <a href={rep_data.rss} >
                     RSS
                   </a>
                   <br />
@@ -148,7 +147,7 @@ function RepresentativeTemplate() {
                     <div className="col-md-6">
                       <label>
                         Summary: (Courtesy of{" "}
-                        <a href="http://bioguide.congress.gov" target="_blank">
+                        <a href="http://bioguide.congress.gov" >
                           BioGuide
                         </a>
                         )

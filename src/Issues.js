@@ -50,7 +50,7 @@ function Issues() {
   }
 
   const fetchIssues = async () => {
-    if (data.length == 0) {
+    if (data.length === 0) {
       let res = await axios(
         `https://api.congressand.me/api/Issues?results_per_page=15`
       );
@@ -98,7 +98,7 @@ function Issues() {
   }, [page_num]);
 
   const sortIssues = () => {
-    if (sort_dir == "A-Z") {
+    if (sort_dir === "A-Z") {
       const start_index = (page_num - 1) * 5;
       setIssues(
         data
@@ -113,7 +113,7 @@ function Issues() {
           })
           .slice(start_index, start_index + 5)
       );
-    } else if (sort_dir == "Z-A") {
+    } else if (sort_dir === "Z-A") {
       const start_index = (page_num - 1) * 5;
       setIssues(
         data

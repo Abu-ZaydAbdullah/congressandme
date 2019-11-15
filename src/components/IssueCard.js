@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
 
@@ -41,7 +41,7 @@ function IssueCard({ issues, filterText }) {
               className="card-img-top about-image"
               style={{ maxHeight: 200 }}
               src={issue.image}
-              alt="Card image cap"
+              alt={issue.name}
             ></img>
           </Link>
           <div className="card-body">

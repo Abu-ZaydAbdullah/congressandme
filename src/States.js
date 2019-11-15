@@ -61,7 +61,7 @@ function States() {
   }, [filterText]);
 
   const fetchStates = async () => {
-    if (data.length == 0) {
+    if (data.length === 0) {
       let res = await axios(
         `https://api.congressand.me/api/States?results_per_page=50`
       );
@@ -91,7 +91,7 @@ function States() {
   }, [sort_dir]);
 
   function resetStates() {
-    if (sort_dir == "A-Z") {
+    if (sort_dir === "A-Z") {
       const start_index = (page_num - 1) * 9;
       let temp_data = data
         .sort(function(a, b) {
@@ -106,7 +106,7 @@ function States() {
         .filter(state => stateHasIssue(state));
       setStates(temp_data.slice(start_index, start_index + 9));
       setDataSize(temp_data.length);
-    } else if (sort_dir == "Z-A") {
+    } else if (sort_dir === "Z-A") {
       const start_index = (page_num - 1) * 9;
       let temp_data = data
         .sort(function(a, b) {
@@ -129,7 +129,7 @@ function States() {
   }, [filterIssue]);
 
   function stateHasIssue(state) {
-    if (filterIssue == "") {
+    if (filterIssue === "") {
       return true;
     }
     for (var i = 0; i < data2.length; i++) {

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Jumbotron as Jumbo, Container } from "react-bootstrap";
 import styled from "styled-components";
-import congressImage from "../assets/congress_image.jpg";
 
 class Jumbotron extends Component {
   render() {
