@@ -6,6 +6,7 @@ import issueImage from "./assets/issueImage.jpg";
 import IssueCard from "./components/IssueCard";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
+import states_list from "./data/StatesAbbreviations";
 const Fuse = require("fuse.js");
 
 function Issues() {
@@ -68,9 +69,9 @@ function Issues() {
   };
 
   useEffect(() => {
-      var temp_data = fuse.search(filterText);
-      setIssues(temp_data);
-      setDataSize(temp_data.length);
+    var temp_data = fuse.search(filterText);
+    setIssues(temp_data);
+    setDataSize(temp_data.length);
   }, [filterText]);
 
   useEffect(() => {
@@ -154,7 +155,18 @@ function Issues() {
     return p_list;
   };
 
-  console.log(issues)
+  const states_dropdown = states_list.map(state => {
+    return (
+      <Dropdown.Item
+        onClick={() => {
+          setFilterState(state);
+        }}
+      >
+        {state}
+      </Dropdown.Item>
+    );
+  });
+
   return (
     <>
       <main role="main">
@@ -173,357 +185,8 @@ function Issues() {
                 Filter By:
               </Dropdown.Toggle>
 
-              <Dropdown.Menu style={{overflow: "scroll", maxHeight: "200px"}}>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("AL");
-                  }}
-                >
-                  AL
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("AK");
-                  }}
-                >
-                  AK
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("AZ");
-                  }}
-                >
-                  AZ
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("AR");
-                  }}
-                >
-                  AR
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("CA");
-                  }}
-                >
-                  CA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("CO");
-                  }}
-                >
-                  CO
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("CT");
-                  }}
-                >
-                  CT
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("DE");
-                  }}
-                >
-                  DE
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("FL");
-                  }}
-                >
-                  FL
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("GA");
-                  }}
-                >
-                  GA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("HA");
-                  }}
-                >
-                  HA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("ID");
-                  }}
-                >
-                  ID
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("IL");
-                  }}
-                >
-                  IL
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("IN");
-                  }}
-                >
-                  IN
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("IA");
-                  }}
-                >
-                  IA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("KS");
-                  }}
-                >
-                  KS
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("KY");
-                  }}
-                >
-                  KY
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("LA");
-                  }}
-                >
-                  LA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("ME");
-                  }}
-                >
-                  ME
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MD");
-                  }}
-                >
-                  MD
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MA");
-                  }}
-                >
-                  MA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MI");
-                  }}
-                >
-                  MI
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MN");
-                  }}
-                >
-                  MN
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MS");
-                  }}
-                >
-                  MS
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MO");
-                  }}
-                >
-                  MO
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("MT");
-                  }}
-                >
-                  MT
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NE");
-                  }}
-                >
-                  NE
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NV");
-                  }}
-                >
-                  NV
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NH");
-                  }}
-                >
-                  NH
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NJ");
-                  }}
-                >
-                  NJ
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NM");
-                  }}
-                >
-                  NM
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NY");
-                  }}
-                >
-                  NY
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("NC");
-                  }}
-                >
-                  NC
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("ND");
-                  }}
-                >
-                  ND
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("OH");
-                  }}
-                >
-                  OH
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("OK");
-                  }}
-                >
-                  OK
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("OR");
-                  }}
-                >
-                  OR
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("PA");
-                  }}
-                >
-                  PA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("RI");
-                  }}
-                >
-                  RI
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("SC");
-                  }}
-                >
-                  SC
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("SD");
-                  }}
-                >
-                  SD
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("TN");
-                  }}
-                >
-                  TN
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("TX");
-                  }}
-                >
-                  TX
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("UT");
-                  }}
-                >
-                  UT
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("VT");
-                  }}
-                >
-                  VT
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("VA");
-                  }}
-                >
-                  VA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("WA");
-                  }}
-                >
-                  WA
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("WV");
-                  }}
-                >
-                  WV
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("WI");
-                  }}
-                >
-                  WI
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilterState("WY");
-                  }}
-                >
-                  WY
-                </Dropdown.Item>
+              <Dropdown.Menu style={{ overflow: "scroll", maxHeight: "200px" }}>
+                {states_dropdown}
               </Dropdown.Menu>
             </Dropdown>
           </div>

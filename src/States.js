@@ -6,6 +6,8 @@ import stateImage from "./assets/stateImage.jpg";
 import StateCard from "./components/StateCard";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
+import issue_list from "./data/IssueAbbreviation";
+import { states_alphabetical, states_reversed } from "./utils/SortFunctions";
 const Fuse = require("fuse.js");
 
 function States() {
@@ -94,30 +96,14 @@ function States() {
     if (sort_dir === "A-Z") {
       const start_index = (page_num - 1) * 9;
       let temp_data = data
-        .sort(function(a, b) {
-          if (a.name < b.name) {
-            return -1;
-          }
-          if (a.name > b.name) {
-            return 1;
-          }
-          return 0;
-        })
+        .sort(states_alphabetical)
         .filter(state => stateHasIssue(state));
       setStates(temp_data.slice(start_index, start_index + 9));
       setDataSize(temp_data.length);
     } else if (sort_dir === "Z-A") {
       const start_index = (page_num - 1) * 9;
       let temp_data = data
-        .sort(function(a, b) {
-          if (a.name > b.name) {
-            return -1;
-          }
-          if (a.name < b.name) {
-            return 1;
-          }
-          return 0;
-        })
+        .sort(states_reversed)
         .filter(state => stateHasIssue(state));
       setStates(temp_data.slice(start_index, start_index + 9));
       setDataSize(temp_data.length);
@@ -160,6 +146,18 @@ function States() {
     return p_list;
   };
 
+  const issue_dropdown = Object.keys(issue_list).map(issue => {
+    return (
+      <Dropdown.Item
+        onClick={() => {
+          setFilterIssue(issue);
+        }}
+      >
+        {issue_list[issue]}
+      </Dropdown.Item>
+    );
+  });
+
   return (
     <>
       <main role="main">
@@ -187,118 +185,7 @@ function States() {
                   >
                     Reset Filter
                   </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("agriculture");
-                    }}
-                  >
-                    Agriculture
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("armed_forces");
-                    }}
-                  >
-                    Armed Forces
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("crimes");
-                    }}
-                  >
-                    Crime And Law Enforcement
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("armed_forces");
-                    }}
-                  >
-                    Armed Forces
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("economics");
-                    }}
-                  >
-                    Economics
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("education");
-                    }}
-                  >
-                    Education
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("emergency_management");
-                    }}
-                  >
-                    Emergency Management
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("environmentalism");
-                    }}
-                  >
-                    Environmentalism
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("gun_control");
-                    }}
-                  >
-                    Gun Control
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("healthcare");
-                    }}
-                  >
-                    Healthcare
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("housing_and_community_development");
-                    }}
-                  >
-                    Housing and Community Development
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("immigration");
-                    }}
-                  >
-                    Immigration
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("labor_and_employment");
-                    }}
-                  >
-                    Labor and Employment
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("social_issues");
-                    }}
-                  >
-                    Social Issues
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("taxation");
-                    }}
-                  >
-                    Taxation
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("transportation_and_public_works");
-                    }}
-                  >
-                    Transportation and Public Works
-                  </Dropdown.Item>
+                  {issue_dropdown}
                 </Dropdown.Menu>
               </Dropdown>
             </div>

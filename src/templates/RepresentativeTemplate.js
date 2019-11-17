@@ -58,7 +58,11 @@ function RepresentativeTemplate() {
                 <h5>{rep_data.type}</h5>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item">
-                    <a className="nav-link active" id="home-tab" href={`http://bioguide.congress.gov/scripts/biodisplay.pl?index=${rep_data.bioguide}`}>
+                    <a
+                      className="nav-link active"
+                      id="home-tab"
+                      href={`http://bioguide.congress.gov/scripts/biodisplay.pl?index=${rep_data.bioguide}`}
+                    >
                       About
                       <TwitterTimelineEmbed
                         sourceType="profile"
@@ -77,33 +81,19 @@ function RepresentativeTemplate() {
               <div className="shifted">
                 <div className="profile-work">
                   <p>Contact</p>
-                  <a href={rep_data.website} >
-                    Website
-                  </a>
+                  <a href={rep_data.website}>Website</a>
                   <br />
-                  <a href={rep_data.form} >
-                    Email
-                  </a>
+                  <a href={rep_data.form}>Email</a>
                   <br />
-                  <a href={rep_data.phone} >
-                    Phone
-                  </a>
+                  <a href={rep_data.phone}>Phone</a>
                   <p>Social Media</p>
-                  <a href={rep_data.twitter} >
-                    Twitter
-                  </a>
+                  <a href={rep_data.twitter}>Twitter</a>
                   <br />
-                  <a href={rep_data.facebook} >
-                    Facebook
-                  </a>
+                  <a href={rep_data.facebook}>Facebook</a>
                   <br />
-                  <a href={rep_data.youtube} >
-                    YouTube
-                  </a>
+                  <a href={rep_data.youtube}>YouTube</a>
                   <br />
-                  <a href={rep_data.rss} >
-                    RSS
-                  </a>
+                  <a href={rep_data.rss}>RSS</a>
                   <br />
                   <br />
                 </div>
@@ -147,10 +137,7 @@ function RepresentativeTemplate() {
                     <div className="col-md-6">
                       <label>
                         Summary: (Courtesy of{" "}
-                        <a href="http://bioguide.congress.gov" >
-                          BioGuide
-                        </a>
-                        )
+                        <a href="http://bioguide.congress.gov">BioGuide</a>)
                       </label>
                     </div>
                     <div className="col-md-6"></div>

@@ -57,13 +57,15 @@ function IssueTemplate() {
           <div className="row justify-content-left">
             <div className="col-md-4">
               <div>
-                <img style={{ height: 180 }} src={issue_data.image} alt={issue_data.name}/>
+                <img
+                  style={{ height: 180 }}
+                  src={issue_data.image}
+                  alt={issue_data.name}
+                />
               </div>
               <div className="row">
                 <p>
-                  <a href={issue_data.vids}>
-                    Trevor Noah on {issue_data.name}
-                  </a>
+                  <a href={issue_data.vids}>Trevor Noah on {issue_data.name}</a>
                   <TwitterTimelineEmbed
                     sourceType="profile"
                     screenName="UN"
