@@ -1,43 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
+import { representative_link } from "../utils/LinkFunctions";
 
 function RepresentativeCard({ representatives, filterText }) {
   const queries = filterText.split(" ");
   const repList = representatives.map(representative => {
+    const rep_image = () => {
+      return (
+        <img
+          className="card-img-top about-image"
+          style={{ maxHeight: 450 }}
+          src={`https://congress-and-me.s3.us-east-2.amazonaws.com/static/media/450x550/${representative.bioguide_id}.jpg`}
+          alt={representative.full_name}
+        ></img>
+      );
+    };
+    const learn_more = () => {
+      return <a class="btn btn-light">Learn More</a>;
+    };
+
     return (
       <div className="col-md-4" key={representative.index}>
         <div className="card mb-4 box-shadow">
-          <Link
-            to={{
-              pathname: `/representative/${representative.full_name}`,
-              state: {
-                name: representative.full_name,
-                chamber:
-                  representative.type === "sen"
-                    ? "Senate"
-                    : "House of Representatives",
-                image: `https://congress-and-me.s3.us-east-2.amazonaws.com/static/media/450x550/${representative.bioguide_id}.jpg`,
-                party: representative.party,
-                state: representative.state,
-                twitter: `https://twitter.com/@${representative.twitter}`,
-                facebook: `https://facebook.com/${representative.facebook}`,
-                youtube: `https://www.youtube.com/results?search_query=${representative.youtube}`,
-                rss: representative.rss_url,
-                website: representative.url,
-                form: representative.contact_form,
-                phone: `tel:${representative.phone}`,
-                summary: representative.bioguide_summary
-              }
-            }}
-          >
-            <img
-              className="card-img-top about-image"
-              style={{ maxHeight: 450 }}
-              src={`https://congress-and-me.s3.us-east-2.amazonaws.com/static/media/450x550/${representative.bioguide_id}.jpg`}
-              alt={representative.full_name}
-            ></img>
-          </Link>
+          {representative_link(representative, rep_image())}
           <div className="card-body">
             <h5>
               <Highlighter
@@ -133,35 +119,7 @@ function RepresentativeCard({ representatives, filterText }) {
               />
             </p>
             <div class="col-mb-4 text-center">
-              <Link
-                to={{
-                  pathname: `/representative/${representative.full_name}`,
-                  state: {
-                    name: representative.full_name,
-                    chamber:
-                      representative.type === "sen"
-                        ? "Senate"
-                        : "House of Representatives",
-                    type:
-                      representative.type === "sen"
-                        ? "Senator"
-                        : "Representative",
-                    image: `https://congress-and-me.s3.us-east-2.amazonaws.com/static/media/450x550/${representative.bioguide_id}.jpg`,
-                    party: representative.party,
-                    state: representative.state,
-                    twitter: `https://twitter.com/@${representative.twitter}`,
-                    facebook: `https://facebook.com/${representative.facebook}`,
-                    youtube: `https://www.youtube.com/results?search_query=${representative.youtube}`,
-                    rss: representative.rss_url,
-                    website: representative.url,
-                    form: representative.contact_form,
-                    phone: `tel:${representative.phone}`,
-                    summary: representative.bioguide_summary
-                  }
-                }}
-              >
-                <a class="btn btn-light">Learn More</a>
-              </Link>
+              {representative_link(representative, learn_more())}
             </div>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group"></div>
@@ -172,9 +130,19 @@ function RepresentativeCard({ representatives, filterText }) {
     );
   });
   return (
-    <div className="album py-5 bg-light">
-      <div className="container">
-        <div className="row">{repList}</div>
+    <div className="container">
+      <div className="row">
+        <div className="album py-5 bg-light">
+          <div className="container">
+            <div className="row">
+              <div className="album py-5 bg-light">
+                <div className="container">
+                  <div className="row">{repList}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

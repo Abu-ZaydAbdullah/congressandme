@@ -110,10 +110,6 @@ function States() {
     }
   }
 
-  useEffect(() => {
-    resetStates();
-  }, [filterIssue]);
-
   function stateHasIssue(state) {
     if (filterIssue === "") {
       return true;
@@ -159,87 +155,83 @@ function States() {
   });
 
   return (
-    <>
-      <main role="main">
-        <div>
-          <Jumbotron
-            title_text={"States"}
-            subtitle_text={"Learn more about your State!"}
-            image={stateImage}
-          />
-          <br></br>
-          <h1 className="page-title">States</h1>
-          <div className="row">
-            <div className="col-md-8"></div>
-            <div className="col-md-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  Filter By:
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterIssue("");
-                    }}
-                  >
-                    Reset Filter
-                  </Dropdown.Item>
-                  {issue_dropdown}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="col-md-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  Sort By:
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("A-Z");
-                    }}
-                  >
-                    A-Z
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("Z-A");
-                    }}
-                  >
-                    Z-A
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <br></br>
-            </div>
-          </div>
-        </div>
-        <Search
-          placeholder={"Search"}
-          filterText={filterText}
-          filterUpdate={filterUpdate.bind(this)}
+    <main role="main">
+      <div>
+        <Jumbotron
+          title_text={"States"}
+          subtitle_text={"Learn more about your State!"}
+          image={stateImage}
         />
-        <StateCard states={states} filterText={filterText} />
+        <br></br>
+        <h1 className="page-title">States</h1>
+        <div className="row">
+          <div className="col-md-8"></div>
+          <div className="col-md-2">
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                Filter By:
+              </Dropdown.Toggle>
 
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
-              <nav>
-                <ul aria-label="Page:" class="pagination">
-                  {pagination_list()}
-                </ul>
-              </nav>
-            </div>
-            <div className="col-md-4"></div>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterIssue("");
+                  }}
+                >
+                  Reset Filter
+                </Dropdown.Item>
+                {issue_dropdown}
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div className="col-md-2">
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                Sort By:
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("A-Z");
+                  }}
+                >
+                  A-Z
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("Z-A");
+                  }}
+                >
+                  Z-A
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <br></br>
           </div>
         </div>
-      </main>
-      <br></br>
-      <br></br>
-    </>
+      </div>
+      <Search
+        placeholder={"Search"}
+        filterText={filterText}
+        filterUpdate={filterUpdate.bind(this)}
+      />
+      <StateCard states={states} filterText={filterText} />
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+            <nav>
+              <ul aria-label="Page:" class="pagination">
+                {pagination_list()}
+              </ul>
+            </nav>
+          </div>
+          <div className="col-md-4"></div>
+        </div>
+      </div>
+    </main>
   );
 }
 

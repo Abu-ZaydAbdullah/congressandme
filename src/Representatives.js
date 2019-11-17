@@ -160,90 +160,84 @@ function Representatives() {
   });
 
   return (
-    <>
-      <main role="main">
-        <div>
-          <Jumbotron
-            title_text={"Representatives"}
-            subtitle_text={"Learn who represents your State!"}
-            image={repImage}
-          />
-          <br></br>
-          <h1 className="page-title">Representatives</h1>
-          <div className="row">
-            <div className="col-md-8"></div>
-            <div className="col-md-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  Filter By:
-                </Dropdown.Toggle>
+    <main role="main">
+      <div>
+        <Jumbotron
+          title_text={"Representatives"}
+          subtitle_text={"Learn who represents your State!"}
+          image={repImage}
+        />
+        <br></br>
+        <h1 className="page-title">Representatives</h1>
+        <div className="row">
+          <div className="col-md-8"></div>
+          <div className="col-md-2">
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                Filter By:
+              </Dropdown.Toggle>
 
-                <Dropdown.Menu
-                  style={{ overflow: "scroll", maxHeight: "200px" }}
+              <Dropdown.Menu style={{ overflow: "scroll", maxHeight: "200px" }}>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilterState("");
+                  }}
                 >
-                  <Dropdown.Item
-                    onClick={() => {
-                      setFilterState("");
-                    }}
-                  >
-                    Reset Filter
-                  </Dropdown.Item>
-                  {states_dropdown}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="col-md-2">
-              <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  Sort By:
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("A-Z");
-                    }}
-                  >
-                    A-Z
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      setSortDir("Z-A");
-                    }}
-                  >
-                    Z-A
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <br></br>
-            </div>
+                  Reset Filter
+                </Dropdown.Item>
+                {states_dropdown}
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div className="col-md-2">
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                Sort By:
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("A-Z");
+                  }}
+                >
+                  A-Z
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setSortDir("Z-A");
+                  }}
+                >
+                  Z-A
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <br></br>
           </div>
         </div>
-        <Search
-          placeholder={"Search"}
-          filterText={filterText}
-          filterUpdate={filterUpdate.bind(this)}
-        />
-        <RepresentativeCard
-          representatives={representatives}
-          filterText={filterText}
-        />
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
-              <nav>
-                <ul aria-label="Page:" class="pagination">
-                  {pagination_list()}
-                </ul>
-              </nav>
-            </div>
-            <div className="col-md-4"></div>
+      </div>
+      <Search
+        placeholder={"Search"}
+        filterText={filterText}
+        filterUpdate={filterUpdate.bind(this)}
+      />
+      <RepresentativeCard
+        representatives={representatives}
+        filterText={filterText}
+      />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+            <nav>
+              <ul aria-label="Page:" class="pagination">
+                {pagination_list()}
+              </ul>
+            </nav>
           </div>
+          <div className="col-md-4"></div>
         </div>
-      </main>
-      <br></br>
-      <br></br>
-    </>
+      </div>
+    </main>
   );
 }
 

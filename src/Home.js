@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Jumbotron from "./components/Jumbotron";
 import { Tab, Tabs } from "react-bootstrap";
 import congressImage from "./assets/congress_image.jpg";
@@ -93,7 +93,7 @@ function Home() {
   }, [filterText]);
 
   return (
-    <>
+    <Fragment>
       <main role="main">
         <div>
           <Jumbotron
@@ -148,7 +148,7 @@ function Home() {
       </main>
       <br></br>
       <br></br>
-    </>
+    </Fragment>
   );
 }
 

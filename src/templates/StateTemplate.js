@@ -50,14 +50,12 @@ function StateTemplate() {
       }
       return issueList;
     });
-    console.log(allIssues());
     await setIssuesMentioned(allIssues());
     const req2 = await axios(
       `https://api.congressand.me/api/Issues?results_per_page=31`
     );
     const data3 = await req2.data.objects;
     await setIssueData(data3);
-    console.log(data3);
   };
 
   useEffect(() => {
@@ -119,26 +117,13 @@ function StateTemplate() {
       </div>
       <div className="row mb-5">
         <h1>This State's Representatives!</h1>
-        <div className="container">
-          <div className="row">
-            <div className="album py-5 bg-light">
-              <div className="container">
-                <div className="row">
-                  <RepresentativeCard
-                    representatives={rep_data}
-                    filterText={""}
-                  />
-                </div>
-              </div>
+        <RepresentativeCard representatives={rep_data} filterText={""} />
+        <div className="row mb-5">
+          <h1>Issues relevant to this state:</h1>
+          <div className="container">
+            <div className="row">
+              <IssueCard issues={issue_data} filterText={""} />
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="row mb-5">
-        <h1>Issues relevant to this state:</h1>
-        <div className="container">
-          <div className="row">
-            <IssueCard issues={issue_data} filterText={""} />
           </div>
         </div>
       </div>

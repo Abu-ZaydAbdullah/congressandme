@@ -83,21 +83,7 @@ function IssueTemplate() {
           <div className="panel panel-default pt-5"></div>
           <div className="row justify-content-left pt-5 ">
             <h1>This issue is important to the following politicians!</h1>
-
-            <div className="container">
-              <div className="row">
-                <div className="album py-5 bg-light">
-                  <div className="container">
-                    <div className="row">
-                      <RepresentativeCard
-                        representatives={rep_data}
-                        filterText={""}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RepresentativeCard representatives={rep_data} filterText={""} />
           </div>
         </div>
       </div>

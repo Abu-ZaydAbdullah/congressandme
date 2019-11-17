@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import IssueCard from "../components/IssueCard";
@@ -43,7 +43,7 @@ function RepresentativeTemplate() {
   }, [rep_data.name]);
 
   return (
-    <>
+    <Fragment>
       <div>
         <div className="container emp-profile">
           <div className="row">
@@ -161,7 +161,7 @@ function RepresentativeTemplate() {
           <IssueCard issues={issue_data} filterText={""} />
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
 

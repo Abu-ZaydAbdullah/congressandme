@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { issue_link } from "../utils/LinkFunctions";
 import Highlighter from "react-highlight-words";
 
 function trimSummary(str, queries) {
@@ -19,31 +19,23 @@ function IssueCard({ issues, filterText }) {
   const issueList = issues.map(issue => {
     var about_idx = trimSummary(issue.about, queries);
     var description_idx = trimSummary(issue.description, queries);
+    const issue_image = () => {
+      return (
+        <img
+          className="card-img-top about-image"
+          style={{ maxHeight: 200 }}
+          src={issue.image}
+          alt={issue.name}
+        ></img>
+      );
+    };
+    const learn_more = () => {
+      return <a class="btn btn-light">Learn More</a>;
+    };
     return (
       <div className="col-md-4 text-center" key={issue.index}>
         <div className="card mb-4 box-shadow">
-          <Link
-            to={{
-              pathname: `/issue/${issue.name}`,
-              state: {
-                name: issue.name,
-                abbreviation: issue.abbreviation,
-                about: issue.about,
-                description: issue.description,
-                image: issue.image,
-                states: issue.states,
-                reps: issue.rep,
-                vids: issue.vids
-              }
-            }}
-          >
-            <img
-              className="card-img-top about-image"
-              style={{ maxHeight: 200 }}
-              src={issue.image}
-              alt={issue.name}
-            ></img>
-          </Link>
+          {issue_link(issue, issue_image())}
           <div className="card-body">
             <h5>
               <Highlighter
@@ -92,23 +84,7 @@ function IssueCard({ issues, filterText }) {
                 }}
               />
             </p>
-            <Link
-              to={{
-                pathname: `/issue/${issue.name}`,
-                state: {
-                  name: issue.name,
-                  abbreviation: issue.abbreviation,
-                  about: issue.about,
-                  description: issue.description,
-                  image: issue.image,
-                  states: issue.states,
-                  reps: issue.rep,
-                  vids: issue.vids
-                }
-              }}
-            >
-              <a class="btn btn-light">Learn More</a>
-            </Link>
+            {issue_link(issue, learn_more())}
           </div>
         </div>
       </div>

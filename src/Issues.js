@@ -7,6 +7,7 @@ import IssueCard from "./components/IssueCard";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
 import states_list from "./data/StatesAbbreviations";
+import { issues_alphabetical, issues_reversed } from "./utils/SortFunctions";
 const Fuse = require("fuse.js");
 
 function Issues() {
@@ -102,33 +103,11 @@ function Issues() {
     if (sort_dir === "A-Z") {
       const start_index = (page_num - 1) * 5;
       setIssues(
-        data
-          .sort(function(a, b) {
-            if (a.name < b.name) {
-              return -1;
-            }
-            if (a.name > b.name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 5)
+        data.sort(issues_alphabetical).slice(start_index, start_index + 5)
       );
     } else if (sort_dir === "Z-A") {
       const start_index = (page_num - 1) * 5;
-      setIssues(
-        data
-          .sort(function(a, b) {
-            if (a.name > b.name) {
-              return -1;
-            }
-            if (a.name < b.name) {
-              return 1;
-            }
-            return 0;
-          })
-          .slice(start_index, start_index + 5)
-      );
+      setIssues(data.sort(issues_reversed).slice(start_index, start_index + 5));
     }
   };
 
@@ -168,76 +147,74 @@ function Issues() {
   });
 
   return (
-    <>
-      <main role="main">
-        <Jumbotron
-          title_text={"Issues"}
-          subtitle_text={"All the hottest topics being discussed"}
-          image={issueImage}
-        />
-        <br></br>
-        <h1 className="page-title">Issues</h1>
+    <main role="main">
+      <Jumbotron
+        title_text={"Issues"}
+        subtitle_text={"All the hottest topics being discussed"}
+        image={issueImage}
+      />
+      <br></br>
+      <h1 className="page-title">Issues</h1>
+      <div className="row">
+        <div className="col-md-8"></div>
+        <div className="col-md-2">
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Filter By:
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu style={{ overflow: "scroll", maxHeight: "200px" }}>
+              {states_dropdown}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        <div className="col-md-2">
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Sort By:
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={() => {
+                  setSortDir("A-Z");
+                }}
+              >
+                A-Z
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setSortDir("Z-A");
+                }}
+              >
+                Z-A
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <br></br>
+        </div>
+      </div>
+      <Search
+        placeholder={"Search"}
+        filterText={filterText}
+        filterUpdate={filterUpdate.bind(this)}
+      />
+      <IssueCard issues={issues} filterText={filterText} />
+
+      <div className="container">
         <div className="row">
-          <div className="col-md-8"></div>
-          <div className="col-md-2">
-            <Dropdown>
-              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                Filter By:
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu style={{ overflow: "scroll", maxHeight: "200px" }}>
-                {states_dropdown}
-              </Dropdown.Menu>
-            </Dropdown>
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+            <nav>
+              <ul aria-label="Page:" class="pagination">
+                {pagination_list()}
+              </ul>
+            </nav>
           </div>
-          <div className="col-md-2">
-            <Dropdown>
-              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                Sort By:
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  onClick={() => {
-                    setSortDir("A-Z");
-                  }}
-                >
-                  A-Z
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setSortDir("Z-A");
-                  }}
-                >
-                  Z-A
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <br></br>
-          </div>
+          <div className="col-md-4"></div>
         </div>
-        <Search
-          placeholder={"Search"}
-          filterText={filterText}
-          filterUpdate={filterUpdate.bind(this)}
-        />
-        <IssueCard issues={issues} filterText={filterText} />
-
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
-              <nav>
-                <ul aria-label="Page:" class="pagination">
-                  {pagination_list()}
-                </ul>
-              </nav>
-            </div>
-            <div className="col-md-4"></div>
-          </div>
-        </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
 

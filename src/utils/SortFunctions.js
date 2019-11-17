@@ -37,3 +37,11 @@ export function states_reversed(a, b) {
   }
   return 0;
 }
+
+export function issues_alphabetical(a, b) {
+  return states_alphabetical(a, b);
+}
+
+export function issues_reversed(a, b) {
+  return states_reversed(a, b);
+}

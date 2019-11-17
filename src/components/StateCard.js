@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { state_link } from "../utils/LinkFunctions";
 import Highlighter from "react-highlight-words";
 
 function trimSummary(str, queries) {
@@ -16,30 +16,24 @@ function trimSummary(str, queries) {
 function StateCard({ states, filterText }) {
   const queries = filterText.split(" ");
   const stateList = states.map((state, index) => {
+    const state_image = () => {
+      return (
+        <img
+          className="card-img-top about-img"
+          style={{ maxHeight: 160 }}
+          src={state.image}
+          alt="{state.name}"
+        ></img>
+      );
+    };
+    const learn_more = () => {
+      return <a class="btn btn-light">Learn More</a>;
+    };
     var summary_idx = trimSummary(state.summary, queries);
     return (
       <div className="col-md-4" key={state.index}>
         <div className="card mb-4 box-shadow">
-          <Link
-            to={{
-              pathname: `/state/${state.abbreviation}`,
-              state: {
-                name: state.name,
-                image: state.image,
-                website: state.website,
-                summary: state.summary,
-                issues: state.issues,
-                facebook: state.facebook
-              }
-            }}
-          >
-            <img
-              className="card-img-top about-img"
-              style={{ maxHeight: 160 }}
-              src={state.image}
-              alt="{state.name}"
-            ></img>
-          </Link>
+          {state_link(state, state_image())}
           <div class="col-mb-4 text-center" style={{ marginTop: "5%" }}>
             <div className="card-body">
               <h5>
@@ -97,21 +91,7 @@ function StateCard({ states, filterText }) {
                   />
                 </a>
               </p>
-              <Link
-                to={{
-                  pathname: `/state/${state.abbreviation}`,
-                  state: {
-                    name: state.name,
-                    image: state.image,
-                    website: state.website,
-                    summary: state.summary,
-                    issues: state.issues,
-                    facebook: state.facebook
-                  }
-                }}
-              >
-                <a class="btn btn-light">Learn More</a>
-              </Link>
+              {state_link(state, learn_more())}
             </div>
           </div>
           <div className="d-flex justify-content-between align-items-center">
