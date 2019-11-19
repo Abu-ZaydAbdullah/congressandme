@@ -85,6 +85,10 @@ function States() {
   };
 
   useEffect(() => {
+    resetStates();
+  }, [filterIssue]);
+
+  useEffect(() => {
     fetchStates();
   }, [page_num]);
 

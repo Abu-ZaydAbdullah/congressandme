@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Representatives from "./Representatives";
-import RepresentativeTemplate from "./templates/RepresentativeTemplate";
-import StateTemplate from "./templates/StateTemplate";
-import IssueTemplate from "./templates/IssueTemplate";
-import States from "./States";
-import Issues from "./Issues";
-import About from "./About";
+const Home = lazy(() => import('./Home'));
+const Representatives = lazy(() => import('./Representatives'));
+const States = lazy(() => import('./States'));
+const Issues = lazy(() => import('./Issues'));
+const About = lazy(() => import('./About'));
+const RepresentativeTemplate = lazy(() => import('./templates/RepresentativeTemplate'));
+const StateTemplate = lazy(() => import('./templates/StateTemplate'));
+const IssueTemplate = lazy(() => import('./templates/IssueTemplate'));
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
@@ -17,6 +17,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
+        <Suspense fallback={<div>Loading...</div>}>
           <NavigationBar />
           <Layout>
             <Switch>
@@ -38,6 +39,7 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </Layout>
+          </Suspense>
         </Router>
       </React.Fragment>
     );
