@@ -14,7 +14,7 @@
     "react-twitter-embed": "^3.0.3"
   },
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "parcel public/index.html --port 3000",
     "build": "parcel build public/index.html",
     "deploy": "aws s3 sync build/ s3://congress-and-me",
     "test": "react-scripts test"
