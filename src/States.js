@@ -131,14 +131,14 @@ function States() {
     console.log("page list " + String(dataSize));
     for (var i = 0; i < dataSize / 9; i++) {
       p_list.push(
-        <li class="page-item">
+        <li className="page-item" key={i}>
           <Link
             to={{
               pathname: `/states/page/${i + 1}`,
               state: { page_num: i + 1 }
             }}
           >
-            <a class="page-link">{i + 1}</a>
+            <p className="page-link">{i + 1}</p>
           </Link>
         </li>
       );
@@ -146,13 +146,13 @@ function States() {
     return p_list;
   };
 
-  const issue_dropdown = Object.keys(issue_list).map(issue => {
+  const issue_dropdown = Object.keys(issue_list).map((issue, index) => {
     return (
       <Dropdown.Item
         onClick={() => {
           setFilterIssue(issue);
         }}
-      >
+      key={index}>
         {issue_list[issue]}
       </Dropdown.Item>
     );
@@ -227,7 +227,7 @@ function States() {
           <div className="col-md-4"></div>
           <div className="col-md-4">
             <nav>
-              <ul aria-label="Page:" class="pagination">
+              <ul aria-label="Page:" className="pagination">
                 {pagination_list()}
               </ul>
             </nav>

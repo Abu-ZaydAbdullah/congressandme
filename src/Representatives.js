@@ -132,14 +132,14 @@ function Representatives() {
     let p_list = [];
     for (var i = 0; i < dataSize / reps_per_page; i++) {
       p_list.push(
-        <li class="page-item">
+        <li className="page-item" key={i}>
           <Link
             to={{
               pathname: `/representatives/page/${i + 1}`,
               state: { page_num: i + 1 }
             }}
           >
-            <a class="page-link">{i + 1}</a>
+            <p className="page-link">{i + 1}</p>
           </Link>
         </li>
       );
@@ -147,13 +147,13 @@ function Representatives() {
     return p_list;
   };
 
-  const states_dropdown = states_list.map(state => {
+  const states_dropdown = states_list.map((state, index) => {
     return (
       <Dropdown.Item
         onClick={() => {
           setFilterState(state);
         }}
-      >
+       key={index}>
         {state}
       </Dropdown.Item>
     );
@@ -229,7 +229,7 @@ function Representatives() {
           <div className="col-md-4"></div>
           <div className="col-md-4">
             <nav>
-              <ul aria-label="Page:" class="pagination">
+              <ul aria-label="Page:" className="pagination">
                 {pagination_list()}
               </ul>
             </nav>

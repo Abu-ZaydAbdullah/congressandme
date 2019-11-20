@@ -17,9 +17,9 @@ class SourceCard extends Component {
               <h5>
                 <a href={source.url}>{source.name}</a>
               </h5>
-              <p>
+              <div>
                 <p className="card-text">{source.purpose}</p>
-              </p>
+              </div>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="btn-group"></div>
               </div>
