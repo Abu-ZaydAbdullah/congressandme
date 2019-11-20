@@ -92,7 +92,7 @@ function Issues() {
       )
     );
     await setDataSize(issues.length);
-    console.log("HERE");
+    
   };
 
   useEffect(() => {

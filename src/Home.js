@@ -89,7 +89,7 @@ function Home() {
     setRepData(fuseReps.search(filterText));
     setStateData(fuseStates.search(filterText));
     setIssueData(fuseIssues.search(filterText));
-    console.log(issue_data);
+    
   }, [filterText]);
 
   return (

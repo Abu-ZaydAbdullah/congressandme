@@ -128,7 +128,7 @@ function States() {
 
   const pagination_list = () => {
     let p_list = [];
-    console.log("page list " + String(dataSize));
+    
     for (var i = 0; i < dataSize / 9; i++) {
       p_list.push(
         <li className="page-item" key={i}>
