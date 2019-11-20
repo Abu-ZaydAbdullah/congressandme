@@ -6,8 +6,10 @@ import RepresentativeCard from "./components/RepresentativeCard";
 import repImage from "./assets/repImage.jpg";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
+import Pagination from "./components/Pagination";
 import states_list from "./data/StatesAbbreviations";
 import { reps_alphabetical, reps_reversed } from "./utils/SortFunctions";
+import { sanitize } from "./utils/TextFunctions"
 const Fuse = require("fuse.js");
 
 function Representatives() {
@@ -39,16 +41,6 @@ function Representatives() {
     ]
   };
   const fuse = new Fuse(data, options);
-
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ");
-  }
 
   function filterUpdate(value) {
     value = sanitize(value);
@@ -128,25 +120,6 @@ function Representatives() {
     resetRepresentatives();
   }, [filterState]);
 
-  const pagination_list = () => {
-    let p_list = [];
-    for (var i = 0; i < dataSize / reps_per_page; i++) {
-      p_list.push(
-        <li className="page-item" key={i}>
-          <Link
-            to={{
-              pathname: `/representatives/page/${i + 1}`,
-              state: { page_num: i + 1 }
-            }}
-          >
-            <p className="page-link">{i + 1}</p>
-          </Link>
-        </li>
-      );
-    }
-    return p_list;
-  };
-
   const states_dropdown = states_list.map((state, index) => {
     return (
       <Dropdown.Item
@@ -224,19 +197,7 @@ function Representatives() {
         representatives={representatives}
         filterText={filterText}
       />
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
-            <nav>
-              <ul aria-label="Page:" className="pagination">
-                {pagination_list()}
-              </ul>
-            </nav>
-          </div>
-          <div className="col-md-4"></div>
-        </div>
-      </div>
+    <Pagination model={'representatives'} data_size={dataSize} per_page={reps_per_page} />
     </main>
   );
 }

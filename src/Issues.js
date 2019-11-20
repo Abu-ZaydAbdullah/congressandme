@@ -6,13 +6,18 @@ import issueImage from "./assets/issueImage.jpg";
 import IssueCard from "./components/IssueCard";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
+import Pagination from "./components/Pagination";
 import states_list from "./data/StatesAbbreviations";
 import { issues_alphabetical, issues_reversed } from "./utils/SortFunctions";
+import { sanitize } from "./utils/TextFunctions"
 const Fuse = require("fuse.js");
 
 function Issues() {
   const [issues, setIssues] = useState([]);
   const { page_num } = useParams();
+  const num_of_issues = 15;
+  const default_num_pages = 3;
+  const issues_per_page = Math.round(num_of_issues / default_num_pages);
   const [dataSize, setDataSize] = useState(5);
   const [sort_dir, setSortDir] = useState("A-Z");
   const [data, setData] = useState([]);
@@ -34,17 +39,6 @@ function Issues() {
     ]
   };
   const fuse = new Fuse(data, options);
-
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ")
-      .replace("\\", " ");
-  }
 
   function filterUpdate(value) {
     value = sanitize(value);
@@ -115,25 +109,6 @@ function Issues() {
     sortIssues();
   }, [sort_dir]);
 
-  const pagination_list = () => {
-    let p_list = [];
-    for (var i = 0; i < dataSize / 5; i++) {
-      p_list.push(
-        <li className="page-item" key={i}>
-          <Link
-            to={{
-              pathname: `/issues/page/${i + 1}`,
-              state: { page_num: i + 1 }
-            }}
-          >
-            <p className="page-link">{i + 1}</p>
-          </Link>
-        </li>
-      );
-    }
-    return p_list;
-  };
-
   const states_dropdown = states_list.map((state, index) => {
     return (
       <Dropdown.Item
@@ -200,20 +175,7 @@ function Issues() {
         filterUpdate={filterUpdate.bind(this)}
       />
       <IssueCard issues={issues} filterText={filterText} />
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
-            <nav>
-              <ul aria-label="Page:" className="pagination">
-                {pagination_list()}
-              </ul>
-            </nav>
-          </div>
-          <div className="col-md-4"></div>
-        </div>
-      </div>
+      <Pagination model={'issues'} data_size={dataSize} per_page={issues_per_page} />
     </main>
   );
 }

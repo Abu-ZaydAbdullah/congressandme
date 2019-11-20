@@ -9,6 +9,7 @@ import IssueCard from "./components/IssueCard";
 import StateData from "./data/StateData";
 import RepresentativeData from "./data/RepresentativeData";
 import IssueData from "./data/IssueData";
+import { sanitize } from "./utils/TextFunctions"
 const Fuse = require("fuse.js");
 
 function Home() {
@@ -68,17 +69,6 @@ function Home() {
   const fuseReps = new Fuse(RepresentativeData, rep_options);
   const fuseStates = new Fuse(StateData, state_options);
   const fuseIssues = new Fuse(IssueData, issue_options);
-
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ")
-      .replace("\\", " ");
-  }
 
   function filterUpdate(value) {
     value = sanitize(value);
