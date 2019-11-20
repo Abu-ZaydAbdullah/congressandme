@@ -16,7 +16,7 @@ function States() {
   const [states, setStates] = useState([]);
   const num_of_states = 50;
   const default_num_pages = 6;
-  const states_per_page = Math.round(num_of_states / default_num_pages);
+  const states_per_page = Math.ceil(num_of_states / default_num_pages);
   const { page_num } = useParams();
   const [dataSize, setDataSize] = useState(50);
   const [sort_dir, setSortDir] = useState("A-Z");
