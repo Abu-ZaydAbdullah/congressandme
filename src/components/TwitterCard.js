@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import './TwitterCard.css'
-class TwitterCard extends Component {
-    render() {
+import React from "react";
+
+function TwitterCard() {
         return(
             <div className="container">
                 <blockquote className="quote-box">
@@ -17,6 +16,6 @@ class TwitterCard extends Component {
                 </blockquote>
             </div>
         );
-    }
 }
+
 export default TwitterCard;

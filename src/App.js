@@ -1,5 +1,8 @@
 import React, { Component, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { Layout } from "./components/Layout";
+import { NavigationBar } from "./components/NavigationBar";
 const Home = lazy(() => import('./Home'));
 const Representatives = lazy(() => import('./Representatives'));
 const States = lazy(() => import('./States'));
@@ -8,9 +11,7 @@ const About = lazy(() => import('./About'));
 const RepresentativeTemplate = lazy(() => import('./templates/RepresentativeTemplate'));
 const StateTemplate = lazy(() => import('./templates/StateTemplate'));
 const IssueTemplate = lazy(() => import('./templates/IssueTemplate'));
-import { NoMatch } from "./NoMatch";
-import { Layout } from "./components/Layout";
-import { NavigationBar } from "./components/NavigationBar";
+const NoMatch = lazy(() => import('./NoMatch'));
 
 class App extends Component {
   render() {

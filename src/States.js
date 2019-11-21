@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import stateImage from "./assets/stateImage.jpg";
 import StateCard from "./components/StateCard";

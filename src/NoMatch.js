@@ -1,6 +1,7 @@
 import React from "react";
 
-export const NoMatch = () => (
+function NoMatch() {
+  return(
   <div>
     <div class="container h-100 d-flex justify-content-center">
       <div class="jumbotron my-auto">
@@ -8,4 +9,7 @@ export const NoMatch = () => (
       </div>
     </div>
   </div>
-);
+)
+}
+
+export default NoMatch;

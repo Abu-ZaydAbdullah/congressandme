@@ -1,15 +1,15 @@
-import React, { useState, useEffect, Fragment } from "react";
-import Jumbotron from "./components/Jumbotron";
+import React, { useState, useEffect, Fragment, lazy } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import congressImage from "./assets/congress_image.jpg";
-import Search from "./components/Search";
-import StateCard from "./components/StateCard";
-import RepresentativeCard from "./components/RepresentativeCard";
-import IssueCard from "./components/IssueCard";
+import { sanitize } from "./utils/TextFunctions"
 import StateData from "./data/StateData";
 import RepresentativeData from "./data/RepresentativeData";
 import IssueData from "./data/IssueData";
-import { sanitize } from "./utils/TextFunctions"
+const Search = lazy(() => import('./components/Search'));
+const Jumbotron = lazy(() => import('./components/Jumbotron'));
+const RepresentativeCard = lazy(() => import('./components/RepresentativeCard'));
+const IssueCard = lazy(() => import('./components/IssueCard'));
+const StateCard = lazy(() => import('./components/StateCard'));
 const Fuse = require("fuse.js");
 
 function Home() {

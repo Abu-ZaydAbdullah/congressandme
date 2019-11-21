@@ -1,7 +1,7 @@
-import React from "react";
-import AboutCard from "./components/AboutCard";
-import ToolCard from "./components/ToolCard";
-import SourceCard from "./components/SourceCard";
+import React, { lazy } from "react";
+const AboutCard = lazy(() => import('./components/AboutCard'));
+const ToolCard = lazy(() => import('./components/ToolCard'));
+const SourceCard = lazy(() => import('./components/SourceCard'));
 
 function About() {
   return (
