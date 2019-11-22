@@ -129,6 +129,14 @@ class stateIssues(db.Model):
     transportation_and_public_works =   db.Column(db.Unicode)
     tally =                             db.Column(db.Unicode)
 
+class Tweets(db.model):
+    __tablename__ =                     "Tweets"
+    username =                          db.Column(db.Unicode, primary_key = True)
+    category =                          db.Column(db.Unicode)
+    date =                              db.Column(db.Unicode)
+    tweet_id =                          db.Column(db.Unicode)
+    text =                              db.Column(db.Unicode)
+
 
 # Allows for the use of Flask-Restless to quickly build APIs
 # Requires app we just built with configurations and a flask alchemy obj
@@ -141,6 +149,7 @@ manager.create_api(Issues, methods=['GET'], results_per_page=5, max_results_per_
 manager.create_api(Mentions, methods = ['GET'], results_per_page=0)
 manager.create_api(megaTable, methods = ['GET'])
 manager.create_api(stateIssues, methods = ['GET'])
+manager.create_api(Tweets, methods = ['GET'])
 
 if __name__=='__main__':
     app.run(host='0.0.0.0')
