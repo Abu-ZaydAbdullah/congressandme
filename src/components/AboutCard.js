@@ -110,7 +110,7 @@ class AboutCard extends Component {
             ></img>
             <div className="card-body">
               <h5>{member.name}</h5>
-              <p>
+              <div>
                 <p className="card-text">
                   <strong>Role: </strong>
                   {member.role}
@@ -119,7 +119,7 @@ class AboutCard extends Component {
                   <strong>Biography: </strong>
                   {member.bio}
                 </p>
-              </p>
+              </div>
               {"\n"}
               <p className="card-text">
                 <strong>Commits: </strong>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import IssueCard from "../components/IssueCard";
 import axios from "axios";
+import TwitterCard from "../components/TwitterCard.js"
 
 function RepresentativeTemplate() {
   const rep_data = { ...useLocation().state };
@@ -151,11 +152,13 @@ function RepresentativeTemplate() {
           </div>
         </div>
       </div>
+      <TwitterCard></TwitterCard>
       <div className="col-md-6">
         <label>
           <strong>Issues Discussed:</strong>
         </label>
       </div>
+      
       <div className="container">
         <div className="row">
           <IssueCard issues={issue_data} filterText={""} />

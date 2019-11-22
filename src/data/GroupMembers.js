@@ -1,4 +1,4 @@
-import davidImage from "../assets/david.jpeg";
+import davidImage from "../assets/david.jpg";
 import robertImage from "../assets/robert.png";
 import abuzaydImage from "../assets/abuzayd.png";
 import benbImage from "../assets/benb.png";

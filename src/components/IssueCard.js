@@ -1,17 +1,7 @@
 import React from "react";
 import { issue_link } from "../utils/LinkFunctions";
 import Highlighter from "react-highlight-words";
-
-function trimSummary(str, queries) {
-  var query;
-  for (query in queries) {
-    let idx = str.toLowerCase().indexOf(queries[query].toLowerCase());
-    if (idx !== -1) {
-      return str.indexOf(" ", idx - 5) + 1;
-    }
-  }
-  return 0;
-}
+import { trimSummary } from "../utils/TextFunctions"
 
 function IssueCard({ issues, filterText }) {
   const queries = filterText.split(" ");
@@ -30,10 +20,10 @@ function IssueCard({ issues, filterText }) {
       );
     };
     const learn_more = () => {
-      return <a class="btn btn-light">Learn More</a>;
+      return <p className="btn btn-light" style={{color: "#007bff"}}>Learn More</p>;
     };
     return (
-      <div className="col-md-4 text-center" key={issue.index}>
+      <div className="col-md-4 text-center" key={issue.name}>
         <div className="card mb-4 box-shadow">
           {issue_link(issue, issue_image())}
           <div className="card-body">

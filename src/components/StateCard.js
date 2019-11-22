@@ -1,17 +1,7 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import { state_link } from "../utils/LinkFunctions";
+import { trimSummary } from "../utils/TextFunctions"
 import Highlighter from "react-highlight-words";
-
-function trimSummary(str, queries) {
-  var query;
-  for (query in queries) {
-    let idx = str.toLowerCase().indexOf(queries[query].toLowerCase());
-    if (idx !== -1) {
-      return idx;
-    }
-  }
-  return 0;
-}
 
 function StateCard({ states, filterText }) {
   const queries = filterText.split(" ");

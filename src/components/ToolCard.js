@@ -15,9 +15,9 @@ class ToolCard extends Component {
             ></img>
             <div className="card-body">
               <h5>{tool.name}</h5>
-              <p>
+              <div>
                 <p className="card-text">{tool.purpose}</p>
-              </p>
+              </div>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="btn-group"></div>
               </div>

@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Jumbotron from "./components/Jumbotron";
 import stateImage from "./assets/stateImage.jpg";
 import StateCard from "./components/StateCard";
 import { Dropdown } from "react-bootstrap";
 import Search from "./components/Search";
+import Pagination from "./components/Pagination";
 import issue_list from "./data/IssueAbbreviation";
 import { states_alphabetical, states_reversed } from "./utils/SortFunctions";
+import { sanitize } from "./utils/TextFunctions"
 const Fuse = require("fuse.js");
 
 function States() {
   const [states, setStates] = useState([]);
+  const num_of_states = 50;
+  const default_num_pages = 6;
+  const states_per_page = Math.ceil(num_of_states / default_num_pages);
   const { page_num } = useParams();
   const [dataSize, setDataSize] = useState(50);
   const [sort_dir, setSortDir] = useState("A-Z");
@@ -34,17 +39,6 @@ function States() {
     ]
   };
   const fuse = new Fuse(data, options);
-
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ")
-      .replace("\\", " ");
-  }
 
   function filterUpdate(value) {
     value = sanitize(value);
@@ -73,14 +67,14 @@ function States() {
         `https://api.congressand.me/api/stateIssues?results_per_page=56`
       );
       let data2 = await res2.data.objects;
-      const start_index = (page_num - 1) * 9;
+      const start_index = (page_num - 1) * states_per_page;
       await setData(data);
       await setData2(data2);
-      await setStates(data.slice(start_index, start_index + 9));
+      await setStates(data.slice(start_index, start_index + states_per_page));
       await setDataSize(data.length);
     } else {
-      const start_index = (page_num - 1) * 9;
-      resetStates(data.slice(start_index, start_index + 9));
+      const start_index = (page_num - 1) * states_per_page;
+      resetStates(data.slice(start_index, start_index + states_per_page));
     }
   };
 
@@ -98,18 +92,18 @@ function States() {
 
   function resetStates() {
     if (sort_dir === "A-Z") {
-      const start_index = (page_num - 1) * 9;
+      const start_index = (page_num - 1) * states_per_page;
       let temp_data = data
         .sort(states_alphabetical)
         .filter(state => stateHasIssue(state));
-      setStates(temp_data.slice(start_index, start_index + 9));
+      setStates(temp_data.slice(start_index, start_index + states_per_page));
       setDataSize(temp_data.length);
     } else if (sort_dir === "Z-A") {
-      const start_index = (page_num - 1) * 9;
+      const start_index = (page_num - 1) * states_per_page;
       let temp_data = data
         .sort(states_reversed)
         .filter(state => stateHasIssue(state));
-      setStates(temp_data.slice(start_index, start_index + 9));
+      setStates(temp_data.slice(start_index, start_index + states_per_page));
       setDataSize(temp_data.length);
     }
   }
@@ -126,33 +120,13 @@ function States() {
     return false;
   }
 
-  const pagination_list = () => {
-    let p_list = [];
-    console.log("page list " + String(dataSize));
-    for (var i = 0; i < dataSize / 9; i++) {
-      p_list.push(
-        <li class="page-item">
-          <Link
-            to={{
-              pathname: `/states/page/${i + 1}`,
-              state: { page_num: i + 1 }
-            }}
-          >
-            <a class="page-link">{i + 1}</a>
-          </Link>
-        </li>
-      );
-    }
-    return p_list;
-  };
-
-  const issue_dropdown = Object.keys(issue_list).map(issue => {
+  const issue_dropdown = Object.keys(issue_list).map((issue, index) => {
     return (
       <Dropdown.Item
         onClick={() => {
           setFilterIssue(issue);
         }}
-      >
+      key={index}>
         {issue_list[issue]}
       </Dropdown.Item>
     );
@@ -222,19 +196,7 @@ function States() {
       />
       <StateCard states={states} filterText={filterText} />
 
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
-            <nav>
-              <ul aria-label="Page:" class="pagination">
-                {pagination_list()}
-              </ul>
-            </nav>
-          </div>
-          <div className="col-md-4"></div>
-        </div>
-      </div>
+      <Pagination model={'states'} data_size={dataSize} per_page={states_per_page} />
     </main>
   );
 }

@@ -1,14 +1,15 @@
-import React, { useState, useEffect, Fragment } from "react";
-import Jumbotron from "./components/Jumbotron";
+import React, { useState, useEffect, Fragment, lazy } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import congressImage from "./assets/congress_image.jpg";
-import Search from "./components/Search";
-import StateCard from "./components/StateCard";
-import RepresentativeCard from "./components/RepresentativeCard";
-import IssueCard from "./components/IssueCard";
+import { sanitize } from "./utils/TextFunctions"
 import StateData from "./data/StateData";
 import RepresentativeData from "./data/RepresentativeData";
 import IssueData from "./data/IssueData";
+const Search = lazy(() => import('./components/Search'));
+const Jumbotron = lazy(() => import('./components/Jumbotron'));
+const RepresentativeCard = lazy(() => import('./components/RepresentativeCard'));
+const IssueCard = lazy(() => import('./components/IssueCard'));
+const StateCard = lazy(() => import('./components/StateCard'));
 const Fuse = require("fuse.js");
 
 function Home() {
@@ -69,17 +70,6 @@ function Home() {
   const fuseStates = new Fuse(StateData, state_options);
   const fuseIssues = new Fuse(IssueData, issue_options);
 
-  function sanitize(value) {
-    return value
-      .replace("(", " ")
-      .replace(")", " ")
-      .replace(",", " ")
-      .replace("^", " ")
-      .replace("[", " ")
-      .replace("]", " ")
-      .replace("\\", " ");
-  }
-
   function filterUpdate(value) {
     value = sanitize(value);
     setFilterText(value);
@@ -89,7 +79,7 @@ function Home() {
     setRepData(fuseReps.search(filterText));
     setStateData(fuseStates.search(filterText));
     setIssueData(fuseIssues.search(filterText));
-    console.log(issue_data);
+    
   }, [filterText]);
 
   return (
