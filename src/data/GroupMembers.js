@@ -58,7 +58,7 @@ export default [
   },
   {
     index: 5,
-    name: "Ben Burton",
+    name: "Benjamin Burton",
     gitlab_id: "bentburton",
     email: "bentburton@gmail.com",
     role: "Cloud Services Engineer",
