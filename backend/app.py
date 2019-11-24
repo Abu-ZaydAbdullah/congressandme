@@ -129,7 +129,7 @@ class stateIssues(db.Model):
     transportation_and_public_works =   db.Column(db.Unicode)
     tally =                             db.Column(db.Unicode)
 
-class Tweets(db.model):
+class Tweets(db.Model):
     __tablename__ =                     "Tweets"
     username =                          db.Column(db.Unicode, primary_key = True)
     category =                          db.Column(db.Unicode)
