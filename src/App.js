@@ -8,6 +8,7 @@ const Representatives = lazy(() => import('./Representatives'));
 const States = lazy(() => import('./States'));
 const Issues = lazy(() => import('./Issues'));
 const About = lazy(() => import('./About'));
+const Visualizations = lazy(() => import('./Visualizations'));
 const RepresentativeTemplate = lazy(() => import('./templates/RepresentativeTemplate'));
 const StateTemplate = lazy(() => import('./templates/StateTemplate'));
 const IssueTemplate = lazy(() => import('./templates/IssueTemplate'));
@@ -37,6 +38,7 @@ class App extends Component {
               <Route path="/issue/:name" component={IssueTemplate} /> }}/>/>
               <Route path="/issues/page/:page_num" component={Issues} />
               <Route path="/about" component={About} />
+              <Route path="/visualizations" component={Visualizations} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
