@@ -25,21 +25,21 @@ function RepresentativeTemplate() {
       }
       return issueList;
     });
-    console.log(allIssues());
-    await setIssuesMentioned(allIssues());
-  };
-
-  const getIssueData = async () => {
-    const req = await axios(
+    var isList = allIssues();
+    await setIssuesMentioned(isList);
+    const req2 = await axios(
       `https://api.congressand.me/api/Issues?results_per_page=31`
     );
-    const data = await req.data.objects;
-    await setIssueData(data);
+    const data2 = await req2.data.objects;
+    console.log(data2);
+    console.log(isList);
+    const final_data = data2.filter(issue => isList.indexOf(issue.abbreviation) > -1);
+    console.log(final_data);
+    await setIssueData(final_data);
   };
 
   useEffect(() => {
     getIssueList();
-    getIssueData();
     window.scrollTo(0, 0);
   }, [rep_data.name]);
 
