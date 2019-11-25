@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import { LabeledArc } from './LabeledArc';
  
-class Piechart extends Component {
+class PieChart extends Component {
     constructor() {
         super();
  
@@ -26,7 +26,7 @@ class Piechart extends Component {
         translate = `translate(${this.props.x}, ${this.props.y})`;
 
         return (
-            <svg>
+            <svg width="750" height="750">
             <g transform={translate}>
                 {pie.map((d, i) => this.arcGenerator(d, i))}
             </g>
@@ -35,4 +35,4 @@ class Piechart extends Component {
     }
 }
  
-export default Piechart;
+export default PieChart;

@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import * as d3 from 'd3';
+import React from 'react';
 import Arc from "./Arc"
 
 class LabeledArc extends Arc {
