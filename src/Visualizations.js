@@ -1,4 +1,4 @@
-import React, { lazy, useRef, useEffect } from "react";
+import React from "react";
 import PieChart from "./components/PieChart"
 import * as d3 from "d3";
 
@@ -22,7 +22,7 @@ function Visualizations () {
 
             <div className="col-md-6">
             <PieChart x={100} y={100} outerRadius={100} innerRadius={50}
-          data={[{value: 92-34, label: 'Code lines'},
+            data={[{value: 92-34, label: 'Code lines'},
                  {value: 34, label: 'Empty lines'}]} />
             </div>
       </div>

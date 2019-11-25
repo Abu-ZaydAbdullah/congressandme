@@ -26,9 +26,11 @@ class Piechart extends Component {
         translate = `translate(${this.props.x}, ${this.props.y})`;
 
         return (
+            <svg>
             <g transform={translate}>
                 {pie.map((d, i) => this.arcGenerator(d, i))}
             </g>
+            </svg>
         )
     }
 }
