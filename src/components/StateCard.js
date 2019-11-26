@@ -1,6 +1,6 @@
 import React from "react";
 import { state_link } from "../utils/LinkFunctions";
-import { trimSummary } from "../utils/TextFunctions"
+import { trimSummary } from "../utils/TextFunctions";
 import Highlighter from "react-highlight-words";
 
 function StateCard({ states, filterText }) {

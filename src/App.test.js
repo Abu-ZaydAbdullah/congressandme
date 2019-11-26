@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { MemoryRouter } from "react-router-dom";
 import { mount, configure } from "enzyme";
@@ -20,7 +20,9 @@ it("renders without crashing", () => {
 
 const HomeWrapper = mount(
   <MemoryRouter initial_entries="/representatives/page/1">
-    <Home />
+    <Suspense fallback={<div>loading</div>}>
+      <Home />
+    </Suspense>
   </MemoryRouter>
 );
 
@@ -138,7 +140,9 @@ describe("Issues Component", () => {
 
 const AboutWrapper = mount(
   <MemoryRouter initial_entries="/about">
-    <About />
+    <Suspense fallback={<div>loading</div>}>
+      <About />
+    </Suspense>
   </MemoryRouter>
 );
 

@@ -9,7 +9,7 @@ import Search from "./components/Search";
 import Pagination from "./components/Pagination";
 import states_list from "./data/StatesAbbreviations";
 import { reps_alphabetical, reps_reversed } from "./utils/SortFunctions";
-import { sanitize } from "./utils/TextFunctions"
+import { sanitize } from "./utils/TextFunctions";
 const Fuse = require("fuse.js");
 
 function Representatives() {
@@ -126,7 +126,8 @@ function Representatives() {
         onClick={() => {
           setFilterState(state);
         }}
-       key={index}>
+        key={index}
+      >
         {state}
       </Dropdown.Item>
     );
@@ -197,7 +198,11 @@ function Representatives() {
         representatives={representatives}
         filterText={filterText}
       />
-    <Pagination model={'representatives'} data_size={dataSize} per_page={reps_per_page} />
+      <Pagination
+        model={"representatives"}
+        data_size={dataSize}
+        per_page={reps_per_page}
+      />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { issue_link } from "../utils/LinkFunctions";
 import Highlighter from "react-highlight-words";
-import { trimSummary } from "../utils/TextFunctions"
+import { trimSummary } from "../utils/TextFunctions";
 
 function IssueCard({ issues, filterText }) {
   const queries = filterText.split(" ");
@@ -21,7 +21,11 @@ function IssueCard({ issues, filterText }) {
       );
     };
     const learn_more = () => {
-      return <p className="btn btn-light" style={{color: "#007bff"}}>Learn More</p>;
+      return (
+        <p className="btn btn-light" style={{ color: "#007bff" }}>
+          Learn More
+        </p>
+      );
     };
     return (
       <div className="col-md-4 text-center" key={issue.name}>
