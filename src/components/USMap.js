@@ -1,13 +1,7 @@
 import React from "react";
+import statesData from "../data/MapData"
 
-
-async function USMap() {
-        const res = await fetch('https://willhaley.com/assets/united-states-map-react/states.json')
-        const statesData = await res.json();
-    
-    if (statesData === null) {
-        return <div>Loading...</div>
-    }
+function USMap() {
     return (
         <svg viewBox="0 0 960 600">
             {statesData.map((stateData, index) =>
