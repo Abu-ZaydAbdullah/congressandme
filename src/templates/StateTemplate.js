@@ -42,7 +42,7 @@ function StateTemplate() {
     // Grab only the issues relavent to this state
     const unused = data.map(rep => {
       const temp = rep.issues.split(",").map(issue => {
-        if(isList.indexOf(issue) == -1) {
+        if (isList.indexOf(issue) == -1) {
           isList.push(issue);
         }
       });
@@ -53,7 +53,9 @@ function StateTemplate() {
     );
     // Filter out irrelavent issues from list
     const data2 = await req2.data.objects;
-    const final_data = data2.filter(issue => isList.indexOf(issue.abbreviation) > -1);
+    const final_data = data2.filter(
+      issue => isList.indexOf(issue.abbreviation) > -1
+    );
     await setIssueData(final_data);
   };
 

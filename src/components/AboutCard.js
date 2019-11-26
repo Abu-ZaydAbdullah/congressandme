@@ -3,7 +3,7 @@ import cloneDeep from "lodash/cloneDeep";
 import React, { useState, useEffect } from "react";
 import data from "../data/GroupMembers";
 
-function AboutCard(){
+function AboutCard() {
   const [commit_dict, setCommitDict] = useState({
     "Abu-Zayd Abdullah": 0,
     "Abu-ZaydAbdullah": 0,
@@ -35,35 +35,35 @@ function AboutCard(){
   });
   const [unittest_count, setUnitTestCount] = useState(81);
 
-  function getCommits(){
+  function getCommits() {
     let currPage = 1;
     let temp_commit_dict = cloneDeep(commit_dict);
-      while (currPage < 5) {
-        var authOptions = {
-          method: "GET",
-          url: `https://gitlab.com/api/v4/projects/14525540/repository/commits?all=true&per_page=100&page=${currPage}`,
-          headers: { "Private-Token": "mS_bG_uQE4UkARaq3_oQ" },
-          json: true
-        };
-        axios(authOptions).then(response => {
-          let temp_commit_count = 0;
-          const responseData = response.data;
-          responseData.forEach(commit => {
-            temp_commit_count += 1;
-            temp_commit_dict[commit.author_name] += 1;
-          });
-          
-          temp_commit_dict["Abu-Zayd Abdullah"] +=
-            temp_commit_dict["Abu-ZaydAbdullah"];
-          
-          setCommitCount(previousCount => previousCount + temp_commit_count);
+    while (currPage < 5) {
+      var authOptions = {
+        method: "GET",
+        url: `https://gitlab.com/api/v4/projects/14525540/repository/commits?all=true&per_page=100&page=${currPage}`,
+        headers: { "Private-Token": "mS_bG_uQE4UkARaq3_oQ" },
+        json: true
+      };
+      axios(authOptions).then(response => {
+        let temp_commit_count = 0;
+        const responseData = response.data;
+        responseData.forEach(commit => {
+          temp_commit_count += 1;
+          temp_commit_dict[commit.author_name] += 1;
         });
-        currPage += 1;
-      }
-      setCommitDict(temp_commit_dict);      
+
+        temp_commit_dict["Abu-Zayd Abdullah"] +=
+          temp_commit_dict["Abu-ZaydAbdullah"];
+
+        setCommitCount(previousCount => previousCount + temp_commit_count);
+      });
+      currPage += 1;
+    }
+    setCommitDict(temp_commit_dict);
   }
 
-  function getIssues(){
+  function getIssues() {
     var authOptions = {
       method: "GET",
       url:
@@ -163,7 +163,6 @@ function AboutCard(){
       </div>
     </div>
   );
-
 }
 
 export default AboutCard;

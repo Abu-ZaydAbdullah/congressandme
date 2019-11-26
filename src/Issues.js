@@ -9,7 +9,7 @@ import Search from "./components/Search";
 import Pagination from "./components/Pagination";
 import states_list from "./data/StatesAbbreviations";
 import { issues_alphabetical, issues_reversed } from "./utils/SortFunctions";
-import { sanitize } from "./utils/TextFunctions"
+import { sanitize } from "./utils/TextFunctions";
 const Fuse = require("fuse.js");
 
 function Issues() {
@@ -86,7 +86,6 @@ function Issues() {
       )
     );
     await setDataSize(issues.length);
-    
   };
 
   useEffect(() => {
@@ -115,7 +114,8 @@ function Issues() {
         onClick={() => {
           setFilterState(state);
         }}
-       key={index}>
+        key={index}
+      >
         {state}
       </Dropdown.Item>
     );
@@ -175,7 +175,11 @@ function Issues() {
         filterUpdate={filterUpdate.bind(this)}
       />
       <IssueCard issues={issues} filterText={filterText} />
-      <Pagination model={'issues'} data_size={dataSize} per_page={issues_per_page} />
+      <Pagination
+        model={"issues"}
+        data_size={dataSize}
+        per_page={issues_per_page}
+      />
     </main>
   );
 }

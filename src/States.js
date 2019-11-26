@@ -9,7 +9,7 @@ import Search from "./components/Search";
 import Pagination from "./components/Pagination";
 import issue_list from "./data/IssueAbbreviation";
 import { states_alphabetical, states_reversed } from "./utils/SortFunctions";
-import { sanitize } from "./utils/TextFunctions"
+import { sanitize } from "./utils/TextFunctions";
 const Fuse = require("fuse.js");
 
 function States() {
@@ -126,7 +126,8 @@ function States() {
         onClick={() => {
           setFilterIssue(issue);
         }}
-      key={index}>
+        key={index}
+      >
         {issue_list[issue]}
       </Dropdown.Item>
     );
@@ -196,7 +197,11 @@ function States() {
       />
       <StateCard states={states} filterText={filterText} />
 
-      <Pagination model={'states'} data_size={dataSize} per_page={states_per_page} />
+      <Pagination
+        model={"states"}
+        data_size={dataSize}
+        per_page={states_per_page}
+      />
     </main>
   );
 }

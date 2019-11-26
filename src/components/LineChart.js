@@ -1,5 +1,5 @@
-import React from 'react';
-import ShowcaseButton from './showcase-button';
+import React from "react";
+import ShowcaseButton from "./showcase-button";
 
 import {
   XYPlot,
@@ -12,7 +12,7 @@ import {
   LineSeriesCanvas,
   LineSeries,
   Crosshair
-} from 'react-vis';
+} from "react-vis";
 
 function getRandomData() {
   return new Array(1000).fill(0).map((row, i) => ({
@@ -25,27 +25,27 @@ function getRandomData() {
 const randomData = getRandomData();
 
 const colorRanges = {
-  typeA: ['#59E4EC', '#0D676C'],
-  typeB: ['#EFC1E3', '#B52F93']
+  typeA: ["#59E4EC", "#0D676C"],
+  typeB: ["#EFC1E3", "#B52F93"]
 };
 
 const nextType = {
-  typeA: 'typeB',
-  typeB: 'typeA'
+  typeA: "typeB",
+  typeB: "typeA"
 };
 
 const nextModeContent = {
-  canvas: 'SWITCH TO SVG',
-  svg: 'SWITCH TO CANVAS'
+  canvas: "SWITCH TO SVG",
+  svg: "SWITCH TO CANVAS"
 };
 
-const drawModes = ['canvas', 'svg'];
+const drawModes = ["canvas", "svg"];
 
 export default class LineChart extends React.Component {
   state = {
     drawMode: 0,
     data: randomData,
-    colorType: 'typeA',
+    colorType: "typeA",
     strokeWidth: 1,
     showMarks: true,
     value: false,
@@ -64,14 +64,14 @@ export default class LineChart extends React.Component {
     } = this.state;
     const lineSeriesProps = {
       animation: true,
-      className: 'mark-series-example',
+      className: "mark-series-example",
       sizeRange: [5, 15],
-      color: colorType === 'typeA' ? '#0D676C' : '#B52F93',
+      color: colorType === "typeA" ? "#0D676C" : "#B52F93",
       colorRange: colorRanges[colorType],
-      opacityType: 'literal',
+      opacityType: "literal",
       strokeWidth,
       data,
-      onNearestX: d => this.setState({value: d})
+      onNearestX: d => this.setState({ value: d })
     };
     const SVGComponent = showMarks ? LineMarkSeries : LineSeries;
     const CanvasComponent = showMarks ? LineMarkSeriesCanvas : LineSeriesCanvas;
@@ -82,35 +82,35 @@ export default class LineChart extends React.Component {
         <div className="canvas-example-controls">
           <div> {`Mode: ${mode}`} </div>
           <ShowcaseButton
-            onClick={() => this.setState({drawMode: (drawMode + 1) % 2})}
+            onClick={() => this.setState({ drawMode: (drawMode + 1) % 2 })}
             buttonContent={nextModeContent[mode]}
           />
           <ShowcaseButton
-            onClick={() => this.setState({showMarks: !showMarks})}
-            buttonContent={showMarks ? 'HIDE MARKS' : 'SHOW MARKS'}
+            onClick={() => this.setState({ showMarks: !showMarks })}
+            buttonContent={showMarks ? "HIDE MARKS" : "SHOW MARKS"}
           />
           <ShowcaseButton
-            onClick={() => this.setState({data: getRandomData()})}
-            buttonContent={'UPDATE DATA'}
+            onClick={() => this.setState({ data: getRandomData() })}
+            buttonContent={"UPDATE DATA"}
           />
           <ShowcaseButton
-            onClick={() => this.setState({colorType: nextType[colorType]})}
+            onClick={() => this.setState({ colorType: nextType[colorType] })}
             buttonContent={`TOGGLE COLOR to ${nextType[colorType]}`}
           />
           <ShowcaseButton
             onClick={() =>
-              this.setState({strokeWidth: strokeWidth === 1 ? 2 : 1})
+              this.setState({ strokeWidth: strokeWidth === 1 ? 2 : 1 })
             }
-            buttonContent={'TOGGLE STROKEWIDTH'}
+            buttonContent={"TOGGLE STROKEWIDTH"}
           />
           <ShowcaseButton
-            onClick={() => this.setState({hideComponent: !hideComponent})}
-            buttonContent={hideComponent ? 'SHOW' : 'HIDE'}
+            onClick={() => this.setState({ hideComponent: !hideComponent })}
+            buttonContent={hideComponent ? "SHOW" : "HIDE"}
           />
         </div>
         {!hideComponent && (
           <XYPlot
-            onMouseLeave={() => this.setState({value: false})}
+            onMouseLeave={() => this.setState({ value: false })}
             width={600}
             height={300}
           >
@@ -118,8 +118,8 @@ export default class LineChart extends React.Component {
             <HorizontalGridLines />
             <XAxis />
             <YAxis />
-            {mode === 'canvas' && <CanvasComponent {...lineSeriesProps} />}
-            {mode === 'svg' && <SVGComponent {...lineSeriesProps} />}
+            {mode === "canvas" && <CanvasComponent {...lineSeriesProps} />}
+            {mode === "svg" && <SVGComponent {...lineSeriesProps} />}
             {value && <Crosshair values={[value]} />}
           </XYPlot>
         )}
