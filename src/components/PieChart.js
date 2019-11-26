@@ -14,7 +14,7 @@ class CustomLabel extends React.Component {
             cornerRadius={100}
             flyoutWidth={200}
             flyoutHeight={200}
-            flyoutStyle={{ fill: "black" }}
+            flyoutStyle={{ fill: "#222f3e" }}
           />
         </g>
       );
@@ -28,7 +28,7 @@ class CustomLabel extends React.Component {
     render() {
       return (
           <VictoryPie
-            style={{ labels: { fill: "white", fontSize: "5rem" } }}
+            style={{ labels: { fill: "white", fontSize: 20 } }}
             innerRadius={200}
             labelRadius={240}
             labels={({ datum }) => `${datum.x}`}
@@ -36,19 +36,19 @@ class CustomLabel extends React.Component {
             data={[
                 {
                     "count": 569,
-                    "x": "Agriculture and Food",
+                    "x": "Agriculture \nand Food",
                     "y": 0.04655539191621666
                 }, {
                     "count": 2200,
-                    "x": "Armed Forces and Security",
+                    "x": "Armed Forces \nand\n Security",
                     "y": 0.18000327278677794
                 }, {
                     "count": 339,
-                    "x": "Crime and Law Enforcement",
+                    "x": "Crime and \nLaw Enforcement",
                     "y": 0.02773686794305351
                 }, {
                     "count": 426,
-                    "x": "Economics and Public Finance",
+                    "x": "Economics \nand \nPublic Finance",
                     "y": 0.03485517918507609
                 }, {
                     "count": 1240,
@@ -56,11 +56,11 @@ class CustomLabel extends React.Component {
                     "y": 0.10145639011618393
                 }, {
                     "count": 268,
-                    "x": "Emergency Management",
+                    "x": "Emergency\n Management",
                     "y": 0.021927671412207493
                 }, {
                     "count": 736,
-                    "x": "Environmental Protection",
+                    "x": "Environmental\n Protection",
                     "y": 0.060219276714122076
                 }, {
                     "count": 644,
@@ -80,7 +80,7 @@ class CustomLabel extends React.Component {
                     "y": 0.04475535918834888
                 }, {
                     "count": 642,
-                    "x": "Labor and Employment",
+                    "x": "Labor \nand\n Employment",
                     "y": 0.052528227785959745
                 }, {
                     "count": 711,
@@ -92,7 +92,7 @@ class CustomLabel extends React.Component {
                     "y": 0.037146129929635084
                 }, {
                     "count": 959,
-                    "x": "Transportation and Public Works",
+                    "x": "Transportation \nand Public Works",
                     "y": 0.07846506300114547
                 }, {
                     "count": 0,
@@ -100,7 +100,7 @@ class CustomLabel extends React.Component {
                     "y": 0.0
                 }
             ]}
-            colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
+            colorScale={["#ff9ff3", "#feca57", "#ff6b6b", "#48dbfb", "#1dd1a1", "#f368e0", "#ff9f43", "#ee5253", "#0abde3", "#10ac84", "#00d2d3", "#5f27cd", "#c8d6e5", "#576574", "#222f3e", "#2e86de" ]}
           />
       );
     }
