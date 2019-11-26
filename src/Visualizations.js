@@ -1,5 +1,6 @@
 import React from "react";
 import PieChart from "./components/PieChart";
+import WordCloud from "./components/WordCloud";
 import LineChart from "./components/LineChart";
 
 function Visualizations() {
@@ -98,9 +99,11 @@ function Visualizations() {
         </div>
       </div>
 
-      <LineChart />
+      {/* <LineChart /> */}
 
-      <svg height="620" width="848" xmlns="http://www.w3.org/2000/svg">
+      <WordCloud />
+
+      {/* <svg height="620" width="848" xmlns="http://www.w3.org/2000/svg">
         <text
           dy=".35em"
           font-family="Arial, Helvetica"
@@ -349,7 +352,7 @@ function Visualizations() {
             Armed Forces and National Security
           </text>
         </g>
-      </svg>
+      </svg> */}
     </main>
   );
 }
