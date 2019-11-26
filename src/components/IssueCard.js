@@ -7,7 +7,6 @@ function IssueCard({ issues, filterText }) {
   const queries = filterText.split(" ");
 
   const issueList = issues.map(issue => {
-    //console.log(issue);
     var about_idx = trimSummary(issue.about, queries);
     var description_idx = trimSummary(issue.description, queries);
     const issue_image = () => {
