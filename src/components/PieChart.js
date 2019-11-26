@@ -28,7 +28,7 @@ class CustomLabel extends React.Component {
     render() {
       return (
           <VictoryPie
-            style={{ labels: { fill: "white" } }}
+            style={{ labels: { fill: "white", fontSize: "5rem" } }}
             innerRadius={200}
             labelRadius={240}
             labels={({ datum }) => `${datum.x}`}
@@ -40,7 +40,7 @@ class CustomLabel extends React.Component {
                     "y": 0.04655539191621666
                 }, {
                     "count": 2200,
-                    "x": "Armed Forces and National Security",
+                    "x": "Armed Forces and Security",
                     "y": 0.18000327278677794
                 }, {
                     "count": 339,
@@ -72,7 +72,7 @@ class CustomLabel extends React.Component {
                     "y": 0.17910325642284405
                 }, {
                     "count": 298,
-                    "x": "Housing and Community Development",
+                    "x": "Housing",
                     "y": 0.024382261495663558
                 }, {
                     "count": 547,
@@ -84,7 +84,7 @@ class CustomLabel extends React.Component {
                     "y": 0.052528227785959745
                 }, {
                     "count": 711,
-                    "x": "Social xs",
+                    "x": "Social Issues",
                     "y": 0.05817378497790869
                 }, {
                     "count": 454,
