@@ -4,6 +4,12 @@ import reactImage from "../assets/react.png";
 import postmanImage from "../assets/postman.png";
 import namecheapImage from "../assets/namecheap.png";
 import gitlabImage from "../assets/gitlab.png";
+import d3Image from "../assets/d3_image.png";
+import enzymeImage from "../assets/enzyme_img.png";
+import flaskImage from "../assets/flask_img.png";
+import fuseImage from "../assets/fuse_img.png";
+import seleniumImage from "../assets/selenium_img.jpg";
+
 
 export default [
   {
@@ -41,5 +47,36 @@ export default [
     name: "GitLab",
     purpose: "Version control and code sharing.",
     image: gitlabImage
+  },
+  {
+    index: 6,
+    name: "D3",
+    purpose: "Visualizations for website.",
+    image: d3Image
+  },
+  {
+    index: 7,
+    name: "Enzyme",
+    purpose: "JavaScript testing utility.",
+    image: enzymeImage
+  },
+  {
+    index: 8,
+    name: "Flask",
+    purpose: "Used to create backend of website.",
+    image: flaskImage
+  },
+  {
+    index: 9,
+    name: "Fuse",
+    purpose: "JavaScript searching library.",
+    image: fuseImage
+  },
+  {
+    index: 10,
+    name: "Selenium",
+    purpose: "Automated testing for front end.",
+    image: seleniumImage
   }
+
 ];

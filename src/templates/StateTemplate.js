@@ -38,24 +38,23 @@ function StateTemplate() {
     );
     const data = await req.data.objects;
     await setRepresentativeData(data);
-    const data2 = await data[0];
-    console.log(data2);
-    const allIssues = await (() => {
-      var issue;
-      var issueList = [];
-      for (issue in data2) {
-        if (data2[issue]) {
-          issueList.push(issue);
+    const isList = [];
+    // Grab only the issues relavent to this state
+    const unused = data.map(rep => {
+      const temp = rep.issues.split(",").map(issue => {
+        if(isList.indexOf(issue) == -1) {
+          isList.push(issue);
         }
-      }
-      return issueList;
+      });
     });
-    await setIssuesMentioned(allIssues());
+    await setIssuesMentioned(isList);
     const req2 = await axios(
       `https://api.congressand.me/api/Issues?results_per_page=31`
     );
-    const data3 = await req2.data.objects;
-    await setIssueData(data3);
+    // Filter out irrelavent issues from list
+    const data2 = await req2.data.objects;
+    const final_data = data2.filter(issue => isList.indexOf(issue.abbreviation) > -1);
+    await setIssueData(final_data);
   };
 
   useEffect(() => {
