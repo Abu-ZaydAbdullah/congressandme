@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowcaseButton from './showcase-button';
+import ShowcaseButton from './ShowcaseButton';
 
 import {
   XYPlot,
