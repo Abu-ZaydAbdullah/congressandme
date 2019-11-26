@@ -1,15 +1,17 @@
 import React, { useState, useEffect, Fragment, lazy } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import congressImage from "./assets/congress_image.jpg";
-import { sanitize } from "./utils/TextFunctions"
+import { sanitize } from "./utils/TextFunctions";
 import StateData from "./data/StateData";
 import RepresentativeData from "./data/RepresentativeData";
 import IssueData from "./data/IssueData";
-const Search = lazy(() => import('./components/Search'));
-const Jumbotron = lazy(() => import('./components/Jumbotron'));
-const RepresentativeCard = lazy(() => import('./components/RepresentativeCard'));
-const IssueCard = lazy(() => import('./components/IssueCard'));
-const StateCard = lazy(() => import('./components/StateCard'));
+const Search = lazy(() => import("./components/Search"));
+const Jumbotron = lazy(() => import("./components/Jumbotron"));
+const RepresentativeCard = lazy(() =>
+  import("./components/RepresentativeCard")
+);
+const IssueCard = lazy(() => import("./components/IssueCard"));
+const StateCard = lazy(() => import("./components/StateCard"));
 const Fuse = require("fuse.js");
 
 function Home() {
@@ -79,7 +81,6 @@ function Home() {
     setRepData(fuseReps.search(filterText));
     setStateData(fuseStates.search(filterText));
     setIssueData(fuseIssues.search(filterText));
-    
   }, [filterText]);
 
   return (
