@@ -37,7 +37,7 @@ function IssueTemplate() {
       console.log(issue_name);
     }
     const req2 = await axios(
-      `https://api.congressand.me/api/megaTable?q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
+      `https://api.congressand.me/api/megaTable?results_per_page=540&q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
     );
 
     const data2 = await req2.data.objects;
