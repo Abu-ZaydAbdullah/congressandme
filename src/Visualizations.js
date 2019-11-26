@@ -20,8 +20,8 @@ function Visualizations() {
           Visualization 1
         </h3>
         <p className="lead text-muted text-center">
-            Most discussed issues based on tweets. (Hover over a slice.)
-          </p>
+          Most discussed issues based on tweets. (Hover over a slice.)
+        </p>
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
@@ -107,14 +107,14 @@ function Visualizations() {
           Visualization 2
         </h3>
         <p className="lead text-muted text-center">
-            Representatives' most commonly tweeted words. (Hover over a word.)
+          Representatives' most commonly tweeted words. (Hover over a word.)
         </p>
         <div className="row">
-        <div className="col-md-1"></div>
-        <div className="col-md-1">
-          <WordCloud/>
-        </div>
-        <div className="col-md-3"></div>
+          <div className="col-md-1"></div>
+          <div className="col-md-1">
+            <WordCloud />
+          </div>
+          <div className="col-md-3"></div>
         </div>
       </div>
 
@@ -123,13 +123,11 @@ function Visualizations() {
           Visualization 3
         </h3>
         <p className="lead text-muted text-center">
-        <USMap />
+          <USMap />
         </p>
       </div>
 
       {/* <LineChart /> */}
-
-      
 
       {/* <svg height="620" width="848" xmlns="http://www.w3.org/2000/svg">
         <text
