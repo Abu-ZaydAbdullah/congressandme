@@ -24,7 +24,7 @@ function AboutCard() {
     BenHazel007: 0
   });
   const [issue_count, setIssueCount] = useState(0);
-  const [unittest_dict, setUnitTestDict] = useState({
+  const [unittest_dict] = useState({
     "Abu-Zayd Abdullah": 40,
     "Abu-ZaydAbdullah": 0,
     "Robert Gutierrez": 0,
@@ -33,11 +33,10 @@ function AboutCard() {
     "Benjamin Burton": 41,
     "Ben Hazel": 0
   });
-  const [unittest_count, setUnitTestCount] = useState(81);
+  const [unittest_count] = useState(81);
 
   function getCommits() {
     let currPage = 1;
-    let temp_commit_dict = cloneDeep(commit_dict);
     while (currPage < 5) {
       var authOptions = {
         method: "GET",
@@ -50,17 +49,15 @@ function AboutCard() {
         const responseData = response.data;
         responseData.forEach(commit => {
           temp_commit_count += 1;
-          temp_commit_dict[commit.author_name] += 1;
+          commit_dict[commit.author_name] += 1;
         });
 
-        temp_commit_dict["Abu-Zayd Abdullah"] +=
-          temp_commit_dict["Abu-ZaydAbdullah"];
+        commit_dict["Abu-Zayd Abdullah"] += commit_dict["Abu-ZaydAbdullah"];
 
         setCommitCount(previousCount => previousCount + temp_commit_count);
       });
       currPage += 1;
     }
-    setCommitDict(temp_commit_dict);
   }
 
   function getIssues() {

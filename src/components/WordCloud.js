@@ -26,6 +26,7 @@ function WordCloud() {
             words={words}
             options={{
               padding: 10,
+              deterministic: true,
               rotations: 3,
               rotationAngles: [0, 45],
               scale: "sqrt",
