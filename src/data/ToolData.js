@@ -10,7 +10,6 @@ import flaskImage from "../assets/flask_img.png";
 import fuseImage from "../assets/fuse_img.png";
 import seleniumImage from "../assets/selenium_img.jpg";
 
-
 export default [
   {
     index: 0,
@@ -78,5 +77,4 @@ export default [
     purpose: "Automated testing for front end.",
     image: seleniumImage
   }
-
 ];
