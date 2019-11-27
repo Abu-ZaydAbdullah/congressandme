@@ -115,8 +115,7 @@ class TestClass(TestCase):
         home_page = self.browser.find_element_by_class_name("jumbotron-heading")
 
         self.assertEqual(
-            home_page.text,
-            "",
+            home_page.text, "",
         )
 
     def test_16(self):
