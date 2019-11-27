@@ -112,12 +112,10 @@ class TestClass(TestCase):
     def test_15(self):
         self.browser.get("https://congressand.me/about")
         self.browser.implicitly_wait(3)
-        home_page = self.browser.find_element_by_xpath(
-            "/html/body/div/div/main/section/div/p"
-        )
+        home_page = self.browser.find_element_by_class_name("jumbotron-heading")
+
         self.assertEqual(
-            home_page.text,
-            "Get to know the team responsible for creating and maintaining this site!",
+            home_page.text, "Meet the Team",
         )
 
     def test_16(self):
@@ -129,6 +127,20 @@ class TestClass(TestCase):
         self.assertEqual(
             home_page.text, "A picture is worth a thousand lines of code.",
         )
+
+    def test_17(self):
+        self.browser.get("https://congressand.me/visualizations")
+        self.browser.implicitly_wait(3)
+        home_page = self.browser.find_element_by_class_name("jumbotron-heading")
+        self.assertEqual(
+            home_page.text, "Visualizations",
+        )
+
+    def test_18(self):
+        self.browser.get("https://congressand.me/visualizations")
+        self.browser.implicitly_wait(3)
+        home_page = self.browser.find_element_by_class_name("navbar-brand")
+        self.assertEqual(home_page.text, "Congress and Me")
 
 
 if __name__ == "__main__":
