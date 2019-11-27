@@ -1,4 +1,5 @@
 import React from "react";
+import IssueCoverageData from "./data/IssueCoverageData";
 import PieChart from "./components/PieChart";
 import WordCloud from "./components/WordCloud";
 import Choropleth from "./components/Choropleth";
@@ -30,72 +31,7 @@ function Visualizations() {
               y={200}
               outerRadius={500}
               innerRadius={250}
-              data={[
-                {
-                  value: 569,
-                  label: "Agriculture and Food"
-                },
-                {
-                  value: 2200,
-                  label: "Armed Forces and National Security"
-                },
-                {
-                  value: 339,
-                  label: "Crime and Law Enforcement"
-                },
-                {
-                  value: 426,
-                  label: "Economics and Public Finance"
-                },
-                {
-                  value: 1240,
-                  label: "Education"
-                },
-                {
-                  value: 268,
-                  label: "Emergency Management"
-                },
-                {
-                  value: 736,
-                  label: "Environmental Protection"
-                },
-                {
-                  value: 644,
-                  label: "Guns"
-                },
-                {
-                  value: 2189,
-                  label: "Health"
-                },
-                {
-                  value: 298,
-                  label: "Housing and Community Development"
-                },
-                {
-                  value: 547,
-                  label: "Immigration"
-                },
-                {
-                  value: 642,
-                  label: "Labor and Employment"
-                },
-                {
-                  value: 711,
-                  label: "Social labels"
-                },
-                {
-                  value: 454,
-                  label: "Taxation"
-                },
-                {
-                  value: 959,
-                  label: "Transportation and Public Works"
-                },
-                {
-                  value: 0,
-                  label: "Unknown"
-                }
-              ]}
+              data={IssueCoverageData}
             />
           </div>
           <div className="col-md-3"></div>
@@ -123,12 +59,11 @@ function Visualizations() {
           Visualization 3
         </h3>
         <p className="lead text-muted text-center">
-          Number of congresspeople per state. (Hover over a state.)
+          Number of Congressman per state. (Hover over a state.)
         </p>
-        <div align="center">
-              <Choropleth size={[window.screen.width / 5 * 4, 500]}/>
-            </div>
-
+        <div className="row" style={{ paddingLeft: "10%" }}>
+          <Choropleth size={[(window.screen.width / 5) * 4, 500]} />
+        </div>
       </div>
     </main>
   );

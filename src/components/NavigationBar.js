@@ -44,18 +44,18 @@ export const NavigationBar = () => (
         </Nav.Item>
         <Nav.Item>
           <Nav.Link
-            href="/about"
-            style={{ color: "#fdfdfd", fontWeight: "500" }}
-          >
-            About
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
             href="/visualizations"
             style={{ color: "#fdfdfd", fontWeight: "500" }}
           >
             Visualizations
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            href="/about"
+            style={{ color: "#fdfdfd", fontWeight: "500" }}
+          >
+            About
           </Nav.Link>
         </Nav.Item>
       </Nav>

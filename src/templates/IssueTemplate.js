@@ -27,23 +27,19 @@ function IssueTemplate() {
         `https://api.congressand.me/api/Issues?q={"filters":[{"name":"abbreviation","op":"==","val":"${name}"}]}`
       );
       const data = await req.data.objects;
-      await console.log(data);
       await setIssueData(data[0]);
       await setIssueName(data[0].abbreviation);
     } else {
       setIssueData(temp_data.state);
-      console.log(issue_data);
+
       setIssueName(temp_data.state.abbreviation);
-      console.log(issue_name);
     }
     const req2 = await axios(
       `https://api.congressand.me/api/megaTable?results_per_page=540&q={"filters":[{"name":"${issue_name}","op":"==","val":"1"}]}`
     );
 
     const data2 = await req2.data.objects;
-    await console.log(data2);
     await setRepresentativeData(data2);
-    await console.log(rep_data);
   };
 
   useEffect(() => {

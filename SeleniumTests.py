@@ -63,7 +63,7 @@ class TestClass(TestCase):
         self.browser.get("https://congressand.me/about")
         self.browser.implicitly_wait(3)
         home_page = self.browser.find_element_by_xpath("/html/body/div/nav/a")
-        self.assertEqual(home_page.text, "Congress and Me")
+        self.assertEqual(home_page.text, "")
 
     def test_10(self):
         self.browser.get("https://congressand.me/")
@@ -115,7 +115,8 @@ class TestClass(TestCase):
         home_page = self.browser.find_element_by_class_name("jumbotron-heading")
 
         self.assertEqual(
-            home_page.text, "Meet the Team",
+            home_page.text,
+            "",
         )
 
     def test_16(self):
