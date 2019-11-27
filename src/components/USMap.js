@@ -1,5 +1,14 @@
+// Adapted from code by Will Haley. https://willhaley.com/blog/united-states-map-react/
+
 import React from "react";
 import statesData from "../data/MapData"
+import d3 from "d3";
+
+var myTool = d3.select("body")
+                  .append("div")
+                  .attr("class", "mytooltip")
+                  .style("opacity", "0")
+                  .style("display", "none");
 
 function USMap() {
     return (

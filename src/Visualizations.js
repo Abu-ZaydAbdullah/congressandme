@@ -1,7 +1,7 @@
 import React from "react";
 import PieChart from "./components/PieChart";
 import WordCloud from "./components/WordCloud";
-import USMap from "./components/USMap";
+import Choropleth from "./components/Choropleth";
 
 function Visualizations() {
   return (
@@ -122,9 +122,10 @@ function Visualizations() {
         <h3 className="text-center" style={{ marginBottom: "3%" }}>
           Visualization 3
         </h3>
-        <p className="lead text-muted text-center">
-        <USMap />
-        </p>
+        <div align="center">
+              <Choropleth size={[window.screen.width / 5 * 4, 500]}/>
+            </div>
+
       </div>
 
       {/* <LineChart /> */}
