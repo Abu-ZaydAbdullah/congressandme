@@ -31,7 +31,7 @@ class PieChart extends React.Component {
         style={{ labels: { fill: "white", fontSize: 20 } }}
         innerRadius={200}
         labelRadius={240}
-        labels={({ datum }) => `${datum.x}`}
+        labels={({ datum }) => `${datum.x} (${(datum.y.toFixed(2))*100}%)`}
         labelComponent={<CustomLabel />}
         data={[
           {
