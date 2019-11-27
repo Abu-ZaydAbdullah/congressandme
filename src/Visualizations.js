@@ -21,7 +21,7 @@ function Visualizations() {
           Visualization 1
         </h3>
         <p className="lead text-muted text-center">
-          Most discussed issues based on tweets. (Hover over a slice.)
+          Relative importance of each issue. (Hover over a slice.)
         </p>
         <div className="row">
           <div className="col-md-3"></div>
