@@ -9,6 +9,7 @@ const States = lazy(() => import("./States"));
 const Issues = lazy(() => import("./Issues"));
 const About = lazy(() => import("./About"));
 const Visualizations = lazy(() => import("./Visualizations"));
+const Miscellaneous = lazy(() => import("./Miscellaneous"));
 const RepresentativeTemplate = lazy(() =>
   import("./templates/RepresentativeTemplate")
 );
@@ -41,6 +42,7 @@ class App extends Component {
                 <Route path="/issues/page/:page_num" component={Issues} />
                 <Route path="/about" component={About} />
                 <Route path="/visualizations" component={Visualizations} />
+                <Route path="/misc" component={Miscellaneous} />
                 <Route component={NoMatch} />
               </Switch>
             </Layout>
