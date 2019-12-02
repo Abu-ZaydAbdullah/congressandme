@@ -3,6 +3,7 @@ import IssueCoverageData from "./data/IssueCoverageData";
 import IncomeData from "./data/TheLastWordIncomeData";
 import words from "./data/Words";
 import LastWordWords from "./data/LastWordLanguageData"
+import WorldMap from "./components/WorldMap";
 
 const PieChart = lazy(() => import("./components/PieChart"));
 const WordCloud = lazy(() => import("./components/WordCloud"));
@@ -117,6 +118,22 @@ function Visualizations() {
           <div className="col-md-1"></div>
           <div className="col-md-10">
             <WordCloud words={LastWordWords} width={900} height={300}/>
+          </div>
+          <div className="col-md-1"></div>
+        </div>
+      </div>
+
+      <div className="album py-5 bg-light">
+        <h3 className="text-center" style={{ marginBottom: "3%" }}>
+          Visualization 3
+        </h3>
+        <p className="lead text-muted text-center">
+          Placeholder
+        </p>
+        <div className="row">
+          <div className="col-md-1"></div>
+          <div className="col-md-10">
+            <WorldMap/>
           </div>
           <div className="col-md-1"></div>
         </div>
