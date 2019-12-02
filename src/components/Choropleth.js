@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { select } from "d3-selection";
-import { interpolate } from "d3-interpolate"
+import { interpolate } from "d3-interpolate";
 import states from "../data/MapData";
 import axios from "axios";
 

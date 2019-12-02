@@ -1,4 +1,4 @@
-import {select, selectAll, event} from "d3-selection";
+import { select, selectAll, event } from "d3-selection";
 
 var statePaths = [
   {
