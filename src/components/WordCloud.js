@@ -1,7 +1,6 @@
 import React from "react";
 import { Resizable } from "re-resizable";
 import ReactWordcloud from "react-wordcloud";
-import words from "../data/Words";
 
 const resizeStyle = {
   display: "flex",
@@ -11,7 +10,7 @@ const resizeStyle = {
   background: "#f0f0f0"
 };
 
-function WordCloud() {
+function WordCloud(props) {
   return (
     <div style={{ fontSize: 90 }}>
       <Resizable
@@ -23,7 +22,7 @@ function WordCloud() {
       >
         <div style={{ width: "100%", height: "100%" }}>
           <ReactWordcloud
-            words={words}
+            words={props.words}
             options={{
               padding: 10,
               deterministic: true,

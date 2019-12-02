@@ -1,9 +1,13 @@
 import React, { lazy } from "react";
 import IssueCoverageData from "./data/IssueCoverageData";
 import IncomeData from "./data/TheLastWordIncomeData";
+import words from "./data/Words";
+import LastWordWords from "./data/LastWordLanguageData"
+
 const PieChart = lazy(() => import("./components/PieChart"));
 const WordCloud = lazy(() => import("./components/WordCloud"));
 const Choropleth = lazy(() => import("./components/Choropleth"));
+
 
 function Visualizations() {
   return (
@@ -49,7 +53,7 @@ function Visualizations() {
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-6">
-            <WordCloud />
+            <WordCloud words={words}/>
           </div>
           <div className="col-md-3"></div>
         </div>
@@ -85,7 +89,7 @@ function Visualizations() {
           Visualization 1
         </h3>
         <p className="lead text-muted text-center">
-          Relative importance of each issue. (Hover over a slice.)
+          Percentage of countries in each income level. (Hover over a slice.)
         </p>
         <div className="row">
           <div className="col-md-3"></div>
@@ -97,6 +101,22 @@ function Visualizations() {
               innerRadius={250}
               data={IncomeData}
             />
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+      </div>
+
+      <div className="album py-5 bg-light">
+        <h3 className="text-center" style={{ marginBottom: "3%" }}>
+          Visualization 2
+        </h3>
+        <p className="lead text-muted text-center">
+          The most commonly spoken languages in the dataset. (Hover over a word.)
+        </p>
+        <div className="row">
+          <div className="col-md-1"></div>
+          <div className="col-md-6">
+            <WordCloud words={LastWordWords}/>
           </div>
           <div className="col-md-3"></div>
         </div>
