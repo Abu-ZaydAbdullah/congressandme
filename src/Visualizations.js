@@ -52,10 +52,10 @@ function Visualizations() {
         </p>
         <div className="row">
           <div className="col-md-1"></div>
-          <div className="col-md-6">
-            <WordCloud words={words}/>
+          <div className="col-md-10">
+            <WordCloud words={words} width={900} height={300}/>
           </div>
-          <div className="col-md-3"></div>
+          <div className="col-md-1"></div>
         </div>
       </div>
 
@@ -115,10 +115,10 @@ function Visualizations() {
         </p>
         <div className="row">
           <div className="col-md-1"></div>
-          <div className="col-md-6">
-            <WordCloud words={LastWordWords}/>
+          <div className="col-md-10">
+            <WordCloud words={LastWordWords} width={900} height={300}/>
           </div>
-          <div className="col-md-3"></div>
+          <div className="col-md-1"></div>
         </div>
       </div>
     </main>

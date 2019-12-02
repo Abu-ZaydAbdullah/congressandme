@@ -12,11 +12,11 @@ const resizeStyle = {
 
 function WordCloud(props) {
   return (
-    <div style={{ fontSize: 90 }}>
+    <div>
       <Resizable
         defaultSize={{
-          width: 900,
-          height: 300
+          width: props.width,
+          height: props.height
         }}
         style={resizeStyle}
       >
