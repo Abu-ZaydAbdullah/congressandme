@@ -16,7 +16,7 @@ function WordCloud(props) {
       <Resizable
         defaultSize={{
           width: 900,
-          height: 450
+          height: 300
         }}
         style={resizeStyle}
       >
