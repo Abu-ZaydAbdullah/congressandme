@@ -5,7 +5,6 @@ class CustomLabel extends React.Component {
   render() {
     return (
       <g>
-        <VictoryLabel {...this.props} />
         <VictoryTooltip
           {...this.props}
           x={200}

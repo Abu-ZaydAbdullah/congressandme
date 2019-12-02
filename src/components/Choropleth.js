@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import * as d3 from "d3";
+import { select } from "d3-selection";
+import { interpolate } from "d3-interpolate"
 import states from "../data/MapData";
 import axios from "axios";
-import "./Choropleth.css";
 
 class Choropleth extends Component {
   constructor(props) {
@@ -91,13 +91,13 @@ class Choropleth extends Component {
       sampleData[d] = {
         total: count,
         schools: populated_data[d],
-        color: d3.interpolate("#fbefff", "#bf00ff")(count / 10)
+        color: interpolate("#fbefff", "#bf00ff")(count / 10)
       };
     });
 
     states.draw("#statesvg", sampleData, tooltipHtml);
 
-    d3.select(window.frameElement).style("height", "600px");
+    select(window.frameElement).style("height", "600px");
   }
 
   getData() {

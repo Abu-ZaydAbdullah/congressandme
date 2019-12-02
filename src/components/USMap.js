@@ -1,5 +1,3 @@
-// Adapted from code by Will Haley. https://willhaley.com/blog/united-states-map-react/
-
 import React from "react";
 import statesData from "../data/MapData";
 

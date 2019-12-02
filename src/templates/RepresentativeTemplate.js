@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import IssueCard from "../components/IssueCard";
 import axios from "axios";
-import TwitterCard from "../components/TwitterCard.js";
 
 function RepresentativeTemplate() {
   const rep_data = { ...useLocation().state };

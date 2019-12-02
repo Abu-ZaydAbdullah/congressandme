@@ -1,4 +1,4 @@
-import * as d3 from "d3";
+import {select, selectAll, event} from "d3-selection";
 
 var statePaths = [
   {
@@ -311,7 +311,7 @@ var statePaths = [
 var states = {};
 
 states.draw = function(id, data, toolTip) {
-  d3.select(id)
+  select(id)
     .selectAll(".state")
     .data(statePaths)
     .enter()
@@ -328,22 +328,22 @@ states.draw = function(id, data, toolTip) {
     .on("mouseout", mouseOut);
 
   function mouseOut() {
-    d3.select("#tooltip")
+    select("#tooltip")
       .transition()
       .duration(500)
       .style("opacity", 0);
   }
 
   function mouseOver(d) {
-    d3.select("#tooltip")
+    select("#tooltip")
       .transition()
       .duration(200)
       .style("opacity", 0.9);
 
-    d3.select("#tooltip")
+    select("#tooltip")
       .html(toolTip(d.n, data[d.id]))
-      .style("left", d3.event.pageX + "px")
-      .style("top", d3.event.pageY - 28 + "px");
+      .style("left", event.pageX + "px")
+      .style("top", event.pageY - 28 + "px");
   }
 };
 

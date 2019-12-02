@@ -58,14 +58,6 @@ export const NavigationBar = () => (
             About
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            href="/misc"
-            style={{ color: "#fdfdfd", fontWeight: "500" }}
-          >
-            Misc.
-          </Nav.Link>
-        </Nav.Item>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

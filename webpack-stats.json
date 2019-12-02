@@ -1,0 +1,12 @@
+Installing 'webpack-cli' (running 'npm install -D webpack-cli')...
+
+> fsevents@1.2.4 install /Users/abu-zaydabdullah/Documents/congressconversation/node_modules/react-scripts/node_modules/fsevents
+> node install
+
+  SOLINK_MODULE(target) Release/.node
+  CXX(target) Release/obj.target/fse/fsevents.o
+Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/Users/abu-zaydabdullah/Documents/congressconversation/node_modules/react-scripts/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/fse.node --module_name=fse --module_path=/Users/abu-zaydabdullah/Documents/congressconversation/node_modules/react-scripts/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64 --napi_version=5 --node_abi_napi=napi' (1)
++ webpack-cli@3.3.10
+updated 1 package and audited 42770 packages in 14.686s
+found 64 vulnerabilities (63 low, 1 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
