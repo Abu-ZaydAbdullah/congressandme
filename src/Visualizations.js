@@ -74,7 +74,7 @@ function Visualizations() {
       <section className="jumbotron text-center">
         <div className="container">
           <h1 className="jumbotron-heading">
-            Visualizations for <strong>The Last Word</strong>.
+            Visualizations for <strong>The Last Word</strong>
           </h1>
           <p className="lead text-muted">
             Our website would not be what it is without the input from the
@@ -128,7 +128,7 @@ function Visualizations() {
           Visualization 3
         </h3>
         <p className="lead text-muted text-center">
-          Placeholder
+          Locations of languages and the sizes of their speaking populations.
         </p>
         <div className="row">
           <div className="col-md-1"></div>
