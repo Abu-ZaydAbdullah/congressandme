@@ -77,10 +77,8 @@ function Visualizations() {
             Visualizations for <strong>The Last Word</strong>
           </h1>
           <p className="lead text-muted">
-            Our website would not be what it is without the input from the
-            development team for{" "}
-            <a href="http://thelastword.tech">The Last Word</a>. Their site
-            catalogs endangered and vulnerable languages around the world.
+            {" "}<a href="http://thelastword.tech">The Last Word</a> catalogs
+            endangered and vulnerable languages around the world.
           </p>
         </div>
       </section>
@@ -128,7 +126,7 @@ function Visualizations() {
           Visualization 3
         </h3>
         <p className="lead text-muted text-center">
-          Locations of languages and the sizes of their speaking populations.
+          Locations of top 20 languages and the sizes of their speaking populations.
         </p>
         <div className="row">
           <div className="col-md-1"></div>
