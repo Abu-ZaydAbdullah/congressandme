@@ -51,7 +51,7 @@ function AboutCard() {
           temp_commit_count += 1;
           commit_dict[commit.author_name] += 1;
         });
-
+        commit_dict["Abu-Zayd Abdullah"] = 0;
         commit_dict["Abu-Zayd Abdullah"] += commit_dict["Abu-ZaydAbdullah"];
 
         setCommitCount(previousCount => previousCount + temp_commit_count);

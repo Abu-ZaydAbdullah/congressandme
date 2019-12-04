@@ -2,13 +2,11 @@ import React, { lazy } from "react";
 import IssueCoverageData from "./data/IssueCoverageData";
 import IncomeData from "./data/TheLastWordIncomeData";
 import words from "./data/Words";
-import LastWordWords from "./data/LastWordLanguageData"
-import WorldMap from "./components/WorldMap";
-
+import LastWordWords from "./data/LastWordLanguageData";
 const PieChart = lazy(() => import("./components/PieChart"));
 const WordCloud = lazy(() => import("./components/WordCloud"));
 const Choropleth = lazy(() => import("./components/Choropleth"));
-
+const WorldMap = lazy(() => import("./components/WorldMap"));
 
 function Visualizations() {
   return (
@@ -54,7 +52,7 @@ function Visualizations() {
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <WordCloud words={words} width={900} height={300}/>
+            <WordCloud words={words} width={900} height={300} />
           </div>
           <div className="col-md-1"></div>
         </div>
@@ -77,7 +75,8 @@ function Visualizations() {
             Visualizations for <strong>The Last Word</strong>
           </h1>
           <p className="lead text-muted">
-            {" "}<a href="http://thelastword.tech">The Last Word</a> catalogs
+            {" "}
+            <a href="http://thelastword.tech">The Last Word</a> catalogs
             endangered and vulnerable languages around the world.
           </p>
         </div>
@@ -110,12 +109,13 @@ function Visualizations() {
           Visualization 2
         </h3>
         <p className="lead text-muted text-center">
-          The most commonly spoken languages in the dataset. (Hover over a word.)
+          The most commonly spoken languages in the dataset. (Hover over a
+          word.)
         </p>
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <WordCloud words={LastWordWords} width={900} height={300}/>
+            <WordCloud words={LastWordWords} width={900} height={300} />
           </div>
           <div className="col-md-1"></div>
         </div>
@@ -126,12 +126,13 @@ function Visualizations() {
           Visualization 3
         </h3>
         <p className="lead text-muted text-center">
-          Locations of top 20 languages and the sizes of their speaking populations.
+          Locations of top 20 languages and the sizes of their speaking
+          populations.
         </p>
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <WorldMap/>
+            <WorldMap />
           </div>
           <div className="col-md-1"></div>
         </div>
