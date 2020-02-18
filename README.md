@@ -1,18 +1,14 @@
 # Congress and Me (Phase 4)
 
-| Name              | EID           | GitLabID           | Estimated Comp. | Actual Comp. |
-| ------------------|:-------------:|:------------------:|:---------------:|:------------:|
-| Abu-Zayd Abdullah | aa77266       | AbuZaydAbdullah    | 14 hours        | 20 hours     |
-| Ben Burton        | btb896        | bentburton         | 10 hours        | 20 hours     |
-| Calvin Dao        | cvd325        | auproxis           | 15 hours        | 20 hours     |
-| Robert Gutierrez  | rg43274       | robgutierrez1      | 30 hours        | 20 hours     |
-| Ben Hazel         | bgh559        | BenHazel007        | 15 hours        | 20 hours     |
-| David Sikabwe     | dws2375       | dsikabwe           | 20 hours        | 20 hours     |
+| Name              |
+| ------------------|
+| Abu-Zayd Abdullah |
+| Ben Burton        |
+| Calvin Dao        |
+| Robert Gutierrez  |
+| Ben Hazel         |
+| David Sikabwe     |
 
-
-Git SHA: d0fa01deaed92199fa0d3f84be82842de5a47852<br>
-Project Lead: David Sikabwe<br>
-GitLab Pipelines: https://gitlab.com/AbuZaydAbdullah/congressconversation/pipelines<br>
 Website: https://congressand.me<br>
 
 ## Available Commands
